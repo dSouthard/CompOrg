@@ -10,98 +10,112 @@
 
 /*********************** Initialization ***********************/
 struct Cache * initialize(int newCacheSize, int newBlockSize, int newAssociativity, int newMissTime, int newHitTime) {
-  struct Cache *cache;
-  struct Block *temp;
-  int i, j;	// used for iteration
+	struct Cache *cache;
 
-  // Create in memory
-  cache=(struct Cache*)malloc(sizeof(struct Cache));
+	// Create in memory  
+	cache=(struct Cache*)malloc(sizeof(struct Cache));
 
-  // Initalize cache variable fields based on config files
-  cache->cacheSize=newCacheSize;
-  cache->blockSize=newBlockSize;
-  cache->associativity=newAssociativity;
-  cache->lengthOfWay=(newCacheSize/newBlockSize)/newAssociativity;
-  cache->indexFieldSize=log(cache->lengthOfWay)/log(2);	// log(base2)(lengthOfWay)
-  cache->byteOffsetSize=log(newBlockSize)/log(2);	// log(base2)(newBlockSize)
-  cache->missTime=newMissTime;
-  cache->hitTime=newHitTime;
+	// Initalize cache variable fields based on config files
+	cache->cacheSize=newCacheSize;
+	cache->blockSize=newBlockSize;	
+	cache->associativity=newAssociativity;
+	cache->lengthOfWay=(newCacheSize/newBlockSize)/newAssociativity;
+	cache->indexFieldSize=log(cache->lengthOfWay)/log(2);	// log(base2)(lengthOfWay)
+	cache->byteOffsetSize=log(newBlockSize)/log(2);	// log(base2)(newBlockSize)
+	cache->missTime=newMissTime;
+	cache->hitTime=newHitTime;
 
-  // Initialize tracking variables to 0
-  cache->hits=0;
-  cache->misses=0;
-  cache->writeRefs=0;
-  cache->readRefs=0;
-  cache->instructionTime=0;
-  cache->readTime=0;
-  cache->writeTime=0;
-  cache->dirtyKickouts=0;
-  cache->kickouts=0;
-  
-  // Initialize array of blocks
-  cache->blockArray=(struct Block **)malloc((cache->lengthOfWay*sizeof(struct Block *)));
-  for (i=0;i<cache->lengthOfWay;i++) {
-    // First column in blockArray will be a dummy pointer => add an extra "way"(column)
-    // Go through each row and allocate space for necessary amount of blocks
-    cache->blockArray[i]=(struct Block *)malloc((newAssociativity+1)*sizeof(struct Block));
-
-    // Go through and intialize blocks
-    for (j=0;j < newAssociativity;j++) {
-    // Set valid, dirty, and tag fields
-	cache->blockArray[i][j].valid = 0;
-	cache->blockArray[i][j].dirty = 0;
-	cache->blockArray[i][j].tag = 0;
-
-    // Point to next block in LRU chain
-	cache->blockArray[i][j].nextBlock = ache->blockArray[i][j+1];
-     }
-     
-    // Point last block to null
-    cache->blockArray[i][newAssociativity].nextBlock = null;
-  }
-
-  // Done
-  return cache;
+	// Initialize tracking variables to 0
+	cache->hits=0;
+	cache->misses=0;
+	cache->writeRefs=0;
+	cache->readRefs=0;
+	cache->instructionTime=0;
+	cache->readTime=0;
+	cache->writeTime=0;
+	cache->dirtyKickouts=0;
+	cache->kickouts=0;
+	
+	// Initialize array of blocks
+	cache->blockArray=(struct Block **)malloc((cache->lengthOfWay*sizeof(struct Block *)));
+	
+	int i=0, j=0;	// used for iteration
+	for (i=0;i < cache->lengthOfWay;i++) {
+		// First column in blockArray will be a dummy pointer => add an extra "way"(column)
+		// Go through each row and allocate space for necessary amount of blocks
+		cache->blockArray[i]=(struct Block *)malloc((newAssociativity+1)*sizeof(struct Block));
+		
+		// Go through and intialize blocks
+		for (j=0;j < newAssociativity;j++) {
+		// Set valid, dirty, and tag fields
+			cache->blockArray[i][j].valid = 0;
+			cache->blockArray[i][j].dirty = 0;
+			cache->blockArray[i][j].tag = 0;
+			
+			// Point to next block in LRU chain
+			cache->blockArray[i][j].nextBlock = ache->blockArray[i][j+1];
+		}
+			
+		// Point last block to null
+		cache->blockArray[i][newAssociativity].nextBlock = NULL;
+	}
+	
+	// Done
+	return cache;
 }
 
 /********************* Read Trace Function ***************************/
-unsigned long long readd(struct Cache* cache,unsigned long long  t, unsigned long long index, char op){
-    int i, j;
-    struct Block *t1, *t2;
-    for (j=0;j<cache->ways;j++) {
-      if (cache->bloarr[index][j].tag==t) {
-        if (!cache->bloarr[index][j].valid) {
-          cache->bloarr[index][j].tag=t;
-          cache->bloarr[index][j].valid=1;
-          return 0;
-        }
-        if (op=='W') {
-          cache->bloarr[index][j].dirty=1;
-        }
-        cache->hits++;
-        if (&cache->bloarr[index][j]==cache->lruarray[index]) {
-          return 0;
-        }
-        t1=cache->lruarray[index];
-        while (t1!=&cache->bloarr[index][j]) {
-          t1 = t1->lru;
-        }
-        t2=cache->lruarray[index];
-        while ((t2->lru)!=&cache->bloarr[index][j]) {
-          t2 = t2->lru;
-        }
-        if (t1->lru!=NULL) {
-          t2->lru=t1->lru;
-        }
-        else {
-          t2->lru=NULL;
-        }
-        t1->lru=cache->lruarray[index];
-        cache->lruarray[index]=t1;
-
-        return 0;
-      }
-    }
+unsigned long long readTrace(struct Cache* cache, unsigned long long targetTag, unsigned long long targetIndex, char op){
+    int i=0, j=0;					// Used for iteration
+    struct Block *tempBlock;	// Used for LRU policy implementation
+    
+    // Go through blockArray, try to find targetTag. Start at most-recently used block in targetIndex
+	tempBlock = cache->blockArray[targetIndex][0].nextBlock;
+	while (tempBlock.nextBlock != null) {
+		if (tempBlock.valid) {	// Only check blocks if they are valid
+		
+			if (tempBlock.tag == targetTag) {
+		  		// Found the tag! Increment hits
+		  		cache->hits++; 
+		  		
+		  		if (op=='W') {	// valid targetTag found in cache, write operation => mark block as dirty
+				  cache->blockArray[targetIndex][j].(*nextBlock).dirty=1;
+				  cache->writeTime+=hitTime;	// increase write time by hit penalty
+				} 
+				
+				else if (op == 'R') { // valid targetTag found in cache, read operation
+					cache->readTime+=hitTime;	// increase read time by hit penalty
+				}
+				
+				else if (op == 'I') { // valid targetTag found in cache, instruction operation
+					cache->instructionTime+=hitTime;	// increase instruction time by hit penalty
+				}
+				    
+				// Move block to beginning of LRU chain
+		  		struct Block *dummyPointer = cache->blockArray[targetIndex][0].nextBlock;	// Keep track of current start of chain
+		  		cache->blockArray[targetIndex][0].nextBlock = tempBlock;					// Make this referenced block the new start of chain
+		  		tempBlock = tempBlock.nextBlock;											// Point to where referenced block was pointing
+		  		struct Block *dummyPointer2 = cache->blockArray[targetIndex][0].nextBlock;
+		  		dummyPointer2->nextBlock = dummyPointer;
+		  		while (dummyPointer.nextBlock != cache->blockArray[targetIndex][0].nextBlock) {
+		  			dummyPointer = dummyPoint->nextBlock;		// Go through chain until you find the block that was pointing to the referenced block
+		  		}
+		  		dummyPointer.nextBlock = tempBlock;				// Change that block to reconnect the chain
+		      	          	
+		      	// Done
+		      	return 0;
+			}	// end matching targetTag if
+		
+		// targetTag wasn't found, look into next block
+		tempBlock = tempBlock.nextBlock;
+		}
+	}
+	
+	// Reached a null block => reached the end of the LRU chain without a hit
+	
+		
+	
+	// Find the end of the LRU chain, send its tag back to be replaced
     t1=cache->lruarray[index];
 
     while (t1->lru!=NULL) {
