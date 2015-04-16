@@ -1,0 +1,6 @@
+l1size 8192
+l2size 32768
+l1assoc 4
+l2assoc 4
+memchunks
+size 16
