@@ -232,11 +232,7 @@ void printstuff(struct Cache *icache, struct Cache* dcache, struct Cache* l2cach
   }
   printf("\n\n");
 
-  printf("Memory System:\n");
-  printf("    Dcache Size = %d : ways = %d : block size = %d\n", dcache->cachesize,dcache->ways,dcache->blocksize);
-  printf("    Icache Size = %d : ways = %d : block size = %d\n", icache->cachesize,icache->ways,icache->blocksize);
-  printf("    L2-cache Size = %d : ways = %d : block size = %d\n", l2cache->cachesize, l2cache->ways,l2cache->blocksize);
-  printf("    Memory ready  time = %d : chunksize = %d : chunktime = %d\n\n", mready,mchunks,mchunkt);
+  
   printf("Execute Time = %lld; Total References = %lld\n", extime, refnum+1);
   printf("Instruction Refereneces = %lld; Data refs = %lld\n",icache->rrefs,dcache->wrefs+dcache->rrefs);
   printf("Number of references types: [Percentage]\n");
