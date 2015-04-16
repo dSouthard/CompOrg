@@ -1,5 +1,0 @@
-l1size 8192
-l2size 65536
-l1assoc 256
-l2assoc 256
-memchunksize 8 
