@@ -11,7 +11,6 @@
 /*********************** Initialization ***********************/
 struct Cache * initialize(int newCacheSize, int newBlockSize, int newAssociativity, int newMissTime, int newHitTime) {
 	struct Cache *cache;
-	
 
 	// Create in memory  
 	cache=(struct Cache*)malloc(sizeof(struct Cache));
