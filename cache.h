@@ -21,39 +21,19 @@ struct Cache {
   // size of index field & byte offset field
   int indexFieldSize, byteOffsetSize;	
 
-  // track number of hits/misses/references
-  long long hits, misses, writeRefs, readRefs;
+  // track number of hits/misses/references; need to be unsigned to handle possible sizes
+  unsigned long long hits, misses, writeRefs, readRefs, insRefs;
 
   // track kick-outs and dirty kick-outs
-  long long dirtyKickouts, kickouts;
+  unsigned long long dirtyKickouts, kickouts;
 
   // track cycles for activities
-  long long instructionTime, readTime, writeTime;
-
+  unsigned long long instructionTime, readTime, writeTime;
+  
   // how many cycles each hit/miss should add
   int hitTime, missTime;
 
-  // track the financial cost of the cache
-  int cost;
-
   struct Block **blockArray;	// Array of pointers to blocks, implements LRU policy
 };
-
-
-// Function declarations
-// Initialization for caches
-struct Cache* initialize(int cachesize, int blocksize, int ways, int hittime, int misstime);
-
-// Read Trace
-unsigned long long readTrace(struct Cache* cache,unsigned long long  t, unsigned long long index, char op);
-
-// Print Cache Status
-void printCache(struct Cache *cache);
-
-// Print Full Report
-void printReport(struct Cache *icache, struct Cache* dcache, struct Cache* l2cache, int mready, int mchunks, int mchunkt, unsigned long long refnum, unsigned long long misallignment, int memcost);
-
-// Calculate financial cost of the system
-int cacheCost(int level, int size, int associativity);
 
 #endif
