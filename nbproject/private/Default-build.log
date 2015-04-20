@@ -1,0 +1,7 @@
+gcc -g -Wall -Wextra -c cache.c -o cache.o
+gcc -g -Wall -Wextra -c main.c -o main.o
+main.c: In function ‘main’:
+main.c:89:28: warning: unused variable ‘misallignments’ [-Wunused-variable]
+     unsigned long long int misallignments = 0; // Track total misalignments
+                            ^
+gcc  cache.o  main.o -lm -Wall -o main

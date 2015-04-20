@@ -25,7 +25,7 @@ struct Cache {
   unsigned long long hits, misses, writeRefs, readRefs, insRefs;
 
   // track kick-outs and dirty kick-outs
-  unsigned long long dirtyKickouts, kickouts;
+  unsigned long long dirtyKickouts, kickouts, transfers;
 
   // track cycles for activities
   unsigned long long instructionTime, readTime, writeTime;
