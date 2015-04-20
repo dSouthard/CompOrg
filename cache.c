@@ -9,6 +9,7 @@
 
 #define DEBUG
 #define POINTERDEBUG
+//#define INITIALIZEDEBUG
 
 void updateLRU(struct Cache* cache, struct Block * tempBlock, unsigned long long targetIndex);
 
@@ -61,14 +62,14 @@ struct Cache * initialize(int newCacheSize, int newBlockSize, int newAssociativi
 
             // Point to next block in LRU chain
             cache->blockArray[i][j].nextBlock = &(cache->blockArray[i][j + 1]);
-#ifdef POINTERDEBUG
+#ifdef INITIALIZEDEBUG
             printf("|| [%p] points to: %p || \t", &cache->blockArray[i][j], cache->blockArray[i][j].nextBlock);
 #endif
         }
 
         // Point last block to null
         cache->blockArray[i][newAssociativity].nextBlock = NULL;
-#ifdef POINTERDEBUG
+#ifdef INITIALIZEDEBUG
         printf("|| [%p] points to: %p || \n", &cache->blockArray[i][newAssociativity], cache->blockArray[i][newAssociativity].nextBlock);
 #endif
     }
@@ -81,22 +82,43 @@ struct Cache * initialize(int newCacheSize, int newBlockSize, int newAssociativi
 
 unsigned long long moveBlock(struct Cache* cache, unsigned long long targetTag, unsigned long long targetIndex) {
 #ifdef DEBUG
-    printf("~~~> In the moveBlock function: ");
+    printf("\n~~~> <~~~\n");
+    printf("~~~> In the moveBlock function: \n");
 #endif
     struct Block *tempBlock; // Used for LRU policy implementation
 
     // Point to the first block in the index
-    tempBlock = cache->blockArray[targetIndex][0].nextBlock;
+#ifdef POINTERDEBUG
+    printf(" >>>>> The cache index is pointing to: %p\n", cache->blockArray[targetIndex][0].nextBlock);
+#endif
+
+    if (cache->blockArray[targetIndex][0].nextBlock != NULL)
+        tempBlock = cache->blockArray[targetIndex][0].nextBlock;
+    else {
+        printf("!!!! Cache dummy pointer is pointing to a NULL block!!\n");
+        printf("~~~> <~~~\n\n");
+        return 0;
+    }
+
+#ifdef POINTERDEBUG
+    printf(" >>>>> tempBlock is now pointing to: %p\n", tempBlock);
+    printf(" >>>>> Next in line is: %p\n", tempBlock->nextBlock);
+#endif
+
 #ifdef DEBUG
-    printf("Moved tempBlock to beginning of LRU chain...");
+    printf("~~~> Moved tempBlock to beginning of LRU chain...\n");
 #endif
 
     while ((tempBlock->nextBlock != NULL) && (tempBlock->valid == 1)) { // Find the LRU or first invalid block
         tempBlock = tempBlock->nextBlock;
+#ifdef POINTERDEBUG
+        printf(" >>>>> tempBlock is now pointing to: %p\n", tempBlock);
+        printf(" >>>>> Next in line is: %p\n", tempBlock->nextBlock);
+#endif
     }
 
 #ifdef DEBUG
-    printf("tempBlock now pointing at LRU/1st invalid block...\n");
+    printf("~~~> tempBlock now pointing at LRU/1st invalid block...\n");
 #endif
     if ((!tempBlock->valid) || (!tempBlock->dirty)) {
 #ifdef DEBUG
@@ -124,6 +146,10 @@ unsigned long long moveBlock(struct Cache* cache, unsigned long long targetTag, 
 
 #ifdef DEBUG
         printf("~~~> Exiting the moveBlock function successfully.\n");
+#endif
+#ifdef POINTERDEBUG
+        printf(" >>>>> The cache index is pointing to: %p\n", cache->blockArray[targetIndex][0].nextBlock);
+        printf("~~~> <~~~\n\n");
 #endif
         return 0;
     }
@@ -155,28 +181,42 @@ unsigned long long moveBlock(struct Cache* cache, unsigned long long targetTag, 
     }
 
 #ifdef DEBUG
-    printf("~~~> Sucessfully exiting the moveBlock function, returning dirty tag.\n");
+    printf("~~~> Successfully exiting the moveBlock function, returning dirty tag.\n");
+#endif
+
+#ifdef POINTERDEBUG
+    printf("\n >>>>> The cache index is pointing to: %p\n", cache->blockArray[targetIndex][0].nextBlock);
+    printf("~~~> <~~~\n\n");
 #endif
     return returnedTag; // signal that there was a dirty kick out
-    //    return 0;
 }
 
 int scanCache(struct Cache* cache, unsigned long long targetTag, unsigned long long targetIndex, char op) {
 #ifdef DEBUG
+    printf("\n~~~> <~~~\n");
     printf("~~~> In the scanCache function: ");
 #endif
     struct Block * tempBlock; // Used for LRU policy implementation
 
     // Point to the first block in the index
-
-    tempBlock = cache->blockArray[targetIndex][0].nextBlock;
-#ifdef DEBUG
-    printf("tempBlock is now pointing to start of LRU chain\n");
+#ifdef POINTERDEBUG
+    printf("\n >>>>> The cache index is pointing to: %p\n", cache->blockArray[targetIndex][0].nextBlock);
 #endif
 
+    tempBlock = cache->blockArray[targetIndex][0].nextBlock;
+
+#ifdef DEBUG
+    printf("~~~> tempBlock is now pointing to start of LRU chain\n");
+#endif
+
+    int wayNumber = 1;
     while (tempBlock != NULL) {
 #ifdef DEBUG
-        printf("~~~> Moving through the chain...");
+        printf("~~~> Moving through the chain...Looking at way #%d", wayNumber);
+#endif
+#ifdef POINTERDEBUG
+        printf("\n >>>>> tempBlock is now pointing to: %p\n", tempBlock);
+        printf(" >>>>> Next in line is: %p\n", tempBlock->nextBlock);
 #endif
         if (tempBlock->valid) { // Only check blocks if they are valid
 #ifdef DEBUG
@@ -210,16 +250,19 @@ int scanCache(struct Cache* cache, unsigned long long targetTag, unsigned long l
                 } else {
 #ifdef POINTERDEBUG
                     printf("~~~> tempBlock is already the head of the LRU chain, all is good.\n");
+                    printf("~~~> <~~~\n\n");
 #endif
                 }
 
                 return 1;
             }
-        } else
+        } else {
+            wayNumber++;
 #ifdef DEBUG
-            printf("It's not a match, moving on to the next block.\n");
+            printf("~~~> It's not valid\n");
 #endif
-        tempBlock = tempBlock->nextBlock;
+            tempBlock = tempBlock->nextBlock;
+        }
     }
     // Target tag not found in cache
     cache->misses++;
@@ -232,6 +275,10 @@ int scanCache(struct Cache* cache, unsigned long long targetTag, unsigned long l
         cache->readRefs++;
     }
 
+#ifdef DEBUG
+    printf("~~~> <~~~\n\n");
+#endif
+
     return 0;
 }
 
@@ -239,6 +286,7 @@ int scanCache(struct Cache* cache, unsigned long long targetTag, unsigned long l
 
 void updateLRU(struct Cache* cache, struct Block * tempBlock, unsigned long long targetIndex) {
 #ifdef DEBUG
+    printf("\n~~~> <~~~\n");
     printf("Starting updateLRU function...");
 #endif
     // firstBlock points to the old start of the chain
@@ -275,14 +323,17 @@ void updateLRU(struct Cache* cache, struct Block * tempBlock, unsigned long long
     temp2->nextBlock = firstBlock;
 #ifdef DEBUG
     printf("Now the new front points to the old front, and the LRU chain is restored.");
+    printf("~~~> <~~~\n\n");
 #endif
+
+    return;
+
+
 }
 
-void printCacheStatus(struct Cache * cache) {
-    printf("----------------------------------------------------\n");
-    printf("---------------  Cache Status  ---------------------\n");
-    printf("----------------------------------------------------\n");
-
+void printCacheStatus(struct Cache * cache, int * cacheIndexCounter) {
+    printf("*********************************************************\n");
+   
     // Cache variables not already printed in printSetup function at beginning
     printf("Cache length: %d, index field size: %d, byte field size: %d\n",
             cache->lengthOfWay, cache->indexFieldSize, cache->byteOffsetSize);
@@ -300,30 +351,36 @@ void printCacheStatus(struct Cache * cache) {
     printf("------ Current Row Status ------\n");
     int i = 0, j = 0;
     for (i = 0; i < cache->lengthOfWay; i++) {
-        printf("Index %llx: ", (unsigned long long) i);
-        for (j = 1; j < (cache->associativity + 1); j++) {
-            // Skip the first column since it's being used as a dummy pointer
-            if (cache->blockArray[i][j].tag) // Block has a tag in it
-                printf("| Tag: %llx, V: %d, D: %d  |",
-                    cache->blockArray[i][j].tag, cache->blockArray[i][j].valid, cache->blockArray[i][j].dirty);
-            else // Block doesn't have a tag in it
-                printf("| Tag: -, V: %d, D: %d  |",
-                    cache->blockArray[i][j].valid, cache->blockArray[i][j].dirty);
+        if (cacheIndexCounter[i] == 1) {
+            printf("Index %llx: ", (unsigned long long) i);
+            for (j = 1; j < (cache->associativity + 1); j++) {
+                // Skip the first column since it's being used as a dummy pointer
+                if (cache->blockArray[i][j].tag) // Block has a tag in it
+                    printf("| Tag: %llx, V: %d, D: %d  |",
+                        cache->blockArray[i][j].tag, cache->blockArray[i][j].valid, cache->blockArray[i][j].dirty);
+                else // Block doesn't have a tag in it
+                    printf("| Tag: -, V: %d, D: %d  |",
+                        cache->blockArray[i][j].valid, cache->blockArray[i][j].dirty);
+            }
+            printf("\n");
         }
-        printf("\n\n");
     }
+    printf("\n");
 
 #ifdef POINTERDEBUG
     printf("~~~> ---------------- Pointer Contents ----------------\n\n");
     int row = 0, col = 0;
     for (row = 0; row < cache->lengthOfWay; row++) {
-        printf("~~~> Index: %llx", (unsigned long long)row);
-        for (col = 0; col < cache->associativity+1;col++){
-            struct Block* thisBlock =&cache->blockArray[row][col];
-            printf("||This block:%p, points to %p||\t", thisBlock, thisBlock->nextBlock);
+        if (cacheIndexCounter[row] == 1) {
+            printf("~~~> Index: %llx", (unsigned long long) row);
+            for (col = 0; col < cache->associativity + 1; col++) {
+                struct Block* thisBlock = &cache->blockArray[row][col];
+                printf("||This block:%p, points to %p||\t", thisBlock, thisBlock->nextBlock);
+            }
+            printf("\n");
         }
-        printf("\n");
     }
 #endif
     printf("End of Cache Status\n\n");
+    printf("*********************************************************\n");
 }

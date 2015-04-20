@@ -1,0 +1,972 @@
+-------------- Inputting Traces Now -------------
+
+Trace #1 --- Address  = 7f81ce2206b0, Byte Size = 3, Type = I 
+	 *** L1: Index Field = 35, Tag Field = ff039c440 *** 
+
+~~~> <~~~
+~~~> In the scanCache function: 
+ >>>>> The cache index is pointing to: 0x17941c8
+~~~> tempBlock is now pointing to start of LRU chain
+~~~> Moving through the chain...Looking at way #1
+ >>>>> tempBlock is now pointing to: 0x17941c8
+ >>>>> Next in line is: 0x17941e0
+~~~> It's not valid
+~~~> Moving through the chain...Looking at way #2
+ >>>>> tempBlock is now pointing to: 0x17941e0
+ >>>>> Next in line is: 0x17941f8
+~~~> It's not valid
+~~~> Moving through the chain...Looking at way #3
+ >>>>> tempBlock is now pointing to: 0x17941f8
+ >>>>> Next in line is: 0x1794210
+~~~> It's not valid
+~~~> Moving through the chain...Looking at way #4
+ >>>>> tempBlock is now pointing to: 0x1794210
+ >>>>> Next in line is: (nil)
+~~~> It's not valid
+~~~> <~~~
+
+	 MISS: Not found in L1, adding L1 miss time (+1)
+	 *** L2: Index Field = 1a, Tag Field = 3fc0e7110 *** 
+
+~~~> <~~~
+~~~> In the scanCache function: 
+ >>>>> The cache index is pointing to: 0x1797b88
+~~~> tempBlock is now pointing to start of LRU chain
+~~~> Moving through the chain...Looking at way #1
+ >>>>> tempBlock is now pointing to: 0x1797b88
+ >>>>> Next in line is: 0x1797ba0
+~~~> It's not valid
+~~~> Moving through the chain...Looking at way #2
+ >>>>> tempBlock is now pointing to: 0x1797ba0
+ >>>>> Next in line is: 0x1797bb8
+~~~> It's not valid
+~~~> Moving through the chain...Looking at way #3
+ >>>>> tempBlock is now pointing to: 0x1797bb8
+ >>>>> Next in line is: 0x1797bd0
+~~~> It's not valid
+~~~> Moving through the chain...Looking at way #4
+ >>>>> tempBlock is now pointing to: 0x1797bd0
+ >>>>> Next in line is: (nil)
+~~~> It's not valid
+~~~> <~~~
+
+	 MISS: Not found in L2, adding L2 miss time (+7)
+	 Bringing in from main memory (+160)
+
+~~~> <~~~
+~~~> In the moveBlock function: 
+ >>>>> The cache index is pointing to: 0x1797b88
+ >>>>> tempBlock is now pointing to: 0x1797b88
+ >>>>> Next in line is: 0x1797ba0
+~~~> Moved tempBlock to beginning of LRU chain...
+~~~> tempBlock now pointing at LRU/1st invalid block...
+~~~> Block was clean/invalid: good to overwrite.
+~~~> tempBlock is already the head of the LRU chain, all is good.
+~~~> Exiting the moveBlock function successfully.
+ >>>>> The cache index is pointing to: 0x1797b88
+~~~> <~~~
+
+	 Writing block back to L1...Adding L2->L1 transfer time (+80)
+	 Adding L1 replay time (+1)
+
+~~~> <~~~
+~~~> In the moveBlock function: 
+ >>>>> The cache index is pointing to: 0x17941c8
+ >>>>> tempBlock is now pointing to: 0x17941c8
+ >>>>> Next in line is: 0x17941e0
+~~~> Moved tempBlock to beginning of LRU chain...
+~~~> tempBlock now pointing at LRU/1st invalid block...
+~~~> Block was clean/invalid: good to overwrite.
+~~~> tempBlock is already the head of the LRU chain, all is good.
+~~~> Exiting the moveBlock function successfully.
+ >>>>> The cache index is pointing to: 0x17941c8
+~~~> <~~~
+
+	 ---> Total trace time: 249
+	 ---> Total execution time: 249
+-------------------- End of Trace --------------------
+
+Trace #2 --- Address  = 7f81ce2206b3, Byte Size = 5, Type = I 
+	 *** L1: Index Field = 35, Tag Field = ff039c440 *** 
+
+~~~> <~~~
+~~~> In the scanCache function: 
+ >>>>> The cache index is pointing to: 0x17941c8
+~~~> tempBlock is now pointing to start of LRU chain
+~~~> Moving through the chain...Looking at way #1
+ >>>>> tempBlock is now pointing to: 0x17941c8
+ >>>>> Next in line is: 0x17941e0
+Checking a valid block...It's a match!
+~~~> tempBlock is already the head of the LRU chain, all is good.
+~~~> <~~~
+
+	 HIT: Found in L1, adding L1 hit time (+1)
+	 ---> Total trace time: 1
+	 ---> Total execution time: 250
+-------------------- End of Trace --------------------
+
+Trace #3 --- Address  = 7fff5a8487d8, Byte Size = 8, Type = W 
+	 *** L1: Index Field = 3e, Tag Field = fffeb5090 *** 
+
+~~~> <~~~
+~~~> In the scanCache function: 
+ >>>>> The cache index is pointing to: 0x17968e8
+~~~> tempBlock is now pointing to start of LRU chain
+~~~> Moving through the chain...Looking at way #1
+ >>>>> tempBlock is now pointing to: 0x17968e8
+ >>>>> Next in line is: 0x1796900
+~~~> It's not valid
+~~~> Moving through the chain...Looking at way #2
+ >>>>> tempBlock is now pointing to: 0x1796900
+ >>>>> Next in line is: 0x1796918
+~~~> It's not valid
+~~~> Moving through the chain...Looking at way #3
+ >>>>> tempBlock is now pointing to: 0x1796918
+ >>>>> Next in line is: 0x1796930
+~~~> It's not valid
+~~~> Moving through the chain...Looking at way #4
+ >>>>> tempBlock is now pointing to: 0x1796930
+ >>>>> Next in line is: (nil)
+~~~> It's not valid
+~~~> <~~~
+
+	 MISS: Not found in L1, adding L1 Miss time (+1)
+	 *** L2: Index Field = 1f, Tag Field = 3fffad424 *** 
+
+~~~> <~~~
+~~~> In the scanCache function: 
+ >>>>> The cache index is pointing to: 0x1797e08
+~~~> tempBlock is now pointing to start of LRU chain
+~~~> Moving through the chain...Looking at way #1
+ >>>>> tempBlock is now pointing to: 0x1797e08
+ >>>>> Next in line is: 0x1797e20
+~~~> It's not valid
+~~~> Moving through the chain...Looking at way #2
+ >>>>> tempBlock is now pointing to: 0x1797e20
+ >>>>> Next in line is: 0x1797e38
+~~~> It's not valid
+~~~> Moving through the chain...Looking at way #3
+ >>>>> tempBlock is now pointing to: 0x1797e38
+ >>>>> Next in line is: 0x1797e50
+~~~> It's not valid
+~~~> Moving through the chain...Looking at way #4
+ >>>>> tempBlock is now pointing to: 0x1797e50
+ >>>>> Next in line is: (nil)
+~~~> It's not valid
+~~~> <~~~
+
+	 MISS: Not found in L2, adding L2 miss time (+7)
+	 Bringing in from main memory (+160)
+
+~~~> <~~~
+~~~> In the moveBlock function: 
+ >>>>> The cache index is pointing to: 0x1797e08
+ >>>>> tempBlock is now pointing to: 0x1797e08
+ >>>>> Next in line is: 0x1797e20
+~~~> Moved tempBlock to beginning of LRU chain...
+~~~> tempBlock now pointing at LRU/1st invalid block...
+~~~> Block was clean/invalid: good to overwrite.
+~~~> tempBlock is already the head of the LRU chain, all is good.
+~~~> Exiting the moveBlock function successfully.
+ >>>>> The cache index is pointing to: 0x1797e08
+~~~> <~~~
+
+	 Writing block back to L1...Adding L2->L1 transfer time (+80)
+	 Adding L1 replay time (+1)
+
+~~~> <~~~
+~~~> In the moveBlock function: 
+ >>>>> The cache index is pointing to: 0x17968e8
+ >>>>> tempBlock is now pointing to: 0x17968e8
+ >>>>> Next in line is: 0x1796900
+~~~> Moved tempBlock to beginning of LRU chain...
+~~~> tempBlock now pointing at LRU/1st invalid block...
+~~~> Block was clean/invalid: good to overwrite.
+~~~> tempBlock is already the head of the LRU chain, all is good.
+~~~> Exiting the moveBlock function successfully.
+ >>>>> The cache index is pointing to: 0x17968e8
+~~~> <~~~
+
+	 ---> Total trace time: 249
+	 ---> Total execution time: 499
+-------------------- End of Trace --------------------
+
+Trace #4 --- Address  = 7f81ce224010, Byte Size = 1, Type = I 
+	 *** L1: Index Field = 0, Tag Field = ff039c448 *** 
+
+~~~> <~~~
+~~~> In the scanCache function: 
+ >>>>> The cache index is pointing to: 0x1792748
+~~~> tempBlock is now pointing to start of LRU chain
+~~~> Moving through the chain...Looking at way #1
+ >>>>> tempBlock is now pointing to: 0x1792748
+ >>>>> Next in line is: 0x1792760
+~~~> It's not valid
+~~~> Moving through the chain...Looking at way #2
+ >>>>> tempBlock is now pointing to: 0x1792760
+ >>>>> Next in line is: 0x1792778
+~~~> It's not valid
+~~~> Moving through the chain...Looking at way #3
+ >>>>> tempBlock is now pointing to: 0x1792778
+ >>>>> Next in line is: 0x1792790
+~~~> It's not valid
+~~~> Moving through the chain...Looking at way #4
+ >>>>> tempBlock is now pointing to: 0x1792790
+ >>>>> Next in line is: (nil)
+~~~> It's not valid
+~~~> <~~~
+
+	 MISS: Not found in L1, adding L1 miss time (+1)
+	 *** L2: Index Field = 0, Tag Field = 3fc0e7112 *** 
+
+~~~> <~~~
+~~~> In the scanCache function: 
+ >>>>> The cache index is pointing to: 0x1796e88
+~~~> tempBlock is now pointing to start of LRU chain
+~~~> Moving through the chain...Looking at way #1
+ >>>>> tempBlock is now pointing to: 0x1796e88
+ >>>>> Next in line is: 0x1796ea0
+~~~> It's not valid
+~~~> Moving through the chain...Looking at way #2
+ >>>>> tempBlock is now pointing to: 0x1796ea0
+ >>>>> Next in line is: 0x1796eb8
+~~~> It's not valid
+~~~> Moving through the chain...Looking at way #3
+ >>>>> tempBlock is now pointing to: 0x1796eb8
+ >>>>> Next in line is: 0x1796ed0
+~~~> It's not valid
+~~~> Moving through the chain...Looking at way #4
+ >>>>> tempBlock is now pointing to: 0x1796ed0
+ >>>>> Next in line is: (nil)
+~~~> It's not valid
+~~~> <~~~
+
+	 MISS: Not found in L2, adding L2 miss time (+7)
+	 Bringing in from main memory (+160)
+
+~~~> <~~~
+~~~> In the moveBlock function: 
+ >>>>> The cache index is pointing to: 0x1796e88
+ >>>>> tempBlock is now pointing to: 0x1796e88
+ >>>>> Next in line is: 0x1796ea0
+~~~> Moved tempBlock to beginning of LRU chain...
+~~~> tempBlock now pointing at LRU/1st invalid block...
+~~~> Block was clean/invalid: good to overwrite.
+~~~> tempBlock is already the head of the LRU chain, all is good.
+~~~> Exiting the moveBlock function successfully.
+ >>>>> The cache index is pointing to: 0x1796e88
+~~~> <~~~
+
+	 Writing block back to L1...Adding L2->L1 transfer time (+80)
+	 Adding L1 replay time (+1)
+
+~~~> <~~~
+~~~> In the moveBlock function: 
+ >>>>> The cache index is pointing to: 0x1792748
+ >>>>> tempBlock is now pointing to: 0x1792748
+ >>>>> Next in line is: 0x1792760
+~~~> Moved tempBlock to beginning of LRU chain...
+~~~> tempBlock now pointing at LRU/1st invalid block...
+~~~> Block was clean/invalid: good to overwrite.
+~~~> tempBlock is already the head of the LRU chain, all is good.
+~~~> Exiting the moveBlock function successfully.
+ >>>>> The cache index is pointing to: 0x1792748
+~~~> <~~~
+
+	 ---> Total trace time: 249
+	 ---> Total execution time: 748
+-------------------- End of Trace --------------------
+
+Trace #5 --- Address  = 7fff5a8487d0, Byte Size = 8, Type = W 
+	 *** L1: Index Field = 3e, Tag Field = fffeb5090 *** 
+
+~~~> <~~~
+~~~> In the scanCache function: 
+ >>>>> The cache index is pointing to: 0x17968e8
+~~~> tempBlock is now pointing to start of LRU chain
+~~~> Moving through the chain...Looking at way #1
+ >>>>> tempBlock is now pointing to: 0x17968e8
+ >>>>> Next in line is: 0x1796900
+Checking a valid block...It's a match!
+~~~> tempBlock is already the head of the LRU chain, all is good.
+~~~> <~~~
+
+	 HIT: Found in L1, adding L1 hit time (+1)
+	 ---> Total trace time: 1
+	 ---> Total execution time: 749
+-------------------- End of Trace --------------------
+
+Trace #6 --- Address  = 7f81ce224011, Byte Size = 3, Type = I 
+	 *** L1: Index Field = 0, Tag Field = ff039c448 *** 
+
+~~~> <~~~
+~~~> In the scanCache function: 
+ >>>>> The cache index is pointing to: 0x1792748
+~~~> tempBlock is now pointing to start of LRU chain
+~~~> Moving through the chain...Looking at way #1
+ >>>>> tempBlock is now pointing to: 0x1792748
+ >>>>> Next in line is: 0x1792760
+Checking a valid block...It's a match!
+~~~> tempBlock is already the head of the LRU chain, all is good.
+~~~> <~~~
+
+	 HIT: Found in L1, adding L1 hit time (+1)
+	 ---> Total trace time: 1
+	 ---> Total execution time: 750
+-------------------- End of Trace --------------------
+
+Trace #7 --- Address  = 7f81ce224014, Byte Size = 2, Type = I 
+	 *** L1: Index Field = 0, Tag Field = ff039c448 *** 
+
+~~~> <~~~
+~~~> In the scanCache function: 
+ >>>>> The cache index is pointing to: 0x1792748
+~~~> tempBlock is now pointing to start of LRU chain
+~~~> Moving through the chain...Looking at way #1
+ >>>>> tempBlock is now pointing to: 0x1792748
+ >>>>> Next in line is: 0x1792760
+Checking a valid block...It's a match!
+~~~> tempBlock is already the head of the LRU chain, all is good.
+~~~> <~~~
+
+	 HIT: Found in L1, adding L1 hit time (+1)
+	 ---> Total trace time: 1
+	 ---> Total execution time: 751
+-------------------- End of Trace --------------------
+
+Trace #8 --- Address  = 7fff5a8487c8, Byte Size = 8, Type = W 
+	 *** L1: Index Field = 3e, Tag Field = fffeb5090 *** 
+
+~~~> <~~~
+~~~> In the scanCache function: 
+ >>>>> The cache index is pointing to: 0x17968e8
+~~~> tempBlock is now pointing to start of LRU chain
+~~~> Moving through the chain...Looking at way #1
+ >>>>> tempBlock is now pointing to: 0x17968e8
+ >>>>> Next in line is: 0x1796900
+Checking a valid block...It's a match!
+~~~> tempBlock is already the head of the LRU chain, all is good.
+~~~> <~~~
+
+	 HIT: Found in L1, adding L1 hit time (+1)
+	 ---> Total trace time: 1
+	 ---> Total execution time: 752
+-------------------- End of Trace --------------------
+
+Trace #9 --- Address  = 7f81ce224016, Byte Size = 2, Type = I 
+	 *** L1: Index Field = 0, Tag Field = ff039c448 *** 
+
+~~~> <~~~
+~~~> In the scanCache function: 
+ >>>>> The cache index is pointing to: 0x1792748
+~~~> tempBlock is now pointing to start of LRU chain
+~~~> Moving through the chain...Looking at way #1
+ >>>>> tempBlock is now pointing to: 0x1792748
+ >>>>> Next in line is: 0x1792760
+Checking a valid block...It's a match!
+~~~> tempBlock is already the head of the LRU chain, all is good.
+~~~> <~~~
+
+	 HIT: Found in L1, adding L1 hit time (+1)
+	 ---> Total trace time: 1
+	 ---> Total execution time: 753
+-------------------- End of Trace --------------------
+
+Trace #10 --- Address  = 7fff5a8487c0, Byte Size = 8, Type = W 
+	 *** L1: Index Field = 3e, Tag Field = fffeb5090 *** 
+
+~~~> <~~~
+~~~> In the scanCache function: 
+ >>>>> The cache index is pointing to: 0x17968e8
+~~~> tempBlock is now pointing to start of LRU chain
+~~~> Moving through the chain...Looking at way #1
+ >>>>> tempBlock is now pointing to: 0x17968e8
+ >>>>> Next in line is: 0x1796900
+Checking a valid block...It's a match!
+~~~> tempBlock is already the head of the LRU chain, all is good.
+~~~> <~~~
+
+	 HIT: Found in L1, adding L1 hit time (+1)
+	 ---> Total trace time: 1
+	 ---> Total execution time: 754
+-------------------- End of Trace --------------------
+
+Trace #11 --- Address  = 7f81ce224018, Byte Size = 2, Type = I 
+	 *** L1: Index Field = 0, Tag Field = ff039c448 *** 
+
+~~~> <~~~
+~~~> In the scanCache function: 
+ >>>>> The cache index is pointing to: 0x1792748
+~~~> tempBlock is now pointing to start of LRU chain
+~~~> Moving through the chain...Looking at way #1
+ >>>>> tempBlock is now pointing to: 0x1792748
+ >>>>> Next in line is: 0x1792760
+Checking a valid block...It's a match!
+~~~> tempBlock is already the head of the LRU chain, all is good.
+~~~> <~~~
+
+	 HIT: Found in L1, adding L1 hit time (+1)
+	 ---> Total trace time: 1
+	 ---> Total execution time: 755
+-------------------- End of Trace --------------------
+
+Trace #12 --- Address  = 7fff5a8487b8, Byte Size = 8, Type = W 
+	 *** L1: Index Field = 3d, Tag Field = fffeb5090 *** 
+
+~~~> <~~~
+~~~> In the scanCache function: 
+ >>>>> The cache index is pointing to: 0x1796868
+~~~> tempBlock is now pointing to start of LRU chain
+~~~> Moving through the chain...Looking at way #1
+ >>>>> tempBlock is now pointing to: 0x1796868
+ >>>>> Next in line is: 0x1796880
+~~~> It's not valid
+~~~> Moving through the chain...Looking at way #2
+ >>>>> tempBlock is now pointing to: 0x1796880
+ >>>>> Next in line is: 0x1796898
+~~~> It's not valid
+~~~> Moving through the chain...Looking at way #3
+ >>>>> tempBlock is now pointing to: 0x1796898
+ >>>>> Next in line is: 0x17968b0
+~~~> It's not valid
+~~~> Moving through the chain...Looking at way #4
+ >>>>> tempBlock is now pointing to: 0x17968b0
+ >>>>> Next in line is: (nil)
+~~~> It's not valid
+~~~> <~~~
+
+	 MISS: Not found in L1, adding L1 Miss time (+1)
+	 *** L2: Index Field = 1e, Tag Field = 3fffad424 *** 
+
+~~~> <~~~
+~~~> In the scanCache function: 
+ >>>>> The cache index is pointing to: 0x1797d88
+~~~> tempBlock is now pointing to start of LRU chain
+~~~> Moving through the chain...Looking at way #1
+ >>>>> tempBlock is now pointing to: 0x1797d88
+ >>>>> Next in line is: 0x1797da0
+~~~> It's not valid
+~~~> Moving through the chain...Looking at way #2
+ >>>>> tempBlock is now pointing to: 0x1797da0
+ >>>>> Next in line is: 0x1797db8
+~~~> It's not valid
+~~~> Moving through the chain...Looking at way #3
+ >>>>> tempBlock is now pointing to: 0x1797db8
+ >>>>> Next in line is: 0x1797dd0
+~~~> It's not valid
+~~~> Moving through the chain...Looking at way #4
+ >>>>> tempBlock is now pointing to: 0x1797dd0
+ >>>>> Next in line is: (nil)
+~~~> It's not valid
+~~~> <~~~
+
+	 MISS: Not found in L2, adding L2 miss time (+7)
+	 Bringing in from main memory (+160)
+
+~~~> <~~~
+~~~> In the moveBlock function: 
+ >>>>> The cache index is pointing to: 0x1797d88
+ >>>>> tempBlock is now pointing to: 0x1797d88
+ >>>>> Next in line is: 0x1797da0
+~~~> Moved tempBlock to beginning of LRU chain...
+~~~> tempBlock now pointing at LRU/1st invalid block...
+~~~> Block was clean/invalid: good to overwrite.
+~~~> tempBlock is already the head of the LRU chain, all is good.
+~~~> Exiting the moveBlock function successfully.
+ >>>>> The cache index is pointing to: 0x1797d88
+~~~> <~~~
+
+	 Writing block back to L1...Adding L2->L1 transfer time (+80)
+	 Adding L1 replay time (+1)
+
+~~~> <~~~
+~~~> In the moveBlock function: 
+ >>>>> The cache index is pointing to: 0x1796868
+ >>>>> tempBlock is now pointing to: 0x1796868
+ >>>>> Next in line is: 0x1796880
+~~~> Moved tempBlock to beginning of LRU chain...
+~~~> tempBlock now pointing at LRU/1st invalid block...
+~~~> Block was clean/invalid: good to overwrite.
+~~~> tempBlock is already the head of the LRU chain, all is good.
+~~~> Exiting the moveBlock function successfully.
+ >>>>> The cache index is pointing to: 0x1796868
+~~~> <~~~
+
+	 ---> Total trace time: 249
+	 ---> Total execution time: 1004
+-------------------- End of Trace --------------------
+
+Trace #13 --- Address  = 7f81ce22401a, Byte Size = 2, Type = I 
+	 *** L1: Index Field = 0, Tag Field = ff039c448 *** 
+
+~~~> <~~~
+~~~> In the scanCache function: 
+ >>>>> The cache index is pointing to: 0x1792748
+~~~> tempBlock is now pointing to start of LRU chain
+~~~> Moving through the chain...Looking at way #1
+ >>>>> tempBlock is now pointing to: 0x1792748
+ >>>>> Next in line is: 0x1792760
+Checking a valid block...It's a match!
+~~~> tempBlock is already the head of the LRU chain, all is good.
+~~~> <~~~
+
+	 HIT: Found in L1, adding L1 hit time (+1)
+	 ---> Total trace time: 1
+	 ---> Total execution time: 1005
+-------------------- End of Trace --------------------
+
+Trace #14 --- Address  = 7fff5a8487b0, Byte Size = 8, Type = W 
+	 *** L1: Index Field = 3d, Tag Field = fffeb5090 *** 
+
+~~~> <~~~
+~~~> In the scanCache function: 
+ >>>>> The cache index is pointing to: 0x1796868
+~~~> tempBlock is now pointing to start of LRU chain
+~~~> Moving through the chain...Looking at way #1
+ >>>>> tempBlock is now pointing to: 0x1796868
+ >>>>> Next in line is: 0x1796880
+Checking a valid block...It's a match!
+~~~> tempBlock is already the head of the LRU chain, all is good.
+~~~> <~~~
+
+	 HIT: Found in L1, adding L1 hit time (+1)
+	 ---> Total trace time: 1
+	 ---> Total execution time: 1006
+-------------------- End of Trace --------------------
+
+Trace #15 --- Address  = 7f81ce22401c, Byte Size = 1, Type = I 
+	 *** L1: Index Field = 0, Tag Field = ff039c448 *** 
+
+~~~> <~~~
+~~~> In the scanCache function: 
+ >>>>> The cache index is pointing to: 0x1792748
+~~~> tempBlock is now pointing to start of LRU chain
+~~~> Moving through the chain...Looking at way #1
+ >>>>> tempBlock is now pointing to: 0x1792748
+ >>>>> Next in line is: 0x1792760
+Checking a valid block...It's a match!
+~~~> tempBlock is already the head of the LRU chain, all is good.
+~~~> <~~~
+
+	 HIT: Found in L1, adding L1 hit time (+1)
+	 ---> Total trace time: 1
+	 ---> Total execution time: 1007
+-------------------- End of Trace --------------------
+
+Trace #16 --- Address  = 7fff5a8487a8, Byte Size = 8, Type = W 
+	 *** L1: Index Field = 3d, Tag Field = fffeb5090 *** 
+
+~~~> <~~~
+~~~> In the scanCache function: 
+ >>>>> The cache index is pointing to: 0x1796868
+~~~> tempBlock is now pointing to start of LRU chain
+~~~> Moving through the chain...Looking at way #1
+ >>>>> tempBlock is now pointing to: 0x1796868
+ >>>>> Next in line is: 0x1796880
+Checking a valid block...It's a match!
+~~~> tempBlock is already the head of the LRU chain, all is good.
+~~~> <~~~
+
+	 HIT: Found in L1, adding L1 hit time (+1)
+	 ---> Total trace time: 1
+	 ---> Total execution time: 1008
+-------------------- End of Trace --------------------
+
+Trace #17 --- Address  = 7f81ce22401d, Byte Size = 3, Type = I 
+	 *** L1: Index Field = 0, Tag Field = ff039c448 *** 
+
+~~~> <~~~
+~~~> In the scanCache function: 
+ >>>>> The cache index is pointing to: 0x1792748
+~~~> tempBlock is now pointing to start of LRU chain
+~~~> Moving through the chain...Looking at way #1
+ >>>>> tempBlock is now pointing to: 0x1792748
+ >>>>> Next in line is: 0x1792760
+Checking a valid block...It's a match!
+~~~> tempBlock is already the head of the LRU chain, all is good.
+~~~> <~~~
+
+	 HIT: Found in L1, adding L1 hit time (+1)
+	 ---> Total trace time: 1
+	 ---> Total execution time: 1009
+-------------------- End of Trace --------------------
+
+Trace #18 --- Address  = 7f81ce224020, Byte Size = 4, Type = I 
+	 *** L1: Index Field = 1, Tag Field = ff039c448 *** 
+
+~~~> <~~~
+~~~> In the scanCache function: 
+ >>>>> The cache index is pointing to: 0x17927c8
+~~~> tempBlock is now pointing to start of LRU chain
+~~~> Moving through the chain...Looking at way #1
+ >>>>> tempBlock is now pointing to: 0x17927c8
+ >>>>> Next in line is: 0x17927e0
+~~~> It's not valid
+~~~> Moving through the chain...Looking at way #2
+ >>>>> tempBlock is now pointing to: 0x17927e0
+ >>>>> Next in line is: 0x17927f8
+~~~> It's not valid
+~~~> Moving through the chain...Looking at way #3
+ >>>>> tempBlock is now pointing to: 0x17927f8
+ >>>>> Next in line is: 0x1792810
+~~~> It's not valid
+~~~> Moving through the chain...Looking at way #4
+ >>>>> tempBlock is now pointing to: 0x1792810
+ >>>>> Next in line is: (nil)
+~~~> It's not valid
+~~~> <~~~
+
+	 MISS: Not found in L1, adding L1 miss time (+1)
+	 *** L2: Index Field = 0, Tag Field = 3fc0e7112 *** 
+
+~~~> <~~~
+~~~> In the scanCache function: 
+ >>>>> The cache index is pointing to: 0x1796e88
+~~~> tempBlock is now pointing to start of LRU chain
+~~~> Moving through the chain...Looking at way #1
+ >>>>> tempBlock is now pointing to: 0x1796e88
+ >>>>> Next in line is: 0x1796ea0
+Checking a valid block...It's a match!
+~~~> tempBlock is already the head of the LRU chain, all is good.
+~~~> <~~~
+
+	 HIT: Found in L2, adding L2 hit time (+5)
+
+~~~> <~~~
+~~~> In the moveBlock function: 
+ >>>>> The cache index is pointing to: 0x17927c8
+ >>>>> tempBlock is now pointing to: 0x17927c8
+ >>>>> Next in line is: 0x17927e0
+~~~> Moved tempBlock to beginning of LRU chain...
+~~~> tempBlock now pointing at LRU/1st invalid block...
+~~~> Block was clean/invalid: good to overwrite.
+~~~> tempBlock is already the head of the LRU chain, all is good.
+~~~> Exiting the moveBlock function successfully.
+ >>>>> The cache index is pointing to: 0x17927c8
+~~~> <~~~
+
+	 Writing block back to L1...Adding L2->L1 transfer time (+80)
+	 Adding L1 replay time (+1)
+	 ---> Total trace time: 87
+	 ---> Total execution time: 1096
+-------------------- End of Trace --------------------
+
+Trace #19 --- Address  = 7f81ce224024, Byte Size = 2, Type = I 
+	 *** L1: Index Field = 1, Tag Field = ff039c448 *** 
+
+~~~> <~~~
+~~~> In the scanCache function: 
+ >>>>> The cache index is pointing to: 0x17927c8
+~~~> tempBlock is now pointing to start of LRU chain
+~~~> Moving through the chain...Looking at way #1
+ >>>>> tempBlock is now pointing to: 0x17927c8
+ >>>>> Next in line is: 0x17927e0
+Checking a valid block...It's a match!
+~~~> tempBlock is already the head of the LRU chain, all is good.
+~~~> <~~~
+
+	 HIT: Found in L1, adding L1 hit time (+1)
+	 ---> Total trace time: 1
+	 ---> Total execution time: 1097
+-------------------- End of Trace --------------------
+
+Trace #20 --- Address  = 7f81ce224026, Byte Size = 4, Type = I 
+	 *** L1: Index Field = 1, Tag Field = ff039c448 *** 
+
+~~~> <~~~
+~~~> In the scanCache function: 
+ >>>>> The cache index is pointing to: 0x17927c8
+~~~> tempBlock is now pointing to start of LRU chain
+~~~> Moving through the chain...Looking at way #1
+ >>>>> tempBlock is now pointing to: 0x17927c8
+ >>>>> Next in line is: 0x17927e0
+Checking a valid block...It's a match!
+~~~> tempBlock is already the head of the LRU chain, all is good.
+~~~> <~~~
+
+	 HIT: Found in L1, adding L1 hit time (+1)
+------------ DEBUGGING--------------------
+Cache final contents - Index and Tag values are in HEX
+
+L1 Instruction Cache current status: 
+----------------------------------------------------
+---------------  Cache Status  ---------------------
+----------------------------------------------------
+Cache length: 64, index field size: 6, byte field size: 5
+Number of hits: 10, misses: 3, kick-outs: 3, dirty kick-outs: 0
+Reference Counts: writes = 3, reads = 16, instructions = 10
+Times: writes = 3, reads = 3, instructions = 10
+------ Current Row Status ------
+Index 0: | Tag: ff039c448, V: 1, D: 0  || Tag: -, V: 0, D: 0  || Tag: -, V: 0, D: 0  || Tag: -, V: 0, D: 0  |
+Index 1: | Tag: ff039c448, V: 1, D: 0  || Tag: -, V: 0, D: 0  || Tag: -, V: 0, D: 0  || Tag: -, V: 0, D: 0  |
+Index 35: | Tag: ff039c440, V: 1, D: 0  || Tag: -, V: 0, D: 0  || Tag: -, V: 0, D: 0  || Tag: -, V: 0, D: 0  |
+
+~~~> ---------------- Pointer Contents ----------------
+
+End of Cache Status
+
+
+L1 Data Cache current status: 
+----------------------------------------------------
+---------------  Cache Status  ---------------------
+----------------------------------------------------
+Cache length: 64, index field size: 6, byte field size: 5
+Number of hits: 5, misses: 2, kick-outs: 2, dirty kick-outs: 0
+Reference Counts: writes = 16, reads = 0, instructions = 0
+Times: writes = 9, reads = 0, instructions = 0
+------ Current Row Status ------
+Index 3d: | Tag: fffeb5090, V: 1, D: 1  || Tag: -, V: 0, D: 0  || Tag: -, V: 0, D: 0  || Tag: -, V: 0, D: 0  |
+Index 3e: | Tag: fffeb5090, V: 1, D: 1  || Tag: -, V: 0, D: 0  || Tag: -, V: 0, D: 0  || Tag: -, V: 0, D: 0  |
+
+~~~> ---------------- Pointer Contents ----------------
+
+End of Cache Status
+
+
+L2 Unified Cache current status: 
+----------------------------------------------------
+---------------  Cache Status  ---------------------
+----------------------------------------------------
+Cache length: 128, index field size: 7, byte field size: 6
+Number of hits: 1, misses: 4, kick-outs: 4, dirty kick-outs: 0
+Reference Counts: writes = 6, reads = 2, instructions = 1
+Times: writes = 34, reads = 14, instructions = 5
+------ Current Row Status ------
+Index 0: | Tag: 3fc0e7112, V: 1, D: 0  || Tag: -, V: 0, D: 0  || Tag: -, V: 0, D: 0  || Tag: -, V: 0, D: 0  |
+Index 1a: | Tag: 3fc0e7110, V: 1, D: 0  || Tag: -, V: 0, D: 0  || Tag: -, V: 0, D: 0  || Tag: -, V: 0, D: 0  |
+Index 1e: | Tag: 3fffad424, V: 1, D: 0  || Tag: -, V: 0, D: 0  || Tag: -, V: 0, D: 0  || Tag: -, V: 0, D: 0  |
+Index 1f: | Tag: 3fffad424, V: 1, D: 0  || Tag: -, V: 0, D: 0  || Tag: -, V: 0, D: 0  || Tag: -, V: 0, D: 0  |
+
+~~~> ---------------- Pointer Contents ----------------
+
+~~~> Index: 0||This block:0x1796e70, points to 0x1796e88||	||This block:0x1796e88, points to 0x1796ea0||	||This block:0x1796ea0, points to 0x1796eb8||	||This block:0x1796eb8, points to 0x1796ed0||	||This block:0x1796ed0, points to (nil)||	
+~~~> Index: 1||This block:0x1796ef0, points to 0x1796f08||	||This block:0x1796f08, points to 0x1796f20||	||This block:0x1796f20, points to 0x1796f38||	||This block:0x1796f38, points to 0x1796f50||	||This block:0x1796f50, points to (nil)||	
+~~~> Index: 2||This block:0x1796f70, points to 0x1796f88||	||This block:0x1796f88, points to 0x1796fa0||	||This block:0x1796fa0, points to 0x1796fb8||	||This block:0x1796fb8, points to 0x1796fd0||	||This block:0x1796fd0, points to (nil)||	
+~~~> Index: 3||This block:0x1796ff0, points to 0x1797008||	||This block:0x1797008, points to 0x1797020||	||This block:0x1797020, points to 0x1797038||	||This block:0x1797038, points to 0x1797050||	||This block:0x1797050, points to (nil)||	
+~~~> Index: 4||This block:0x1797070, points to 0x1797088||	||This block:0x1797088, points to 0x17970a0||	||This block:0x17970a0, points to 0x17970b8||	||This block:0x17970b8, points to 0x17970d0||	||This block:0x17970d0, points to (nil)||	
+~~~> Index: 5||This block:0x17970f0, points to 0x1797108||	||This block:0x1797108, points to 0x1797120||	||This block:0x1797120, points to 0x1797138||	||This block:0x1797138, points to 0x1797150||	||This block:0x1797150, points to (nil)||	
+~~~> Index: 6||This block:0x1797170, points to 0x1797188||	||This block:0x1797188, points to 0x17971a0||	||This block:0x17971a0, points to 0x17971b8||	||This block:0x17971b8, points to 0x17971d0||	||This block:0x17971d0, points to (nil)||	
+~~~> Index: 7||This block:0x17971f0, points to 0x1797208||	||This block:0x1797208, points to 0x1797220||	||This block:0x1797220, points to 0x1797238||	||This block:0x1797238, points to 0x1797250||	||This block:0x1797250, points to (nil)||	
+~~~> Index: 8||This block:0x1797270, points to 0x1797288||	||This block:0x1797288, points to 0x17972a0||	||This block:0x17972a0, points to 0x17972b8||	||This block:0x17972b8, points to 0x17972d0||	||This block:0x17972d0, points to (nil)||	
+~~~> Index: 9||This block:0x17972f0, points to 0x1797308||	||This block:0x1797308, points to 0x1797320||	||This block:0x1797320, points to 0x1797338||	||This block:0x1797338, points to 0x1797350||	||This block:0x1797350, points to (nil)||	
+~~~> Index: a||This block:0x1797370, points to 0x1797388||	||This block:0x1797388, points to 0x17973a0||	||This block:0x17973a0, points to 0x17973b8||	||This block:0x17973b8, points to 0x17973d0||	||This block:0x17973d0, points to (nil)||	
+~~~> Index: b||This block:0x17973f0, points to 0x1797408||	||This block:0x1797408, points to 0x1797420||	||This block:0x1797420, points to 0x1797438||	||This block:0x1797438, points to 0x1797450||	||This block:0x1797450, points to (nil)||	
+~~~> Index: c||This block:0x1797470, points to 0x1797488||	||This block:0x1797488, points to 0x17974a0||	||This block:0x17974a0, points to 0x17974b8||	||This block:0x17974b8, points to 0x17974d0||	||This block:0x17974d0, points to (nil)||	
+~~~> Index: d||This block:0x17974f0, points to 0x1797508||	||This block:0x1797508, points to 0x1797520||	||This block:0x1797520, points to 0x1797538||	||This block:0x1797538, points to 0x1797550||	||This block:0x1797550, points to (nil)||	
+~~~> Index: e||This block:0x1797570, points to 0x1797588||	||This block:0x1797588, points to 0x17975a0||	||This block:0x17975a0, points to 0x17975b8||	||This block:0x17975b8, points to 0x17975d0||	||This block:0x17975d0, points to (nil)||	
+~~~> Index: f||This block:0x17975f0, points to 0x1797608||	||This block:0x1797608, points to 0x1797620||	||This block:0x1797620, points to 0x1797638||	||This block:0x1797638, points to 0x1797650||	||This block:0x1797650, points to (nil)||	
+~~~> Index: 10||This block:0x1797670, points to 0x1797688||	||This block:0x1797688, points to 0x17976a0||	||This block:0x17976a0, points to 0x17976b8||	||This block:0x17976b8, points to 0x17976d0||	||This block:0x17976d0, points to (nil)||	
+~~~> Index: 11||This block:0x17976f0, points to 0x1797708||	||This block:0x1797708, points to 0x1797720||	||This block:0x1797720, points to 0x1797738||	||This block:0x1797738, points to 0x1797750||	||This block:0x1797750, points to (nil)||	
+~~~> Index: 12||This block:0x1797770, points to 0x1797788||	||This block:0x1797788, points to 0x17977a0||	||This block:0x17977a0, points to 0x17977b8||	||This block:0x17977b8, points to 0x17977d0||	||This block:0x17977d0, points to (nil)||	
+~~~> Index: 13||This block:0x17977f0, points to 0x1797808||	||This block:0x1797808, points to 0x1797820||	||This block:0x1797820, points to 0x1797838||	||This block:0x1797838, points to 0x1797850||	||This block:0x1797850, points to (nil)||	
+~~~> Index: 14||This block:0x1797870, points to 0x1797888||	||This block:0x1797888, points to 0x17978a0||	||This block:0x17978a0, points to 0x17978b8||	||This block:0x17978b8, points to 0x17978d0||	||This block:0x17978d0, points to (nil)||	
+~~~> Index: 15||This block:0x17978f0, points to 0x1797908||	||This block:0x1797908, points to 0x1797920||	||This block:0x1797920, points to 0x1797938||	||This block:0x1797938, points to 0x1797950||	||This block:0x1797950, points to (nil)||	
+~~~> Index: 16||This block:0x1797970, points to 0x1797988||	||This block:0x1797988, points to 0x17979a0||	||This block:0x17979a0, points to 0x17979b8||	||This block:0x17979b8, points to 0x17979d0||	||This block:0x17979d0, points to (nil)||	
+~~~> Index: 17||This block:0x17979f0, points to 0x1797a08||	||This block:0x1797a08, points to 0x1797a20||	||This block:0x1797a20, points to 0x1797a38||	||This block:0x1797a38, points to 0x1797a50||	||This block:0x1797a50, points to (nil)||	
+~~~> Index: 18||This block:0x1797a70, points to 0x1797a88||	||This block:0x1797a88, points to 0x1797aa0||	||This block:0x1797aa0, points to 0x1797ab8||	||This block:0x1797ab8, points to 0x1797ad0||	||This block:0x1797ad0, points to (nil)||	
+~~~> Index: 19||This block:0x1797af0, points to 0x1797b08||	||This block:0x1797b08, points to 0x1797b20||	||This block:0x1797b20, points to 0x1797b38||	||This block:0x1797b38, points to 0x1797b50||	||This block:0x1797b50, points to (nil)||	
+~~~> Index: 1a||This block:0x1797b70, points to 0x1797b88||	||This block:0x1797b88, points to 0x1797ba0||	||This block:0x1797ba0, points to 0x1797bb8||	||This block:0x1797bb8, points to 0x1797bd0||	||This block:0x1797bd0, points to (nil)||	
+~~~> Index: 1b||This block:0x1797bf0, points to 0x1797c08||	||This block:0x1797c08, points to 0x1797c20||	||This block:0x1797c20, points to 0x1797c38||	||This block:0x1797c38, points to 0x1797c50||	||This block:0x1797c50, points to (nil)||	
+~~~> Index: 1c||This block:0x1797c70, points to 0x1797c88||	||This block:0x1797c88, points to 0x1797ca0||	||This block:0x1797ca0, points to 0x1797cb8||	||This block:0x1797cb8, points to 0x1797cd0||	||This block:0x1797cd0, points to (nil)||	
+~~~> Index: 1d||This block:0x1797cf0, points to 0x1797d08||	||This block:0x1797d08, points to 0x1797d20||	||This block:0x1797d20, points to 0x1797d38||	||This block:0x1797d38, points to 0x1797d50||	||This block:0x1797d50, points to (nil)||	
+~~~> Index: 1e||This block:0x1797d70, points to 0x1797d88||	||This block:0x1797d88, points to 0x1797da0||	||This block:0x1797da0, points to 0x1797db8||	||This block:0x1797db8, points to 0x1797dd0||	||This block:0x1797dd0, points to (nil)||	
+~~~> Index: 1f||This block:0x1797df0, points to 0x1797e08||	||This block:0x1797e08, points to 0x1797e20||	||This block:0x1797e20, points to 0x1797e38||	||This block:0x1797e38, points to 0x1797e50||	||This block:0x1797e50, points to (nil)||	
+~~~> Index: 20||This block:0x1797e70, points to 0x1797e88||	||This block:0x1797e88, points to 0x1797ea0||	||This block:0x1797ea0, points to 0x1797eb8||	||This block:0x1797eb8, points to 0x1797ed0||	||This block:0x1797ed0, points to (nil)||	
+~~~> Index: 21||This block:0x1797ef0, points to 0x1797f08||	||This block:0x1797f08, points to 0x1797f20||	||This block:0x1797f20, points to 0x1797f38||	||This block:0x1797f38, points to 0x1797f50||	||This block:0x1797f50, points to (nil)||	
+~~~> Index: 22||This block:0x1797f70, points to 0x1797f88||	||This block:0x1797f88, points to 0x1797fa0||	||This block:0x1797fa0, points to 0x1797fb8||	||This block:0x1797fb8, points to 0x1797fd0||	||This block:0x1797fd0, points to (nil)||	
+~~~> Index: 23||This block:0x1797ff0, points to 0x1798008||	||This block:0x1798008, points to 0x1798020||	||This block:0x1798020, points to 0x1798038||	||This block:0x1798038, points to 0x1798050||	||This block:0x1798050, points to (nil)||	
+~~~> Index: 24||This block:0x1798070, points to 0x1798088||	||This block:0x1798088, points to 0x17980a0||	||This block:0x17980a0, points to 0x17980b8||	||This block:0x17980b8, points to 0x17980d0||	||This block:0x17980d0, points to (nil)||	
+~~~> Index: 25||This block:0x17980f0, points to 0x1798108||	||This block:0x1798108, points to 0x1798120||	||This block:0x1798120, points to 0x1798138||	||This block:0x1798138, points to 0x1798150||	||This block:0x1798150, points to (nil)||	
+~~~> Index: 26||This block:0x1798170, points to 0x1798188||	||This block:0x1798188, points to 0x17981a0||	||This block:0x17981a0, points to 0x17981b8||	||This block:0x17981b8, points to 0x17981d0||	||This block:0x17981d0, points to (nil)||	
+~~~> Index: 27||This block:0x17981f0, points to 0x1798208||	||This block:0x1798208, points to 0x1798220||	||This block:0x1798220, points to 0x1798238||	||This block:0x1798238, points to 0x1798250||	||This block:0x1798250, points to (nil)||	
+~~~> Index: 28||This block:0x1798270, points to 0x1798288||	||This block:0x1798288, points to 0x17982a0||	||This block:0x17982a0, points to 0x17982b8||	||This block:0x17982b8, points to 0x17982d0||	||This block:0x17982d0, points to (nil)||	
+~~~> Index: 29||This block:0x17982f0, points to 0x1798308||	||This block:0x1798308, points to 0x1798320||	||This block:0x1798320, points to 0x1798338||	||This block:0x1798338, points to 0x1798350||	||This block:0x1798350, points to (nil)||	
+~~~> Index: 2a||This block:0x1798370, points to 0x1798388||	||This block:0x1798388, points to 0x17983a0||	||This block:0x17983a0, points to 0x17983b8||	||This block:0x17983b8, points to 0x17983d0||	||This block:0x17983d0, points to (nil)||	
+~~~> Index: 2b||This block:0x17983f0, points to 0x1798408||	||This block:0x1798408, points to 0x1798420||	||This block:0x1798420, points to 0x1798438||	||This block:0x1798438, points to 0x1798450||	||This block:0x1798450, points to (nil)||	
+~~~> Index: 2c||This block:0x1798470, points to 0x1798488||	||This block:0x1798488, points to 0x17984a0||	||This block:0x17984a0, points to 0x17984b8||	||This block:0x17984b8, points to 0x17984d0||	||This block:0x17984d0, points to (nil)||	
+~~~> Index: 2d||This block:0x17984f0, points to 0x1798508||	||This block:0x1798508, points to 0x1798520||	||This block:0x1798520, points to 0x1798538||	||This block:0x1798538, points to 0x1798550||	||This block:0x1798550, points to (nil)||	
+~~~> Index: 2e||This block:0x1798570, points to 0x1798588||	||This block:0x1798588, points to 0x17985a0||	||This block:0x17985a0, points to 0x17985b8||	||This block:0x17985b8, points to 0x17985d0||	||This block:0x17985d0, points to (nil)||	
+~~~> Index: 2f||This block:0x17985f0, points to 0x1798608||	||This block:0x1798608, points to 0x1798620||	||This block:0x1798620, points to 0x1798638||	||This block:0x1798638, points to 0x1798650||	||This block:0x1798650, points to (nil)||	
+~~~> Index: 30||This block:0x1798670, points to 0x1798688||	||This block:0x1798688, points to 0x17986a0||	||This block:0x17986a0, points to 0x17986b8||	||This block:0x17986b8, points to 0x17986d0||	||This block:0x17986d0, points to (nil)||	
+~~~> Index: 31||This block:0x17986f0, points to 0x1798708||	||This block:0x1798708, points to 0x1798720||	||This block:0x1798720, points to 0x1798738||	||This block:0x1798738, points to 0x1798750||	||This block:0x1798750, points to (nil)||	
+~~~> Index: 32||This block:0x1798770, points to 0x1798788||	||This block:0x1798788, points to 0x17987a0||	||This block:0x17987a0, points to 0x17987b8||	||This block:0x17987b8, points to 0x17987d0||	||This block:0x17987d0, points to (nil)||	
+~~~> Index: 33||This block:0x17987f0, points to 0x1798808||	||This block:0x1798808, points to 0x1798820||	||This block:0x1798820, points to 0x1798838||	||This block:0x1798838, points to 0x1798850||	||This block:0x1798850, points to (nil)||	
+~~~> Index: 34||This block:0x1798870, points to 0x1798888||	||This block:0x1798888, points to 0x17988a0||	||This block:0x17988a0, points to 0x17988b8||	||This block:0x17988b8, points to 0x17988d0||	||This block:0x17988d0, points to (nil)||	
+~~~> Index: 35||This block:0x17988f0, points to 0x1798908||	||This block:0x1798908, points to 0x1798920||	||This block:0x1798920, points to 0x1798938||	||This block:0x1798938, points to 0x1798950||	||This block:0x1798950, points to (nil)||	
+~~~> Index: 36||This block:0x1798970, points to 0x1798988||	||This block:0x1798988, points to 0x17989a0||	||This block:0x17989a0, points to 0x17989b8||	||This block:0x17989b8, points to 0x17989d0||	||This block:0x17989d0, points to (nil)||	
+~~~> Index: 37||This block:0x17989f0, points to 0x1798a08||	||This block:0x1798a08, points to 0x1798a20||	||This block:0x1798a20, points to 0x1798a38||	||This block:0x1798a38, points to 0x1798a50||	||This block:0x1798a50, points to (nil)||	
+~~~> Index: 38||This block:0x1798a70, points to 0x1798a88||	||This block:0x1798a88, points to 0x1798aa0||	||This block:0x1798aa0, points to 0x1798ab8||	||This block:0x1798ab8, points to 0x1798ad0||	||This block:0x1798ad0, points to (nil)||	
+~~~> Index: 39||This block:0x1798af0, points to 0x1798b08||	||This block:0x1798b08, points to 0x1798b20||	||This block:0x1798b20, points to 0x1798b38||	||This block:0x1798b38, points to 0x1798b50||	||This block:0x1798b50, points to (nil)||	
+~~~> Index: 3a||This block:0x1798b70, points to 0x1798b88||	||This block:0x1798b88, points to 0x1798ba0||	||This block:0x1798ba0, points to 0x1798bb8||	||This block:0x1798bb8, points to 0x1798bd0||	||This block:0x1798bd0, points to (nil)||	
+~~~> Index: 3b||This block:0x1798bf0, points to 0x1798c08||	||This block:0x1798c08, points to 0x1798c20||	||This block:0x1798c20, points to 0x1798c38||	||This block:0x1798c38, points to 0x1798c50||	||This block:0x1798c50, points to (nil)||	
+~~~> Index: 3c||This block:0x1798c70, points to 0x1798c88||	||This block:0x1798c88, points to 0x1798ca0||	||This block:0x1798ca0, points to 0x1798cb8||	||This block:0x1798cb8, points to 0x1798cd0||	||This block:0x1798cd0, points to (nil)||	
+~~~> Index: 3d||This block:0x1798cf0, points to 0x1798d08||	||This block:0x1798d08, points to 0x1798d20||	||This block:0x1798d20, points to 0x1798d38||	||This block:0x1798d38, points to 0x1798d50||	||This block:0x1798d50, points to (nil)||	
+~~~> Index: 3e||This block:0x1798d70, points to 0x1798d88||	||This block:0x1798d88, points to 0x1798da0||	||This block:0x1798da0, points to 0x1798db8||	||This block:0x1798db8, points to 0x1798dd0||	||This block:0x1798dd0, points to (nil)||	
+~~~> Index: 3f||This block:0x1798df0, points to 0x1798e08||	||This block:0x1798e08, points to 0x1798e20||	||This block:0x1798e20, points to 0x1798e38||	||This block:0x1798e38, points to 0x1798e50||	||This block:0x1798e50, points to (nil)||	
+~~~> Index: 40||This block:0x1798e70, points to 0x1798e88||	||This block:0x1798e88, points to 0x1798ea0||	||This block:0x1798ea0, points to 0x1798eb8||	||This block:0x1798eb8, points to 0x1798ed0||	||This block:0x1798ed0, points to (nil)||	
+~~~> Index: 41||This block:0x1798ef0, points to 0x1798f08||	||This block:0x1798f08, points to 0x1798f20||	||This block:0x1798f20, points to 0x1798f38||	||This block:0x1798f38, points to 0x1798f50||	||This block:0x1798f50, points to (nil)||	
+~~~> Index: 42||This block:0x1798f70, points to 0x1798f88||	||This block:0x1798f88, points to 0x1798fa0||	||This block:0x1798fa0, points to 0x1798fb8||	||This block:0x1798fb8, points to 0x1798fd0||	||This block:0x1798fd0, points to (nil)||	
+~~~> Index: 43||This block:0x1798ff0, points to 0x1799008||	||This block:0x1799008, points to 0x1799020||	||This block:0x1799020, points to 0x1799038||	||This block:0x1799038, points to 0x1799050||	||This block:0x1799050, points to (nil)||	
+~~~> Index: 44||This block:0x1799070, points to 0x1799088||	||This block:0x1799088, points to 0x17990a0||	||This block:0x17990a0, points to 0x17990b8||	||This block:0x17990b8, points to 0x17990d0||	||This block:0x17990d0, points to (nil)||	
+~~~> Index: 45||This block:0x17990f0, points to 0x1799108||	||This block:0x1799108, points to 0x1799120||	||This block:0x1799120, points to 0x1799138||	||This block:0x1799138, points to 0x1799150||	||This block:0x1799150, points to (nil)||	
+~~~> Index: 46||This block:0x1799170, points to 0x1799188||	||This block:0x1799188, points to 0x17991a0||	||This block:0x17991a0, points to 0x17991b8||	||This block:0x17991b8, points to 0x17991d0||	||This block:0x17991d0, points to (nil)||	
+~~~> Index: 47||This block:0x17991f0, points to 0x1799208||	||This block:0x1799208, points to 0x1799220||	||This block:0x1799220, points to 0x1799238||	||This block:0x1799238, points to 0x1799250||	||This block:0x1799250, points to (nil)||	
+~~~> Index: 48||This block:0x1799270, points to 0x1799288||	||This block:0x1799288, points to 0x17992a0||	||This block:0x17992a0, points to 0x17992b8||	||This block:0x17992b8, points to 0x17992d0||	||This block:0x17992d0, points to (nil)||	
+~~~> Index: 49||This block:0x17992f0, points to 0x1799308||	||This block:0x1799308, points to 0x1799320||	||This block:0x1799320, points to 0x1799338||	||This block:0x1799338, points to 0x1799350||	||This block:0x1799350, points to (nil)||	
+~~~> Index: 4a||This block:0x1799370, points to 0x1799388||	||This block:0x1799388, points to 0x17993a0||	||This block:0x17993a0, points to 0x17993b8||	||This block:0x17993b8, points to 0x17993d0||	||This block:0x17993d0, points to (nil)||	
+~~~> Index: 4b||This block:0x17993f0, points to 0x1799408||	||This block:0x1799408, points to 0x1799420||	||This block:0x1799420, points to 0x1799438||	||This block:0x1799438, points to 0x1799450||	||This block:0x1799450, points to (nil)||	
+~~~> Index: 4c||This block:0x1799470, points to 0x1799488||	||This block:0x1799488, points to 0x17994a0||	||This block:0x17994a0, points to 0x17994b8||	||This block:0x17994b8, points to 0x17994d0||	||This block:0x17994d0, points to (nil)||	
+~~~> Index: 4d||This block:0x17994f0, points to 0x1799508||	||This block:0x1799508, points to 0x1799520||	||This block:0x1799520, points to 0x1799538||	||This block:0x1799538, points to 0x1799550||	||This block:0x1799550, points to (nil)||	
+~~~> Index: 4e||This block:0x1799570, points to 0x1799588||	||This block:0x1799588, points to 0x17995a0||	||This block:0x17995a0, points to 0x17995b8||	||This block:0x17995b8, points to 0x17995d0||	||This block:0x17995d0, points to (nil)||	
+~~~> Index: 4f||This block:0x17995f0, points to 0x1799608||	||This block:0x1799608, points to 0x1799620||	||This block:0x1799620, points to 0x1799638||	||This block:0x1799638, points to 0x1799650||	||This block:0x1799650, points to (nil)||	
+~~~> Index: 50||This block:0x1799670, points to 0x1799688||	||This block:0x1799688, points to 0x17996a0||	||This block:0x17996a0, points to 0x17996b8||	||This block:0x17996b8, points to 0x17996d0||	||This block:0x17996d0, points to (nil)||	
+~~~> Index: 51||This block:0x17996f0, points to 0x1799708||	||This block:0x1799708, points to 0x1799720||	||This block:0x1799720, points to 0x1799738||	||This block:0x1799738, points to 0x1799750||	||This block:0x1799750, points to (nil)||	
+~~~> Index: 52||This block:0x1799770, points to 0x1799788||	||This block:0x1799788, points to 0x17997a0||	||This block:0x17997a0, points to 0x17997b8||	||This block:0x17997b8, points to 0x17997d0||	||This block:0x17997d0, points to (nil)||	
+~~~> Index: 53||This block:0x17997f0, points to 0x1799808||	||This block:0x1799808, points to 0x1799820||	||This block:0x1799820, points to 0x1799838||	||This block:0x1799838, points to 0x1799850||	||This block:0x1799850, points to (nil)||	
+~~~> Index: 54||This block:0x1799870, points to 0x1799888||	||This block:0x1799888, points to 0x17998a0||	||This block:0x17998a0, points to 0x17998b8||	||This block:0x17998b8, points to 0x17998d0||	||This block:0x17998d0, points to (nil)||	
+~~~> Index: 55||This block:0x17998f0, points to 0x1799908||	||This block:0x1799908, points to 0x1799920||	||This block:0x1799920, points to 0x1799938||	||This block:0x1799938, points to 0x1799950||	||This block:0x1799950, points to (nil)||	
+~~~> Index: 56||This block:0x1799970, points to 0x1799988||	||This block:0x1799988, points to 0x17999a0||	||This block:0x17999a0, points to 0x17999b8||	||This block:0x17999b8, points to 0x17999d0||	||This block:0x17999d0, points to (nil)||	
+~~~> Index: 57||This block:0x17999f0, points to 0x1799a08||	||This block:0x1799a08, points to 0x1799a20||	||This block:0x1799a20, points to 0x1799a38||	||This block:0x1799a38, points to 0x1799a50||	||This block:0x1799a50, points to (nil)||	
+~~~> Index: 58||This block:0x1799a70, points to 0x1799a88||	||This block:0x1799a88, points to 0x1799aa0||	||This block:0x1799aa0, points to 0x1799ab8||	||This block:0x1799ab8, points to 0x1799ad0||	||This block:0x1799ad0, points to (nil)||	
+~~~> Index: 59||This block:0x1799af0, points to 0x1799b08||	||This block:0x1799b08, points to 0x1799b20||	||This block:0x1799b20, points to 0x1799b38||	||This block:0x1799b38, points to 0x1799b50||	||This block:0x1799b50, points to (nil)||	
+~~~> Index: 5a||This block:0x1799b70, points to 0x1799b88||	||This block:0x1799b88, points to 0x1799ba0||	||This block:0x1799ba0, points to 0x1799bb8||	||This block:0x1799bb8, points to 0x1799bd0||	||This block:0x1799bd0, points to (nil)||	
+~~~> Index: 5b||This block:0x1799bf0, points to 0x1799c08||	||This block:0x1799c08, points to 0x1799c20||	||This block:0x1799c20, points to 0x1799c38||	||This block:0x1799c38, points to 0x1799c50||	||This block:0x1799c50, points to (nil)||	
+~~~> Index: 5c||This block:0x1799c70, points to 0x1799c88||	||This block:0x1799c88, points to 0x1799ca0||	||This block:0x1799ca0, points to 0x1799cb8||	||This block:0x1799cb8, points to 0x1799cd0||	||This block:0x1799cd0, points to (nil)||	
+~~~> Index: 5d||This block:0x1799cf0, points to 0x1799d08||	||This block:0x1799d08, points to 0x1799d20||	||This block:0x1799d20, points to 0x1799d38||	||This block:0x1799d38, points to 0x1799d50||	||This block:0x1799d50, points to (nil)||	
+~~~> Index: 5e||This block:0x1799d70, points to 0x1799d88||	||This block:0x1799d88, points to 0x1799da0||	||This block:0x1799da0, points to 0x1799db8||	||This block:0x1799db8, points to 0x1799dd0||	||This block:0x1799dd0, points to (nil)||	
+~~~> Index: 5f||This block:0x1799df0, points to 0x1799e08||	||This block:0x1799e08, points to 0x1799e20||	||This block:0x1799e20, points to 0x1799e38||	||This block:0x1799e38, points to 0x1799e50||	||This block:0x1799e50, points to (nil)||	
+~~~> Index: 60||This block:0x1799e70, points to 0x1799e88||	||This block:0x1799e88, points to 0x1799ea0||	||This block:0x1799ea0, points to 0x1799eb8||	||This block:0x1799eb8, points to 0x1799ed0||	||This block:0x1799ed0, points to (nil)||	
+~~~> Index: 61||This block:0x1799ef0, points to 0x1799f08||	||This block:0x1799f08, points to 0x1799f20||	||This block:0x1799f20, points to 0x1799f38||	||This block:0x1799f38, points to 0x1799f50||	||This block:0x1799f50, points to (nil)||	
+~~~> Index: 62||This block:0x1799f70, points to 0x1799f88||	||This block:0x1799f88, points to 0x1799fa0||	||This block:0x1799fa0, points to 0x1799fb8||	||This block:0x1799fb8, points to 0x1799fd0||	||This block:0x1799fd0, points to (nil)||	
+~~~> Index: 63||This block:0x1799ff0, points to 0x179a008||	||This block:0x179a008, points to 0x179a020||	||This block:0x179a020, points to 0x179a038||	||This block:0x179a038, points to 0x179a050||	||This block:0x179a050, points to (nil)||	
+~~~> Index: 64||This block:0x179a070, points to 0x179a088||	||This block:0x179a088, points to 0x179a0a0||	||This block:0x179a0a0, points to 0x179a0b8||	||This block:0x179a0b8, points to 0x179a0d0||	||This block:0x179a0d0, points to (nil)||	
+~~~> Index: 65||This block:0x179a0f0, points to 0x179a108||	||This block:0x179a108, points to 0x179a120||	||This block:0x179a120, points to 0x179a138||	||This block:0x179a138, points to 0x179a150||	||This block:0x179a150, points to (nil)||	
+~~~> Index: 66||This block:0x179a170, points to 0x179a188||	||This block:0x179a188, points to 0x179a1a0||	||This block:0x179a1a0, points to 0x179a1b8||	||This block:0x179a1b8, points to 0x179a1d0||	||This block:0x179a1d0, points to (nil)||	
+~~~> Index: 67||This block:0x179a1f0, points to 0x179a208||	||This block:0x179a208, points to 0x179a220||	||This block:0x179a220, points to 0x179a238||	||This block:0x179a238, points to 0x179a250||	||This block:0x179a250, points to (nil)||	
+~~~> Index: 68||This block:0x179a270, points to 0x179a288||	||This block:0x179a288, points to 0x179a2a0||	||This block:0x179a2a0, points to 0x179a2b8||	||This block:0x179a2b8, points to 0x179a2d0||	||This block:0x179a2d0, points to (nil)||	
+~~~> Index: 69||This block:0x179a2f0, points to 0x179a308||	||This block:0x179a308, points to 0x179a320||	||This block:0x179a320, points to 0x179a338||	||This block:0x179a338, points to 0x179a350||	||This block:0x179a350, points to (nil)||	
+~~~> Index: 6a||This block:0x179a370, points to 0x179a388||	||This block:0x179a388, points to 0x179a3a0||	||This block:0x179a3a0, points to 0x179a3b8||	||This block:0x179a3b8, points to 0x179a3d0||	||This block:0x179a3d0, points to (nil)||	
+~~~> Index: 6b||This block:0x179a3f0, points to 0x179a408||	||This block:0x179a408, points to 0x179a420||	||This block:0x179a420, points to 0x179a438||	||This block:0x179a438, points to 0x179a450||	||This block:0x179a450, points to (nil)||	
+~~~> Index: 6c||This block:0x179a470, points to 0x179a488||	||This block:0x179a488, points to 0x179a4a0||	||This block:0x179a4a0, points to 0x179a4b8||	||This block:0x179a4b8, points to 0x179a4d0||	||This block:0x179a4d0, points to (nil)||	
+~~~> Index: 6d||This block:0x179a4f0, points to 0x179a508||	||This block:0x179a508, points to 0x179a520||	||This block:0x179a520, points to 0x179a538||	||This block:0x179a538, points to 0x179a550||	||This block:0x179a550, points to (nil)||	
+~~~> Index: 6e||This block:0x179a570, points to 0x179a588||	||This block:0x179a588, points to 0x179a5a0||	||This block:0x179a5a0, points to 0x179a5b8||	||This block:0x179a5b8, points to 0x179a5d0||	||This block:0x179a5d0, points to (nil)||	
+~~~> Index: 6f||This block:0x179a5f0, points to 0x179a608||	||This block:0x179a608, points to 0x179a620||	||This block:0x179a620, points to 0x179a638||	||This block:0x179a638, points to 0x179a650||	||This block:0x179a650, points to (nil)||	
+~~~> Index: 70||This block:0x179a670, points to 0x179a688||	||This block:0x179a688, points to 0x179a6a0||	||This block:0x179a6a0, points to 0x179a6b8||	||This block:0x179a6b8, points to 0x179a6d0||	||This block:0x179a6d0, points to (nil)||	
+~~~> Index: 71||This block:0x179a6f0, points to 0x179a708||	||This block:0x179a708, points to 0x179a720||	||This block:0x179a720, points to 0x179a738||	||This block:0x179a738, points to 0x179a750||	||This block:0x179a750, points to (nil)||	
+~~~> Index: 72||This block:0x179a770, points to 0x179a788||	||This block:0x179a788, points to 0x179a7a0||	||This block:0x179a7a0, points to 0x179a7b8||	||This block:0x179a7b8, points to 0x179a7d0||	||This block:0x179a7d0, points to (nil)||	
+~~~> Index: 73||This block:0x179a7f0, points to 0x179a808||	||This block:0x179a808, points to 0x179a820||	||This block:0x179a820, points to 0x179a838||	||This block:0x179a838, points to 0x179a850||	||This block:0x179a850, points to (nil)||	
+~~~> Index: 74||This block:0x179a870, points to 0x179a888||	||This block:0x179a888, points to 0x179a8a0||	||This block:0x179a8a0, points to 0x179a8b8||	||This block:0x179a8b8, points to 0x179a8d0||	||This block:0x179a8d0, points to (nil)||	
+~~~> Index: 75||This block:0x179a8f0, points to 0x179a908||	||This block:0x179a908, points to 0x179a920||	||This block:0x179a920, points to 0x179a938||	||This block:0x179a938, points to 0x179a950||	||This block:0x179a950, points to (nil)||	
+~~~> Index: 76||This block:0x179a970, points to 0x179a988||	||This block:0x179a988, points to 0x179a9a0||	||This block:0x179a9a0, points to 0x179a9b8||	||This block:0x179a9b8, points to 0x179a9d0||	||This block:0x179a9d0, points to (nil)||	
+~~~> Index: 77||This block:0x179a9f0, points to 0x179aa08||	||This block:0x179aa08, points to 0x179aa20||	||This block:0x179aa20, points to 0x179aa38||	||This block:0x179aa38, points to 0x179aa50||	||This block:0x179aa50, points to (nil)||	
+~~~> Index: 78||This block:0x179aa70, points to 0x179aa88||	||This block:0x179aa88, points to 0x179aaa0||	||This block:0x179aaa0, points to 0x179aab8||	||This block:0x179aab8, points to 0x179aad0||	||This block:0x179aad0, points to (nil)||	
+~~~> Index: 79||This block:0x179aaf0, points to 0x179ab08||	||This block:0x179ab08, points to 0x179ab20||	||This block:0x179ab20, points to 0x179ab38||	||This block:0x179ab38, points to 0x179ab50||	||This block:0x179ab50, points to (nil)||	
+~~~> Index: 7a||This block:0x179ab70, points to 0x179ab88||	||This block:0x179ab88, points to 0x179aba0||	||This block:0x179aba0, points to 0x179abb8||	||This block:0x179abb8, points to 0x179abd0||	||This block:0x179abd0, points to (nil)||	
+~~~> Index: 7b||This block:0x179abf0, points to 0x179ac08||	||This block:0x179ac08, points to 0x179ac20||	||This block:0x179ac20, points to 0x179ac38||	||This block:0x179ac38, points to 0x179ac50||	||This block:0x179ac50, points to (nil)||	
+~~~> Index: 7c||This block:0x179ac70, points to 0x179ac88||	||This block:0x179ac88, points to 0x179aca0||	||This block:0x179aca0, points to 0x179acb8||	||This block:0x179acb8, points to 0x179acd0||	||This block:0x179acd0, points to (nil)||	
+~~~> Index: 7d||This block:0x179acf0, points to 0x179ad08||	||This block:0x179ad08, points to 0x179ad20||	||This block:0x179ad20, points to 0x179ad38||	||This block:0x179ad38, points to 0x179ad50||	||This block:0x179ad50, points to (nil)||	
+~~~> Index: 7e||This block:0x179ad70, points to 0x179ad88||	||This block:0x179ad88, points to 0x179ada0||	||This block:0x179ada0, points to 0x179adb8||	||This block:0x179adb8, points to 0x179add0||	||This block:0x179add0, points to (nil)||	
+~~~> Index: 7f||This block:0x179adf0, points to 0x179ae08||	||This block:0x179ae08, points to 0x179ae20||	||This block:0x179ae20, points to 0x179ae38||	||This block:0x179ae38, points to 0x179ae50||	||This block:0x179ae50, points to (nil)||	
+End of Cache Status
+
+	 ---> Total trace time: 1
+	 ---> Total execution time: 1098
+-------------------- End of Trace --------------------
+
+Trace #21 --- Address  = 7f81ce22402a, Byte Size = 2, Type = I 
+	 *** L1: Index Field = 1, Tag Field = ff039c448 *** 
+
+~~~> <~~~
+~~~> In the scanCache function: 
+ >>>>> The cache index is pointing to: 0x17927c8
+~~~> tempBlock is now pointing to start of LRU chain
+~~~> Moving through the chain...Looking at way #1
+ >>>>> tempBlock is now pointing to: 0x17927c8
+ >>>>> Next in line is: 0x17927e0
+Checking a valid block...It's a match!
+~~~> tempBlock is already the head of the LRU chain, all is good.
+~~~> <~~~
+
+	 HIT: Found in L1, adding L1 hit time (+1)
+	 ---> Total trace time: 1
+	 ---> Total execution time: 1099
+-------------------- End of Trace --------------------
+
+Trace #22 --- Address  = 7f81ce22402c, Byte Size = 3, Type = I 
+	 *** L1: Index Field = 1, Tag Field = ff039c448 *** 
+
+~~~> <~~~
+~~~> In the scanCache function: 
+ >>>>> The cache index is pointing to: 0x17927c8
+~~~> tempBlock is now pointing to start of LRU chain
+~~~> Moving through the chain...Looking at way #1
+ >>>>> tempBlock is now pointing to: 0x17927c8
+ >>>>> Next in line is: 0x17927e0
+Checking a valid block...It's a match!
+~~~> tempBlock is already the head of the LRU chain, all is good.
+~~~> <~~~
+
+	 HIT: Found in L1, adding L1 hit time (+1)
+	 ---> Total trace time: 1
+	 ---> Total execution time: 1100
+-------------------- End of Trace --------------------
+
+Trace #23 --- Address  = 7f81ce22402f, Byte Size = 7, Type = I 
+	 *** L1: Index Field = 1, Tag Field = ff039c448 *** 
+
+~~~> <~~~
+~~~> In the scanCache function: 
+ >>>>> The cache index is pointing to: 0x17927c8
+~~~> tempBlock is now pointing to start of LRU chain
+~~~> Moving through the chain...Looking at way #1
+ >>>>> tempBlock is now pointing to: 0x17927c8
+ >>>>> Next in line is: 0x17927e0
+Checking a valid block...It's a match!
+~~~> tempBlock is already the head of the LRU chain, all is good.
+~~~> <~~~
+
+	 HIT: Found in L1, adding L1 hit time (+1)
+	 ---> Total trace time: 1
+	 ---> Total execution time: 1101
+-------------------- End of Trace --------------------
+
+Trace #24 --- Address  = 7f81ce224036, Byte Size = 7, Type = I 
+	 *** L1: Index Field = 1, Tag Field = ff039c448 *** 
+
+~~~> <~~~
+~~~> In the scanCache function: 
+ >>>>> The cache index is pointing to: 0x17927c8
+~~~> tempBlock is now pointing to start of LRU chain
+~~~> Moving through the chain...Looking at way #1
+ >>>>> tempBlock is now pointing to: 0x17927c8
+ >>>>> Next in line is: 0x17927e0
+Checking a valid block...It's a match!
+~~~> tempBlock is already the head of the LRU chain, all is good.
+~~~> <~~~
+
+	 HIT: Found in L1, adding L1 hit time (+1)
+	 ---> Total trace time: 1
+	 ---> Total execution time: 1102
+-------------------- End of Trace --------------------
+
+Trace #25 --- Address  = 7f81ce441b80, Byte Size = 8, Type = R 
+	 *** L1: Index Field = 1c, Tag Field = ff039c883 *** 
+
+~~~> <~~~
+~~~> In the scanCache function: 
+ >>>>> The cache index is pointing to: 0x17957e8
+~~~> tempBlock is now pointing to start of LRU chain
+~~~> Moving through the chain...Looking at way #1
+ >>>>> tempBlock is now pointing to: 0x17957e8
+ >>>>> Next in line is: 0x1795800
+~~~> It's not valid
+~~~> Moving through the chain...Looking at way #2
+ >>>>> tempBlock is now pointing to: 0x1795800
+ >>>>> Next in line is: 0x1795818
+~~~> It's not valid
+~~~> Moving through the chain...Looking at way #3
+ >>>>> tempBlock is now pointing to: 0x1795818
+ >>>>> Next in line is: 0x1795830
+~~~> It's not valid
+~~~> Moving through the chain...Looking at way #4
+ >>>>> tempBlock is

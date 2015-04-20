@@ -50,7 +50,7 @@ unsigned long long moveBlock(struct Cache* cache, unsigned long long targetTag, 
 struct Cache * initialize(int newCacheSize, int newBlockSize, int newAssociativity, int newMissTime, int newHitTime);
 void printHelpStatement();
 void printSetup();
-void printCacheStatus(struct Cache * cache);
+void printCacheStatus(struct Cache * cache, int * cacheTracker);
 void printReport();
 
 int main(int argc, char* argv[]) {
@@ -143,24 +143,54 @@ int main(int argc, char* argv[]) {
     unsigned long long writeOverTag[10]; // returned value if a LRU was dirty
     int hit; // Flag to tell if there was a hit in a cache
 
+    // Track which indexes have been changed
+    int tracker = 0;
+
+    // icache
+    int icacheIndexTracker[icache->lengthOfWay];
+
+    for (tracker = 0; tracker < icache->lengthOfWay; tracker++) {
+        icacheIndexTracker[tracker] = 0;
+    }
+
+    // dcache
+    int dcacheIndexTracker[dcache->lengthOfWay];
+    for (tracker = 0; tracker < dcache->lengthOfWay; tracker++) {
+        dcacheIndexTracker[tracker] = 0;
+    }
+
+    // l2cache
+    int l2cacheIndexTracker[l2cache->lengthOfWay];
+    for (tracker = 0; tracker < l2cache->lengthOfWay; tracker++) {
+        l2cacheIndexTracker[tracker] = 0;
+    }
+
 #ifndef DEBUG
     while (scanf("%c %Lx %d\n", &opCode, &address[0], &byteSize) == 3) {
 #endif
 
+        if (verbose) {
+            printf("-------------- Inputting Traces Now -------------\n");
+        }
 #ifdef DEBUG
         while (fscanf(inputFile, "%c %Lx %d\n", &opCode, &address[0], &byteSize) != EOF) {
 #endif
             traceCounter++; // Increment trace counter
+            int traceTime = 0; // Track individual trace times
 
             findFields(); // Have pulled out Index, Byte, and Tag fields for L1 cache
             if (verbose) {
-                printf("\nTrace #%lld --- Address  = %llx, Type = %c, Byte Size = %d \n", traceCounter, address[0], opCode, byteSize);
-                printf("\t L1: Index Field = %llx, Tag Field = %llx, \n", l1IndexField[0], l1Tag[0]);
+                printf("\nTrace #%lld --- Address  = %llx, Byte Size = %d, Type = %c \n", traceCounter, address[0], byteSize, opCode);
+                printf("\t *** L1: Index Field = %llx, Tag Field = %llx *** \n", l1IndexField[0], l1Tag[0]);
             }
 
             if (opCode == 'I') {
                 instructionCounter++; // Increment instruction counter
                 icache->readRefs++; // instruction must access L1 instruction cache
+
+                // Track which indexes have been changed
+                icacheIndexTracker[l1IndexField[0]] = 1;
+                l2cacheIndexTracker[l2IndexField[0]] = 1;
 
                 hit = scanCache(icache, l1Tag[0], l1IndexField[0], opCode); // Check L1I cache
                 if (hit) { // Found in L1I cache
@@ -168,13 +198,15 @@ int main(int argc, char* argv[]) {
                         printf("\t HIT: Found in L1, adding L1 hit time (+%d)\n", l1_hit_time);
                     l1HitCounter++; //Increment hit counter
                     executionTime += icache->hitTime;
+                    traceTime += icache->hitTime;
                 } else { // Not in L1 Cache
                     if (verbose) {
                         printf("\t MISS: Not found in L1, adding L1 miss time (+%d)\n", l1_miss_time);
-                        printf("\t L2: Index Field = %llx, Tag Field = %llx, \n", l2IndexField[0], l2Tag[0]);
+                        printf("\t *** L2: Index Field = %llx, Tag Field = %llx *** \n", l2IndexField[0], l2Tag[0]);
                     }
                     l1MissCounter++;
                     executionTime += icache->missTime;
+                    traceTime += icache->missTime;
                     // Scan L2
                     hit = scanCache(l2cache, l2Tag[0], l2IndexField[0], opCode);
                     if (hit) {
@@ -182,19 +214,40 @@ int main(int argc, char* argv[]) {
                             printf("\t HIT: Found in L2, adding L2 hit time (+%d)\n", l2_hit_time);
                         l2HitCounter++; // Increment hit counter
                         executionTime += l2cache->hitTime;
+                        traceTime += l2cache->hitTime;
                         // Bring into L1 cache
                         // Find LRU to write over in L1
                         writeOverTag[0] = moveBlock(icache, l1Tag[0], l1IndexField[0]); // MoveBlock needs to be seen as a write request
+
+                        if (verbose) {
+                            printf("\t Writing block back to L1...");
+                            printf("Adding L2->L1 transfer time (+%d)\n", l2_transfer_time * (icache->blockSize * 8 / l2_bus_width));
+                            printf("\t Adding L1 replay time (+%d)\n", l1_hit_time);
+                        }
+
                         // Time penalty
                         executionTime += l2_transfer_time * (icache->blockSize * 8 / l2_bus_width); // Move desired block from L2->L1
                         executionTime += icache->hitTime;
 
+                        traceTime += l2_transfer_time * (icache->blockSize * 8 / l2_bus_width); // Move desired block from L2->L1
+                        traceTime += icache->hitTime;
+
                         if (writeOverTag[0]) { // Tag was dirty, needs to be written back to L2
+                            if (verbose) {
+                                printf("\t Kicking out dirty block in L1...\n");
+                                printf("\t Rewriting dirty block to L2, adding transfer time (+%d)\n", l2_transfer_time * (icache->blockSize * 8 / l2_bus_width));
+                            }
                             writeOverTag[0] = moveBlock(l2cache, writeOverTag[0], l2IndexField[0]);
                             executionTime += l2_transfer_time * (icache->blockSize * 8 / l2_bus_width); // Move dirty block from L1->L2
+                            traceTime += l2_transfer_time * (icache->blockSize * 8 / l2_bus_width); // Move dirty block from L1->L2
 
                             if (writeOverTag[0]) { // Tag in L2 was dirty, needs to be written to Main Memory
+                                if (verbose) {
+                                    printf("\t Kicking out dirty block in L2...\n");
+                                    printf("\t Rewriting dirty block to main memory (+%d)\n", mainMemoryTime);
+                                }
                                 executionTime += mainMemoryTime; // Move dirty block from L2 -> memory
+                                traceTime += mainMemoryTime; // Move dirty block from L2 -> memory
                             }
                         }
 
@@ -205,8 +258,10 @@ int main(int argc, char* argv[]) {
                         }
                         l2MissCounter++; // Increment miss counter
                         executionTime += l2cache->missTime;
+                        traceTime += l2cache->missTime;
 
                         executionTime += mainMemoryTime; // Bring from memory -> L2
+                        traceTime += mainMemoryTime; // Bring from memory -> L2
 
                         // Find LRU to write over in L2
                         writeOverTag[0] = moveBlock(l2cache, l2Tag[0], l2IndexField[0]); // MoveBlock needs to be seen as a write request
@@ -216,18 +271,23 @@ int main(int argc, char* argv[]) {
                                 printf("\t Rewriting dirty block to main memory (+%d)\n", mainMemoryTime);
                             }
                             executionTime += mainMemoryTime; // Move dirty block from L2 -> memory
+                            traceTime += mainMemoryTime; // Move dirty block from L2 -> memory
                         }
 
                         // Find LRU to write over in L1
-                        writeOverTag[0] = moveBlock(icache, l1Tag[0], l1IndexField[0]); // MoveBlock needs to be seen as a write request
-                        // Time penalty
                         if (verbose) {
                             printf("\t Writing block back to L1...");
                             printf("Adding L2->L1 transfer time (+%d)\n", l2_transfer_time * (icache->blockSize * 8 / l2_bus_width));
-                            printf("Adding L1 replay time (+%d)\n", l1_hit_time);
+                            printf("\t Adding L1 replay time (+%d)\n", l1_hit_time);
                         }
+                        writeOverTag[0] = moveBlock(icache, l1Tag[0], l1IndexField[0]); // MoveBlock needs to be seen as a write request
+                        // Time penalty
+
                         executionTime += l2_transfer_time * (icache->blockSize * 8 / l2_bus_width); // Move desired block from L2->L1
                         executionTime += icache->hitTime;
+
+                        traceTime += l2_transfer_time * (icache->blockSize * 8 / l2_bus_width); // Move desired block from L2->L1
+                        traceTime += icache->hitTime;
 
                         if (writeOverTag[0]) { // Tag was dirty, needs to be written back to L2
                             if (verbose) {
@@ -236,6 +296,7 @@ int main(int argc, char* argv[]) {
                             }
                             writeOverTag[0] = moveBlock(l2cache, writeOverTag[0], l2IndexField[0]);
                             executionTime += l2_transfer_time * (icache->blockSize * 8 / l2_bus_width); // Move dirty block from L1->L2
+                            traceTime += l2_transfer_time * (icache->blockSize * 8 / l2_bus_width); // Move dirty block from L1->L2
 
                             if (writeOverTag[0]) { // Tag in L2 was dirty, needs to be written to Main Memory
                                 if (verbose) {
@@ -243,6 +304,7 @@ int main(int argc, char* argv[]) {
                                     printf("\t Rewriting dirty block to main memory (+%d)\n", mainMemoryTime);
                                 }
                                 executionTime += mainMemoryTime; // Move dirty block from L2 -> memory
+                                traceTime += mainMemoryTime; // Move dirty block from L2 -> memory
                             }
                         }
                     }
@@ -251,19 +313,25 @@ int main(int argc, char* argv[]) {
                 dcache->readRefs++; // Read must access L1 data cache
                 readCounter++; // increment read counter
 
+                // Track which indexes have been changed
+                dcacheIndexTracker[l1IndexField[0]] = 1;
+                l2cacheIndexTracker[l2IndexField[0]] = 1;
+
                 hit = scanCache(dcache, l1Tag[0], l1IndexField[0], opCode); // Check L1I cache
                 if (hit) { // Found in L1I cache
                     if (verbose)
                         printf("\t HIT: Found in L1 \n");
                     l1HitCounter++; //Increment hit counter
                     executionTime += dcache->hitTime;
+                    traceTime += dcache->hitTime;
                 } else { // Not in L1 Cache
                     if (verbose) {
                         printf("\t MISS: Not found in L1, adding L1 miss time (+%d)\n", l1_miss_time);
-                        printf("\t L2: Index Field = %llx, Tag Field = %llx, \n", l2IndexField[0], l2Tag[0]);
+                        printf("\t *** L2: Index Field = %llx, Tag Field = %llx *** \n", l2IndexField[0], l2Tag[0]);
                     }
                     l1MissCounter++;
                     executionTime += dcache->missTime;
+                    traceTime += dcache->missTime;
 
                     // ************************** Scan L2
                     // Reset tag/index fields
@@ -274,48 +342,95 @@ int main(int argc, char* argv[]) {
 
                         l2HitCounter++; // Increment hit counter
                         executionTime += l2cache->hitTime;
+                        traceTime += l2cache->hitTime;
 
                         // Bring into L1 cache
                         // Find LRU to write over in L1 data cache
+                        if (verbose) {
+                            printf("\t Writing block back to L1...");
+                            printf("Adding L2->L1 transfer time (+%d)\n", l2_transfer_time * (icache->blockSize * 8 / l2_bus_width));
+                            printf("\t Adding L1 replay time (+%d)\n", l1_hit_time);
+                        }
                         writeOverTag[0] = moveBlock(dcache, l1Tag[0], l1IndexField[0]); // MoveBlock needs to be seen as a write request
                         // Time penalty
                         executionTime += l2_transfer_time * (dcache->blockSize * 8 / l2_bus_width); // Move desired block from L2->L1
                         executionTime += dcache->hitTime;
 
+                        traceTime += l2_transfer_time * (dcache->blockSize * 8 / l2_bus_width); // Move desired block from L2->L1
+                        traceTime += dcache->hitTime;
+
                         if (writeOverTag[0]) { // Tag was dirty, needs to be written back to L2
+                            if (verbose) {
+                                printf("\t Kicking out dirty block in L1...\n");
+                                printf("\t Rewriting dirty block to L2, adding transfer time (+%d)\n", l2_transfer_time * (icache->blockSize * 8 / l2_bus_width));
+                            }
                             writeOverTag[0] = moveBlock(l2cache, writeOverTag[0], l2IndexField[0]);
                             executionTime += l2_transfer_time * (dcache->blockSize * 8 / l2_bus_width); // Move dirty block from L1->L2
+                            traceTime += l2_transfer_time * (dcache->blockSize * 8 / l2_bus_width); // Move dirty block from L1->L2
 
                             if (writeOverTag[0]) { // Tag in L2 was dirty, needs to be written to Main Memory
+                                if (verbose) {
+                                    printf("\t Kicking out dirty block in L2...\n");
+                                    printf("\t Rewriting dirty block to main memory (+%d)\n", mainMemoryTime);
+                                }
                                 executionTime += mainMemoryTime; // Move dirty block from L2 -> memory
+                                traceTime += mainMemoryTime; // Move dirty block from L2 -> memory
                             }
                         }
 
                     } else { // Miss in L2 Cache, read from memory
-                        if (verbose)
+                        if (verbose) {
                             printf("\t MISS: Not found in L2, adding L2 miss time (+%d)\n", l2_miss_time);
+                            printf("\t Bringing in from main memory (+%d)\n", mainMemoryTime);
+                        }
                         l2MissCounter++; // Increment miss counter
                         executionTime += l2cache->missTime;
                         executionTime += mainMemoryTime; // Bring from memory -> L2
 
+                        traceTime += l2cache->missTime;
+                        traceTime += mainMemoryTime; // Bring from memory -> L2
+
                         // Find LRU to write over in L2
                         writeOverTag[0] = moveBlock(l2cache, l2Tag[0], l2IndexField[0]); // MoveBlock needs to be seen as a write request
                         if (writeOverTag[0]) { // LRU in L2 was dirty
+                            if (verbose) {
+                                printf("\t Kicking out dirty block in L2...\n");
+                                printf("\t Rewriting dirty block to main memory (+%d)\n", mainMemoryTime);
+                            }
                             executionTime += mainMemoryTime; // Move dirty block from L2 -> memory
+                            traceTime += mainMemoryTime; // Move dirty block from L2 -> memory
                         }
 
                         // Find LRU to write over in L1
+                        if (verbose) {
+                            printf("\t Writing block back to L1...");
+                            printf("Adding L2->L1 transfer time (+%d)\n", l2_transfer_time * (icache->blockSize * 8 / l2_bus_width));
+                            printf("\t Adding L1 replay time (+%d)\n", l1_hit_time);
+                        }
                         writeOverTag[0] = moveBlock(dcache, l1Tag[0], l2IndexField[0]); // MoveBlock needs to be seen as a write request
                         // Time penalty
                         executionTime += l2_transfer_time * (dcache->blockSize * 8 / l2_bus_width); // Move desired block from L2->L1
                         executionTime += dcache->hitTime;
 
+                        traceTime += l2_transfer_time * (dcache->blockSize * 8 / l2_bus_width); // Move desired block from L2->L1
+                        traceTime += dcache->hitTime;
+
                         if (writeOverTag[0]) { // Tag was dirty, needs to be written back to L2
+                            if (verbose) {
+                                printf("\t Kicking out dirty block in L1...\n");
+                                printf("\t Rewriting dirty block to L2, adding transfer time (+%d)\n", l2_transfer_time * (icache->blockSize * 8 / l2_bus_width));
+                            }
                             writeOverTag[0] = moveBlock(l2cache, writeOverTag[0], l2IndexField[0]);
                             executionTime += l2_transfer_time * (dcache->blockSize * 8 / l2_bus_width); // Move dirty block from L1->L2
+                            traceTime += l2_transfer_time * (dcache->blockSize * 8 / l2_bus_width); // Move dirty block from L1->L2
 
                             if (writeOverTag[0]) { // Tag in L2 was dirty, needs to be written to Main Memory
+                                if (verbose) {
+                                    printf("\t Kicking out dirty block in L2...\n");
+                                    printf("\t Rewriting dirty block to main memory (+%d)\n", mainMemoryTime);
+                                }
                                 executionTime += mainMemoryTime; // Move dirty block from L2 -> memory
+                                traceTime += mainMemoryTime; // Move dirty block from L2 -> memory
                             }
                         }
                     }
@@ -324,19 +439,25 @@ int main(int argc, char* argv[]) {
                 writeCounter++; // Increment write counter
                 dcache->writeRefs++; // write must access L1 data cache
 
+                // Track which indexes have been accessed
+                dcacheIndexTracker[l1IndexField[0]] = 1;
+                l2cacheIndexTracker[l2IndexField[0]] = 1;
+
                 hit = scanCache(dcache, l1Tag[0], l1IndexField[0], opCode); // Check L1I cache
                 if (hit) { // Found in L1I cache
                     if (verbose)
                         printf("\t HIT: Found in L1, adding L1 hit time (+%d)\n", l1_hit_time);
                     l1HitCounter++; //Increment hit counter
                     executionTime += dcache->hitTime;
+                    traceTime += dcache->hitTime;
                 } else { // Not in L1 Cache
                     if (verbose) {
                         printf("\t MISS: Not found in L1, adding L1 Miss time (+%d)\n", l1_miss_time);
-                        printf("\t L2: Index Field = %llx, Tag Field = %llx, \n", l2IndexField[0], l2Tag[0]);
+                        printf("\t *** L2: Index Field = %llx, Tag Field = %llx *** \n", l2IndexField[0], l2Tag[0]);
                     }
                     l1MissCounter++;
                     executionTime += dcache->missTime;
+                    traceTime += dcache->missTime;
 
                     // Scan L2
                     hit = scanCache(l2cache, l2Tag[0], l2IndexField[0], opCode);
@@ -345,66 +466,114 @@ int main(int argc, char* argv[]) {
                             printf("\t HIT: Found in L2, adding L2 hit time (+%d)\n", l2_hit_time);
                         l2HitCounter++; // Increment hit counter
                         executionTime += l2cache->hitTime;
+                        traceTime += l2cache->hitTime;
 
                         // Bring into L1 cache
                         // Find LRU to write over in L1 data cache
+                        if (verbose) {
+                            printf("\t Writing block back to L1...");
+                            printf("Adding L2->L1 transfer time (+%d)\n", l2_transfer_time * (icache->blockSize * 8 / l2_bus_width));
+                            printf("\t Adding L1 replay time (+%d)\n", l1_hit_time);
+                        }
                         writeOverTag[0] = moveBlock(dcache, l1Tag[0], l1IndexField[0]); // MoveBlock needs to be seen as a write request
                         // Time penalty
                         executionTime += l2_transfer_time * (dcache->blockSize * 8 / l2_bus_width); // Move desired block from L2->L1
                         executionTime += dcache->hitTime;
 
+                        traceTime += l2_transfer_time * (dcache->blockSize * 8 / l2_bus_width); // Move desired block from L2->L1
+                        traceTime += dcache->hitTime;
+
                         if (writeOverTag[0]) { // Tag was dirty, needs to be written back to L2
+                            if (verbose) {
+                                printf("\t Kicking out dirty block in L1...\n");
+                                printf("\t Rewriting dirty block to L2, adding transfer time (+%d)\n", l2_transfer_time * (icache->blockSize * 8 / l2_bus_width));
+                            }
                             writeOverTag[0] = moveBlock(l2cache, writeOverTag[0], l2IndexField[0]);
                             executionTime += l2_transfer_time * (dcache->blockSize * 8 / l2_bus_width); // Move dirty block from L1->L2
+                            traceTime += l2_transfer_time * (dcache->blockSize * 8 / l2_bus_width); // Move dirty block from L1->L2
 
                             if (writeOverTag[0]) { // Tag in L2 was dirty, needs to be written to Main Memory
+                                if (verbose) {
+                                    printf("\t Kicking out dirty block in L2...\n");
+                                    printf("\t Rewriting dirty block to main memory (+%d)\n", mainMemoryTime);
+                                }
                                 executionTime += mainMemoryTime; // Move dirty block from L2 -> memory
+                                traceTime += mainMemoryTime; // Move dirty block from L2 -> memory
                             }
                         }
 
                     } else { // Miss in L2 Cache, read from memory
-                        if (verbose)
+                        if (verbose) {
                             printf("\t MISS: Not found in L2, adding L2 miss time (+%d)\n", l2_miss_time);
+                            printf("\t Bringing in from main memory (+%d)\n", mainMemoryTime);
+                        }
                         l2MissCounter++; // Increment miss counter
                         executionTime += l2cache->missTime;
                         executionTime += mainMemoryTime; // Bring from memory -> L2
 
+                        traceTime += l2cache->missTime;
+                        traceTime += mainMemoryTime; // Bring from memory -> L2
+
                         // Find LRU to write over in L2
                         writeOverTag[0] = moveBlock(l2cache, l2Tag[0], l2IndexField[0]); // MoveBlock needs to be seen as a write request
                         if (writeOverTag[0]) { // LRU in L2 was dirty
+                            if (verbose) {
+                                printf("\t Kicking out dirty block in L2...\n");
+                                printf("\t Rewriting dirty block to main memory (+%d)\n", mainMemoryTime);
+                            }
                             executionTime += mainMemoryTime; // Move dirty block from L2 -> memory
+                            traceTime += mainMemoryTime; // Move dirty block from L2 -> memory
                         }
 
                         // Find LRU to write over in L1
+                        if (verbose) {
+                            printf("\t Writing block back to L1...");
+                            printf("Adding L2->L1 transfer time (+%d)\n", l2_transfer_time * (icache->blockSize * 8 / l2_bus_width));
+                            printf("\t Adding L1 replay time (+%d)\n", l1_hit_time);
+                        }
                         writeOverTag[0] = moveBlock(dcache, l1Tag[0], l1IndexField[0]); // MoveBlock needs to be seen as a write request
                         // Time penalty
                         executionTime += l2_transfer_time * (dcache->blockSize * 8 / l2_bus_width); // Move desired block from L2->L1
                         executionTime += dcache->hitTime;
 
+                        traceTime += l2_transfer_time * (dcache->blockSize * 8 / l2_bus_width); // Move desired block from L2->L1
+                        traceTime += dcache->hitTime;
+
                         if (writeOverTag[0]) { // Tag was dirty, needs to be written back to L2
+                            if (verbose) {
+                                printf("\t Kicking out dirty block in L1...\n");
+                                printf("\t Rewriting dirty block to L2, adding transfer time (+%d)\n", l2_transfer_time * (icache->blockSize * 8 / l2_bus_width));
+                            }
                             writeOverTag[0] = moveBlock(l2cache, writeOverTag[0], l2IndexField[0]);
                             executionTime += l2_transfer_time * (dcache->blockSize * 8 / l2_bus_width); // Move dirty block from L1->L2
+                            traceTime += l2_transfer_time * (dcache->blockSize * 8 / l2_bus_width); // Move dirty block from L1->L2
 
                             if (writeOverTag[0]) { // Tag in L2 was dirty, needs to be written to Main Memory
+                                if (verbose) {
+                                    printf("\t Kicking out dirty block in L2...\n");
+                                    printf("\t Rewriting dirty block to main memory (+%d)\n", mainMemoryTime);
+                                }
                                 executionTime += mainMemoryTime; // Move dirty block from L2 -> memory
+                                traceTime += mainMemoryTime; // Move dirty block from L2 -> memory
                             }
                         }
                     }
                 }
             }
 #ifdef DEBUG
-            if (traceCounter == 22) {
-                printf("------------ DEBUGGING--------------------\n");
-                printf("Cache final contents - Index and Tag values are in HEX\n");
+            if (traceCounter == 20) {
                 printf("\nL1 Instruction Cache current status: \n");
-                printCacheStatus(icache);
+                printCacheStatus(icache, icacheIndexTracker);
 
                 printf("\nL1 Data Cache current status: \n");
-                printCacheStatus(dcache);
+                printCacheStatus(dcache, dcacheIndexTracker);
 
                 printf("\nL2 Unified Cache current status: \n");
-                printCacheStatus(l2cache);
+                printCacheStatus(l2cache, l2cacheIndexTracker);
             }
+            printf("\t ---> Total trace time: %d\n", traceTime);
+            printf("\t ---> Total execution time: %d\n", (int) executionTime);
+            printf("-------------------- End of Trace --------------------\n");
         }
 #endif
 
@@ -413,16 +582,14 @@ int main(int argc, char* argv[]) {
 #endif
 
     if (verbose) {
-        printf("--------------------------------------------\n");
-        printf("Cache final contents - Index and Tag values are in HEX\n");
         printf("\nL1 Instruction Cache current status: \n");
-        printCacheStatus(icache);
+        printCacheStatus(icache, icacheIndexTracker);
 
         printf("\nL1 Data Cache current status: \n");
-        printCacheStatus(dcache);
+        printCacheStatus(dcache, dcacheIndexTracker);
 
         printf("\nL2 Unified Cache current status: \n");
-        printCacheStatus(l2cache);
+        printCacheStatus(l2cache, l2cacheIndexTracker);
     }
 
     printSetup();
