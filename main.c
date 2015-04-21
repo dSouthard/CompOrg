@@ -52,6 +52,7 @@ void printHelpStatement();
 void printSetup();
 void printCacheStatus(struct Cache * cache, int * cacheTracker);
 void printReport();
+void freeCache(struct Cache * cache);
 
 int main(int argc, char* argv[]) {
     //**************************  Local Variables
@@ -123,6 +124,9 @@ int main(int argc, char* argv[]) {
             mem_chunksize = value;
         }
     }
+    
+    // Finished reading file --> Close it
+    fclose(configFile);
 
     // Initiate caches based on configFile values
     icache = initialize(l1size, 32, l1assoc, l1_miss_time, l1_hit_time);
@@ -176,6 +180,18 @@ int main(int argc, char* argv[]) {
         while (fscanf(inputFile, "%c %Lx %d\n", &opCode, &address[0], &byteSize) != EOF) {
 #endif
             traceCounter++; // Increment trace counter
+#ifdef DEBUG
+            if (traceCounter == 30) {
+                printf("\nL1 Instruction Cache current status: \n");
+                printCacheStatus(icache, icacheIndexTracker);
+
+                printf("\nL1 Data Cache current status: \n");
+                printCacheStatus(dcache, dcacheIndexTracker);
+
+                printf("\nL2 Unified Cache current status: \n");
+                printCacheStatus(l2cache, l2cacheIndexTracker);
+            }
+#endif
             int traceTime = 0; // Track individual trace times
 
             findFields(); // Have pulled out Index, Byte, and Tag fields for L1 cache
@@ -407,10 +423,11 @@ int main(int argc, char* argv[]) {
                             printf("Adding L2->L1 transfer time (+%d)\n", l2_transfer_time * (icache->blockSize * 8 / l2_bus_width));
                             printf("\t Adding L1 replay time (+%d)\n", l1_hit_time);
                         }
-                        writeOverTag[0] = moveBlock(dcache, l1Tag[0], l2IndexField[0]); // MoveBlock needs to be seen as a write request
+                        writeOverTag[0] = moveBlock(dcache, l1Tag[0], l1IndexField[0]); // MoveBlock needs to be seen as a write request
                         // Time penalty
                         executionTime += l2_transfer_time * (dcache->blockSize * 8 / l2_bus_width); // Move desired block from L2->L1
                         executionTime += dcache->hitTime;
+                        
 
                         traceTime += l2_transfer_time * (dcache->blockSize * 8 / l2_bus_width); // Move desired block from L2->L1
                         traceTime += dcache->hitTime;
@@ -561,24 +578,29 @@ int main(int argc, char* argv[]) {
                 }
             }
 #ifdef DEBUG
-            if (traceCounter == 20) {
-                printf("\nL1 Instruction Cache current status: \n");
-                printCacheStatus(icache, icacheIndexTracker);
-
-                printf("\nL1 Data Cache current status: \n");
-                printCacheStatus(dcache, dcacheIndexTracker);
-
-                printf("\nL2 Unified Cache current status: \n");
-                printCacheStatus(l2cache, l2cacheIndexTracker);
-            }
+//            if (traceCounter == 20) {
+//                printf("\nL1 Instruction Cache current status: \n");
+//                printCacheStatus(icache, icacheIndexTracker);
+//
+//                printf("\nL1 Data Cache current status: \n");
+//                printCacheStatus(dcache, dcacheIndexTracker);
+//
+//                printf("\nL2 Unified Cache current status: \n");
+//                printCacheStatus(l2cache, l2cacheIndexTracker);
+//            }
             printf("\t ---> Total trace time: %d\n", traceTime);
             printf("\t ---> Total execution time: %d\n", (int) executionTime);
             printf("-------------------- End of Trace --------------------\n");
         }
+        
+        fclose(inputFile);
 #endif
 
 #ifndef DEBUG
-    }
+        printf("\t ---> Total trace time: %d\n", traceTime);
+            printf("\t ---> Total execution time: %d\n", (int) executionTime);
+            printf("-------------------- End of Trace --------------------\n");
+        }
 #endif
 
     if (verbose) {
@@ -594,6 +616,11 @@ int main(int argc, char* argv[]) {
 
     printSetup();
     printReport();
+    
+    freeCache(icache);
+    freeCache(dcache);
+    freeCache(l2cache);
+    
     return 0;
 }
 
@@ -687,7 +714,7 @@ void printSetup() {
 }
 
 void printReport() {
-    printf("Execution Time = %llx, Total Traces Read = %llx\n", executionTime, traceCounter);
+    printf("Execution Time = %d, Total Traces Read = %d\n", (int)executionTime, (int)traceCounter);
     printf("Instruction Counters: Read = %llx, Write = %llx, Instruction = %llx\n", readCounter, writeCounter, instructionCounter);
     printf("Flush time = %llx, Misalignments = %llx\n", flushTime, misalignments);
 }

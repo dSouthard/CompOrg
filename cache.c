@@ -44,13 +44,13 @@ struct Cache * initialize(int newCacheSize, int newBlockSize, int newAssociativi
     cache->kickouts = 0;
 
     // Initialize array of blocks
-    cache->blockArray = (struct Block **) malloc((cache->lengthOfWay * sizeof (struct Block *)));
+    cache->blockArray = (struct Block **) malloc(sizeof (struct Block *) * (cache->lengthOfWay));
 
     int i = 0, j = 0; // used for iteration
     for (i = 0; i < cache->lengthOfWay; i++) {
         // First column in blockArray will be a dummy pointer => add an extra "way"(column)
         // Go through each row and allocate space for necessary amount of blocks
-        cache->blockArray[i] = (struct Block *) malloc((newAssociativity + 1) * sizeof (struct Block));
+        cache->blockArray[i] = (struct Block *) malloc(sizeof (struct Block) * (newAssociativity + 1));
 
         // Go through and initialize blocks (columns)
         for (j = 0; j < newAssociativity; j++) {
@@ -67,8 +67,11 @@ struct Cache * initialize(int newCacheSize, int newBlockSize, int newAssociativi
 #endif
         }
 
-        // Point last block to null
-        cache->blockArray[i][newAssociativity].nextBlock = NULL;
+        // Initialize last block to null
+        cache->blockArray[i][newAssociativity].nextBlock = NULL; // Point to null
+        cache->blockArray[i][newAssociativity].valid = 0;
+        cache->blockArray[i][newAssociativity].dirty = 0;
+        cache->blockArray[i][newAssociativity].tag = 0;
 #ifdef INITIALIZEDEBUG
         printf("|| [%p] points to: %p || \n", &cache->blockArray[i][newAssociativity], cache->blockArray[i][newAssociativity].nextBlock);
 #endif
@@ -255,6 +258,12 @@ int scanCache(struct Cache* cache, unsigned long long targetTag, unsigned long l
                 }
 
                 return 1;
+            } else { // Tag didn't match
+#ifdef DEBUG
+                printf("~~~> Valid tag didn't match\n");
+#endif
+                tempBlock = tempBlock->nextBlock;
+                wayNumber++;
             }
         } else {
             wayNumber++;
@@ -295,7 +304,12 @@ void updateLRU(struct Cache* cache, struct Block * tempBlock, unsigned long long
     printf("firstBlock is now pointing to the front of the LRU chain...");
 #endif
 
-    cache->blockArray[targetIndex][0].nextBlock = tempBlock; // Put block at start of chain
+    if (tempBlock != NULL)
+        cache->blockArray[targetIndex][0].nextBlock = tempBlock; // Put block at start of chain
+    else {
+        printf("!x!x!x ATTEMPTING TO SET INDEX TO NULL! !x!x!x\n");
+        return;
+    }
 #ifdef DEBUG
     printf("tempBlock's block is now the start of the LRU chain.\n");
 #endif
@@ -333,7 +347,7 @@ void updateLRU(struct Cache* cache, struct Block * tempBlock, unsigned long long
 
 void printCacheStatus(struct Cache * cache, int * cacheIndexCounter) {
     printf("*********************************************************\n");
-   
+
     // Cache variables not already printed in printSetup function at beginning
     printf("Cache length: %d, index field size: %d, byte field size: %d\n",
             cache->lengthOfWay, cache->indexFieldSize, cache->byteOffsetSize);
@@ -355,12 +369,10 @@ void printCacheStatus(struct Cache * cache, int * cacheIndexCounter) {
             printf("Index %llx: ", (unsigned long long) i);
             for (j = 1; j < (cache->associativity + 1); j++) {
                 // Skip the first column since it's being used as a dummy pointer
-                if (cache->blockArray[i][j].tag) // Block has a tag in it
-                    printf("| Tag: %llx, V: %d, D: %d  |",
-                        cache->blockArray[i][j].tag, cache->blockArray[i][j].valid, cache->blockArray[i][j].dirty);
+                if (cache->blockArray[i][j].tag != 0) // Block has a tag in it
+                    printf("| Tag: %llx, V: %d, D: %d  |", cache->blockArray[i][j].tag, cache->blockArray[i][j].valid, cache->blockArray[i][j].dirty);
                 else // Block doesn't have a tag in it
-                    printf("| Tag: -, V: %d, D: %d  |",
-                        cache->blockArray[i][j].valid, cache->blockArray[i][j].dirty);
+                    printf("| Tag: -, V: %d, D: %d  |", cache->blockArray[i][j].valid, cache->blockArray[i][j].dirty);
             }
             printf("\n");
         }
@@ -383,4 +395,16 @@ void printCacheStatus(struct Cache * cache, int * cacheIndexCounter) {
 #endif
     printf("End of Cache Status\n\n");
     printf("*********************************************************\n");
+}
+
+void freeCache(struct Cache * cache) {
+    int row;
+
+    for (row = 0; row < cache->lengthOfWay; row++) {
+        free(cache->blockArray[row]);
+    }
+
+    free(cache->blockArray);
+
+    free(cache);
 }
