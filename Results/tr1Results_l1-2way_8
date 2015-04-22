@@ -1,0 +1,75 @@
+Configuration: config/l1-2way_8
+
+---------------------------------------------------
+				 Simulation Results
+---------------------------------------------------
+Memory System:
+	 D Cache: Size = 8192, 	Associativity = 2, 	Block size = 32
+	 I Cache: Size = 8192, 	Associativity = 2, 	Block size = 32
+	 L2 Unified Cache: Size = 32768, 	Associativity = 1, 	Block size = 64
+	 Main Memory: Ready time = 30, 	Chunksize = 8, 	Chunktime = 15,
+
+Execution Time = 754, 	Total Traces Read = 10
+Flush time = 0, Misalignments = 0
+
+Number of Reference Types: 	[Percentage] 
+	Reads 	= 	0 	[0.0%]
+	Writes 	= 	4 	[40.0%]
+	Inst. 	= 	6 	[60.0%]
+	Total 	= 	10
+
+Total Cycles for Activities: 	[Percentage] 
+	Reads 	= 	0 	[0.0%]
+	Writes 	= 	137 	[18.2%]
+	Inst. 	= 	64 	[8.5%]
+	Total 	= 	201
+
+Average Cycles for Activities: 
+	Reads = 0.0, 	Writes = 34.0, 	Instructions = 10.0
+
+Memory Level: L1 Instruction Cache
+	Hit Count = 4, 	 Miss Count = 2
+	Total Requests = 6
+	Hit Rate: 66.7%, 	 Miss Rate = 33.3%
+	Kickouts = 2, 	 Dirty-kickouts = 0, 	 Transfers = 0
+	Flush Kickouts = 0
+
+Memory Level: L1 Data Cache
+	Hit Count = 3, 	 Miss Count = 1
+	Total Requests = 4
+	Hit Rate: 75.0%, 	 Miss Rate = 25.0%
+	Kickouts = 1, 	 Dirty-kickouts = 0, 	 Transfers = 0
+	Flush Kickouts = 0
+
+Memory Level: L1 Data Cache
+	Hit Count = 0, 	 Miss Count = 3
+	Total Requests = 3
+	Hit Rate: 0.0%, 	 Miss Rate = 100.0%
+	Kickouts = 3, 	 Dirty-kickouts = 0, 	 Transfers = 0
+	Flush Kickouts = 0
+
+
+System Costs:
+	 L1: Instruction Cache (400.00) + Data Cache(400.00) = 800.00 total
+	 L2 Cache Costs: 50.00 
+	 Main Memory Costs: 75.00 
+	 Total Memory Cost: 925.00 
+
+---------------------------------------------------
+---------------------------------------------------
+Cache Final Contents: 
+
+Memory Level: L1 Instruction Cache
+Index 0:	| V: 1, D: 0 Tag: 	7f81ce224|| V: 0, D: 0 Tag: - |
+Index 35:	| V: 1, D: 0 Tag: 	7f81ce220|| V: 0, D: 0 Tag: - |
+
+
+Memory Level: L1 Data Cache
+Index 3e:	| V: 1, D: 1 Tag: 	7fff5a848|| V: 0, D: 0 Tag: - |
+
+
+Memory Level: L2 Unified Cache 
+Index 1a:	| V: 1, D: 0 Tag: 	ff039c44|
+Index 1f:	| V: 1, D: 0 Tag: 	fffeb509|
+Index 100:	| V: 1, D: 0 Tag: 	ff039c44|
+

@@ -1,0 +1,110 @@
+Configuration: config/default_8
+
+---------------------------------------------------
+				 Simulation Results
+---------------------------------------------------
+Memory System:
+	 D Cache: Size = 8192, 	Associativity = 1, 	Block size = 32
+	 I Cache: Size = 8192, 	Associativity = 1, 	Block size = 32
+	 L2 Unified Cache: Size = 32768, 	Associativity = 1, 	Block size = 64
+	 Main Memory: Ready time = 30, 	Chunksize = 8, 	Chunktime = 15,
+
+Execution Time = 4994, 	Total Traces Read = 100
+Flush time = 0, Misalignments = 0
+
+Number of Reference Types: 	[Percentage] 
+	Reads 	= 	7 	[7.0%]
+	Writes 	= 	14 	[14.0%]
+	Inst. 	= 	79 	[79.0%]
+	Total 	= 	100
+
+Total Cycles for Activities: 	[Percentage] 
+	Reads 	= 	263 	[5.3%]
+	Writes 	= 	4951 	[99.1%]
+	Inst. 	= 	6881 	[137.8%]
+	Total 	= 	12095
+
+Average Cycles for Activities: 
+	Reads = 37.0, 	Writes = 353.0, 	Instructions = 87.0
+
+Memory Level: L1 Instruction Cache
+	Hit Count = 69, 	 Miss Count = 10
+	Total Requests = 79
+	Hit Rate: 87.3%, 	 Miss Rate = 12.7%
+	Kickouts = 10, 	 Dirty-kickouts = 0, 	 Transfers = 0
+	Flush Kickouts = 0
+
+Memory Level: L1 Data Cache
+	Hit Count = 8, 	 Miss Count = 13
+	Total Requests = 21
+	Hit Rate: 38.1%, 	 Miss Rate = 61.9%
+	Kickouts = 13, 	 Dirty-kickouts = 0, 	 Transfers = 0
+	Flush Kickouts = 0
+
+Memory Level: L1 Data Cache
+	Hit Count = 5, 	 Miss Count = 18
+	Total Requests = 23
+	Hit Rate: 21.7%, 	 Miss Rate = 78.3%
+	Kickouts = 18, 	 Dirty-kickouts = 0, 	 Transfers = 0
+	Flush Kickouts = 0
+
+
+System Costs:
+	 L1: Instruction Cache (200.00) + Data Cache(200.00) = 400.00 total
+	 L2 Cache Costs: 50.00 
+	 Main Memory Costs: 75.00 
+	 Total Memory Cost: 525.00 
+
+---------------------------------------------------
+---------------------------------------------------
+Cache Final Contents: 
+
+Memory Level: L1 Instruction Cache
+Index 0:	| V: 1, D: 0 Tag: 	3fc0e7112|
+Index 1:	| V: 1, D: 0 Tag: 	3fc0e7112|
+Index 2:	| V: 1, D: 0 Tag: 	3fc0e7112|
+Index 3:	| V: 1, D: 0 Tag: 	3fc0e7112|
+Index 4:	| V: 1, D: 0 Tag: 	3fc0e7112|
+Index 5:	| V: 1, D: 0 Tag: 	3fc0e7112|
+Index 1d:	| V: 1, D: 0 Tag: 	3fc0e7112|
+Index 1e:	| V: 1, D: 0 Tag: 	3fc0e7112|
+Index 29:	| V: 1, D: 0 Tag: 	3fc0e7112|
+Index 35:	| V: 1, D: 0 Tag: 	3fc0e7110|
+
+
+Memory Level: L1 Data Cache
+Index 3d:	| V: 1, D: 1 Tag: 	3fffad424|
+Index 3e:	| V: 1, D: 1 Tag: 	3fffad424|
+Index 4e:	| V: 1, D: 0 Tag: 	3fc0e7221|
+Index 4f:	| V: 1, D: 0 Tag: 	3fc0e7221|
+Index 51:	| V: 1, D: 0 Tag: 	3fc0e7221|
+Index 54:	| V: 1, D: 0 Tag: 	3fc0e7221|
+Index 57:	| V: 1, D: 1 Tag: 	3fc0e7221|
+Index dc:	| V: 1, D: 0 Tag: 	3fc0e7220|
+Index e6:	| V: 1, D: 0 Tag: 	3fc0e7220|
+Index f1:	| V: 1, D: 0 Tag: 	3fc0e7220|
+Index f2:	| V: 1, D: 0 Tag: 	3fc0e7220|
+Index f3:	| V: 1, D: 0 Tag: 	3fc0e7220|
+Index fd:	| V: 1, D: 0 Tag: 	3fc0e7220|
+
+
+Memory Level: L2 Unified Cache 
+Index 1a:	| V: 1, D: 0 Tag: 	ff039c44|
+Index 1e:	| V: 1, D: 0 Tag: 	fffeb509|
+Index 1f:	| V: 1, D: 0 Tag: 	fffeb509|
+Index 6e:	| V: 1, D: 0 Tag: 	ff039c88|
+Index 73:	| V: 1, D: 0 Tag: 	ff039c88|
+Index 78:	| V: 1, D: 0 Tag: 	ff039c88|
+Index 79:	| V: 1, D: 0 Tag: 	ff039c88|
+Index 7e:	| V: 1, D: 0 Tag: 	ff039c88|
+Index a7:	| V: 1, D: 1 Tag: 	ff039c88|
+Index a8:	| V: 1, D: 0 Tag: 	ff039c88|
+Index aa:	| V: 1, D: 0 Tag: 	ff039c88|
+Index ab:	| V: 1, D: 0 Tag: 	ff039c88|
+Index 100:	| V: 1, D: 0 Tag: 	ff039c44|
+Index 101:	| V: 1, D: 0 Tag: 	ff039c44|
+Index 102:	| V: 1, D: 0 Tag: 	ff039c44|
+Index 10e:	| V: 1, D: 0 Tag: 	ff039c44|
+Index 10f:	| V: 1, D: 0 Tag: 	ff039c44|
+Index 114:	| V: 1, D: 0 Tag: 	ff039c44|
+

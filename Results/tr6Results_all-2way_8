@@ -1,0 +1,236 @@
+Configuration: config/all-2way_8
+
+---------------------------------------------------
+				 Simulation Results
+---------------------------------------------------
+Memory System:
+	 D Cache: Size = 8192, 	Associativity = 2, 	Block size = 32
+	 I Cache: Size = 8192, 	Associativity = 2, 	Block size = 32
+	 L2 Unified Cache: Size = 32768, 	Associativity = 2, 	Block size = 64
+	 Main Memory: Ready time = 30, 	Chunksize = 8, 	Chunktime = 15,
+
+Execution Time = 21152, 	Total Traces Read = 1000
+Flush time = 0, Misalignments = 0
+
+Number of Reference Types: 	[Percentage] 
+	Reads 	= 	162 	[16.2%]
+	Writes 	= 	62 	[6.2%]
+	Inst. 	= 	776 	[77.6%]
+	Total 	= 	1000
+
+Total Cycles for Activities: 	[Percentage] 
+	Reads 	= 	63883 	[302.0%]
+	Writes 	= 	70048 	[331.2%]
+	Inst. 	= 	613485 	[2900.4%]
+	Total 	= 	747416
+
+Average Cycles for Activities: 
+	Reads = 394.0, 	Writes = 1129.0, 	Instructions = 790.0
+
+Memory Level: L1 Instruction Cache
+	Hit Count = 733, 	 Miss Count = 43
+	Total Requests = 776
+	Hit Rate: 94.5%, 	 Miss Rate = 5.5%
+	Kickouts = 43, 	 Dirty-kickouts = 0, 	 Transfers = 0
+	Flush Kickouts = 0
+
+Memory Level: L1 Data Cache
+	Hit Count = 157, 	 Miss Count = 67
+	Total Requests = 224
+	Hit Rate: 70.1%, 	 Miss Rate = 29.9%
+	Kickouts = 67, 	 Dirty-kickouts = 0, 	 Transfers = 0
+	Flush Kickouts = 0
+
+Memory Level: L1 Data Cache
+	Hit Count = 44, 	 Miss Count = 66
+	Total Requests = 110
+	Hit Rate: 40.0%, 	 Miss Rate = 60.0%
+	Kickouts = 66, 	 Dirty-kickouts = 0, 	 Transfers = 0
+	Flush Kickouts = 0
+
+
+System Costs:
+	 L1: Instruction Cache (400.00) + Data Cache(400.00) = 800.00 total
+	 L2 Cache Costs: 100.00 
+	 Main Memory Costs: 75.00 
+	 Total Memory Cost: 975.00 
+
+---------------------------------------------------
+---------------------------------------------------
+Cache Final Contents: 
+
+Memory Level: L1 Instruction Cache
+Index 0:	| V: 1, D: 0 Tag: 	7f81ce224|| V: 0, D: 0 Tag: - |
+Index 1:	| V: 1, D: 0 Tag: 	7f81ce224|| V: 0, D: 0 Tag: - |
+Index 2:	| V: 1, D: 0 Tag: 	7f81ce224|| V: 0, D: 0 Tag: - |
+Index 3:	| V: 1, D: 0 Tag: 	7f81ce224|| V: 0, D: 0 Tag: - |
+Index 4:	| V: 1, D: 0 Tag: 	7f81ce224|| V: 0, D: 0 Tag: - |
+Index 5:	| V: 1, D: 0 Tag: 	7f81ce224|| V: 0, D: 0 Tag: - |
+Index 6:	| V: 1, D: 0 Tag: 	7f81ce224|| V: 0, D: 0 Tag: - |
+Index 7:	| V: 1, D: 0 Tag: 	7f81ce224|| V: 0, D: 0 Tag: - |
+Index 8:	| V: 1, D: 0 Tag: 	7f81ce224|| V: 0, D: 0 Tag: - |
+Index 9:	| V: 1, D: 0 Tag: 	7f81ce224|| V: 0, D: 0 Tag: - |
+Index a:	| V: 1, D: 0 Tag: 	7f81ce224|| V: 0, D: 0 Tag: - |
+Index b:	| V: 1, D: 0 Tag: 	7f81ce224|| V: 0, D: 0 Tag: - |
+Index c:	| V: 1, D: 0 Tag: 	7f81ce224|| V: 0, D: 0 Tag: - |
+Index d:	| V: 1, D: 0 Tag: 	7f81ce224|| V: 0, D: 0 Tag: - |
+Index e:	| V: 1, D: 0 Tag: 	7f81ce224|| V: 0, D: 0 Tag: - |
+Index f:	| V: 1, D: 0 Tag: 	7f81ce224|| V: 0, D: 0 Tag: - |
+Index 10:	| V: 1, D: 0 Tag: 	7f81ce224|| V: 0, D: 0 Tag: - |
+Index 11:	| V: 1, D: 0 Tag: 	7f81ce224|| V: 0, D: 0 Tag: - |
+Index 12:	| V: 1, D: 0 Tag: 	7f81ce224|| V: 0, D: 0 Tag: - |
+Index 13:	| V: 1, D: 0 Tag: 	7f81ce224|| V: 0, D: 0 Tag: - |
+Index 14:	| V: 1, D: 0 Tag: 	7f81ce224|| V: 0, D: 0 Tag: - |
+Index 15:	| V: 1, D: 0 Tag: 	7f81ce224|| V: 0, D: 0 Tag: - |
+Index 16:	| V: 1, D: 0 Tag: 	7f81ce224|| V: 0, D: 0 Tag: - |
+Index 17:	| V: 1, D: 0 Tag: 	7f81ce224|| V: 0, D: 0 Tag: - |
+Index 18:	| V: 1, D: 0 Tag: 	7f81ce224|| V: 0, D: 0 Tag: - |
+Index 1d:	| V: 1, D: 0 Tag: 	7f81ce224|| V: 0, D: 0 Tag: - |
+Index 1e:	| V: 1, D: 0 Tag: 	7f81ce224|| V: 0, D: 0 Tag: - |
+Index 1f:	| V: 1, D: 0 Tag: 	7f81ce224|| V: 0, D: 0 Tag: - |
+Index 20:	| V: 1, D: 0 Tag: 	7f81ce224|| V: 0, D: 0 Tag: - |
+Index 21:	| V: 1, D: 0 Tag: 	7f81ce224|| V: 0, D: 0 Tag: - |
+Index 22:	| V: 1, D: 0 Tag: 	7f81ce224|| V: 0, D: 0 Tag: - |
+Index 23:	| V: 1, D: 0 Tag: 	7f81ce224|| V: 0, D: 0 Tag: - |
+Index 24:	| V: 1, D: 0 Tag: 	7f81ce224|| V: 0, D: 0 Tag: - |
+Index 25:	| V: 1, D: 0 Tag: 	7f81ce224|| V: 0, D: 0 Tag: - |
+Index 26:	| V: 1, D: 0 Tag: 	7f81ce224|| V: 0, D: 0 Tag: - |
+Index 27:	| V: 1, D: 0 Tag: 	7f81ce224|| V: 0, D: 0 Tag: - |
+Index 28:	| V: 1, D: 0 Tag: 	7f81ce224|| V: 0, D: 0 Tag: - |
+Index 29:	| V: 1, D: 0 Tag: 	7f81ce224|| V: 0, D: 0 Tag: - |
+Index 2a:	| V: 1, D: 0 Tag: 	7f81ce224|| V: 0, D: 0 Tag: - |
+Index 2c:	| V: 1, D: 0 Tag: 	7f81ce224|| V: 0, D: 0 Tag: - |
+Index 2d:	| V: 1, D: 0 Tag: 	7f81ce224|| V: 0, D: 0 Tag: - |
+Index 2f:	| V: 1, D: 0 Tag: 	7f81ce224|| V: 0, D: 0 Tag: - |
+Index 35:	| V: 1, D: 0 Tag: 	7f81ce220|| V: 0, D: 0 Tag: - |
+
+
+Memory Level: L1 Data Cache
+Index 0:	| V: 1, D: 1 Tag: 	7f81ce442|| V: 0, D: 0 Tag: - |
+Index 1:	| V: 1, D: 1 Tag: 	7f81ce442|| V: 0, D: 0 Tag: - |
+Index 20:	| V: 1, D: 0 Tag: 	7f81ce21f|| V: 0, D: 0 Tag: - |
+Index 21:	| V: 1, D: 0 Tag: 	7f81ce21f|| V: 0, D: 0 Tag: - |
+Index 22:	| V: 1, D: 0 Tag: 	7f81ce21f|| V: 0, D: 0 Tag: - |
+Index 23:	| V: 1, D: 0 Tag: 	7f81ce21f|| V: 0, D: 0 Tag: - |
+Index 24:	| V: 1, D: 0 Tag: 	7f81ce21f|| V: 0, D: 0 Tag: - |
+Index 25:	| V: 1, D: 0 Tag: 	7f81ce21f|| V: 0, D: 0 Tag: - |
+Index 26:	| V: 1, D: 0 Tag: 	7f81ce21f|| V: 0, D: 0 Tag: - |
+Index 2b:	| V: 1, D: 0 Tag: 	7f81ce21f|| V: 0, D: 0 Tag: - |
+Index 2c:	| V: 1, D: 0 Tag: 	7f81ce21f|| V: 0, D: 0 Tag: - |
+Index 3d:	| V: 1, D: 1 Tag: 	7fff5a848|| V: 0, D: 0 Tag: - |
+Index 3e:	| V: 1, D: 1 Tag: 	7fff5a848|| V: 0, D: 0 Tag: - |
+Index 43:	| V: 1, D: 0 Tag: 	7f81ce21f|| V: 0, D: 0 Tag: - |
+Index 44:	| V: 1, D: 0 Tag: 	7f81ce21f|| V: 0, D: 0 Tag: - |
+Index 45:	| V: 1, D: 0 Tag: 	7f81ce21f|| V: 0, D: 0 Tag: - |
+Index 46:	| V: 1, D: 0 Tag: 	7f81ce21f|| V: 0, D: 0 Tag: - |
+Index 47:	| V: 1, D: 0 Tag: 	7f81ce21f|| V: 0, D: 0 Tag: - |
+Index 48:	| V: 1, D: 0 Tag: 	7f81ce21f|| V: 0, D: 0 Tag: - |
+Index 49:	| V: 1, D: 0 Tag: 	7f81ce21f|| V: 0, D: 0 Tag: - |
+Index 4a:	| V: 1, D: 0 Tag: 	7f81ce21f|| V: 0, D: 0 Tag: - |
+Index 4b:	| V: 1, D: 0 Tag: 	7f81ce21f|| V: 0, D: 0 Tag: - |
+Index 4c:	| V: 1, D: 0 Tag: 	7f81ce21f|| V: 0, D: 0 Tag: - |
+Index 4d:	| V: 1, D: 0 Tag: 	7f81ce21f|| V: 0, D: 0 Tag: - |
+Index 4e:	| V: 1, D: 0 Tag: 	7f81ce442|| V: 1, D: 0 Tag: 	7f81ce21f|
+Index 4f:	| V: 1, D: 0 Tag: 	7f81ce442|| V: 1, D: 0 Tag: 	7f81ce21f|
+Index 50:	| V: 1, D: 0 Tag: 	7f81ce21f|| V: 0, D: 0 Tag: - |
+Index 51:	| V: 1, D: 1 Tag: 	7f81ce442|| V: 1, D: 0 Tag: 	7f81ce21f|
+Index 52:	| V: 1, D: 1 Tag: 	7f81ce442|| V: 1, D: 0 Tag: 	7f81ce21f|
+Index 53:	| V: 1, D: 1 Tag: 	7f81ce442|| V: 1, D: 0 Tag: 	7f81ce21f|
+Index 54:	| V: 1, D: 0 Tag: 	7f81ce442|| V: 0, D: 0 Tag: - |
+Index 55:	| V: 1, D: 0 Tag: 	7f81ce442|| V: 0, D: 0 Tag: - |
+Index 56:	| V: 1, D: 0 Tag: 	7f81ce442|| V: 0, D: 0 Tag: - |
+Index 57:	| V: 1, D: 1 Tag: 	7f81ce442|| V: 0, D: 0 Tag: - |
+Index 58:	| V: 1, D: 0 Tag: 	7f81ce442|| V: 0, D: 0 Tag: - |
+Index 59:	| V: 1, D: 0 Tag: 	7f81ce442|| V: 0, D: 0 Tag: - |
+Index 5a:	| V: 1, D: 1 Tag: 	7f81ce442|| V: 0, D: 0 Tag: - |
+Index 5b:	| V: 1, D: 0 Tag: 	7f81ce441|| V: 0, D: 0 Tag: - |
+Index 5c:	| V: 1, D: 1 Tag: 	7f81ce441|| V: 0, D: 0 Tag: - |
+Index 5d:	| V: 1, D: 0 Tag: 	7f81ce442|| V: 0, D: 0 Tag: - |
+Index 62:	| V: 1, D: 1 Tag: 	7f81ce441|| V: 0, D: 0 Tag: - |
+Index 63:	| V: 1, D: 0 Tag: 	7f81ce442|| V: 1, D: 1 Tag: 	7f81ce441|
+Index 64:	| V: 1, D: 1 Tag: 	7f81ce441|| V: 0, D: 0 Tag: - |
+Index 65:	| V: 1, D: 0 Tag: 	7f81ce441|| V: 0, D: 0 Tag: - |
+Index 66:	| V: 1, D: 0 Tag: 	7f81ce441|| V: 0, D: 0 Tag: - |
+Index 67:	| V: 1, D: 1 Tag: 	7f81ce442|| V: 0, D: 0 Tag: - |
+Index 71:	| V: 1, D: 0 Tag: 	7f81ce441|| V: 0, D: 0 Tag: - |
+Index 72:	| V: 1, D: 0 Tag: 	7f81ce441|| V: 0, D: 0 Tag: - |
+Index 73:	| V: 1, D: 1 Tag: 	7f81ce441|| V: 0, D: 0 Tag: - |
+Index 74:	| V: 1, D: 1 Tag: 	7f81ce441|| V: 0, D: 0 Tag: - |
+Index 75:	| V: 1, D: 0 Tag: 	7f81ce441|| V: 0, D: 0 Tag: - |
+Index 76:	| V: 1, D: 1 Tag: 	7f81ce441|| V: 0, D: 0 Tag: - |
+Index 77:	| V: 1, D: 1 Tag: 	7f81ce441|| V: 0, D: 0 Tag: - |
+Index 78:	| V: 1, D: 1 Tag: 	7f81ce441|| V: 1, D: 0 Tag: 	7f81ce239|
+Index 79:	| V: 1, D: 0 Tag: 	7f81ce441|| V: 1, D: 0 Tag: 	7f81ce239|
+Index 7a:	| V: 1, D: 1 Tag: 	7f81ce441|| V: 0, D: 0 Tag: - |
+Index 7b:	| V: 1, D: 0 Tag: 	7f81ce441|| V: 0, D: 0 Tag: - |
+Index 7d:	| V: 1, D: 1 Tag: 	7f81ce441|| V: 0, D: 0 Tag: - |
+Index 7e:	| V: 1, D: 1 Tag: 	7f81ce441|| V: 0, D: 0 Tag: - |
+
+
+Memory Level: L2 Unified Cache 
+Index 0:	| V: 1, D: 0 Tag: 	1fe073889|| V: 0, D: 0 Tag: - |
+Index 1:	| V: 1, D: 0 Tag: 	1fe073889|| V: 0, D: 0 Tag: - |
+Index 2:	| V: 1, D: 0 Tag: 	1fe073889|| V: 0, D: 0 Tag: - |
+Index 3:	| V: 1, D: 0 Tag: 	1fe073889|| V: 0, D: 0 Tag: - |
+Index 4:	| V: 1, D: 0 Tag: 	1fe073889|| V: 0, D: 0 Tag: - |
+Index 5:	| V: 1, D: 0 Tag: 	1fe073889|| V: 0, D: 0 Tag: - |
+Index 6:	| V: 1, D: 0 Tag: 	1fe073889|| V: 0, D: 0 Tag: - |
+Index 7:	| V: 1, D: 0 Tag: 	1fe073889|| V: 0, D: 0 Tag: - |
+Index 8:	| V: 1, D: 0 Tag: 	1fe073889|| V: 0, D: 0 Tag: - |
+Index 9:	| V: 1, D: 0 Tag: 	1fe073889|| V: 0, D: 0 Tag: - |
+Index a:	| V: 1, D: 0 Tag: 	1fe073889|| V: 0, D: 0 Tag: - |
+Index b:	| V: 1, D: 0 Tag: 	1fe073889|| V: 0, D: 0 Tag: - |
+Index c:	| V: 1, D: 0 Tag: 	1fe073889|| V: 0, D: 0 Tag: - |
+Index e:	| V: 1, D: 0 Tag: 	1fe073889|| V: 0, D: 0 Tag: - |
+Index f:	| V: 1, D: 0 Tag: 	1fe073889|| V: 0, D: 0 Tag: - |
+Index 10:	| V: 1, D: 0 Tag: 	1fe073889|| V: 0, D: 0 Tag: - |
+Index 11:	| V: 1, D: 0 Tag: 	1fe073889|| V: 0, D: 0 Tag: - |
+Index 12:	| V: 1, D: 0 Tag: 	1fe073889|| V: 0, D: 0 Tag: - |
+Index 13:	| V: 1, D: 0 Tag: 	1fe073889|| V: 0, D: 0 Tag: - |
+Index 14:	| V: 1, D: 0 Tag: 	1fe073889|| V: 0, D: 0 Tag: - |
+Index 15:	| V: 1, D: 0 Tag: 	1fe073889|| V: 0, D: 0 Tag: - |
+Index 16:	| V: 1, D: 0 Tag: 	1fe073889|| V: 0, D: 0 Tag: - |
+Index 17:	| V: 1, D: 0 Tag: 	1fe073889|| V: 0, D: 0 Tag: - |
+Index 1a:	| V: 1, D: 0 Tag: 	1fe073888|| V: 0, D: 0 Tag: - |
+Index 1e:	| V: 1, D: 0 Tag: 	1fffd6a12|| V: 0, D: 0 Tag: - |
+Index 1f:	| V: 1, D: 0 Tag: 	1fffd6a12|| V: 0, D: 0 Tag: - |
+Index 6d:	| V: 1, D: 0 Tag: 	1fe073910|| V: 0, D: 0 Tag: - |
+Index 6e:	| V: 1, D: 0 Tag: 	1fe073910|| V: 0, D: 0 Tag: - |
+Index 71:	| V: 1, D: 1 Tag: 	1fe073910|| V: 0, D: 0 Tag: - |
+Index 72:	| V: 1, D: 1 Tag: 	1fe073910|| V: 0, D: 0 Tag: - |
+Index 73:	| V: 1, D: 0 Tag: 	1fe073910|| V: 0, D: 0 Tag: - |
+Index 78:	| V: 1, D: 0 Tag: 	1fe073910|| V: 0, D: 0 Tag: - |
+Index 79:	| V: 1, D: 0 Tag: 	1fe073910|| V: 0, D: 0 Tag: - |
+Index 7a:	| V: 1, D: 0 Tag: 	1fe073910|| V: 0, D: 0 Tag: - |
+Index 7b:	| V: 1, D: 0 Tag: 	1fe073910|| V: 0, D: 0 Tag: - |
+Index 7c:	| V: 1, D: 0 Tag: 	1fe073910|| V: 1, D: 0 Tag: 	1fe07388e|
+Index 7d:	| V: 1, D: 0 Tag: 	1fe073910|| V: 0, D: 0 Tag: - |
+Index 7e:	| V: 1, D: 0 Tag: 	1fe073910|| V: 0, D: 0 Tag: - |
+Index 7f:	| V: 1, D: 0 Tag: 	1fe073910|| V: 0, D: 0 Tag: - |
+Index 80:	| V: 1, D: 1 Tag: 	1fe073910|| V: 0, D: 0 Tag: - |
+Index a7:	| V: 1, D: 1 Tag: 	1fe073910|| V: 0, D: 0 Tag: - |
+Index a8:	| V: 1, D: 0 Tag: 	1fe073910|| V: 0, D: 0 Tag: - |
+Index a9:	| V: 1, D: 1 Tag: 	1fe073910|| V: 0, D: 0 Tag: - |
+Index aa:	| V: 1, D: 1 Tag: 	1fe073910|| V: 0, D: 0 Tag: - |
+Index ab:	| V: 1, D: 1 Tag: 	1fe073910|| V: 0, D: 0 Tag: - |
+Index ac:	| V: 1, D: 0 Tag: 	1fe073910|| V: 0, D: 0 Tag: - |
+Index ad:	| V: 1, D: 0 Tag: 	1fe073910|| V: 0, D: 0 Tag: - |
+Index ae:	| V: 1, D: 0 Tag: 	1fe073910|| V: 0, D: 0 Tag: - |
+Index b1:	| V: 1, D: 0 Tag: 	1fe073910|| V: 0, D: 0 Tag: - |
+Index b3:	| V: 1, D: 0 Tag: 	1fe073910|| V: 0, D: 0 Tag: - |
+Index d0:	| V: 1, D: 0 Tag: 	1fe073887|| V: 0, D: 0 Tag: - |
+Index d1:	| V: 1, D: 0 Tag: 	1fe073887|| V: 0, D: 0 Tag: - |
+Index d2:	| V: 1, D: 0 Tag: 	1fe073887|| V: 0, D: 0 Tag: - |
+Index d3:	| V: 1, D: 0 Tag: 	1fe073887|| V: 0, D: 0 Tag: - |
+Index d5:	| V: 1, D: 0 Tag: 	1fe073887|| V: 0, D: 0 Tag: - |
+Index d6:	| V: 1, D: 0 Tag: 	1fe073887|| V: 0, D: 0 Tag: - |
+Index e1:	| V: 1, D: 0 Tag: 	1fe073887|| V: 0, D: 0 Tag: - |
+Index e2:	| V: 1, D: 0 Tag: 	1fe073887|| V: 0, D: 0 Tag: - |
+Index e3:	| V: 1, D: 0 Tag: 	1fe073887|| V: 0, D: 0 Tag: - |
+Index e4:	| V: 1, D: 0 Tag: 	1fe073887|| V: 0, D: 0 Tag: - |
+Index e5:	| V: 1, D: 0 Tag: 	1fe073887|| V: 0, D: 0 Tag: - |
+Index e6:	| V: 1, D: 0 Tag: 	1fe073887|| V: 0, D: 0 Tag: - |
+Index e7:	| V: 1, D: 0 Tag: 	1fe073887|| V: 0, D: 0 Tag: - |
+Index e8:	| V: 1, D: 0 Tag: 	1fe073887|| V: 0, D: 0 Tag: - |
+Index e9:	| V: 1, D: 0 Tag: 	1fe073887|| V: 0, D: 0 Tag: - |
+
