@@ -13,6 +13,8 @@
 
 void updateLRU(struct Cache* cache, struct Block * tempBlock, unsigned long long targetIndex);
 
+int debugFlag = 0, pointerFlag = 0;
+
 /*********************** Initialization ***********************/
 struct Cache * initialize(int newCacheSize, int newBlockSize, int newAssociativity, int newMissTime, int newHitTime) {
     struct Cache *cache;
@@ -39,10 +41,12 @@ struct Cache * initialize(int newCacheSize, int newBlockSize, int newAssociativi
     cache->instructionTime = 0;
     cache->readTime = 0;
     cache->writeTime = 0;
+    cache->flushTime = 0;
     cache->transfers = 0;
     cache->kickouts = 0;
     cache->dirtyKickouts = 0;
     cache->flushKickouts = 0;
+
 
     // Initialize array of blocks
     cache->blockArray = (struct Block **) malloc(sizeof (struct Block *) * (cache->lengthOfWay));
@@ -63,9 +67,6 @@ struct Cache * initialize(int newCacheSize, int newBlockSize, int newAssociativi
 
             // Point to next block in LRU chain
             cache->blockArray[i][j].nextBlock = &(cache->blockArray[i][j + 1]);
-#ifdef CACHE_INITIALIZE_DEBUG
-            printf("|| [%p] points to: %p || \t", &cache->blockArray[i][j], cache->blockArray[i][j].nextBlock);
-#endif
         }
 
         // Initialize last block to null
@@ -73,9 +74,6 @@ struct Cache * initialize(int newCacheSize, int newBlockSize, int newAssociativi
         cache->blockArray[i][newAssociativity].valid = 0;
         cache->blockArray[i][newAssociativity].dirty = 0;
         cache->blockArray[i][newAssociativity].tag = 0;
-#ifdef CACHE_INITIALIZE_DEBUG
-        printf("|| [%p] points to: %p || \n", &cache->blockArray[i][newAssociativity], cache->blockArray[i][newAssociativity].nextBlock);
-#endif
     }
 
     // Done
@@ -84,83 +82,53 @@ struct Cache * initialize(int newCacheSize, int newBlockSize, int newAssociativi
 //
 ///********************* Read Trace Function ***************************/
 
-unsigned long long moveBlock(struct Cache* cache, unsigned long long targetTag, unsigned long long targetIndex) {
-#ifdef CACHE_DEBUG
-    printf("\n~~~> <~~~\n");
-    printf("~~~> In the moveBlock function: \n");
-#endif
+unsigned long long moveBlock(struct Cache* cache, unsigned long long targetTag, unsigned long long targetIndex, int isDirty) {
+    cache->transfers++; // Transferring data into cache
+
     struct Block *tempBlock; // Used for LRU policy implementation
 
     // Point to the first block in the index
-#ifdef CACHE_POINTER_DEBUG
-    printf(" >>>>> The cache index is pointing to: %p\n", cache->blockArray[targetIndex][0].nextBlock);
-#endif
+    tempBlock = cache->blockArray[targetIndex][0].nextBlock;
 
-    if (cache->blockArray[targetIndex][0].nextBlock != NULL)
-        tempBlock = cache->blockArray[targetIndex][0].nextBlock;
-    else {
-        printf("!!!! Cache dummy pointer is pointing to a NULL block!!\n");
-        printf("~~~> <~~~\n\n");
-        return 0;
-    }
-
-#ifdef CACHE_POINTER_DEBUG
-    printf(" >>>>> tempBlock is now pointing to: %p\n", tempBlock);
-    printf(" >>>>> Next in line is: %p\n", tempBlock->nextBlock);
-#endif
-
-#ifdef CACHE_DEBUG
-    printf("~~~> Moved tempBlock to beginning of LRU chain...\n");
-#endif
-
-    while ((tempBlock->nextBlock != NULL) && (tempBlock->valid == 1)) { // Find the LRU or first invalid block
+    while (tempBlock->nextBlock != NULL && tempBlock->valid) { // Find the LRU
         tempBlock = tempBlock->nextBlock;
-#ifdef CACHE_POINTER_DEBUG
-        printf(" >>>>> tempBlock is now pointing to: %p\n", tempBlock);
-        printf(" >>>>> Next in line is: %p\n", tempBlock->nextBlock);
-#endif
     }
 
-#ifdef CACHE_DEBUG
-    printf("~~~> tempBlock now pointing at LRU/1st invalid block...\n");
-#endif
     if ((!tempBlock->valid) || (!tempBlock->dirty)) {
-#ifdef CACHE_DEBUG
-        printf("~~~> Block was clean/invalid: good to overwrite.\n");
-#endif
+        if (debugFlag) {
+            printf("~~~> Block was invalid or clean: good to overwrite.\n");
+        }
+
+        if (tempBlock->valid && !(tempBlock->dirty)) {
+            cache->kickouts++; // Kicking out a previously valid, clean block
+        }
+
         // Block is invalid or clean, feel free to write over it
         tempBlock->tag = targetTag;
         tempBlock->valid = 1;
-        cache->kickouts++;
-        cache->writeRefs++;
+
+        // May have been written back due to a dirty/flush kick-out
+        if (isDirty) {
+            tempBlock->dirty = 1; // Needs to be written as dirty
+        }
+
+        cache->writeRefs++; // Seen as a write request
         cache->writeTime += cache->hitTime;
 
         // Update LRU chain
         // Move block to front of LRU chain
         if (cache->blockArray[targetIndex][0].nextBlock != tempBlock) {
-#ifdef CACHE_DEBUG
-            printf("~~~> tempBlock is not the head of the LRU chain, time to reorganize.\n");
-#endif
             updateLRU(cache, tempBlock, targetIndex);
-        } else {
-#ifdef CACHE_DEBUG
-            printf("~~~> tempBlock is already the head of the LRU chain, all is good.\n");
-#endif
         }
-
-#ifdef CACHE_DEBUG
-        printf("~~~> Exiting the moveBlock function successfully.\n");
-#endif
-#ifdef CACHE_POINTER_DEBUG
-        printf(" >>>>> The cache index is pointing to: %p\n", cache->blockArray[targetIndex][0].nextBlock);
-        printf("~~~> <~~~\n\n");
-#endif
         return 0;
     }
 
-#ifdef CACHE_DEBUG
-    printf("~~~> Block was dirty, need to return overwritten tag...");
-#endif
+    if (debugFlag) {
+        printf("~~~> Block was dirty, need to return overwritten tag...");
+    }
+
+    // If you made it to this point, you're pointing at the last block in the chain
+    // All blocks before it would have been valid, and this block is dirty
     unsigned long long returnedTag = tempBlock->tag; // track written over dirty tag
     cache->dirtyKickouts++;
     cache->writeRefs++;
@@ -168,68 +136,24 @@ unsigned long long moveBlock(struct Cache* cache, unsigned long long targetTag, 
 
     tempBlock->tag = targetTag; // Put in new targetTag into block
 
-#ifdef CACHE_DEBUG
-    printf("and update the LRU chain...\n");
-#endif
     // Update LRU chain
     // Move block to front of LRU chain
     if (cache->blockArray[targetIndex][0].nextBlock != tempBlock) {
-#ifdef CACHE_DEBUG
-        printf("~~~> tempBlock is not the head of the LRU chain, time to reorganize.\n");
-#endif
         updateLRU(cache, tempBlock, targetIndex);
-    } else {
-#ifdef CACHE_DEBUG
-        printf("~~~> tempBlock is already the head of the LRU chain, all is good.\n");
-#endif
     }
 
-#ifdef CACHE_DEBUG
-    printf("~~~> Successfully exiting the moveBlock function, returning dirty tag.\n");
-#endif
-
-#ifdef CACHE_POINTER_DEBUG
-    printf("\n >>>>> The cache index is pointing to: %p\n", cache->blockArray[targetIndex][0].nextBlock);
-    printf("~~~> <~~~\n\n");
-#endif
     return returnedTag; // signal that there was a dirty kick out
 }
 
 int scanCache(struct Cache* cache, unsigned long long targetTag, unsigned long long targetIndex, char op) {
-#ifdef CACHE_DEBUG
-    printf("\n~~~> <~~~\n");
-    printf("~~~> In the scanCache function: ");
-#endif
     struct Block * tempBlock; // Used for LRU policy implementation
 
     // Point to the first block in the index
-#ifdef CACHE_POINTER_DEBUG
-    printf("\n >>>>> The cache index is pointing to: %p\n", cache->blockArray[targetIndex][0].nextBlock);
-#endif
-
     tempBlock = cache->blockArray[targetIndex][0].nextBlock;
 
-#ifdef CACHE_DEBUG
-    printf("~~~> tempBlock is now pointing to start of LRU chain\n");
-#endif
-
-    int wayNumber = 1;
     while (tempBlock != NULL) {
-#ifdef CACHE_DEBUG
-        printf("~~~> Moving through the chain...Looking at way #%d", wayNumber);
-#endif
-#ifdef CACHE_POINTER_DEBUG
-        printf("\n >>>>> tempBlock is now pointing to: %p\n", tempBlock);
-        printf(" >>>>> Next in line is: %p\n", tempBlock->nextBlock);
-#endif
         if (tempBlock->valid) { // Only check blocks if they are valid
-#ifdef CACHE_DEBUG
-            printf("Checking a valid block...");
-#endif
             if (tempBlock->tag == targetTag) {
-#ifdef CACHE_DEBUG
-                printf("It's a match!\n");
-#endif
                 // Found the tag! Increment hits
                 cache->hits++;
 
@@ -247,30 +171,14 @@ int scanCache(struct Cache* cache, unsigned long long targetTag, unsigned long l
 
                 // Move block to front of LRU chain
                 if (cache->blockArray[targetIndex][0].nextBlock != tempBlock) {
-#ifdef CACHE_POINTER_DEBUG
-                    printf("~~~> tempBlock is not the head of the LRU chain, time to reorganize.\n");
-#endif
                     updateLRU(cache, tempBlock, targetIndex);
-                } else {
-#ifdef CACHE_POINTER_DEBUG
-                    printf("~~~> tempBlock is already the head of the LRU chain, all is good.\n");
-                    printf("~~~> <~~~\n\n");
-#endif
                 }
-
                 return 1;
+
             } else { // Tag didn't match
-#ifdef CACHE_DEBUG
-                printf("~~~> Valid tag didn't match\n");
-#endif
                 tempBlock = tempBlock->nextBlock;
-                wayNumber++;
             }
         } else {
-            wayNumber++;
-#ifdef CACHE_DEBUG
-            printf("~~~> It's not valid\n");
-#endif
             tempBlock = tempBlock->nextBlock;
         }
     }
@@ -288,86 +196,50 @@ int scanCache(struct Cache* cache, unsigned long long targetTag, unsigned long l
         cache->insRefs++;
     }
 
-#ifdef CACHE_DEBUG
-    printf("~~~> <~~~\n\n");
-#endif
-
     return 0;
 }
 
 // Purpose: move tempBlock to the front of the LRU chain with index targetIndex
 
 void updateLRU(struct Cache* cache, struct Block * tempBlock, unsigned long long targetIndex) {
-#ifdef CACHE_DEBUG
-    printf("\n~~~> <~~~\n");
-    printf("Starting updateLRU function...");
-#endif
     // firstBlock points to the old start of the chain
     struct Block * firstBlock = cache->blockArray[targetIndex][0].nextBlock;
-#ifdef CACHE_DEBUG
-    printf("firstBlock is now pointing to the front of the LRU chain...");
-#endif
 
-    if (tempBlock != NULL)
-        cache->blockArray[targetIndex][0].nextBlock = tempBlock; // Put block at start of chain
-    else {
-        printf("!x!x!x ATTEMPTING TO SET INDEX TO NULL! !x!x!x\n");
-        return;
-    }
-#ifdef CACHE_DEBUG
-    printf("tempBlock's block is now the start of the LRU chain.\n");
-#endif
+    cache->blockArray[targetIndex][0].nextBlock = tempBlock; // Put block at start of chain
 
     tempBlock = firstBlock;
-#ifdef CACHE_DEBUG
-    printf("tempBlock is now pointing to the old front of the LRU chain...");
-#endif
     while (tempBlock->nextBlock != cache->blockArray[targetIndex][0].nextBlock) {
         // Run through chain until you find the block that used to be before tempBlock
         tempBlock = tempBlock->nextBlock;
     }
-#ifdef CACHE_DEBUG
-    printf("and now is pointing to the block that used to be before the new front of the LRU chain\n");
-#endif
-
-    struct Block * temp2 = cache->blockArray[targetIndex][0].nextBlock;
-#ifdef CACHE_DEBUG
-    printf("temp2 is now pointing to the new start of the LRU chain...");
-#endif
-    tempBlock->nextBlock = temp2->nextBlock;
-#ifdef CACHE_DEBUG
-    printf("and now the block before doesn't point to the new front, it points to the one that came after it.\n ");
-#endif
+    struct Block * temp2 = cache->blockArray[targetIndex][0].nextBlock; // Point tempBlock at start of chain
+    tempBlock->nextBlock = temp2->nextBlock;    // 
     temp2->nextBlock = firstBlock;
-#ifdef CACHE_DEBUG
-    printf("Now the new front points to the old front, and the LRU chain is restored.");
-    printf("~~~> <~~~\n\n");
-#endif
-
     return;
-
-
 }
 
 void printCacheStatus(struct Cache * cache, int * cacheIndexCounter) {
-#ifdef CACHE_DEBUG
-    printf("*********************************************************\n");
-    // Cache variables not already printed in printSetup function at beginning
-    printf("Cache length: %d, index field size: %d, byte field size: %d\n",
-            cache->lengthOfWay, cache->indexFieldSize, cache->byteOffsetSize);
+    if (debugFlag) {
+        printf("*********************************************************\n");
+        // Cache variables not already printed in printSetup function at beginning
+        printf("Cache length: %d, index field size: %d, byte field size: %d\n",
+                cache->lengthOfWay, cache->indexFieldSize, cache->byteOffsetSize);
 
-    printf("Number of hits: %llu, misses: %llu, kick-outs: %llu, dirty kick-outs: %llu\n",
-            cache->hits, cache->misses, cache->kickouts, cache->dirtyKickouts);
+        printf("Number of hits: %llu, misses: %llu, kick-outs: %llu, dirty kick-outs: %llu\n",
+                cache->hits, cache->misses, cache->kickouts, cache->dirtyKickouts);
 
-    printf("Reference Counts: writes = %llu, reads = %llu, instructions = %llu\n",
-            cache->writeRefs, cache->readRefs, cache->insRefs);
+        printf("Number of flush kick-outs: %llu, invalidates: %llu, flush time: %llu\n",
+                cache->flushKickouts, cache->invalidates, cache->flushTime);
 
-    printf("Times: writes = %llu, reads = %llu, instructions = %llu\n",
-            cache->writeTime, cache->readTime, cache->instructionTime);
+        printf("Reference Counts: writes = %llu, reads = %llu, instructions = %llu\n",
+                cache->writeRefs, cache->readRefs, cache->insRefs);
 
-    // Go through each row of the cache
-    printf("------ Current Row Status ------\n");
-#endif
+        printf("Times: writes = %llu, reads = %llu, instructions = %llu\n",
+                cache->writeTime, cache->readTime, cache->instructionTime);
+
+        // Go through each row of the cache
+        printf("------ Current Row Status ------\n");
+    }
     int i = 0, j = 0;
     for (i = 0; i < cache->lengthOfWay; i++) {
         if (cacheIndexCounter[i] == 1) {
@@ -384,25 +256,25 @@ void printCacheStatus(struct Cache * cache, int * cacheIndexCounter) {
     }
     printf("\n");
 
-#ifdef CACHE_POINTER_DEBUG
-    printf("~~~> ---------------- Pointer Contents ----------------\n\n");
-    int row = 0, col = 0;
-    for (row = 0; row < cache->lengthOfWay; row++) {
-        if (cacheIndexCounter[row] == 1) {
-            printf("~~~> Index: %llx", (unsigned long long) row);
-            for (col = 0; col < cache->associativity + 1; col++) {
-                struct Block* thisBlock = &cache->blockArray[row][col];
-                printf("||This block:%p, points to %p||\t", thisBlock, thisBlock->nextBlock);
+    if (pointerFlag) {
+        printf("~~~> ---------------- Pointer Contents ----------------\n\n");
+        int row = 0, col = 0;
+        for (row = 0; row < cache->lengthOfWay; row++) {
+            if (cacheIndexCounter[row] == 1) {
+                printf("~~~> Index: %llx", (unsigned long long) row);
+                for (col = 0; col < cache->associativity + 1; col++) {
+                    struct Block* thisBlock = &cache->blockArray[row][col];
+                    printf("||This block:%p, points to %p||\t", thisBlock, thisBlock->nextBlock);
+                }
+                printf("\n");
             }
-            printf("\n");
         }
     }
-#endif
 
-#ifdef CACHE_DEBUG
-    printf("End of Cache Status\n\n");
-    printf("*********************************************************\n");
-#endif
+    if (debugFlag) {
+        printf("End of Cache Status\n\n");
+        printf("*********************************************************\n");
+    }
 }
 
 void freeCache(struct Cache * cache) {
@@ -417,13 +289,186 @@ void freeCache(struct Cache * cache) {
     free(cache);
 }
 
-//void checkDebugStatus() {
-//#ifdef CACHE_DEBUG
-//    printf("Debugging is turned ON in cache.c\n");
-//#endif
-//
-//#ifndef CACHE_DEBUG
-//    printf("Debugging is turned ON in cache.c\n");
-//#endif
-//
-//}
+void flushCaches(struct Cache * iCache, struct Cache * dCache, struct Cache * l2Cache, int mainMemoryTime, int transferTime, int busWidth) {
+    // Go through L1 block, flush dirty blocks to L2 Cache
+    struct Block * tempBlock;
+    unsigned long long addressTemp, indexTemp, tagTemp; // Used if L2 needs to have a tag pushed back
+
+    int index;
+    if (debugFlag) {
+        printf("~~~> Starting to flush the iCache\n");
+    }
+    for (index = 0; index < iCache->lengthOfWay; index++) {
+        tempBlock = iCache->blockArray[index][0].nextBlock;
+        // Start pointing at the beginning of the LRU chain and go all the way through
+        while (tempBlock != NULL) {
+            // Found a valid block
+            if (tempBlock->valid) {
+                tempBlock->valid = 0;
+                iCache->invalidates++; // increment invalidate counter
+                if (debugFlag) {
+                    printf("Block is now invalid, moving on\n");
+                }
+
+                // Check if it was also dirty
+                if (tempBlock->dirty) {
+                    if (debugFlag) {
+                        printf("~~~> Block was dirty, incrementing iCache flush kickouts\n");
+                    }
+
+                    iCache->flushKickouts++;
+
+                    // Get ready to write it back to the L2 Cache
+                    // Start with 0-filled variables
+                    tagTemp = 0;
+                    indexTemp = 0;
+                    addressTemp = 0;
+
+                    tagTemp = tempBlock->tag; // Get the L1 tag and shift it over to the right spot
+                    tagTemp = tagTemp << (iCache->indexFieldSize + iCache->byteOffsetSize);
+
+                    indexTemp = index; // Get the L1 index and shift it over to the right spot
+                    indexTemp = indexTemp << iCache->byteOffsetSize;
+
+                    addressTemp = indexTemp + tagTemp; // Combine the two for the original address, minus the byte size
+
+                    // Pull out the L2 index/tag
+                    indexTemp = (~0) << (l2Cache->indexFieldSize + l2Cache->byteOffsetSize);
+                    tagTemp = indexTemp;
+                    indexTemp = ~indexTemp;
+                    indexTemp = indexTemp & addressTemp;
+                    indexTemp = indexTemp >> iCache->byteOffsetSize; // Pull out the L2 index
+
+                    tagTemp = tagTemp & addressTemp;
+                    tagTemp = tagTemp >> (iCache->indexFieldSize + iCache->byteOffsetSize); // Pull out the L2 tag
+
+                    // Ready to write back to the L2 cache
+                    addressTemp = 0; // Reset to 0
+
+                    if (debugFlag) {
+                        printf("~~~> Writing dirtyBlock back to L2 cache.\n");
+                    }
+                    addressTemp = moveBlock(l2Cache, tagTemp, indexTemp, 1);
+                    iCache->flushTime += transferTime * (iCache->blockSize / busWidth); // Move dirty block from L1->L2
+
+                    if (addressTemp) {
+                        // Kicked out another block, need to add more to the flush time
+                        if (debugFlag) printf("~~~> Kicked out another dirty block in L2 cache, writing it back to main memory");
+                        l2Cache->flushKickouts++; // Increment L2 flushKickouts
+                        iCache->flushTime += mainMemoryTime;
+                    }
+                }
+            }
+            tempBlock = tempBlock->nextBlock;
+        }
+    }
+
+    // Have completed flushing the iCache, repeat for the dCache
+    if (debugFlag) {
+        printf("~~~> Starting to flush the dCache\n");
+    }
+    for (index = 0; index < dCache->lengthOfWay; index++) {
+        tempBlock = dCache->blockArray[index][0].nextBlock;
+        // Start pointing at the beginning of the LRU chain and go all the way through
+        while (tempBlock != NULL) {
+            // Found a valid block
+            if (tempBlock->valid) {
+                tempBlock->valid = 0;
+                dCache->invalidates++; // increment invalidate counter
+                if (debugFlag) {
+                    printf("Block is now invalid, moving on\n");
+                }
+
+                // Check to see if it was also dirty
+                if (tempBlock->dirty) {
+                    if (debugFlag) {
+                        printf("~~~> Block was dirty, incrementing dCache flush kickouts\n");
+                    }
+
+                    dCache->flushKickouts++;
+
+                    // Get ready to write it back to the L2 Cache
+                    // Start with 0-filled variables
+                    tagTemp = 0;
+                    indexTemp = 0;
+                    addressTemp = 0;
+
+                    tagTemp = tempBlock->tag; // Get the L1 tag and shift it over to the right spot
+                    tagTemp = tagTemp << (dCache->indexFieldSize + dCache->byteOffsetSize);
+
+                    indexTemp = index; // Get the L1 index and shift it over to the right spot
+                    indexTemp = indexTemp << dCache->byteOffsetSize;
+
+                    addressTemp = indexTemp + tagTemp; // Combine the two for the original address, minus the byte size
+
+                    // Pull out the L2 index/tag
+                    indexTemp = (~0) << (l2Cache->indexFieldSize + l2Cache->byteOffsetSize);
+                    tagTemp = indexTemp;
+                    indexTemp = ~indexTemp;
+                    indexTemp = indexTemp & addressTemp;
+                    indexTemp = indexTemp >> dCache->byteOffsetSize; // Pull out the L2 index
+
+                    tagTemp = tagTemp & addressTemp;
+                    tagTemp = tagTemp >> (dCache->indexFieldSize + dCache->byteOffsetSize); // Pull out the L2 tag
+
+                    // Ready to write back to the L2 cache
+                    addressTemp = 0; // Reset to 0
+
+                    if (debugFlag) {
+                        printf("~~~> Writing dirtyBlock back to L2 cache.\n");
+                    }
+                    addressTemp = moveBlock(l2Cache, tagTemp, indexTemp, 1);
+                    dCache->flushTime += transferTime * (dCache->blockSize / busWidth); // Move dirty block from L1->L2
+
+                    if (addressTemp) {
+                        // Kicked out another block, need to add more to the flush time
+                        if (debugFlag) printf("~~~> Kicked out another dirty block in L2 cache, writing it back to main memory");
+                        l2Cache->flushKickouts++; // Increment L2 flushKickouts
+                        dCache->flushTime += mainMemoryTime;
+                    }
+                }
+            }
+            tempBlock = tempBlock->nextBlock;
+        }
+    }
+
+    // Have completed flushing the dCache, repeat for the l2Cache
+    if (debugFlag) {
+        printf("~~~> Starting to flush the l2Cache\n");
+    }
+    for (index = 0; index < l2Cache->lengthOfWay; index++) {
+        tempBlock = l2Cache->blockArray[index][0].nextBlock;
+        // Start pointing at the beginning of the LRU chain and go all the way through
+        while (tempBlock != NULL) {
+            // Found a valid block
+            if (tempBlock->valid) {
+                tempBlock->valid = 0;
+                l2Cache->invalidates++; // increment invalidate counter
+                if (debugFlag) {
+                    printf("Block is now invalid, moving on\n");
+                }
+
+                // Check to see if it was also dirty
+                if (tempBlock->dirty) {
+                    if (debugFlag) {
+                        printf("~~~> Block was dirty, incrementing l2Cache flush kickouts\n");
+                    }
+
+                    l2Cache->flushKickouts++;
+                    l2Cache->flushTime += mainMemoryTime; // Write it back to main memory
+                }
+            }
+            tempBlock = tempBlock->nextBlock;
+        }
+    }
+
+    if (debugFlag) {
+        printf("~~~> L2 Cache flushed, all caches flushed, all blocks invalidated\n"
+                "~~~> Completed flushCache function");
+    }
+}
+
+void setDebugStatus(int status) {
+    debugFlag = status;
+    return;
+}

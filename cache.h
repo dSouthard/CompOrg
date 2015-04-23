@@ -23,12 +23,15 @@ struct Cache {
 
   // track number of hits/misses/references; need to be unsigned to handle possible sizes
   unsigned long long hits, misses, writeRefs, readRefs, insRefs;
+  
+  // track number of blocks that were invalidated during a flush
+  unsigned long long invalidates;
 
-  // track kick-outs and dirty kick-outs
+  // track kick-outs, dirty kick-outs, flush kick-outs, and transfers
   unsigned long long dirtyKickouts, kickouts, flushKickouts, transfers;
 
   // track cycles for activities
-  unsigned long long instructionTime, readTime, writeTime;
+  unsigned long long instructionTime, readTime, writeTime, flushTime;
   
   // how many cycles each hit/miss should add
   int hitTime, missTime;

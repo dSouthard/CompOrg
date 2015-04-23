@@ -9,51 +9,56 @@ Memory System:
 	 L2 Unified Cache: Size = 65536, 	Associativity = 1, 	Block size = 64
 	 Main Memory: Ready time = 30, 	Chunksize = 8, 	Chunktime = 15,
 
-Execution Time = 4994, 	Total Traces Read = 100
-Flush time = 0, Misalignments = 0
+Execution Time = 3384, 	Total Traces Read = 100
+Flush time = 0
 
 Number of Reference Types: 	[Percentage] 
-	Reads 	= 	7 	[7.0%]
-	Writes 	= 	14 	[14.0%]
-	Inst. 	= 	79 	[79.0%]
+	Reads 	= 	7 		[7.0%]
+	Writes 	= 	14  		[14.0%]
+	Inst. 	= 	79 		[79.0%]
 	Total 	= 	100
 
 Total Cycles for Activities: 	[Percentage] 
-	Reads 	= 	263 	[5.3%]
-	Writes 	= 	4951 	[99.1%]
-	Inst. 	= 	6881 	[137.8%]
-	Total 	= 	12095
+	Reads 	= 	214 		[6.3%]
+	Writes 	= 	4573 		[135.1%]
+	Inst. 	= 	6881 		[203.3%]
+	Total 	= 	11668
 
 Average Cycles for Activities: 
-	Reads = 37.0, 	Writes = 353.0, 	Instructions = 87.0
+	Reads = 30.0, 	Writes = 326.0, 	Instructions = 87.0
+
+Ideal: Execution Time = xxxxx; 	CPI = xx.xx
+Ideal Misaligned Execution Time = xxxxxx; 	CPI = xx.xx
 
 Memory Level: L1 Instruction Cache
 	Hit Count = 69, 	 Miss Count = 10
 	Total Requests = 79
 	Hit Rate: 87.3%, 	 Miss Rate = 12.7%
-	Kickouts = 10, 	 Dirty-kickouts = 0, 	 Transfers = 0
+	Kickouts = 0, 	 Dirty-kickouts = 0, 	 Transfers = 10
 	Flush Kickouts = 0
 
 Memory Level: L1 Data Cache
 	Hit Count = 8, 	 Miss Count = 13
 	Total Requests = 21
 	Hit Rate: 38.1%, 	 Miss Rate = 61.9%
-	Kickouts = 13, 	 Dirty-kickouts = 0, 	 Transfers = 0
+	Kickouts = 0, 	 Dirty-kickouts = 0, 	 Transfers = 13
 	Flush Kickouts = 0
 
-Memory Level: L1 Data Cache
+Memory Level: L2 Cache
 	Hit Count = 5, 	 Miss Count = 18
 	Total Requests = 23
 	Hit Rate: 21.7%, 	 Miss Rate = 78.3%
-	Kickouts = 18, 	 Dirty-kickouts = 0, 	 Transfers = 0
+	Kickouts = 0, 	 Dirty-kickouts = 0, 	 Transfers = 18
 	Flush Kickouts = 0
 
 
 System Costs:
-	 L1: Instruction Cache (400.00) + Data Cache(400.00) = 800.00 total
-	 L2 Cache Costs: 50.00 
-	 Main Memory Costs: 75.00 
-	 Total Memory Cost: 925.00 
+	 L1 Cache Costs (Instruction Cache $400 + Data Cache $400) = $800
+	 L2 Cache Costs: $100 
+	 Main Memory Costs: $75 
+	 Total Memory Cost: $975 
+
+Flushes = 0, Invalidates = 0
 
 ---------------------------------------------------
 ---------------------------------------------------
@@ -75,13 +80,13 @@ Index 35:	| V: 1, D: 0 Tag: 	7f81ce220|| V: 0, D: 0 Tag: - |
 Memory Level: L1 Data Cache
 Index 3d:	| V: 1, D: 1 Tag: 	7fff5a848|| V: 0, D: 0 Tag: - |
 Index 3e:	| V: 1, D: 1 Tag: 	7fff5a848|| V: 0, D: 0 Tag: - |
-Index 4e:	| V: 1, D: 0 Tag: 	7f81ce442|| V: 0, D: 0 Tag: - |
-Index 4f:	| V: 1, D: 0 Tag: 	7f81ce442|| V: 0, D: 0 Tag: - |
-Index 51:	| V: 1, D: 0 Tag: 	7f81ce442|| V: 0, D: 0 Tag: - |
-Index 54:	| V: 1, D: 0 Tag: 	7f81ce442|| V: 0, D: 0 Tag: - |
+Index 4e:	| V: 1, D: 1 Tag: 	7f81ce442|| V: 0, D: 0 Tag: - |
+Index 4f:	| V: 1, D: 1 Tag: 	7f81ce442|| V: 0, D: 0 Tag: - |
+Index 51:	| V: 1, D: 1 Tag: 	7f81ce442|| V: 0, D: 0 Tag: - |
+Index 54:	| V: 1, D: 1 Tag: 	7f81ce442|| V: 0, D: 0 Tag: - |
 Index 57:	| V: 1, D: 1 Tag: 	7f81ce442|| V: 0, D: 0 Tag: - |
 Index 5c:	| V: 1, D: 0 Tag: 	7f81ce441|| V: 0, D: 0 Tag: - |
-Index 66:	| V: 1, D: 0 Tag: 	7f81ce441|| V: 0, D: 0 Tag: - |
+Index 66:	| V: 1, D: 1 Tag: 	7f81ce441|| V: 0, D: 0 Tag: - |
 Index 71:	| V: 1, D: 0 Tag: 	7f81ce441|| V: 0, D: 0 Tag: - |
 Index 72:	| V: 1, D: 0 Tag: 	7f81ce441|| V: 0, D: 0 Tag: - |
 Index 73:	| V: 1, D: 0 Tag: 	7f81ce441|| V: 0, D: 0 Tag: - |

@@ -9,51 +9,56 @@ Memory System:
 	 L2 Unified Cache: Size = 32768, 	Associativity = 1, 	Block size = 64
 	 Main Memory: Ready time = 30, 	Chunksize = 8, 	Chunktime = 15,
 
-Execution Time = 1351, 	Total Traces Read = 25
-Flush time = 0, Misalignments = 0
+Execution Time = 931, 	Total Traces Read = 25
+Flush time = 0
 
 Number of Reference Types: 	[Percentage] 
-	Reads 	= 	1 	[4.0%]
-	Writes 	= 	7 	[28.0%]
-	Inst. 	= 	17 	[68.0%]
+	Reads 	= 	1 		[4.0%]
+	Writes 	= 	7  		[28.0%]
+	Inst. 	= 	17 		[68.0%]
 	Total 	= 	25
 
 Total Cycles for Activities: 	[Percentage] 
-	Reads 	= 	9 	[0.7%]
-	Writes 	= 	452 	[33.5%]
-	Inst. 	= 	346 	[25.6%]
-	Total 	= 	807
+	Reads 	= 	8 		[0.9%]
+	Writes 	= 	382 		[41.0%]
+	Inst. 	= 	346 		[37.2%]
+	Total 	= 	736
 
 Average Cycles for Activities: 
-	Reads = 9.0, 	Writes = 64.0, 	Instructions = 20.0
+	Reads = 8.0, 	Writes = 54.0, 	Instructions = 20.0
+
+Ideal: Execution Time = xxxxx; 	CPI = xx.xx
+Ideal Misaligned Execution Time = xxxxxx; 	CPI = xx.xx
 
 Memory Level: L1 Instruction Cache
 	Hit Count = 14, 	 Miss Count = 3
 	Total Requests = 17
 	Hit Rate: 82.4%, 	 Miss Rate = 17.6%
-	Kickouts = 3, 	 Dirty-kickouts = 0, 	 Transfers = 0
+	Kickouts = 0, 	 Dirty-kickouts = 0, 	 Transfers = 3
 	Flush Kickouts = 0
 
 Memory Level: L1 Data Cache
 	Hit Count = 5, 	 Miss Count = 3
 	Total Requests = 8
 	Hit Rate: 62.5%, 	 Miss Rate = 37.5%
-	Kickouts = 3, 	 Dirty-kickouts = 0, 	 Transfers = 0
+	Kickouts = 0, 	 Dirty-kickouts = 0, 	 Transfers = 3
 	Flush Kickouts = 0
 
-Memory Level: L1 Data Cache
+Memory Level: L2 Cache
 	Hit Count = 1, 	 Miss Count = 5
 	Total Requests = 6
 	Hit Rate: 16.7%, 	 Miss Rate = 83.3%
-	Kickouts = 5, 	 Dirty-kickouts = 0, 	 Transfers = 0
+	Kickouts = 0, 	 Dirty-kickouts = 0, 	 Transfers = 5
 	Flush Kickouts = 0
 
 
 System Costs:
-	 L1: Instruction Cache (100.00) + Data Cache(100.00) = 200.00 total
-	 L2 Cache Costs: 50.00 
-	 Main Memory Costs: 75.00 
-	 Total Memory Cost: 325.00 
+	 L1 Cache Costs (Instruction Cache $100 + Data Cache $100) = $200
+	 L2 Cache Costs: $50 
+	 Main Memory Costs: $75 
+	 Total Memory Cost: $325 
+
+Flushes = 0, Invalidates = 0
 
 ---------------------------------------------------
 ---------------------------------------------------

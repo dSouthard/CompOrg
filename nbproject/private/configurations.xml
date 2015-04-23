@@ -4,6 +4,10 @@
     <df root="." name="0">
       <df name="config">
       </df>
+      <df name="Results">
+      </df>
+      <df name="traces-short">
+      </df>
       <in>cache.c</in>
       <in>cache.h</in>
       <in>main.c</in>

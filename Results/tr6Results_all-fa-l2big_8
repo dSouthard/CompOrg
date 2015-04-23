@@ -9,51 +9,56 @@ Memory System:
 	 L2 Unified Cache: Size = 65536, 	Associativity = 1024, 	Block size = 64
 	 Main Memory: Ready time = 30, 	Chunksize = 8, 	Chunktime = 15,
 
-Execution Time = 21152, 	Total Traces Read = 1000
-Flush time = 0, Misalignments = 0
+Execution Time = 13452, 	Total Traces Read = 1000
+Flush time = 0
 
 Number of Reference Types: 	[Percentage] 
-	Reads 	= 	162 	[16.2%]
-	Writes 	= 	62 	[6.2%]
-	Inst. 	= 	776 	[77.6%]
+	Reads 	= 	162 		[16.2%]
+	Writes 	= 	62  		[6.2%]
+	Inst. 	= 	776 		[77.6%]
 	Total 	= 	1000
 
 Total Cycles for Activities: 	[Percentage] 
-	Reads 	= 	63883 	[302.0%]
-	Writes 	= 	70048 	[331.2%]
-	Inst. 	= 	613485 	[2900.4%]
-	Total 	= 	747416
+	Reads 	= 	37639 		[279.8%]
+	Writes 	= 	62050 		[461.3%]
+	Inst. 	= 	613485 		[4560.5%]
+	Total 	= 	713174
 
 Average Cycles for Activities: 
-	Reads = 394.0, 	Writes = 1129.0, 	Instructions = 790.0
+	Reads = 232.0, 	Writes = 1000.0, 	Instructions = 790.0
+
+Ideal: Execution Time = xxxxx; 	CPI = xx.xx
+Ideal Misaligned Execution Time = xxxxxx; 	CPI = xx.xx
 
 Memory Level: L1 Instruction Cache
 	Hit Count = 733, 	 Miss Count = 43
 	Total Requests = 776
 	Hit Rate: 94.5%, 	 Miss Rate = 5.5%
-	Kickouts = 43, 	 Dirty-kickouts = 0, 	 Transfers = 0
+	Kickouts = 0, 	 Dirty-kickouts = 0, 	 Transfers = 43
 	Flush Kickouts = 0
 
 Memory Level: L1 Data Cache
 	Hit Count = 157, 	 Miss Count = 67
 	Total Requests = 224
 	Hit Rate: 70.1%, 	 Miss Rate = 29.9%
-	Kickouts = 67, 	 Dirty-kickouts = 0, 	 Transfers = 0
+	Kickouts = 0, 	 Dirty-kickouts = 0, 	 Transfers = 67
 	Flush Kickouts = 0
 
-Memory Level: L1 Data Cache
+Memory Level: L2 Cache
 	Hit Count = 44, 	 Miss Count = 66
 	Total Requests = 110
 	Hit Rate: 40.0%, 	 Miss Rate = 60.0%
-	Kickouts = 66, 	 Dirty-kickouts = 0, 	 Transfers = 0
+	Kickouts = 0, 	 Dirty-kickouts = 0, 	 Transfers = 66
 	Flush Kickouts = 0
 
 
 System Costs:
-	 L1: Instruction Cache (1800.00) + Data Cache(1800.00) = 3600.00 total
-	 L2 Cache Costs: 550.00 
-	 Main Memory Costs: 75.00 
-	 Total Memory Cost: 4225.00 
+	 L1 Cache Costs (Instruction Cache $1800 + Data Cache $1800) = $3600
+	 L2 Cache Costs: $600 
+	 Main Memory Costs: $75 
+	 Total Memory Cost: $4275 
+
+Flushes = 0, Invalidates = 0
 
 ---------------------------------------------------
 ---------------------------------------------------
@@ -64,7 +69,7 @@ Index 0:	| V: 1, D: 0 Tag: 	3fc0e711035|| V: 1, D: 0 Tag: 	3fc0e711200|| V: 1, D
 
 
 Memory Level: L1 Data Cache
-Index 0:	| V: 1, D: 1 Tag: 	3fffad4243e|| V: 1, D: 1 Tag: 	3fffad4243d|| V: 1, D: 1 Tag: 	3fc0e7220dc|| V: 1, D: 0 Tag: 	3fc0e7220e6|| V: 1, D: 1 Tag: 	3fc0e7220fd|| V: 1, D: 0 Tag: 	3fc0e72214e|| V: 1, D: 0 Tag: 	3fc0e7220f1|| V: 1, D: 0 Tag: 	3fc0e72214f|| V: 1, D: 0 Tag: 	3fc0e722154|| V: 1, D: 1 Tag: 	3fc0e722157|| V: 1, D: 0 Tag: 	3fc0e7220f2|| V: 1, D: 1 Tag: 	3fc0e722151|| V: 1, D: 1 Tag: 	3fc0e7220f3|| V: 1, D: 0 Tag: 	3fc0e722163|| V: 1, D: 1 Tag: 	3fc0e722152|| V: 1, D: 1 Tag: 	3fc0e7220f4|| V: 1, D: 1 Tag: 	3fc0e722153|| V: 1, D: 0 Tag: 	3fc0e7220f5|| V: 1, D: 1 Tag: 	3fc0e7220f6|| V: 1, D: 0 Tag: 	3fc0e722155|| V: 1, D: 1 Tag: 	3fc0e7220f7|| V: 1, D: 0 Tag: 	3fc0e722156|| V: 1, D: 1 Tag: 	3fc0e7220f8|| V: 1, D: 0 Tag: 	3fc0e7220f9|| V: 1, D: 1 Tag: 	3fc0e72215a|| V: 1, D: 0 Tag: 	3fc0e722159|| V: 1, D: 1 Tag: 	3fc0e7220fa|| V: 1, D: 0 Tag: 	3fc0e72215d|| V: 1, D: 0 Tag: 	3fc0e7220fb|| V: 1, D: 0 Tag: 	3fc0e722158|| V: 1, D: 0 Tag: 	3fc0e710fc3|| V: 1, D: 0 Tag: 	3fc0e7220db|| V: 1, D: 0 Tag: 	3fc0e710fc4|| V: 1, D: 0 Tag: 	3fc0e710fc5|| V: 1, D: 1 Tag: 	3fc0e7220e2|| V: 1, D: 0 Tag: 	3fc0e710fc6|| V: 1, D: 1 Tag: 	3fc0e7220e3|| V: 1, D: 0 Tag: 	3fc0e710fc7|| V: 1, D: 0 Tag: 	3fc0e710fc8|| V: 1, D: 0 Tag: 	3fc0e710fc9|| V: 1, D: 1 Tag: 	3fc0e7220e4|| V: 1, D: 0 Tag: 	3fc0e710fca|| V: 1, D: 0 Tag: 	3fc0e710fcb|| V: 1, D: 0 Tag: 	3fc0e710fcc|| V: 1, D: 0 Tag: 	3fc0e7220e5|| V: 1, D: 0 Tag: 	3fc0e710fcd|| V: 1, D: 1 Tag: 	3fc0e7220fe|| V: 1, D: 0 Tag: 	3fc0e710fce|| V: 1, D: 0 Tag: 	3fc0e710fa2|| V: 1, D: 0 Tag: 	3fc0e710fa3|| V: 1, D: 0 Tag: 	3fc0e711cf8|| V: 1, D: 0 Tag: 	3fc0e710fa0|| V: 1, D: 0 Tag: 	3fc0e710fcf|| V: 1, D: 0 Tag: 	3fc0e710fa4|| V: 1, D: 0 Tag: 	3fc0e711cf9|| V: 1, D: 1 Tag: 	3fc0e722100|| V: 1, D: 0 Tag: 	3fc0e710fd0|| V: 1, D: 0 Tag: 	3fc0e710fac|| V: 1, D: 0 Tag: 	3fc0e710fd1|| V: 1, D: 0 Tag: 	3fc0e710fab|| V: 1, D: 0 Tag: 	3fc0e710fa5|| V: 1, D: 0 Tag: 	3fc0e710fa6|| V: 1, D: 0 Tag: 	3fc0e710fd2|| V: 1, D: 0 Tag: 	3fc0e710fa1|| V: 1, D: 1 Tag: 	3fc0e722101|| V: 1, D: 0 Tag: 	3fc0e710fd3|| V: 1, D: 1 Tag: 	3fc0e722167|| V: 0, D: 0 Tag: - || V: 0, D: 0 Tag: - || V: 0, D: 0 Tag: - || V: 0, D: 0 Tag: - || V: 0, D: 0 Tag: - || V: 0, D: 0 Tag: - || V: 0, D: 0 Tag: - || V: 0, D: 0 Tag: - || V: 0, D: 0 Tag: - || V: 0, D: 0 Tag: - || V: 0, D: 0 Tag: - || V: 0, D: 0 Tag: - || V: 0, D: 0 Tag: - || V: 0, D: 0 Tag: - || V: 0, D: 0 Tag: - || V: 0, D: 0 Tag: - || V: 0, D: 0 Tag: - || V: 0, D: 0 Tag: - || V: 0, D: 0 Tag: - || V: 0, D: 0 Tag: - || V: 0, D: 0 Tag: - || V: 0, D: 0 Tag: - || V: 0, D: 0 Tag: - || V: 0, D: 0 Tag: - || V: 0, D: 0 Tag: - || V: 0, D: 0 Tag: - || V: 0, D: 0 Tag: - || V: 0, D: 0 Tag: - || V: 0, D: 0 Tag: - || V: 0, D: 0 Tag: - || V: 0, D: 0 Tag: - || V: 0, D: 0 Tag: - || V: 0, D: 0 Tag: - || V: 0, D: 0 Tag: - || V: 0, D: 0 Tag: - || V: 0, D: 0 Tag: - || V: 0, D: 0 Tag: - || V: 0, D: 0 Tag: - || V: 0, D: 0 Tag: - || V: 0, D: 0 Tag: - || V: 0, D: 0 Tag: - || V: 0, D: 0 Tag: - || V: 0, D: 0 Tag: - || V: 0, D: 0 Tag: - || V: 0, D: 0 Tag: - || V: 0, D: 0 Tag: - || V: 0, D: 0 Tag: - || V: 0, D: 0 Tag: - || V: 0, D: 0 Tag: - || V: 0, D: 0 Tag: - || V: 0, D: 0 Tag: - || V: 0, D: 0 Tag: - || V: 0, D: 0 Tag: - || V: 0, D: 0 Tag: - || V: 0, D: 0 Tag: - || V: 0, D: 0 Tag: - || V: 0, D: 0 Tag: - || V: 0, D: 0 Tag: - || V: 0, D: 0 Tag: - || V: 0, D: 0 Tag: - || V: 0, D: 0 Tag: - || V: 0, D: 0 Tag: - || V: 0, D: 0 Tag: - || V: 0, D: 0 Tag: - || V: 0, D: 0 Tag: - || V: 0, D: 0 Tag: - || V: 0, D: 0 Tag: - || V: 0, D: 0 Tag: - || V: 0, D: 0 Tag: - || V: 0, D: 0 Tag: - || V: 0, D: 0 Tag: - || V: 0, D: 0 Tag: - || V: 0, D: 0 Tag: - || V: 0, D: 0 Tag: - || V: 0, D: 0 Tag: - || V: 0, D: 0 Tag: - || V: 0, D: 0 Tag: - || V: 0, D: 0 Tag: - || V: 0, D: 0 Tag: - || V: 0, D: 0 Tag: - || V: 0, D: 0 Tag: - || V: 0, D: 0 Tag: - || V: 0, D: 0 Tag: - || V: 0, D: 0 Tag: - || V: 0, D: 0 Tag: - || V: 0, D: 0 Tag: - || V: 0, D: 0 Tag: - || V: 0, D: 0 Tag: - || V: 0, D: 0 Tag: - || V: 0, D: 0 Tag: - || V: 0, D: 0 Tag: - || V: 0, D: 0 Tag: - || V: 0, D: 0 Tag: - || V: 0, D: 0 Tag: - || V: 0, D: 0 Tag: - || V: 0, D: 0 Tag: - || V: 0, D: 0 Tag: - || V: 0, D: 0 Tag: - || V: 0, D: 0 Tag: - || V: 0, D: 0 Tag: - || V: 0, D: 0 Tag: - || V: 0, D: 0 Tag: - || V: 0, D: 0 Tag: - || V: 0, D: 0 Tag: - || V: 0, D: 0 Tag: - || V: 0, D: 0 Tag: - || V: 0, D: 0 Tag: - || V: 0, D: 0 Tag: - || V: 0, D: 0 Tag: - || V: 0, D: 0 Tag: - || V: 0, D: 0 Tag: - || V: 0, D: 0 Tag: - || V: 0, D: 0 Tag: - || V: 0, D: 0 Tag: - || V: 0, D: 0 Tag: - || V: 0, D: 0 Tag: - || V: 0, D: 0 Tag: - || V: 0, D: 0 Tag: - || V: 0, D: 0 Tag: - || V: 0, D: 0 Tag: - || V: 0, D: 0 Tag: - || V: 0, D: 0 Tag: - || V: 0, D: 0 Tag: - || V: 0, D: 0 Tag: - || V: 0, D: 0 Tag: - || V: 0, D: 0 Tag: - || V: 0, D: 0 Tag: - || V: 0, D: 0 Tag: - || V: 0, D: 0 Tag: - || V: 0, D: 0 Tag: - || V: 0, D: 0 Tag: - || V: 0, D: 0 Tag: - || V: 0, D: 0 Tag: - || V: 0, D: 0 Tag: - || V: 0, D: 0 Tag: - || V: 0, D: 0 Tag: - || V: 0, D: 0 Tag: - || V: 0, D: 0 Tag: - || V: 0, D: 0 Tag: - || V: 0, D: 0 Tag: - || V: 0, D: 0 Tag: - || V: 0, D: 0 Tag: - || V: 0, D: 0 Tag: - || V: 0, D: 0 Tag: - || V: 0, D: 0 Tag: - || V: 0, D: 0 Tag: - || V: 0, D: 0 Tag: - || V: 0, D: 0 Tag: - || V: 0, D: 0 Tag: - || V: 0, D: 0 Tag: - || V: 0, D: 0 Tag: - || V: 0, D: 0 Tag: - || V: 0, D: 0 Tag: - || V: 0, D: 0 Tag: - || V: 0, D: 0 Tag: - || V: 0, D: 0 Tag: - || V: 0, D: 0 Tag: - || V: 0, D: 0 Tag: - || V: 0, D: 0 Tag: - || V: 0, D: 0 Tag: - || V: 0, D: 0 Tag: - || V: 0, D: 0 Tag: - || V: 0, D: 0 Tag: - || V: 0, D: 0 Tag: - || V: 0, D: 0 Tag: - || V: 0, D: 0 Tag: - || V: 0, D: 0 Tag: - || V: 0, D: 0 Tag: - || V: 0, D: 0 Tag: - || V: 0, D: 0 Tag: - || V: 0, D: 0 Tag: - || V: 0, D: 0 Tag: - || V: 0, D: 0 Tag: - || V: 0, D: 0 Tag: - || V: 0, D: 0 Tag: - || V: 0, D: 0 Tag: - || V: 0, D: 0 Tag: - || V: 0, D: 0 Tag: - || V: 0, D: 0 Tag: - || V: 0, D: 0 Tag: - || V: 0, D: 0 Tag: - || V: 0, D: 0 Tag: - || V: 0, D: 0 Tag: - || V: 0, D: 0 Tag: - || V: 0, D: 0 Tag: - || V: 0, D: 0 Tag: - || V: 0, D: 0 Tag: - || V: 0, D: 0 Tag: - || V: 0, D: 0 Tag: - |
+Index 0:	| V: 1, D: 1 Tag: 	3fffad4243e|| V: 1, D: 1 Tag: 	3fffad4243d|| V: 1, D: 1 Tag: 	3fc0e7220dc|| V: 1, D: 1 Tag: 	3fc0e7220e6|| V: 1, D: 1 Tag: 	3fc0e7220fd|| V: 1, D: 1 Tag: 	3fc0e72214e|| V: 1, D: 0 Tag: 	3fc0e7220f1|| V: 1, D: 1 Tag: 	3fc0e72214f|| V: 1, D: 1 Tag: 	3fc0e722154|| V: 1, D: 1 Tag: 	3fc0e722157|| V: 1, D: 0 Tag: 	3fc0e7220f2|| V: 1, D: 1 Tag: 	3fc0e722151|| V: 1, D: 1 Tag: 	3fc0e7220f3|| V: 1, D: 1 Tag: 	3fc0e722163|| V: 1, D: 1 Tag: 	3fc0e722152|| V: 1, D: 1 Tag: 	3fc0e7220f4|| V: 1, D: 1 Tag: 	3fc0e722153|| V: 1, D: 0 Tag: 	3fc0e7220f5|| V: 1, D: 1 Tag: 	3fc0e7220f6|| V: 1, D: 1 Tag: 	3fc0e722155|| V: 1, D: 1 Tag: 	3fc0e7220f7|| V: 1, D: 1 Tag: 	3fc0e722156|| V: 1, D: 1 Tag: 	3fc0e7220f8|| V: 1, D: 0 Tag: 	3fc0e7220f9|| V: 1, D: 1 Tag: 	3fc0e72215a|| V: 1, D: 1 Tag: 	3fc0e722159|| V: 1, D: 1 Tag: 	3fc0e7220fa|| V: 1, D: 1 Tag: 	3fc0e72215d|| V: 1, D: 0 Tag: 	3fc0e7220fb|| V: 1, D: 0 Tag: 	3fc0e722158|| V: 1, D: 0 Tag: 	3fc0e710fc3|| V: 1, D: 1 Tag: 	3fc0e7220db|| V: 1, D: 0 Tag: 	3fc0e710fc4|| V: 1, D: 0 Tag: 	3fc0e710fc5|| V: 1, D: 1 Tag: 	3fc0e7220e2|| V: 1, D: 0 Tag: 	3fc0e710fc6|| V: 1, D: 1 Tag: 	3fc0e7220e3|| V: 1, D: 0 Tag: 	3fc0e710fc7|| V: 1, D: 0 Tag: 	3fc0e710fc8|| V: 1, D: 0 Tag: 	3fc0e710fc9|| V: 1, D: 1 Tag: 	3fc0e7220e4|| V: 1, D: 0 Tag: 	3fc0e710fca|| V: 1, D: 0 Tag: 	3fc0e710fcb|| V: 1, D: 0 Tag: 	3fc0e710fcc|| V: 1, D: 1 Tag: 	3fc0e7220e5|| V: 1, D: 0 Tag: 	3fc0e710fcd|| V: 1, D: 1 Tag: 	3fc0e7220fe|| V: 1, D: 0 Tag: 	3fc0e710fce|| V: 1, D: 0 Tag: 	3fc0e710fa2|| V: 1, D: 0 Tag: 	3fc0e710fa3|| V: 1, D: 0 Tag: 	3fc0e711cf8|| V: 1, D: 0 Tag: 	3fc0e710fa0|| V: 1, D: 0 Tag: 	3fc0e710fcf|| V: 1, D: 0 Tag: 	3fc0e710fa4|| V: 1, D: 0 Tag: 	3fc0e711cf9|| V: 1, D: 1 Tag: 	3fc0e722100|| V: 1, D: 0 Tag: 	3fc0e710fd0|| V: 1, D: 0 Tag: 	3fc0e710fac|| V: 1, D: 0 Tag: 	3fc0e710fd1|| V: 1, D: 0 Tag: 	3fc0e710fab|| V: 1, D: 0 Tag: 	3fc0e710fa5|| V: 1, D: 0 Tag: 	3fc0e710fa6|| V: 1, D: 0 Tag: 	3fc0e710fd2|| V: 1, D: 0 Tag: 	3fc0e710fa1|| V: 1, D: 1 Tag: 	3fc0e722101|| V: 1, D: 0 Tag: 	3fc0e710fd3|| V: 1, D: 1 Tag: 	3fc0e722167|| V: 0, D: 0 Tag: - || V: 0, D: 0 Tag: - || V: 0, D: 0 Tag: - || V: 0, D: 0 Tag: - || V: 0, D: 0 Tag: - || V: 0, D: 0 Tag: - || V: 0, D: 0 Tag: - || V: 0, D: 0 Tag: - || V: 0, D: 0 Tag: - || V: 0, D: 0 Tag: - || V: 0, D: 0 Tag: - || V: 0, D: 0 Tag: - || V: 0, D: 0 Tag: - || V: 0, D: 0 Tag: - || V: 0, D: 0 Tag: - || V: 0, D: 0 Tag: - || V: 0, D: 0 Tag: - || V: 0, D: 0 Tag: - || V: 0, D: 0 Tag: - || V: 0, D: 0 Tag: - || V: 0, D: 0 Tag: - || V: 0, D: 0 Tag: - || V: 0, D: 0 Tag: - || V: 0, D: 0 Tag: - || V: 0, D: 0 Tag: - || V: 0, D: 0 Tag: - || V: 0, D: 0 Tag: - || V: 0, D: 0 Tag: - || V: 0, D: 0 Tag: - || V: 0, D: 0 Tag: - || V: 0, D: 0 Tag: - || V: 0, D: 0 Tag: - || V: 0, D: 0 Tag: - || V: 0, D: 0 Tag: - || V: 0, D: 0 Tag: - || V: 0, D: 0 Tag: - || V: 0, D: 0 Tag: - || V: 0, D: 0 Tag: - || V: 0, D: 0 Tag: - || V: 0, D: 0 Tag: - || V: 0, D: 0 Tag: - || V: 0, D: 0 Tag: - || V: 0, D: 0 Tag: - || V: 0, D: 0 Tag: - || V: 0, D: 0 Tag: - || V: 0, D: 0 Tag: - || V: 0, D: 0 Tag: - || V: 0, D: 0 Tag: - || V: 0, D: 0 Tag: - || V: 0, D: 0 Tag: - || V: 0, D: 0 Tag: - || V: 0, D: 0 Tag: - || V: 0, D: 0 Tag: - || V: 0, D: 0 Tag: - || V: 0, D: 0 Tag: - || V: 0, D: 0 Tag: - || V: 0, D: 0 Tag: - || V: 0, D: 0 Tag: - || V: 0, D: 0 Tag: - || V: 0, D: 0 Tag: - || V: 0, D: 0 Tag: - || V: 0, D: 0 Tag: - || V: 0, D: 0 Tag: - || V: 0, D: 0 Tag: - || V: 0, D: 0 Tag: - || V: 0, D: 0 Tag: - || V: 0, D: 0 Tag: - || V: 0, D: 0 Tag: - || V: 0, D: 0 Tag: - || V: 0, D: 0 Tag: - || V: 0, D: 0 Tag: - || V: 0, D: 0 Tag: - || V: 0, D: 0 Tag: - || V: 0, D: 0 Tag: - || V: 0, D: 0 Tag: - || V: 0, D: 0 Tag: - || V: 0, D: 0 Tag: - || V: 0, D: 0 Tag: - || V: 0, D: 0 Tag: - || V: 0, D: 0 Tag: - || V: 0, D: 0 Tag: - || V: 0, D: 0 Tag: - || V: 0, D: 0 Tag: - || V: 0, D: 0 Tag: - || V: 0, D: 0 Tag: - || V: 0, D: 0 Tag: - || V: 0, D: 0 Tag: - || V: 0, D: 0 Tag: - || V: 0, D: 0 Tag: - || V: 0, D: 0 Tag: - || V: 0, D: 0 Tag: - || V: 0, D: 0 Tag: - || V: 0, D: 0 Tag: - || V: 0, D: 0 Tag: - || V: 0, D: 0 Tag: - || V: 0, D: 0 Tag: - || V: 0, D: 0 Tag: - || V: 0, D: 0 Tag: - || V: 0, D: 0 Tag: - || V: 0, D: 0 Tag: - || V: 0, D: 0 Tag: - || V: 0, D: 0 Tag: - || V: 0, D: 0 Tag: - || V: 0, D: 0 Tag: - || V: 0, D: 0 Tag: - || V: 0, D: 0 Tag: - || V: 0, D: 0 Tag: - || V: 0, D: 0 Tag: - || V: 0, D: 0 Tag: - || V: 0, D: 0 Tag: - || V: 0, D: 0 Tag: - || V: 0, D: 0 Tag: - || V: 0, D: 0 Tag: - || V: 0, D: 0 Tag: - || V: 0, D: 0 Tag: - || V: 0, D: 0 Tag: - || V: 0, D: 0 Tag: - || V: 0, D: 0 Tag: - || V: 0, D: 0 Tag: - || V: 0, D: 0 Tag: - || V: 0, D: 0 Tag: - || V: 0, D: 0 Tag: - || V: 0, D: 0 Tag: - || V: 0, D: 0 Tag: - || V: 0, D: 0 Tag: - || V: 0, D: 0 Tag: - || V: 0, D: 0 Tag: - || V: 0, D: 0 Tag: - || V: 0, D: 0 Tag: - || V: 0, D: 0 Tag: - || V: 0, D: 0 Tag: - || V: 0, D: 0 Tag: - || V: 0, D: 0 Tag: - || V: 0, D: 0 Tag: - || V: 0, D: 0 Tag: - || V: 0, D: 0 Tag: - || V: 0, D: 0 Tag: - || V: 0, D: 0 Tag: - || V: 0, D: 0 Tag: - || V: 0, D: 0 Tag: - || V: 0, D: 0 Tag: - || V: 0, D: 0 Tag: - || V: 0, D: 0 Tag: - || V: 0, D: 0 Tag: - || V: 0, D: 0 Tag: - || V: 0, D: 0 Tag: - || V: 0, D: 0 Tag: - || V: 0, D: 0 Tag: - || V: 0, D: 0 Tag: - || V: 0, D: 0 Tag: - || V: 0, D: 0 Tag: - || V: 0, D: 0 Tag: - || V: 0, D: 0 Tag: - || V: 0, D: 0 Tag: - || V: 0, D: 0 Tag: - || V: 0, D: 0 Tag: - || V: 0, D: 0 Tag: - || V: 0, D: 0 Tag: - || V: 0, D: 0 Tag: - || V: 0, D: 0 Tag: - || V: 0, D: 0 Tag: - || V: 0, D: 0 Tag: - || V: 0, D: 0 Tag: - || V: 0, D: 0 Tag: - || V: 0, D: 0 Tag: - || V: 0, D: 0 Tag: - || V: 0, D: 0 Tag: - || V: 0, D: 0 Tag: - || V: 0, D: 0 Tag: - || V: 0, D: 0 Tag: - || V: 0, D: 0 Tag: - || V: 0, D: 0 Tag: - || V: 0, D: 0 Tag: - || V: 0, D: 0 Tag: - || V: 0, D: 0 Tag: - || V: 0, D: 0 Tag: - || V: 0, D: 0 Tag: - || V: 0, D: 0 Tag: - || V: 0, D: 0 Tag: - || V: 0, D: 0 Tag: - || V: 0, D: 0 Tag: - || V: 0, D: 0 Tag: - || V: 0, D: 0 Tag: - || V: 0, D: 0 Tag: - || V: 0, D: 0 Tag: - || V: 0, D: 0 Tag: - || V: 0, D: 0 Tag: - || V: 0, D: 0 Tag: - || V: 0, D: 0 Tag: - |
 
 
 Memory Level: L2 Unified Cache 

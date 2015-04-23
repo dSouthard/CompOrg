@@ -9,51 +9,56 @@ Memory System:
 	 L2 Unified Cache: Size = 32768, 	Associativity = 4, 	Block size = 64
 	 Main Memory: Ready time = 30, 	Chunksize = 8, 	Chunktime = 15,
 
-Execution Time = 21152, 	Total Traces Read = 1000
-Flush time = 0, Misalignments = 0
+Execution Time = 13452, 	Total Traces Read = 1000
+Flush time = 0
 
 Number of Reference Types: 	[Percentage] 
-	Reads 	= 	162 	[16.2%]
-	Writes 	= 	62 	[6.2%]
-	Inst. 	= 	776 	[77.6%]
+	Reads 	= 	162 		[16.2%]
+	Writes 	= 	62  		[6.2%]
+	Inst. 	= 	776 		[77.6%]
 	Total 	= 	1000
 
 Total Cycles for Activities: 	[Percentage] 
-	Reads 	= 	63883 	[302.0%]
-	Writes 	= 	70048 	[331.2%]
-	Inst. 	= 	613485 	[2900.4%]
-	Total 	= 	747416
+	Reads 	= 	37639 		[279.8%]
+	Writes 	= 	62050 		[461.3%]
+	Inst. 	= 	613485 		[4560.5%]
+	Total 	= 	713174
 
 Average Cycles for Activities: 
-	Reads = 394.0, 	Writes = 1129.0, 	Instructions = 790.0
+	Reads = 232.0, 	Writes = 1000.0, 	Instructions = 790.0
+
+Ideal: Execution Time = xxxxx; 	CPI = xx.xx
+Ideal Misaligned Execution Time = xxxxxx; 	CPI = xx.xx
 
 Memory Level: L1 Instruction Cache
 	Hit Count = 733, 	 Miss Count = 43
 	Total Requests = 776
 	Hit Rate: 94.5%, 	 Miss Rate = 5.5%
-	Kickouts = 43, 	 Dirty-kickouts = 0, 	 Transfers = 0
+	Kickouts = 0, 	 Dirty-kickouts = 0, 	 Transfers = 43
 	Flush Kickouts = 0
 
 Memory Level: L1 Data Cache
 	Hit Count = 157, 	 Miss Count = 67
 	Total Requests = 224
 	Hit Rate: 70.1%, 	 Miss Rate = 29.9%
-	Kickouts = 67, 	 Dirty-kickouts = 0, 	 Transfers = 0
+	Kickouts = 0, 	 Dirty-kickouts = 0, 	 Transfers = 67
 	Flush Kickouts = 0
 
-Memory Level: L1 Data Cache
+Memory Level: L2 Cache
 	Hit Count = 44, 	 Miss Count = 66
 	Total Requests = 110
 	Hit Rate: 40.0%, 	 Miss Rate = 60.0%
-	Kickouts = 66, 	 Dirty-kickouts = 0, 	 Transfers = 0
+	Kickouts = 0, 	 Dirty-kickouts = 0, 	 Transfers = 66
 	Flush Kickouts = 0
 
 
 System Costs:
-	 L1: Instruction Cache (600.00) + Data Cache(600.00) = 1200.00 total
-	 L2 Cache Costs: 150.00 
-	 Main Memory Costs: 75.00 
-	 Total Memory Cost: 1425.00 
+	 L1 Cache Costs (Instruction Cache $600 + Data Cache $600) = $1200
+	 L2 Cache Costs: $150 
+	 Main Memory Costs: $75 
+	 Total Memory Cost: $1425 
+
+Flushes = 0, Invalidates = 0
 
 ---------------------------------------------------
 ---------------------------------------------------
@@ -119,29 +124,29 @@ Index a:	| V: 1, D: 0 Tag: 	ff039c43f|| V: 0, D: 0 Tag: - || V: 0, D: 0 Tag: - |
 Index b:	| V: 1, D: 0 Tag: 	ff039c43f|| V: 0, D: 0 Tag: - || V: 0, D: 0 Tag: - || V: 0, D: 0 Tag: - |
 Index c:	| V: 1, D: 0 Tag: 	ff039c43f|| V: 0, D: 0 Tag: - || V: 0, D: 0 Tag: - || V: 0, D: 0 Tag: - |
 Index d:	| V: 1, D: 0 Tag: 	ff039c43f|| V: 0, D: 0 Tag: - || V: 0, D: 0 Tag: - || V: 0, D: 0 Tag: - |
-Index e:	| V: 1, D: 0 Tag: 	ff039c885|| V: 1, D: 0 Tag: 	ff039c43f|| V: 0, D: 0 Tag: - || V: 0, D: 0 Tag: - |
-Index f:	| V: 1, D: 0 Tag: 	ff039c885|| V: 1, D: 0 Tag: 	ff039c43f|| V: 0, D: 0 Tag: - || V: 0, D: 0 Tag: - |
+Index e:	| V: 1, D: 1 Tag: 	ff039c885|| V: 1, D: 0 Tag: 	ff039c43f|| V: 0, D: 0 Tag: - || V: 0, D: 0 Tag: - |
+Index f:	| V: 1, D: 1 Tag: 	ff039c885|| V: 1, D: 0 Tag: 	ff039c43f|| V: 0, D: 0 Tag: - || V: 0, D: 0 Tag: - |
 Index 10:	| V: 1, D: 0 Tag: 	ff039c43f|| V: 0, D: 0 Tag: - || V: 0, D: 0 Tag: - || V: 0, D: 0 Tag: - |
 Index 11:	| V: 1, D: 1 Tag: 	ff039c885|| V: 1, D: 0 Tag: 	ff039c43f|| V: 0, D: 0 Tag: - || V: 0, D: 0 Tag: - |
 Index 12:	| V: 1, D: 1 Tag: 	ff039c885|| V: 1, D: 0 Tag: 	ff039c43f|| V: 0, D: 0 Tag: - || V: 0, D: 0 Tag: - |
 Index 13:	| V: 1, D: 1 Tag: 	ff039c885|| V: 1, D: 0 Tag: 	ff039c43f|| V: 0, D: 0 Tag: - || V: 0, D: 0 Tag: - |
-Index 14:	| V: 1, D: 0 Tag: 	ff039c885|| V: 0, D: 0 Tag: - || V: 0, D: 0 Tag: - || V: 0, D: 0 Tag: - |
-Index 15:	| V: 1, D: 0 Tag: 	ff039c885|| V: 0, D: 0 Tag: - || V: 0, D: 0 Tag: - || V: 0, D: 0 Tag: - |
-Index 16:	| V: 1, D: 0 Tag: 	ff039c885|| V: 0, D: 0 Tag: - || V: 0, D: 0 Tag: - || V: 0, D: 0 Tag: - |
+Index 14:	| V: 1, D: 1 Tag: 	ff039c885|| V: 0, D: 0 Tag: - || V: 0, D: 0 Tag: - || V: 0, D: 0 Tag: - |
+Index 15:	| V: 1, D: 1 Tag: 	ff039c885|| V: 0, D: 0 Tag: - || V: 0, D: 0 Tag: - || V: 0, D: 0 Tag: - |
+Index 16:	| V: 1, D: 1 Tag: 	ff039c885|| V: 0, D: 0 Tag: - || V: 0, D: 0 Tag: - || V: 0, D: 0 Tag: - |
 Index 17:	| V: 1, D: 1 Tag: 	ff039c885|| V: 0, D: 0 Tag: - || V: 0, D: 0 Tag: - || V: 0, D: 0 Tag: - |
 Index 18:	| V: 1, D: 0 Tag: 	ff039c885|| V: 0, D: 0 Tag: - || V: 0, D: 0 Tag: - || V: 0, D: 0 Tag: - |
-Index 19:	| V: 1, D: 0 Tag: 	ff039c885|| V: 0, D: 0 Tag: - || V: 0, D: 0 Tag: - || V: 0, D: 0 Tag: - |
+Index 19:	| V: 1, D: 1 Tag: 	ff039c885|| V: 0, D: 0 Tag: - || V: 0, D: 0 Tag: - || V: 0, D: 0 Tag: - |
 Index 1a:	| V: 1, D: 1 Tag: 	ff039c885|| V: 0, D: 0 Tag: - || V: 0, D: 0 Tag: - || V: 0, D: 0 Tag: - |
-Index 1b:	| V: 1, D: 0 Tag: 	ff039c883|| V: 0, D: 0 Tag: - || V: 0, D: 0 Tag: - || V: 0, D: 0 Tag: - |
+Index 1b:	| V: 1, D: 1 Tag: 	ff039c883|| V: 0, D: 0 Tag: - || V: 0, D: 0 Tag: - || V: 0, D: 0 Tag: - |
 Index 1c:	| V: 1, D: 1 Tag: 	ff039c883|| V: 0, D: 0 Tag: - || V: 0, D: 0 Tag: - || V: 0, D: 0 Tag: - |
-Index 1d:	| V: 1, D: 0 Tag: 	ff039c885|| V: 0, D: 0 Tag: - || V: 0, D: 0 Tag: - || V: 0, D: 0 Tag: - |
+Index 1d:	| V: 1, D: 1 Tag: 	ff039c885|| V: 0, D: 0 Tag: - || V: 0, D: 0 Tag: - || V: 0, D: 0 Tag: - |
 Index 20:	| V: 1, D: 0 Tag: 	ff039c43e|| V: 0, D: 0 Tag: - || V: 0, D: 0 Tag: - || V: 0, D: 0 Tag: - |
 Index 21:	| V: 1, D: 0 Tag: 	ff039c43e|| V: 0, D: 0 Tag: - || V: 0, D: 0 Tag: - || V: 0, D: 0 Tag: - |
 Index 22:	| V: 1, D: 1 Tag: 	ff039c883|| V: 1, D: 0 Tag: 	ff039c43e|| V: 0, D: 0 Tag: - || V: 0, D: 0 Tag: - |
-Index 23:	| V: 1, D: 0 Tag: 	ff039c885|| V: 1, D: 1 Tag: 	ff039c883|| V: 1, D: 0 Tag: 	ff039c43e|| V: 0, D: 0 Tag: - |
+Index 23:	| V: 1, D: 1 Tag: 	ff039c885|| V: 1, D: 1 Tag: 	ff039c883|| V: 1, D: 0 Tag: 	ff039c43e|| V: 0, D: 0 Tag: - |
 Index 24:	| V: 1, D: 1 Tag: 	ff039c883|| V: 1, D: 0 Tag: 	ff039c43e|| V: 0, D: 0 Tag: - || V: 0, D: 0 Tag: - |
-Index 25:	| V: 1, D: 0 Tag: 	ff039c883|| V: 1, D: 0 Tag: 	ff039c43e|| V: 0, D: 0 Tag: - || V: 0, D: 0 Tag: - |
-Index 26:	| V: 1, D: 0 Tag: 	ff039c883|| V: 1, D: 0 Tag: 	ff039c43e|| V: 0, D: 0 Tag: - || V: 0, D: 0 Tag: - |
+Index 25:	| V: 1, D: 1 Tag: 	ff039c883|| V: 1, D: 0 Tag: 	ff039c43e|| V: 0, D: 0 Tag: - || V: 0, D: 0 Tag: - |
+Index 26:	| V: 1, D: 1 Tag: 	ff039c883|| V: 1, D: 0 Tag: 	ff039c43e|| V: 0, D: 0 Tag: - || V: 0, D: 0 Tag: - |
 Index 27:	| V: 1, D: 1 Tag: 	ff039c885|| V: 0, D: 0 Tag: - || V: 0, D: 0 Tag: - || V: 0, D: 0 Tag: - |
 Index 2b:	| V: 1, D: 0 Tag: 	ff039c43e|| V: 0, D: 0 Tag: - || V: 0, D: 0 Tag: - || V: 0, D: 0 Tag: - |
 Index 2c:	| V: 1, D: 0 Tag: 	ff039c43e|| V: 0, D: 0 Tag: - || V: 0, D: 0 Tag: - || V: 0, D: 0 Tag: - |

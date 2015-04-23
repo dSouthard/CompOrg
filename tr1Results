@@ -1,0 +1,223 @@
+Configuration: default_8
+
+-------------- Inputting Traces Now -------------
+
+Trace #1 --- Address  = 7f81ce2206b0, Byte Size = 3, Type = I 
+	 *** L1 Start Address = 7f81ce2206b0 
+	 *** L1: Index Field = 35, Tag Field = 3fc0e7110 *** 
+	 MISS: Not found in L1, adding L1 miss time (+1)
+	 *** L2 Start Address = 7f81ce2206b0 
+	 *** L2: Index Field = 1a, Tag Field = ff039c44 *** 
+	 MISS: Not found in L2, adding L2 miss time (+7)
+	 Bringing in from main memory (+160)
+~~~> Block was invalid or clean: good to overwrite.
+	 Writing block back to L1...Adding L2->L1 transfer time (+10)
+	 Adding L1 replay time (+1)
+~~~> Block was invalid or clean: good to overwrite.
+	 ---> Total trace time: 179
+	 ---> Total execution time: 179
+-------------------- End of Trace --------------------
+-------------- Inputting Traces Now -------------
+
+Trace #2 --- Address  = 7f81ce2206b3, Byte Size = 5, Type = I 
+	 *** L1 Start Address = 7f81ce2206b0 
+	 *** L1: Index Field = 35, Tag Field = 3fc0e7110 *** 
+	 HIT: Found in L1, adding L1 hit time (+1)
+	 ---> Total trace time: 1
+	 ---> Total execution time: 180
+-------------------- End of Trace --------------------
+-------------- Inputting Traces Now -------------
+
+Trace #3 --- Address  = 7fff5a8487d8, Byte Size = 8, Type = W 
+	 *** L1 Start Address = 7fff5a8487d8 
+	 *** L1: Index Field = 3e, Tag Field = 3fffad424 *** 
+	 MISS: Not found in L1, adding L1 Miss time (+1)
+	 *** L2: Index Field = 1f, Tag Field = fffeb509 *** 
+	 MISS: Not found in L2, adding L2 miss time (+7)
+	 Bringing in from main memory (+160)
+~~~> Block was invalid or clean: good to overwrite.
+	 Writing block back to L1...Adding L2->L1 transfer time (+10)
+	 Adding L1 replay time (+1)
+~~~> Block was invalid or clean: good to overwrite.
+	 ---> Total trace time: 179
+	 ---> Total execution time: 359
+-------------------- End of Trace --------------------
+-------------- Inputting Traces Now -------------
+
+Trace #4 --- Address  = 7f81ce224010, Byte Size = 1, Type = I 
+	 *** L1 Start Address = 7f81ce224010 
+	 *** L1: Index Field = 0, Tag Field = 3fc0e7112 *** 
+	 MISS: Not found in L1, adding L1 miss time (+1)
+	 *** L2 Start Address = 7f81ce224010 
+	 *** L2: Index Field = 100, Tag Field = ff039c44 *** 
+	 MISS: Not found in L2, adding L2 miss time (+7)
+	 Bringing in from main memory (+160)
+~~~> Block was invalid or clean: good to overwrite.
+	 Writing block back to L1...Adding L2->L1 transfer time (+10)
+	 Adding L1 replay time (+1)
+~~~> Block was invalid or clean: good to overwrite.
+	 ---> Total trace time: 179
+	 ---> Total execution time: 538
+-------------------- End of Trace --------------------
+-------------- Inputting Traces Now -------------
+
+Trace #5 --- Address  = 7fff5a8487d0, Byte Size = 8, Type = W 
+	 *** L1 Start Address = 7fff5a8487d0 
+	 *** L1: Index Field = 3e, Tag Field = 3fffad424 *** 
+	 HIT: Found in L1, adding L1 hit time (+1)
+	 ---> Total trace time: 1
+	 ---> Total execution time: 539
+-------------------- End of Trace --------------------
+-------------- Inputting Traces Now -------------
+
+Trace #6 --- Address  = 7f81ce224011, Byte Size = 3, Type = I 
+	 *** L1 Start Address = 7f81ce224010 
+	 *** L1: Index Field = 0, Tag Field = 3fc0e7112 *** 
+	 HIT: Found in L1, adding L1 hit time (+1)
+	 ---> Total trace time: 1
+	 ---> Total execution time: 540
+-------------------- End of Trace --------------------
+-------------- Inputting Traces Now -------------
+
+Trace #7 --- Address  = 7f81ce224014, Byte Size = 2, Type = I 
+	 *** L1 Start Address = 7f81ce224014 
+	 *** L1: Index Field = 0, Tag Field = 3fc0e7112 *** 
+	 HIT: Found in L1, adding L1 hit time (+1)
+	 ---> Total trace time: 1
+	 ---> Total execution time: 541
+-------------------- End of Trace --------------------
+-------------- Inputting Traces Now -------------
+
+Trace #8 --- Address  = 7fff5a8487c8, Byte Size = 8, Type = W 
+	 *** L1 Start Address = 7fff5a8487c8 
+	 *** L1: Index Field = 3e, Tag Field = 3fffad424 *** 
+	 HIT: Found in L1, adding L1 hit time (+1)
+	 ---> Total trace time: 1
+	 ---> Total execution time: 542
+-------------------- End of Trace --------------------
+-------------- Inputting Traces Now -------------
+
+Trace #9 --- Address  = 7f81ce224016, Byte Size = 2, Type = I 
+	 *** L1 Start Address = 7f81ce224014 
+	 *** L1: Index Field = 0, Tag Field = 3fc0e7112 *** 
+	 HIT: Found in L1, adding L1 hit time (+1)
+	 ---> Total trace time: 1
+	 ---> Total execution time: 543
+-------------------- End of Trace --------------------
+-------------- Inputting Traces Now -------------
+
+Trace #10 --- Address  = 7fff5a8487c0, Byte Size = 8, Type = W 
+	 *** L1 Start Address = 7fff5a8487c0 
+	 *** L1: Index Field = 3e, Tag Field = 3fffad424 *** 
+	 HIT: Found in L1, adding L1 hit time (+1)
+	 ---> Total trace time: 1
+	 ---> Total execution time: 544
+-------------------- End of Trace --------------------
+---------------------------------------------------
+				 Simulation Results
+---------------------------------------------------
+Memory System:
+	 D Cache: Size = 8192, 	Associativity = 1, 	Block size = 32
+	 I Cache: Size = 8192, 	Associativity = 1, 	Block size = 32
+	 L2 Unified Cache: Size = 32768, 	Associativity = 1, 	Block size = 64
+	 Main Memory: Ready time = 30, 	Chunksize = 8, 	Chunktime = 15,
+
+Execution Time = 544, 	Total Traces Read = 10
+Flush time = 0
+
+Number of Reference Types: 	[Percentage] 
+	Reads 	= 	0 		[0.0%]
+	Writes 	= 	4  		[40.0%]
+	Inst. 	= 	6 		[60.0%]
+	Total 	= 	10
+
+Total Cycles for Activities: 	[Percentage] 
+	Reads 	= 	0 		[0.0%]
+	Writes 	= 	117 		[21.5%]
+	Inst. 	= 	64 		[11.8%]
+	Total 	= 	181
+
+Average Cycles for Activities: 
+	Reads = 0.0, 	Writes = 29.0, 	Instructions = 10.0
+
+Ideal: Execution Time = xxxxx; 	CPI = xx.xx
+Ideal Misaligned Execution Time = xxxxxx; 	CPI = xx.xx
+
+Memory Level: L1 Instruction Cache
+	Hit Count = 4, 	 Miss Count = 2
+	Total Requests = 6
+	Hit Rate: 66.7%, 	 Miss Rate = 33.3%
+	Kickouts = 0, 	 Dirty-kickouts = 0, 	 Transfers = 2
+	Flush Kickouts = 0
+
+Memory Level: L1 Data Cache
+	Hit Count = 3, 	 Miss Count = 1
+	Total Requests = 4
+	Hit Rate: 75.0%, 	 Miss Rate = 25.0%
+	Kickouts = 0, 	 Dirty-kickouts = 0, 	 Transfers = 1
+	Flush Kickouts = 0
+
+Memory Level: L2 Cache
+	Hit Count = 0, 	 Miss Count = 3
+	Total Requests = 3
+	Hit Rate: 0.0%, 	 Miss Rate = 100.0%
+	Kickouts = 0, 	 Dirty-kickouts = 0, 	 Transfers = 3
+	Flush Kickouts = 0
+
+
+System Costs:
+	 L1 Cache Costs (Instruction Cache $200 + Data Cache $200) = $400
+	 L2 Cache Costs: $50 
+	 Main Memory Costs: $75 
+	 Total Memory Cost: $525 
+
+Flushes = 0, Invalidates = 0
+
+---------------------------------------------------
+---------------------------------------------------
+Cache Final Contents: 
+
+Memory Level: L1 Instruction Cache
+*********************************************************
+Cache length: 256, index field size: 8, byte field size: 5
+Number of hits: 4, misses: 2, kick-outs: 0, dirty kick-outs: 0
+Number of flush kick-outs: 0, invalidates: 0, flush time: 0
+Reference Counts: writes = 2, reads = 0, instructions = 6
+Times: writes = 2, reads = 0, instructions = 6
+------ Current Row Status ------
+Index 0:	| V: 1, D: 0 Tag: 	3fc0e7112|
+Index 35:	| V: 1, D: 0 Tag: 	3fc0e7110|
+
+End of Cache Status
+
+*********************************************************
+
+Memory Level: L1 Data Cache
+*********************************************************
+Cache length: 256, index field size: 8, byte field size: 5
+Number of hits: 3, misses: 1, kick-outs: 0, dirty kick-outs: 0
+Number of flush kick-outs: 0, invalidates: 0, flush time: 0
+Reference Counts: writes = 5, reads = 0, instructions = 0
+Times: writes = 5, reads = 0, instructions = 0
+------ Current Row Status ------
+Index 3e:	| V: 1, D: 1 Tag: 	3fffad424|
+
+End of Cache Status
+
+*********************************************************
+
+Memory Level: L2 Unified Cache 
+*********************************************************
+Cache length: 512, index field size: 9, byte field size: 6
+Number of hits: 0, misses: 3, kick-outs: 0, dirty kick-outs: 0
+Number of flush kick-outs: 0, invalidates: 0, flush time: 0
+Reference Counts: writes = 4, reads = 0, instructions = 2
+Times: writes = 22, reads = 0, instructions = 14
+------ Current Row Status ------
+Index 1a:	| V: 1, D: 0 Tag: 	ff039c44|
+Index 1f:	| V: 1, D: 0 Tag: 	fffeb509|
+Index 100:	| V: 1, D: 0 Tag: 	ff039c44|
+
+End of Cache Status
+
+*********************************************************

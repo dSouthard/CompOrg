@@ -1,0 +1,1260 @@
+-------------- Inputting Traces Now -------------
+
+Trace #1 --- Address  = 7f81ce2206b0, Byte Size = 3, Type = I 
+	 *** L1: Index Field = 35, Tag Field = 3fc0e7110 *** 
+
+~~~> <~~~
+~~~> In the scanCache function: ~~~> tempBlock is now pointing to start of LRU chain
+~~~> Moving through the chain...Looking at way #1~~~> It's not valid
+~~~> <~~~
+
+	 MISS: Not found in L1, adding L1 miss time (+1)
+	 *** L2: Index Field = 1a, Tag Field = ff039c44 *** 
+
+~~~> <~~~
+~~~> In the scanCache function: ~~~> tempBlock is now pointing to start of LRU chain
+~~~> Moving through the chain...Looking at way #1~~~> It's not valid
+~~~> <~~~
+
+	 MISS: Not found in L2, adding L2 miss time (+7)
+	 Bringing in from main memory (+160)
+
+~~~> <~~~
+~~~> In the moveBlock function: 
+~~~> Moved tempBlock to beginning of LRU chain...
+~~~> tempBlock now pointing at LRU/1st invalid block...
+~~~> Block was clean/invalid: good to overwrite.
+~~~> tempBlock is already the head of the LRU chain, all is good.
+~~~> Exiting the moveBlock function successfully.
+	 Writing block back to L1...Adding L2->L1 transfer time (+10)
+	 Adding L1 replay time (+1)
+
+~~~> <~~~
+~~~> In the moveBlock function: 
+~~~> Moved tempBlock to beginning of LRU chain...
+~~~> tempBlock now pointing at LRU/1st invalid block...
+~~~> Block was clean/invalid: good to overwrite.
+~~~> tempBlock is already the head of the LRU chain, all is good.
+~~~> Exiting the moveBlock function successfully.
+	 ---> Total trace time: 179
+	 ---> Total execution time: 179
+-------------------- End of Trace --------------------
+
+Trace #2 --- Address  = 7f81ce2206b3, Byte Size = 5, Type = I 
+	 *** L1: Index Field = 35, Tag Field = 3fc0e7110 *** 
+
+~~~> <~~~
+~~~> In the scanCache function: ~~~> tempBlock is now pointing to start of LRU chain
+~~~> Moving through the chain...Looking at way #1Checking a valid block...It's a match!
+	 HIT: Found in L1, adding L1 hit time (+1)
+	 ---> Total trace time: 1
+	 ---> Total execution time: 180
+-------------------- End of Trace --------------------
+
+Trace #3 --- Address  = 7fff5a8487d8, Byte Size = 8, Type = W 
+	 *** L1: Index Field = 3e, Tag Field = 3fffad424 *** 
+
+~~~> <~~~
+~~~> In the scanCache function: ~~~> tempBlock is now pointing to start of LRU chain
+~~~> Moving through the chain...Looking at way #1~~~> It's not valid
+~~~> <~~~
+
+	 MISS: Not found in L1, adding L1 Miss time (+1)
+	 *** L2: Index Field = 1f, Tag Field = fffeb509 *** 
+
+~~~> <~~~
+~~~> In the scanCache function: ~~~> tempBlock is now pointing to start of LRU chain
+~~~> Moving through the chain...Looking at way #1~~~> It's not valid
+~~~> <~~~
+
+	 MISS: Not found in L2, adding L2 miss time (+7)
+	 Bringing in from main memory (+160)
+
+~~~> <~~~
+~~~> In the moveBlock function: 
+~~~> Moved tempBlock to beginning of LRU chain...
+~~~> tempBlock now pointing at LRU/1st invalid block...
+~~~> Block was clean/invalid: good to overwrite.
+~~~> tempBlock is already the head of the LRU chain, all is good.
+~~~> Exiting the moveBlock function successfully.
+	 Writing block back to L1...Adding L2->L1 transfer time (+10)
+	 Adding L1 replay time (+1)
+
+~~~> <~~~
+~~~> In the moveBlock function: 
+~~~> Moved tempBlock to beginning of LRU chain...
+~~~> tempBlock now pointing at LRU/1st invalid block...
+~~~> Block was clean/invalid: good to overwrite.
+~~~> tempBlock is already the head of the LRU chain, all is good.
+~~~> Exiting the moveBlock function successfully.
+	 ---> Total trace time: 179
+	 ---> Total execution time: 359
+-------------------- End of Trace --------------------
+
+Trace #4 --- Address  = 7f81ce224010, Byte Size = 1, Type = I 
+	 *** L1: Index Field = 0, Tag Field = 3fc0e7112 *** 
+
+~~~> <~~~
+~~~> In the scanCache function: ~~~> tempBlock is now pointing to start of LRU chain
+~~~> Moving through the chain...Looking at way #1~~~> It's not valid
+~~~> <~~~
+
+	 MISS: Not found in L1, adding L1 miss time (+1)
+	 *** L2: Index Field = 100, Tag Field = ff039c44 *** 
+
+~~~> <~~~
+~~~> In the scanCache function: ~~~> tempBlock is now pointing to start of LRU chain
+~~~> Moving through the chain...Looking at way #1~~~> It's not valid
+~~~> <~~~
+
+	 MISS: Not found in L2, adding L2 miss time (+7)
+	 Bringing in from main memory (+160)
+
+~~~> <~~~
+~~~> In the moveBlock function: 
+~~~> Moved tempBlock to beginning of LRU chain...
+~~~> tempBlock now pointing at LRU/1st invalid block...
+~~~> Block was clean/invalid: good to overwrite.
+~~~> tempBlock is already the head of the LRU chain, all is good.
+~~~> Exiting the moveBlock function successfully.
+	 Writing block back to L1...Adding L2->L1 transfer time (+10)
+	 Adding L1 replay time (+1)
+
+~~~> <~~~
+~~~> In the moveBlock function: 
+~~~> Moved tempBlock to beginning of LRU chain...
+~~~> tempBlock now pointing at LRU/1st invalid block...
+~~~> Block was clean/invalid: good to overwrite.
+~~~> tempBlock is already the head of the LRU chain, all is good.
+~~~> Exiting the moveBlock function successfully.
+	 ---> Total trace time: 179
+	 ---> Total execution time: 538
+-------------------- End of Trace --------------------
+
+Trace #5 --- Address  = 7fff5a8487d0, Byte Size = 8, Type = W 
+	 *** L1: Index Field = 3e, Tag Field = 3fffad424 *** 
+
+~~~> <~~~
+~~~> In the scanCache function: ~~~> tempBlock is now pointing to start of LRU chain
+~~~> Moving through the chain...Looking at way #1Checking a valid block...It's a match!
+	 HIT: Found in L1, adding L1 hit time (+1)
+	 ---> Total trace time: 1
+	 ---> Total execution time: 539
+-------------------- End of Trace --------------------
+
+Trace #6 --- Address  = 7f81ce224011, Byte Size = 3, Type = I 
+	 *** L1: Index Field = 0, Tag Field = 3fc0e7112 *** 
+
+~~~> <~~~
+~~~> In the scanCache function: ~~~> tempBlock is now pointing to start of LRU chain
+~~~> Moving through the chain...Looking at way #1Checking a valid block...It's a match!
+	 HIT: Found in L1, adding L1 hit time (+1)
+	 ---> Total trace time: 1
+	 ---> Total execution time: 540
+-------------------- End of Trace --------------------
+
+Trace #7 --- Address  = 7f81ce224014, Byte Size = 2, Type = I 
+	 *** L1: Index Field = 0, Tag Field = 3fc0e7112 *** 
+
+~~~> <~~~
+~~~> In the scanCache function: ~~~> tempBlock is now pointing to start of LRU chain
+~~~> Moving through the chain...Looking at way #1Checking a valid block...It's a match!
+	 HIT: Found in L1, adding L1 hit time (+1)
+	 ---> Total trace time: 1
+	 ---> Total execution time: 541
+-------------------- End of Trace --------------------
+
+Trace #8 --- Address  = 7fff5a8487c8, Byte Size = 8, Type = W 
+	 *** L1: Index Field = 3e, Tag Field = 3fffad424 *** 
+
+~~~> <~~~
+~~~> In the scanCache function: ~~~> tempBlock is now pointing to start of LRU chain
+~~~> Moving through the chain...Looking at way #1Checking a valid block...It's a match!
+	 HIT: Found in L1, adding L1 hit time (+1)
+	 ---> Total trace time: 1
+	 ---> Total execution time: 542
+-------------------- End of Trace --------------------
+
+Trace #9 --- Address  = 7f81ce224016, Byte Size = 2, Type = I 
+	 *** L1: Index Field = 0, Tag Field = 3fc0e7112 *** 
+
+~~~> <~~~
+~~~> In the scanCache function: ~~~> tempBlock is now pointing to start of LRU chain
+~~~> Moving through the chain...Looking at way #1Checking a valid block...It's a match!
+	 HIT: Found in L1, adding L1 hit time (+1)
+	 ---> Total trace time: 1
+	 ---> Total execution time: 543
+-------------------- End of Trace --------------------
+
+Trace #10 --- Address  = 7fff5a8487c0, Byte Size = 8, Type = W 
+	 *** L1: Index Field = 3e, Tag Field = 3fffad424 *** 
+
+~~~> <~~~
+~~~> In the scanCache function: ~~~> tempBlock is now pointing to start of LRU chain
+~~~> Moving through the chain...Looking at way #1Checking a valid block...It's a match!
+	 HIT: Found in L1, adding L1 hit time (+1)
+	 ---> Total trace time: 1
+	 ---> Total execution time: 544
+-------------------- End of Trace --------------------
+
+Trace #11 --- Address  = 7f81ce224018, Byte Size = 2, Type = I 
+	 *** L1: Index Field = 0, Tag Field = 3fc0e7112 *** 
+
+~~~> <~~~
+~~~> In the scanCache function: ~~~> tempBlock is now pointing to start of LRU chain
+~~~> Moving through the chain...Looking at way #1Checking a valid block...It's a match!
+	 HIT: Found in L1, adding L1 hit time (+1)
+	 ---> Total trace time: 1
+	 ---> Total execution time: 545
+-------------------- End of Trace --------------------
+
+Trace #12 --- Address  = 7fff5a8487b8, Byte Size = 8, Type = W 
+	 *** L1: Index Field = 3d, Tag Field = 3fffad424 *** 
+
+~~~> <~~~
+~~~> In the scanCache function: ~~~> tempBlock is now pointing to start of LRU chain
+~~~> Moving through the chain...Looking at way #1~~~> It's not valid
+~~~> <~~~
+
+	 MISS: Not found in L1, adding L1 Miss time (+1)
+	 *** L2: Index Field = 1e, Tag Field = fffeb509 *** 
+
+~~~> <~~~
+~~~> In the scanCache function: ~~~> tempBlock is now pointing to start of LRU chain
+~~~> Moving through the chain...Looking at way #1~~~> It's not valid
+~~~> <~~~
+
+	 MISS: Not found in L2, adding L2 miss time (+7)
+	 Bringing in from main memory (+160)
+
+~~~> <~~~
+~~~> In the moveBlock function: 
+~~~> Moved tempBlock to beginning of LRU chain...
+~~~> tempBlock now pointing at LRU/1st invalid block...
+~~~> Block was clean/invalid: good to overwrite.
+~~~> tempBlock is already the head of the LRU chain, all is good.
+~~~> Exiting the moveBlock function successfully.
+	 Writing block back to L1...Adding L2->L1 transfer time (+10)
+	 Adding L1 replay time (+1)
+
+~~~> <~~~
+~~~> In the moveBlock function: 
+~~~> Moved tempBlock to beginning of LRU chain...
+~~~> tempBlock now pointing at LRU/1st invalid block...
+~~~> Block was clean/invalid: good to overwrite.
+~~~> tempBlock is already the head of the LRU chain, all is good.
+~~~> Exiting the moveBlock function successfully.
+	 ---> Total trace time: 179
+	 ---> Total execution time: 724
+-------------------- End of Trace --------------------
+
+Trace #13 --- Address  = 7f81ce22401a, Byte Size = 2, Type = I 
+	 *** L1: Index Field = 0, Tag Field = 3fc0e7112 *** 
+
+~~~> <~~~
+~~~> In the scanCache function: ~~~> tempBlock is now pointing to start of LRU chain
+~~~> Moving through the chain...Looking at way #1Checking a valid block...It's a match!
+	 HIT: Found in L1, adding L1 hit time (+1)
+	 ---> Total trace time: 1
+	 ---> Total execution time: 725
+-------------------- End of Trace --------------------
+
+Trace #14 --- Address  = 7fff5a8487b0, Byte Size = 8, Type = W 
+	 *** L1: Index Field = 3d, Tag Field = 3fffad424 *** 
+
+~~~> <~~~
+~~~> In the scanCache function: ~~~> tempBlock is now pointing to start of LRU chain
+~~~> Moving through the chain...Looking at way #1Checking a valid block...It's a match!
+	 HIT: Found in L1, adding L1 hit time (+1)
+	 ---> Total trace time: 1
+	 ---> Total execution time: 726
+-------------------- End of Trace --------------------
+
+Trace #15 --- Address  = 7f81ce22401c, Byte Size = 1, Type = I 
+	 *** L1: Index Field = 0, Tag Field = 3fc0e7112 *** 
+
+~~~> <~~~
+~~~> In the scanCache function: ~~~> tempBlock is now pointing to start of LRU chain
+~~~> Moving through the chain...Looking at way #1Checking a valid block...It's a match!
+	 HIT: Found in L1, adding L1 hit time (+1)
+	 ---> Total trace time: 1
+	 ---> Total execution time: 727
+-------------------- End of Trace --------------------
+
+Trace #16 --- Address  = 7fff5a8487a8, Byte Size = 8, Type = W 
+	 *** L1: Index Field = 3d, Tag Field = 3fffad424 *** 
+
+~~~> <~~~
+~~~> In the scanCache function: ~~~> tempBlock is now pointing to start of LRU chain
+~~~> Moving through the chain...Looking at way #1Checking a valid block...It's a match!
+	 HIT: Found in L1, adding L1 hit time (+1)
+	 ---> Total trace time: 1
+	 ---> Total execution time: 728
+-------------------- End of Trace --------------------
+
+Trace #17 --- Address  = 7f81ce22401d, Byte Size = 3, Type = I 
+	 *** L1: Index Field = 0, Tag Field = 3fc0e7112 *** 
+
+~~~> <~~~
+~~~> In the scanCache function: ~~~> tempBlock is now pointing to start of LRU chain
+~~~> Moving through the chain...Looking at way #1Checking a valid block...It's a match!
+	 HIT: Found in L1, adding L1 hit time (+1)
+	 ---> Total trace time: 1
+	 ---> Total execution time: 729
+-------------------- End of Trace --------------------
+
+Trace #18 --- Address  = 7f81ce224020, Byte Size = 4, Type = I 
+	 *** L1: Index Field = 1, Tag Field = 3fc0e7112 *** 
+
+~~~> <~~~
+~~~> In the scanCache function: ~~~> tempBlock is now pointing to start of LRU chain
+~~~> Moving through the chain...Looking at way #1~~~> It's not valid
+~~~> <~~~
+
+	 MISS: Not found in L1, adding L1 miss time (+1)
+	 *** L2: Index Field = 100, Tag Field = ff039c44 *** 
+
+~~~> <~~~
+~~~> In the scanCache function: ~~~> tempBlock is now pointing to start of LRU chain
+~~~> Moving through the chain...Looking at way #1Checking a valid block...It's a match!
+	 HIT: Found in L2, adding L2 hit time (+5)
+
+~~~> <~~~
+~~~> In the moveBlock function: 
+~~~> Moved tempBlock to beginning of LRU chain...
+~~~> tempBlock now pointing at LRU/1st invalid block...
+~~~> Block was clean/invalid: good to overwrite.
+~~~> tempBlock is already the head of the LRU chain, all is good.
+~~~> Exiting the moveBlock function successfully.
+	 Writing block back to L1...Adding L2->L1 transfer time (+10)
+	 Adding L1 replay time (+1)
+	 ---> Total trace time: 17
+	 ---> Total execution time: 746
+-------------------- End of Trace --------------------
+
+Trace #19 --- Address  = 7f81ce224024, Byte Size = 2, Type = I 
+	 *** L1: Index Field = 1, Tag Field = 3fc0e7112 *** 
+
+~~~> <~~~
+~~~> In the scanCache function: ~~~> tempBlock is now pointing to start of LRU chain
+~~~> Moving through the chain...Looking at way #1Checking a valid block...It's a match!
+	 HIT: Found in L1, adding L1 hit time (+1)
+	 ---> Total trace time: 1
+	 ---> Total execution time: 747
+-------------------- End of Trace --------------------
+
+Trace #20 --- Address  = 7f81ce224026, Byte Size = 4, Type = I 
+	 *** L1: Index Field = 1, Tag Field = 3fc0e7112 *** 
+
+~~~> <~~~
+~~~> In the scanCache function: ~~~> tempBlock is now pointing to start of LRU chain
+~~~> Moving through the chain...Looking at way #1Checking a valid block...It's a match!
+	 HIT: Found in L1, adding L1 hit time (+1)
+	 ---> Total trace time: 1
+	 ---> Total execution time: 748
+-------------------- End of Trace --------------------
+
+Trace #21 --- Address  = 7f81ce22402a, Byte Size = 2, Type = I 
+	 *** L1: Index Field = 1, Tag Field = 3fc0e7112 *** 
+
+~~~> <~~~
+~~~> In the scanCache function: ~~~> tempBlock is now pointing to start of LRU chain
+~~~> Moving through the chain...Looking at way #1Checking a valid block...It's a match!
+	 HIT: Found in L1, adding L1 hit time (+1)
+	 ---> Total trace time: 1
+	 ---> Total execution time: 749
+-------------------- End of Trace --------------------
+
+Trace #22 --- Address  = 7f81ce22402c, Byte Size = 3, Type = I 
+	 *** L1: Index Field = 1, Tag Field = 3fc0e7112 *** 
+
+~~~> <~~~
+~~~> In the scanCache function: ~~~> tempBlock is now pointing to start of LRU chain
+~~~> Moving through the chain...Looking at way #1Checking a valid block...It's a match!
+	 HIT: Found in L1, adding L1 hit time (+1)
+	 ---> Total trace time: 1
+	 ---> Total execution time: 750
+-------------------- End of Trace --------------------
+
+Trace #23 --- Address  = 7f81ce22402f, Byte Size = 7, Type = I 
+	 *** L1: Index Field = 1, Tag Field = 3fc0e7112 *** 
+
+~~~> <~~~
+~~~> In the scanCache function: ~~~> tempBlock is now pointing to start of LRU chain
+~~~> Moving through the chain...Looking at way #1Checking a valid block...It's a match!
+	 HIT: Found in L1, adding L1 hit time (+1)
+	 ---> Total trace time: 1
+	 ---> Total execution time: 751
+-------------------- End of Trace --------------------
+
+Trace #24 --- Address  = 7f81ce224036, Byte Size = 7, Type = I 
+	 *** L1: Index Field = 1, Tag Field = 3fc0e7112 *** 
+
+~~~> <~~~
+~~~> In the scanCache function: ~~~> tempBlock is now pointing to start of LRU chain
+~~~> Moving through the chain...Looking at way #1Checking a valid block...It's a match!
+	 HIT: Found in L1, adding L1 hit time (+1)
+	 ---> Total trace time: 1
+	 ---> Total execution time: 752
+-------------------- End of Trace --------------------
+
+Trace #25 --- Address  = 7f81ce441b80, Byte Size = 8, Type = R 
+	 *** L1: Index Field = dc, Tag Field = 3fc0e7220 *** 
+
+~~~> <~~~
+~~~> In the scanCache function: ~~~> tempBlock is now pointing to start of LRU chain
+~~~> Moving through the chain...Looking at way #1~~~> It's not valid
+~~~> <~~~
+
+	 MISS: Not found in L1, adding L1 miss time (+1)
+	 *** L2: Index Field = 6e, Tag Field = ff039c88 *** 
+
+~~~> <~~~
+~~~> In the scanCache function: ~~~> tempBlock is now pointing to start of LRU chain
+~~~> Moving through the chain...Looking at way #1~~~> It's not valid
+~~~> <~~~
+
+	 MISS: Not found in L2, adding L2 miss time (+7)
+	 Bringing in from main memory (+160)
+
+~~~> <~~~
+~~~> In the moveBlock function: 
+~~~> Moved tempBlock to beginning of LRU chain...
+~~~> tempBlock now pointing at LRU/1st invalid block...
+~~~> Block was clean/invalid: good to overwrite.
+~~~> tempBlock is already the head of the LRU chain, all is good.
+~~~> Exiting the moveBlock function successfully.
+	 Writing block back to L1...Adding L2->L1 transfer time (+10)
+	 Adding L1 replay time (+1)
+
+~~~> <~~~
+~~~> In the moveBlock function: 
+~~~> Moved tempBlock to beginning of LRU chain...
+~~~> tempBlock now pointing at LRU/1st invalid block...
+~~~> Block was clean/invalid: good to overwrite.
+~~~> tempBlock is already the head of the LRU chain, all is good.
+~~~> Exiting the moveBlock function successfully.
+	 ---> Total trace time: 179
+	 ---> Total execution time: 931
+-------------------- End of Trace --------------------
+
+Trace #26 --- Address  = 7f81ce22403d, Byte Size = 7, Type = I 
+	 *** L1: Index Field = 1, Tag Field = 3fc0e7112 *** 
+
+~~~> <~~~
+~~~> In the scanCache function: ~~~> tempBlock is now pointing to start of LRU chain
+~~~> Moving through the chain...Looking at way #1Checking a valid block...It's a match!
+	 HIT: Found in L1, adding L1 hit time (+1)
+	 ---> Total trace time: 1
+	 ---> Total execution time: 932
+-------------------- End of Trace --------------------
+
+Trace #27 --- Address  = 7f81ce441cd8, Byte Size = 8, Type = W 
+	 *** L1: Index Field = e6, Tag Field = 3fc0e7220 *** 
+
+~~~> <~~~
+~~~> In the scanCache function: ~~~> tempBlock is now pointing to start of LRU chain
+~~~> Moving through the chain...Looking at way #1~~~> It's not valid
+~~~> <~~~
+
+	 MISS: Not found in L1, adding L1 Miss time (+1)
+	 *** L2: Index Field = 73, Tag Field = ff039c88 *** 
+
+~~~> <~~~
+~~~> In the scanCache function: ~~~> tempBlock is now pointing to start of LRU chain
+~~~> Moving through the chain...Looking at way #1~~~> It's not valid
+~~~> <~~~
+
+	 MISS: Not found in L2, adding L2 miss time (+7)
+	 Bringing in from main memory (+160)
+
+~~~> <~~~
+~~~> In the moveBlock function: 
+~~~> Moved tempBlock to beginning of LRU chain...
+~~~> tempBlock now pointing at LRU/1st invalid block...
+~~~> Block was clean/invalid: good to overwrite.
+~~~> tempBlock is already the head of the LRU chain, all is good.
+~~~> Exiting the moveBlock function successfully.
+	 Writing block back to L1...Adding L2->L1 transfer time (+10)
+	 Adding L1 replay time (+1)
+
+~~~> <~~~
+~~~> In the moveBlock function: 
+~~~> Moved tempBlock to beginning of LRU chain...
+~~~> tempBlock now pointing at LRU/1st invalid block...
+~~~> Block was clean/invalid: good to overwrite.
+~~~> tempBlock is already the head of the LRU chain, all is good.
+~~~> Exiting the moveBlock function successfully.
+	 ---> Total trace time: 179
+	 ---> Total execution time: 1111
+-------------------- End of Trace --------------------
+
+Trace #28 --- Address  = 7f81ce224044, Byte Size = 3, Type = I 
+	 *** L1: Index Field = 2, Tag Field = 3fc0e7112 *** 
+
+~~~> <~~~
+~~~> In the scanCache function: ~~~> tempBlock is now pointing to start of LRU chain
+~~~> Moving through the chain...Looking at way #1~~~> It's not valid
+~~~> <~~~
+
+	 MISS: Not found in L1, adding L1 miss time (+1)
+	 *** L2: Index Field = 101, Tag Field = ff039c44 *** 
+
+~~~> <~~~
+~~~> In the scanCache function: ~~~> tempBlock is now pointing to start of LRU chain
+~~~> Moving through the chain...Looking at way #1~~~> It's not valid
+~~~> <~~~
+
+	 MISS: Not found in L2, adding L2 miss time (+7)
+	 Bringing in from main memory (+160)
+
+~~~> <~~~
+~~~> In the moveBlock function: 
+~~~> Moved tempBlock to beginning of LRU chain...
+~~~> tempBlock now pointing at LRU/1st invalid block...
+~~~> Block was clean/invalid: good to overwrite.
+~~~> tempBlock is already the head of the LRU chain, all is good.
+~~~> Exiting the moveBlock function successfully.
+	 Writing block back to L1...Adding L2->L1 transfer time (+10)
+	 Adding L1 replay time (+1)
+
+~~~> <~~~
+~~~> In the moveBlock function: 
+~~~> Moved tempBlock to beginning of LRU chain...
+~~~> tempBlock now pointing at LRU/1st invalid block...
+~~~> Block was clean/invalid: good to overwrite.
+~~~> tempBlock is already the head of the LRU chain, all is good.
+~~~> Exiting the moveBlock function successfully.
+	 ---> Total trace time: 179
+	 ---> Total execution time: 1290
+-------------------- End of Trace --------------------
+
+Trace #29 --- Address  = 7f81ce224047, Byte Size = 7, Type = I 
+	 *** L1: Index Field = 2, Tag Field = 3fc0e7112 *** 
+
+~~~> <~~~
+~~~> In the scanCache function: ~~~> tempBlock is now pointing to start of LRU chain
+~~~> Moving through the chain...Looking at way #1Checking a valid block...It's a match!
+	 HIT: Found in L1, adding L1 hit time (+1)
+	 ---> Total trace time: 1
+	 ---> Total execution time: 1291
+-------------------- End of Trace --------------------
+
+L1 Instruction Cache current status: 
+*********************************************************
+Cache length: 256, index field size: 8, byte field size: 5
+Number of hits: 16, misses: 4, kick-outs: 4, dirty kick-outs: 0
+Number of flush kick-outs: 0, invalidates: 0, flush time: 0
+Reference Counts: writes = 4, reads = 20, instructions = 20
+Times: writes = 4, reads = 0, instructions = 20
+------ Current Row Status ------
+Index 0:	| V: 1, D: 0 Tag: 	3fc0e7112|
+Index 1:	| V: 1, D: 0 Tag: 	3fc0e7112|
+Index 2:	| V: 1, D: 0 Tag: 	3fc0e7112|
+Index 35:	| V: 1, D: 0 Tag: 	3fc0e7110|
+
+End of Cache Status
+
+*********************************************************
+
+L1 Data Cache current status: 
+*********************************************************
+Cache length: 256, index field size: 8, byte field size: 5
+Number of hits: 5, misses: 4, kick-outs: 4, dirty kick-outs: 0
+Number of flush kick-outs: 0, invalidates: 0, flush time: 0
+Reference Counts: writes = 20, reads = 2, instructions = 0
+Times: writes = 12, reads = 1, instructions = 0
+------ Current Row Status ------
+Index 3d:	| V: 1, D: 1 Tag: 	3fffad424|
+Index 3e:	| V: 1, D: 1 Tag: 	3fffad424|
+Index dc:	| V: 1, D: 0 Tag: 	3fc0e7220|
+Index e6:	| V: 1, D: 1 Tag: 	3fc0e7220|
+
+End of Cache Status
+
+*********************************************************
+
+L2 Unified Cache current status: 
+*********************************************************
+Cache length: 512, index field size: 9, byte field size: 6
+Number of hits: 1, misses: 7, kick-outs: 7, dirty kick-outs: 0
+Number of flush kick-outs: 0, invalidates: 0, flush time: 0
+Reference Counts: writes = 10, reads = 1, instructions = 4
+Times: writes = 56, reads = 7, instructions = 26
+------ Current Row Status ------
+Index 1a:	| V: 1, D: 0 Tag: 	ff039c44|
+Index 1e:	| V: 1, D: 0 Tag: 	fffeb509|
+Index 1f:	| V: 1, D: 0 Tag: 	fffeb509|
+Index 6e:	| V: 1, D: 0 Tag: 	ff039c88|
+Index 73:	| V: 1, D: 0 Tag: 	ff039c88|
+Index 100:	| V: 1, D: 0 Tag: 	ff039c44|
+Index 101:	| V: 1, D: 0 Tag: 	ff039c44|
+
+End of Cache Status
+
+*********************************************************
+
+Trace #30 --- Address  = 7f81ce441fb8, Byte Size = 8, Type = R 
+	 *** L1: Index Field = fd, Tag Field = 3fc0e7220 *** 
+
+~~~> <~~~
+~~~> In the scanCache function: ~~~> tempBlock is now pointing to start of LRU chain
+~~~> Moving through the chain...Looking at way #1~~~> It's not valid
+~~~> <~~~
+
+	 MISS: Not found in L1, adding L1 miss time (+1)
+	 *** L2: Index Field = 7e, Tag Field = ff039c88 *** 
+
+~~~> <~~~
+~~~> In the scanCache function: ~~~> tempBlock is now pointing to start of LRU chain
+~~~> Moving through the chain...Looking at way #1~~~> It's not valid
+~~~> <~~~
+
+	 MISS: Not found in L2, adding L2 miss time (+7)
+	 Bringing in from main memory (+160)
+
+~~~> <~~~
+~~~> In the moveBlock function: 
+~~~> Moved tempBlock to beginning of LRU chain...
+~~~> tempBlock now pointing at LRU/1st invalid block...
+~~~> Block was clean/invalid: good to overwrite.
+~~~> tempBlock is already the head of the LRU chain, all is good.
+~~~> Exiting the moveBlock function successfully.
+	 Writing block back to L1...Adding L2->L1 transfer time (+10)
+	 Adding L1 replay time (+1)
+
+~~~> <~~~
+~~~> In the moveBlock function: 
+~~~> Moved tempBlock to beginning of LRU chain...
+~~~> tempBlock now pointing at LRU/1st invalid block...
+~~~> Block was clean/invalid: good to overwrite.
+~~~> tempBlock is already the head of the LRU chain, all is good.
+~~~> Exiting the moveBlock function successfully.
+	 ---> Total trace time: 179
+	 ---> Total execution time: 1470
+-------------------- End of Trace --------------------
+
+Trace #31 --- Address  = 7f81ce22404e, Byte Size = 7, Type = I 
+	 *** L1: Index Field = 2, Tag Field = 3fc0e7112 *** 
+
+~~~> <~~~
+~~~> In the scanCache function: ~~~> tempBlock is now pointing to start of LRU chain
+~~~> Moving through the chain...Looking at way #1Checking a valid block...It's a match!
+	 HIT: Found in L1, adding L1 hit time (+1)
+	 ---> Total trace time: 1
+	 ---> Total execution time: 1471
+-------------------- End of Trace --------------------
+
+Trace #32 --- Address  = 7f81ce4429d8, Byte Size = 8, Type = W 
+	 *** L1: Index Field = 4e, Tag Field = 3fc0e7221 *** 
+
+~~~> <~~~
+~~~> In the scanCache function: ~~~> tempBlock is now pointing to start of LRU chain
+~~~> Moving through the chain...Looking at way #1~~~> It's not valid
+~~~> <~~~
+
+	 MISS: Not found in L1, adding L1 Miss time (+1)
+	 *** L2: Index Field = a7, Tag Field = ff039c88 *** 
+
+~~~> <~~~
+~~~> In the scanCache function: ~~~> tempBlock is now pointing to start of LRU chain
+~~~> Moving through the chain...Looking at way #1~~~> It's not valid
+~~~> <~~~
+
+	 MISS: Not found in L2, adding L2 miss time (+7)
+	 Bringing in from main memory (+160)
+
+~~~> <~~~
+~~~> In the moveBlock function: 
+~~~> Moved tempBlock to beginning of LRU chain...
+~~~> tempBlock now pointing at LRU/1st invalid block...
+~~~> Block was clean/invalid: good to overwrite.
+~~~> tempBlock is already the head of the LRU chain, all is good.
+~~~> Exiting the moveBlock function successfully.
+	 Writing block back to L1...Adding L2->L1 transfer time (+10)
+	 Adding L1 replay time (+1)
+
+~~~> <~~~
+~~~> In the moveBlock function: 
+~~~> Moved tempBlock to beginning of LRU chain...
+~~~> tempBlock now pointing at LRU/1st invalid block...
+~~~> Block was clean/invalid: good to overwrite.
+~~~> tempBlock is already the head of the LRU chain, all is good.
+~~~> Exiting the moveBlock function successfully.
+	 ---> Total trace time: 179
+	 ---> Total execution time: 1650
+-------------------- End of Trace --------------------
+
+Trace #33 --- Address  = 7f81ce224055, Byte Size = 3, Type = I 
+	 *** L1: Index Field = 2, Tag Field = 3fc0e7112 *** 
+
+~~~> <~~~
+~~~> In the scanCache function: ~~~> tempBlock is now pointing to start of LRU chain
+~~~> Moving through the chain...Looking at way #1Checking a valid block...It's a match!
+	 HIT: Found in L1, adding L1 hit time (+1)
+	 ---> Total trace time: 1
+	 ---> Total execution time: 1651
+-------------------- End of Trace --------------------
+
+Trace #34 --- Address  = 7f81ce441e28, Byte Size = 8, Type = R 
+	 *** L1: Index Field = f1, Tag Field = 3fc0e7220 *** 
+
+~~~> <~~~
+~~~> In the scanCache function: ~~~> tempBlock is now pointing to start of LRU chain
+~~~> Moving through the chain...Looking at way #1~~~> It's not valid
+~~~> <~~~
+
+	 MISS: Not found in L1, adding L1 miss time (+1)
+	 *** L2: Index Field = 78, Tag Field = ff039c88 *** 
+
+~~~> <~~~
+~~~> In the scanCache function: ~~~> tempBlock is now pointing to start of LRU chain
+~~~> Moving through the chain...Looking at way #1~~~> It's not valid
+~~~> <~~~
+
+	 MISS: Not found in L2, adding L2 miss time (+7)
+	 Bringing in from main memory (+160)
+
+~~~> <~~~
+~~~> In the moveBlock function: 
+~~~> Moved tempBlock to beginning of LRU chain...
+~~~> tempBlock now pointing at LRU/1st invalid block...
+~~~> Block was clean/invalid: good to overwrite.
+~~~> tempBlock is already the head of the LRU chain, all is good.
+~~~> Exiting the moveBlock function successfully.
+	 Writing block back to L1...Adding L2->L1 transfer time (+10)
+	 Adding L1 replay time (+1)
+
+~~~> <~~~
+~~~> In the moveBlock function: 
+~~~> Moved tempBlock to beginning of LRU chain...
+~~~> tempBlock now pointing at LRU/1st invalid block...
+~~~> Block was clean/invalid: good to overwrite.
+~~~> tempBlock is already the head of the LRU chain, all is good.
+~~~> Exiting the moveBlock function successfully.
+	 ---> Total trace time: 179
+	 ---> Total execution time: 1830
+-------------------- End of Trace --------------------
+
+Trace #35 --- Address  = 7f81ce224058, Byte Size = 7, Type = I 
+	 *** L1: Index Field = 2, Tag Field = 3fc0e7112 *** 
+
+~~~> <~~~
+~~~> In the scanCache function: ~~~> tempBlock is now pointing to start of LRU chain
+~~~> Moving through the chain...Looking at way #1Checking a valid block...It's a match!
+	 HIT: Found in L1, adding L1 hit time (+1)
+	 ---> Total trace time: 1
+	 ---> Total execution time: 1831
+-------------------- End of Trace --------------------
+
+Trace #36 --- Address  = 7f81ce4429e8, Byte Size = 8, Type = W 
+	 *** L1: Index Field = 4f, Tag Field = 3fc0e7221 *** 
+
+~~~> <~~~
+~~~> In the scanCache function: ~~~> tempBlock is now pointing to start of LRU chain
+~~~> Moving through the chain...Looking at way #1~~~> It's not valid
+~~~> <~~~
+
+	 MISS: Not found in L1, adding L1 Miss time (+1)
+	 *** L2: Index Field = a7, Tag Field = ff039c88 *** 
+
+~~~> <~~~
+~~~> In the scanCache function: ~~~> tempBlock is now pointing to start of LRU chain
+~~~> Moving through the chain...Looking at way #1Checking a valid block...It's a match!
+	 HIT: Found in L2, adding L2 hit time (+5)
+	 Writing block back to L1...Adding L2->L1 transfer time (+10)
+	 Adding L1 replay time (+1)
+
+~~~> <~~~
+~~~> In the moveBlock function: 
+~~~> Moved tempBlock to beginning of LRU chain...
+~~~> tempBlock now pointing at LRU/1st invalid block...
+~~~> Block was clean/invalid: good to overwrite.
+~~~> tempBlock is already the head of the LRU chain, all is good.
+~~~> Exiting the moveBlock function successfully.
+	 ---> Total trace time: 17
+	 ---> Total execution time: 1848
+-------------------- End of Trace --------------------
+
+Trace #37 --- Address  = 7f81ce22405f, Byte Size = 3, Type = I 
+	 *** L1: Index Field = 2, Tag Field = 3fc0e7112 *** 
+
+~~~> <~~~
+~~~> In the scanCache function: ~~~> tempBlock is now pointing to start of LRU chain
+~~~> Moving through the chain...Looking at way #1Checking a valid block...It's a match!
+	 HIT: Found in L1, adding L1 hit time (+1)
+	 ---> Total trace time: 1
+	 ---> Total execution time: 1849
+-------------------- End of Trace --------------------
+
+Trace #38 --- Address  = 7f81ce224062, Byte Size = 6, Type = I 
+	 *** L1: Index Field = 3, Tag Field = 3fc0e7112 *** 
+
+~~~> <~~~
+~~~> In the scanCache function: ~~~> tempBlock is now pointing to start of LRU chain
+~~~> Moving through the chain...Looking at way #1~~~> It's not valid
+~~~> <~~~
+
+	 MISS: Not found in L1, adding L1 miss time (+1)
+	 *** L2: Index Field = 101, Tag Field = ff039c44 *** 
+
+~~~> <~~~
+~~~> In the scanCache function: ~~~> tempBlock is now pointing to start of LRU chain
+~~~> Moving through the chain...Looking at way #1Checking a valid block...It's a match!
+	 HIT: Found in L2, adding L2 hit time (+5)
+
+~~~> <~~~
+~~~> In the moveBlock function: 
+~~~> Moved tempBlock to beginning of LRU chain...
+~~~> tempBlock now pointing at LRU/1st invalid block...
+~~~> Block was clean/invalid: good to overwrite.
+~~~> tempBlock is already the head of the LRU chain, all is good.
+~~~> Exiting the moveBlock function successfully.
+	 Writing block back to L1...Adding L2->L1 transfer time (+10)
+	 Adding L1 replay time (+1)
+	 ---> Total trace time: 17
+	 ---> Total execution time: 1866
+-------------------- End of Trace --------------------
+
+Trace #39 --- Address  = 7f81ce224068, Byte Size = 5, Type = I 
+	 *** L1: Index Field = 3, Tag Field = 3fc0e7112 *** 
+
+~~~> <~~~
+~~~> In the scanCache function: ~~~> tempBlock is now pointing to start of LRU chain
+~~~> Moving through the chain...Looking at way #1Checking a valid block...It's a match!
+	 HIT: Found in L1, adding L1 hit time (+1)
+	 ---> Total trace time: 1
+	 ---> Total execution time: 1867
+-------------------- End of Trace --------------------
+
+Trace #40 --- Address  = 7f81ce22406d, Byte Size = 6, Type = I 
+	 *** L1: Index Field = 3, Tag Field = 3fc0e7112 *** 
+
+~~~> <~~~
+~~~> In the scanCache function: ~~~> tempBlock is now pointing to start of LRU chain
+~~~> Moving through the chain...Looking at way #1Checking a valid block...It's a match!
+	 HIT: Found in L1, adding L1 hit time (+1)
+	 ---> Total trace time: 1
+	 ---> Total execution time: 1868
+-------------------- End of Trace --------------------
+
+Trace #41 --- Address  = 7f81ce224073, Byte Size = 6, Type = I 
+	 *** L1: Index Field = 3, Tag Field = 3fc0e7112 *** 
+
+~~~> <~~~
+~~~> In the scanCache function: ~~~> tempBlock is now pointing to start of LRU chain
+~~~> Moving through the chain...Looking at way #1Checking a valid block...It's a match!
+	 HIT: Found in L1, adding L1 hit time (+1)
+	 ---> Total trace time: 1
+	 ---> Total execution time: 1869
+-------------------- End of Trace --------------------
+
+Trace #42 --- Address  = 7f81ce224079, Byte Size = 7, Type = I 
+	 *** L1: Index Field = 3, Tag Field = 3fc0e7112 *** 
+
+~~~> <~~~
+~~~> In the scanCache function: ~~~> tempBlock is now pointing to start of LRU chain
+~~~> Moving through the chain...Looking at way #1Checking a valid block...It's a match!
+	 HIT: Found in L1, adding L1 hit time (+1)
+	 ---> Total trace time: 1
+	 ---> Total execution time: 1870
+-------------------- End of Trace --------------------
+
+Trace #43 --- Address  = 7f81ce224080, Byte Size = 6, Type = I 
+	 *** L1: Index Field = 4, Tag Field = 3fc0e7112 *** 
+
+~~~> <~~~
+~~~> In the scanCache function: ~~~> tempBlock is now pointing to start of LRU chain
+~~~> Moving through the chain...Looking at way #1~~~> It's not valid
+~~~> <~~~
+
+	 MISS: Not found in L1, adding L1 miss time (+1)
+	 *** L2: Index Field = 102, Tag Field = ff039c44 *** 
+
+~~~> <~~~
+~~~> In the scanCache function: ~~~> tempBlock is now pointing to start of LRU chain
+~~~> Moving through the chain...Looking at way #1~~~> It's not valid
+~~~> <~~~
+
+	 MISS: Not found in L2, adding L2 miss time (+7)
+	 Bringing in from main memory (+160)
+
+~~~> <~~~
+~~~> In the moveBlock function: 
+~~~> Moved tempBlock to beginning of LRU chain...
+~~~> tempBlock now pointing at LRU/1st invalid block...
+~~~> Block was clean/invalid: good to overwrite.
+~~~> tempBlock is already the head of the LRU chain, all is good.
+~~~> Exiting the moveBlock function successfully.
+	 Writing block back to L1...Adding L2->L1 transfer time (+10)
+	 Adding L1 replay time (+1)
+
+~~~> <~~~
+~~~> In the moveBlock function: 
+~~~> Moved tempBlock to beginning of LRU chain...
+~~~> tempBlock now pointing at LRU/1st invalid block...
+~~~> Block was clean/invalid: good to overwrite.
+~~~> tempBlock is already the head of the LRU chain, all is good.
+~~~> Exiting the moveBlock function successfully.
+	 ---> Total trace time: 179
+	 ---> Total execution time: 2049
+-------------------- End of Trace --------------------
+
+Trace #44 --- Address  = 7f81ce224086, Byte Size = 5, Type = I 
+	 *** L1: Index Field = 4, Tag Field = 3fc0e7112 *** 
+
+~~~> <~~~
+~~~> In the scanCache function: ~~~> tempBlock is now pointing to start of LRU chain
+~~~> Moving through the chain...Looking at way #1Checking a valid block...It's a match!
+	 HIT: Found in L1, adding L1 hit time (+1)
+	 ---> Total trace time: 1
+	 ---> Total execution time: 2050
+-------------------- End of Trace --------------------
+
+Trace #45 --- Address  = 7f81ce22408b, Byte Size = 2, Type = I 
+	 *** L1: Index Field = 4, Tag Field = 3fc0e7112 *** 
+
+~~~> <~~~
+~~~> In the scanCache function: ~~~> tempBlock is now pointing to start of LRU chain
+~~~> Moving through the chain...Looking at way #1Checking a valid block...It's a match!
+	 HIT: Found in L1, adding L1 hit time (+1)
+	 ---> Total trace time: 1
+	 ---> Total execution time: 2051
+-------------------- End of Trace --------------------
+
+Trace #46 --- Address  = 7f81ce2240ad, Byte Size = 4, Type = I 
+	 *** L1: Index Field = 5, Tag Field = 3fc0e7112 *** 
+
+~~~> <~~~
+~~~> In the scanCache function: ~~~> tempBlock is now pointing to start of LRU chain
+~~~> Moving through the chain...Looking at way #1~~~> It's not valid
+~~~> <~~~
+
+	 MISS: Not found in L1, adding L1 miss time (+1)
+	 *** L2: Index Field = 102, Tag Field = ff039c44 *** 
+
+~~~> <~~~
+~~~> In the scanCache function: ~~~> tempBlock is now pointing to start of LRU chain
+~~~> Moving through the chain...Looking at way #1Checking a valid block...It's a match!
+	 HIT: Found in L2, adding L2 hit time (+5)
+
+~~~> <~~~
+~~~> In the moveBlock function: 
+~~~> Moved tempBlock to beginning of LRU chain...
+~~~> tempBlock now pointing at LRU/1st invalid block...
+~~~> Block was clean/invalid: good to overwrite.
+~~~> tempBlock is already the head of the LRU chain, all is good.
+~~~> Exiting the moveBlock function successfully.
+	 Writing block back to L1...Adding L2->L1 transfer time (+10)
+	 Adding L1 replay time (+1)
+	 ---> Total trace time: 17
+	 ---> Total execution time: 2068
+-------------------- End of Trace --------------------
+
+Trace #47 --- Address  = 7f81ce2240b1, Byte Size = 2, Type = I 
+	 *** L1: Index Field = 5, Tag Field = 3fc0e7112 *** 
+
+~~~> <~~~
+~~~> In the scanCache function: ~~~> tempBlock is now pointing to start of LRU chain
+~~~> Moving through the chain...Looking at way #1Checking a valid block...It's a match!
+	 HIT: Found in L1, adding L1 hit time (+1)
+	 ---> Total trace time: 1
+	 ---> Total execution time: 2069
+-------------------- End of Trace --------------------
+
+Trace #48 --- Address  = 7f81ce224090, Byte Size = 7, Type = I 
+	 *** L1: Index Field = 4, Tag Field = 3fc0e7112 *** 
+
+~~~> <~~~
+~~~> In the scanCache function: ~~~> tempBlock is now pointing to start of LRU chain
+~~~> Moving through the chain...Looking at way #1Checking a valid block...It's a match!
+	 HIT: Found in L1, adding L1 hit time (+1)
+	 ---> Total trace time: 1
+	 ---> Total execution time: 2070
+-------------------- End of Trace --------------------
+
+Trace #49 --- Address  = 7f81ce224097, Byte Size = 8, Type = I 
+	 *** L1: Index Field = 4, Tag Field = 3fc0e7112 *** 
+
+~~~> <~~~
+~~~> In the scanCache function: ~~~> tempBlock is now pointing to start of LRU chain
+~~~> Moving through the chain...Looking at way #1Checking a valid block...It's a match!
+	 HIT: Found in L1, adding L1 hit time (+1)
+	 ---> Total trace time: 1
+	 ---> Total execution time: 2071
+-------------------- End of Trace --------------------
+
+Trace #50 --- Address  = 7f81ce442a88, Byte Size = 8, Type = W 
+	 *** L1: Index Field = 54, Tag Field = 3fc0e7221 *** 
+
+~~~> <~~~
+~~~> In the scanCache function: ~~~> tempBlock is now pointing to start of LRU chain
+~~~> Moving through the chain...Looking at way #1~~~> It's not valid
+~~~> <~~~
+
+	 MISS: Not found in L1, adding L1 Miss time (+1)
+	 *** L2: Index Field = aa, Tag Field = ff039c88 *** 
+
+~~~> <~~~
+~~~> In the scanCache function: ~~~> tempBlock is now pointing to start of LRU chain
+~~~> Moving through the chain...Looking at way #1~~~> It's not valid
+~~~> <~~~
+
+	 MISS: Not found in L2, adding L2 miss time (+7)
+	 Bringing in from main memory (+160)
+
+~~~> <~~~
+~~~> In the moveBlock function: 
+~~~> Moved tempBlock to beginning of LRU chain...
+~~~> tempBlock now pointing at LRU/1st invalid block...
+~~~> Block was clean/invalid: good to overwrite.
+~~~> tempBlock is already the head of the LRU chain, all is good.
+~~~> Exiting the moveBlock function successfully.
+	 Writing block back to L1...Adding L2->L1 transfer time (+10)
+	 Adding L1 replay time (+1)
+
+~~~> <~~~
+~~~> In the moveBlock function: 
+~~~> Moved tempBlock to beginning of LRU chain...
+~~~> tempBlock now pointing at LRU/1st invalid block...
+~~~> Block was clean/invalid: good to overwrite.
+~~~> tempBlock is already the head of the LRU chain, all is good.
+~~~> Exiting the moveBlock function successfully.
+	 ---> Total trace time: 179
+	 ---> Total execution time: 2250
+-------------------- End of Trace --------------------
+~~~> Starting to flush the iCache
+Block is now invalid, moving on
+Block is now invalid, moving on
+Block is now invalid, moving on
+Block is now invalid, moving on
+Block is now invalid, moving on
+Block is now invalid, moving on
+Block is now invalid, moving on
+~~~> Starting to flush the dCache
+Block is now invalid, moving on
+~~~> Block was dirty, incrementing dCache flush kickouts
+~~~> Writing dirtyBlock back to L2 cache.
+
+~~~> <~~~
+~~~> In the moveBlock function: 
+~~~> Moved tempBlock to beginning of LRU chain...
+~~~> tempBlock now pointing at LRU/1st invalid block...
+~~~> Block was clean/invalid: good to overwrite.
+~~~> tempBlock is already the head of the LRU chain, all is good.
+~~~> Exiting the moveBlock function successfully.
+Block is now invalid, moving on
+~~~> Block was dirty, incrementing dCache flush kickouts
+~~~> Writing dirtyBlock back to L2 cache.
+
+~~~> <~~~
+~~~> In the moveBlock function: 
+~~~> Moved tempBlock to beginning of LRU chain...
+~~~> tempBlock now pointing at LRU/1st invalid block...
+~~~> Block was clean/invalid: good to overwrite.
+~~~> tempBlock is already the head of the LRU chain, all is good.
+~~~> Exiting the moveBlock function successfully.
+Block is now invalid, moving on
+~~~> Block was dirty, incrementing dCache flush kickouts
+~~~> Writing dirtyBlock back to L2 cache.
+
+~~~> <~~~
+~~~> In the moveBlock function: 
+~~~> Moved tempBlock to beginning of LRU chain...
+~~~> tempBlock now pointing at LRU/1st invalid block...
+~~~> Block was clean/invalid: good to overwrite.
+~~~> tempBlock is already the head of the LRU chain, all is good.
+~~~> Exiting the moveBlock function successfully.
+Block is now invalid, moving on
+~~~> Block was dirty, incrementing dCache flush kickouts
+~~~> Writing dirtyBlock back to L2 cache.
+
+~~~> <~~~
+~~~> In the moveBlock function: 
+~~~> Moved tempBlock to beginning of LRU chain...
+~~~> tempBlock now pointing at LRU/1st invalid block...
+~~~> Block was clean/invalid: good to overwrite.
+~~~> tempBlock is already the head of the LRU chain, all is good.
+~~~> Exiting the moveBlock function successfully.
+Block is now invalid, moving on
+~~~> Block was dirty, incrementing dCache flush kickouts
+~~~> Writing dirtyBlock back to L2 cache.
+
+~~~> <~~~
+~~~> In the moveBlock function: 
+~~~> Moved tempBlock to beginning of LRU chain...
+~~~> tempBlock now pointing at LRU/1st invalid block...
+~~~> Block was clean/invalid: good to overwrite.
+~~~> tempBlock is already the head of the LRU chain, all is good.
+~~~> Exiting the moveBlock function successfully.
+Block is now invalid, moving on
+Block is now invalid, moving on
+~~~> Block was dirty, incrementing dCache flush kickouts
+~~~> Writing dirtyBlock back to L2 cache.
+
+~~~> <~~~
+~~~> In the moveBlock function: 
+~~~> Moved tempBlock to beginning of LRU chain...
+~~~> tempBlock now pointing at LRU/1st invalid block...
+~~~> Block was clean/invalid: good to overwrite.
+~~~> tempBlock is already the head of the LRU chain, all is good.
+~~~> Exiting the moveBlock function successfully.
+Block is now invalid, moving on
+Block is now invalid, moving on
+~~~> Starting to flush the l2Cache
+Block is now invalid, moving on
+Block is now invalid, moving on
+Block is now invalid, moving on
+Block is now invalid, moving on
+~~~> Block was dirty, incrementing l2Cache flush kickouts
+Block is now invalid, moving on
+~~~> Block was dirty, incrementing l2Cache flush kickouts
+Block is now invalid, moving on
+Block is now invalid, moving on
+Block is now invalid, moving on
+Block is now invalid, moving on
+Block is now invalid, moving on
+~~~> Block was dirty, incrementing l2Cache flush kickouts
+Block is now invalid, moving on
+Block is now invalid, moving on
+~~~> Block was dirty, incrementing l2Cache flush kickouts
+Block is now invalid, moving on
+Block is now invalid, moving on
+Block is now invalid, moving on
+Block is now invalid, moving on
+~~~> Block was dirty, incrementing l2Cache flush kickouts
+Block is now invalid, moving on
+~~~> Block was dirty, incrementing l2Cache flush kickouts
+Block is now invalid, moving on
+~~~> Block was dirty, incrementing l2Cache flush kickouts
+~~~> L2 Cache flushed, all caches flushed, all blocks invalidated
+~~~> Completed flushCache function---------------------------------------------------
+				 Simulation Results
+---------------------------------------------------
+Memory System:
+	 D Cache: Size = 8192, 	Associativity = 1, 	Block size = 32
+	 I Cache: Size = 8192, 	Associativity = 1, 	Block size = 32
+	 L2 Unified Cache: Size = 32768, 	Associativity = 1, 	Block size = 64
+	 Main Memory: Ready time = 30, 	Chunksize = 8, 	Chunktime = 15,
+
+Execution Time = 2250, 	Total Traces Read = 50
+Flush time = 0
+
+Number of Reference Types: 	[Percentage] 
+	Reads 	= 	3 		[6.0%]
+	Writes 	= 	11  		[22.0%]
+	Inst. 	= 	36 		[72.0%]
+	Total 	= 	50
+
+Total Cycles for Activities: 	[Percentage] 
+	Reads 	= 	81 		[3.6%]
+	Writes 	= 	3789 		[168.4%]
+	Inst. 	= 	1597 		[71.0%]
+	Total 	= 	5467
+
+Average Cycles for Activities: 
+	Reads = 27.0, 	Writes = 344.0, 	Instructions = 44.0
+
+Ideal: Execution Time = xxxxx; 	CPI = xx.xx
+Ideal Misaligned Execution Time = xxxxxx; 	CPI = xx.xx
+
+Memory Level: L1 Instruction Cache
+	Hit Count = 29, 	 Miss Count = 7
+	Total Requests = 36
+	Hit Rate: 80.6%, 	 Miss Rate = 19.4%
+	Kickouts = 7, 	 Dirty-kickouts = 0, 	 Transfers = 0
+	Flush Kickouts = 0
+
+Memory Level: L1 Data Cache
+	Hit Count = 5, 	 Miss Count = 9
+	Total Requests = 14
+	Hit Rate: 35.7%, 	 Miss Rate = 64.3%
+	Kickouts = 9, 	 Dirty-kickouts = 0, 	 Transfers = 0
+	Flush Kickouts = 6
+
+Memory Level: L2 Cache
+	Hit Count = 4, 	 Miss Count = 12
+	Total Requests = 16
+	Hit Rate: 25.0%, 	 Miss Rate = 75.0%
+	Kickouts = 18, 	 Dirty-kickouts = 0, 	 Transfers = 0
+	Flush Kickouts = 7
+
+
+System Costs:
+	 L1 Cache Costs (Instruction Cache $200) + Data Cache $200) = 400
+	 L2 Cache Costs: $50 
+	 Main Memory Costs: $75 
+	 Total Memory Cost: $525 
+
+Flushes = 0, Invalidates = 34
+
+---------------------------------------------------
+---------------------------------------------------
+Cache Final Contents: 
+
+Memory Level: L1 Instruction Cache
+*********************************************************
+Cache length: 256, index field size: 8, byte field size: 5
+Number of hits: 29, misses: 7, kick-outs: 7, dirty kick-outs: 0
+Number of flush kick-outs: 0, invalidates: 7, flush time: 0
+Reference Counts: writes = 7, reads = 36, instructions = 36
+Times: writes = 7, reads = 0, instructions = 36
+------ Current Row Status ------
+Index 0:	| V: 0, D: 0 Tag: 	3fc0e7112|
+Index 1:	| V: 0, D: 0 Tag: 	3fc0e7112|
+Index 2:	| V: 0, D: 0 Tag: 	3fc0e7112|
+Index 3:	| V: 0, D: 0 Tag: 	3fc0e7112|
+Index 4:	| V: 0, D: 0 Tag: 	3fc0e7112|
+Index 5:	| V: 0, D: 0 Tag: 	3fc0e7112|
+Index 35:	| V: 0, D: 0 Tag: 	3fc0e7110|
+
+End of Cache Status
+
+*********************************************************
+
+Memory Level: L1 Data Cache
+*********************************************************
+Cache length: 256, index field size: 8, byte field size: 5
+Number of hits: 5, misses: 9, kick-outs: 9, dirty kick-outs: 0
+Number of flush kick-outs: 6, invalidates: 9, flush time: 60
+Reference Counts: writes = 31, reads = 6, instructions = 0
+Times: writes = 20, reads = 3, instructions = 0
+------ Current Row Status ------
+Index 3d:	| V: 0, D: 1 Tag: 	3fffad424|
+Index 3e:	| V: 0, D: 1 Tag: 	3fffad424|
+Index 4e:	| V: 0, D: 1 Tag: 	3fc0e7221|
+Index 4f:	| V: 0, D: 1 Tag: 	3fc0e7221|
+Index 54:	| V: 0, D: 1 Tag: 	3fc0e7221|
+Index dc:	| V: 0, D: 0 Tag: 	3fc0e7220|
+Index e6:	| V: 0, D: 1 Tag: 	3fc0e7220|
+Index f1:	| V: 0, D: 0 Tag: 	3fc0e7220|
+Index fd:	| V: 0, D: 0 Tag: 	3fc0e7220|
+
+End of Cache Status
+
+*********************************************************
+
+Memory Level: L2 Unified Cache 
+*********************************************************
+Cache length: 512, index field size: 9, byte field size: 6
+Number of hits: 4, misses: 12, kick-outs: 18, dirty kick-outs: 0
+Number of flush kick-outs: 7, invalidates: 18, flush time: 1120
+Reference Counts: writes = 24, reads = 3, instructions = 7
+Times: writes = 130, reads = 21, instructions = 43
+------ Current Row Status ------
+Index 1a:	| V: 0, D: 0 Tag: 	ff039c44|
+Index 1e:	| V: 0, D: 0 Tag: 	fffeb509|
+Index 1f:	| V: 0, D: 0 Tag: 	fffeb509|
+Index 6e:	| V: 0, D: 0 Tag: 	ff039c88|
+Index 73:	| V: 0, D: 0 Tag: 	ff039c88|
+Index 78:	| V: 0, D: 0 Tag: 	ff039c88|
+Index 7e:	| V: 0, D: 0 Tag: 	ff039c88|
+Index a7:	| V: 0, D: 1 Tag: 	ff039c88|
+Index aa:	| V: 0, D: 0 Tag: 	ff039c88|
+Index 100:	| V: 0, D: 0 Tag: 	ff039c44|
+Index 101:	| V: 0, D: 0 Tag: 	ff039c44|
+Index 102:	| V: 0, D: 0 Tag: 	ff039c44|
+
+End of Cache Status
+
+*********************************************************
