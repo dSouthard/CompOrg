@@ -29,6 +29,7 @@ unsigned long long l1Byte, l2Byte; // Address Byte Field
 double l1Cost = 0, l2Cost = 0, mainMemoryCost = 0;
 
 unsigned long long traceCounter = 0; // Track total number of traces received
+unsigned long long readTime = 0, writeTime = 0, instructionTime = 0; // Track total number of traces received
 unsigned long long int executionTime = 0; // Track total execution time
 unsigned long long int misalignments = 0; // Track total misalignments
 unsigned long long flushTime = 0, flushes = 0; // Track time to flush
@@ -223,7 +224,7 @@ int main(int argc, char* argv[]) {
 
             findFields(); // Have pulled out Index, Byte, and Tag fields for L1 cache
             int bytesLeft = byteSize;
-            printf("\nTrace #%lld --- Address  = %llx, Byte Size = %d, Type = %c \n", traceCounter, address, byteSize, opCode);
+            if (debug) printf("\nTrace #%lld --- Address  = %llx, Byte Size = %d, Type = %c \n", traceCounter, address, byteSize, opCode);
 
             while (bytesLeft > 0) { // Go through and repeat for as many bytes as necessary
 
@@ -262,14 +263,16 @@ int main(int argc, char* argv[]) {
 
 
                         if (writeOverTag) {
-                            printf("\t Need to write over a dirty block\n");
+                            if (debug) printf("\t Need to write over a dirty block\n");
                             writeBack(writeOverTag); // Reconstruct fields for L2 write-back
 
-                            printf("\t L2 Writeback Index = %llx, Tag = %llx\n", l2WritebackIndex, l2WritebackTag);
+                            if (debug) printf("\t L2 Writeback Index = %llx, Tag = %llx\n", l2WritebackIndex, l2WritebackTag);
 
                             if (scanCache(l2Cache, l2WritebackTag, l2WritebackIndex, 'W')) { // Be seen as a write
-                                printf("\t\t HIT: Found in L2, adding L2 hit time\n");
-                                printf("Adding L1->L2 transfer time (+%d)\n", l2_transfer_time * (iCache->blockSize / l2_bus_width));
+                                if (debug) {
+                                    printf("\t\t HIT: Found in L2, adding L2 hit time\n");
+                                    printf("Adding L1->L2 transfer time (+%d)\n", l2_transfer_time * (iCache->blockSize / l2_bus_width));
+                                }
                                 executionTime += l2Cache->hitTime;
                                 executionTime += l2_transfer_time * (iCache->blockSize / l2_bus_width); // Move desired block from L1 -> L2
                                 iCache->instructionTime += l2_transfer_time * (iCache->blockSize / l2_bus_width); // Add to instruction time counter
@@ -287,20 +290,20 @@ int main(int argc, char* argv[]) {
                                     executionTime += mainMemoryTime;
                                 }
 
-                                printf("Bringing block into L2, adding memory -> L2 time (+%d)\n", mainMemoryTime);
+                                if (debug) printf("Bringing block into L2, adding memory -> L2 time (+%d)\n", mainMemoryTime);
                                 executionTime += mainMemoryTime;
 
-                                printf("Adding L2 replay time (+%d)\n", l2Cache->hitTime);
+                                if (debug) printf("Adding L2 replay time (+%d)\n", l2Cache->hitTime);
                                 executionTime += l2Cache->hitTime;
 
-                                printf("Adding L1->L2 transfer time (+%d)\n", l2_transfer_time * (iCache->blockSize / l2_bus_width));
+                                if (debug) printf("Adding L1->L2 transfer time (+%d)\n", l2_transfer_time * (iCache->blockSize / l2_bus_width));
                                 executionTime += l2_transfer_time * (iCache->blockSize / l2_bus_width); // Move desired block from L1 -> L2
                                 iCache->instructionTime += l2_transfer_time * (iCache->blockSize / l2_bus_width); // Add to instruction time counter
                             }
                         }
 
                         // Scan L2
-                        printf("Now scanning L2 for target tag\n"
+                        if (debug) printf("Now scanning L2 for target tag\n"
                                 "\t *** L2: Index Field = %llx, Tag Field = %llx *** \n", l2IndexField, l2Tag);
                         if (scanCache(l2Cache, l2Tag, l2IndexField, opCode)) { // Hit in L2
                             if (debug)
@@ -347,9 +350,7 @@ int main(int argc, char* argv[]) {
                         iCache->instructionTime += l2_transfer_time * (iCache->blockSize / l2_bus_width); // Add to instruction time counter
                         executionTime += iCache->hitTime;
                     }
-                }
-
-                else if (opCode == 'R') {
+                } else if (opCode == 'R') {
                     if (!counted) {
                         readCounter++; // increment read counter
                         counted = 1;
@@ -375,54 +376,58 @@ int main(int argc, char* argv[]) {
                         executionTime += dCache->missTime;
 
                         // Find LRU to write over in L1
-//                        if (traceCounter == 25) {
-//                            printf("Trace 25 Tag= %llx, Index =  %llx\n",l1Tag, l1IndexField);
-//                        }
-//                        
+                        //                        if (traceCounter == 25) {
+                        //                            printf("Trace 25 Tag= %llx, Index =  %llx\n",l1Tag, l1IndexField);
+                        //                        }
+                        //                        
                         writeOverTag = moveBlock(dCache, l1Tag, l1IndexField, 0); // Tag is now in L1, do accounting details
 
-//                        if (traceCounter == 25) {
-//                            printf("SHOULD BE HERE NOW\n");
-//                            printCacheStatus(dCache, dCacheIndexTracker);
-//                            printCacheStatus(l2Cache, l2CacheIndexTracker);
-//                        }
+                        //                        if (traceCounter == 25) {
+                        //                            printf("SHOULD BE HERE NOW\n");
+                        //                            printCacheStatus(dCache, dCacheIndexTracker);
+                        //                            printCacheStatus(l2Cache, l2CacheIndexTracker);
+                        //                        }
                         if (writeOverTag) {
-                            printf("\t Need to write over a dirty block\n");
+                            if (debug) printf("\t Need to write over a dirty block\n");
                             writeBack(writeOverTag); // Reconstruct fields for L2 write-back
 
-                            printf("\t L2 Writeback Index = %llx, Tag = %llx\n", l2WritebackIndex, l2WritebackTag);
+                            if (debug) printf("\t L2 Writeback Index = %llx, Tag = %llx\n", l2WritebackIndex, l2WritebackTag);
 
                             if (scanCache(l2Cache, l2WritebackTag, l2WritebackIndex, 'W')) { // Be seen as a write
-                                printf("\t\t HIT: Found in L2, adding L2 hit time\n");
-                                printf("Adding L1->L2 transfer time (+%d)\n", l2_transfer_time * (dCache->blockSize / l2_bus_width));
+                                if (debug) {
+                                    printf("\t\t HIT: Found in L2, adding L2 hit time\n");
+                                    printf("Adding L1->L2 transfer time (+%d)\n", l2_transfer_time * (dCache->blockSize / l2_bus_width));
+                                }
                                 executionTime += l2Cache->hitTime;
                                 executionTime += l2_transfer_time * (dCache->blockSize / l2_bus_width); // Move desired block from L1 -> L2
                             } else {
-                                printf("\t\t MISS: Not Found in L2, adding L2 miss time\n");
+                                if (debug) printf("\t\t MISS: Not Found in L2, adding L2 miss time\n");
                                 executionTime += l2Cache->missTime;
 
                                 // Find LRU to write over in L2
                                 writeOverTag = moveBlock(l2Cache, l2WritebackTag, l2WritebackIndex, 1); // Mark as dirty
 
                                 if (writeOverTag) {
-                                    printf("\t\t Need to write over a dirty block\n");
-                                    printf("\t\t Adding L2-> memory time (+%d)\n", mainMemoryTime);
+                                    if (debug) {
+                                        printf("\t\t Need to write over a dirty block\n");
+                                        printf("\t\t Adding L2-> memory time (+%d)\n", mainMemoryTime);
+                                    }
                                     executionTime += mainMemoryTime;
                                 }
 
-                                printf("Bringing block into L2, adding memory -> L2 time (+%d)\n", mainMemoryTime);
+                                if (debug) printf("Bringing block into L2, adding memory -> L2 time (+%d)\n", mainMemoryTime);
                                 executionTime += mainMemoryTime;
 
-                                printf("Adding L2 replay time (+%d)\n", l2Cache->hitTime);
+                                if (debug) printf("Adding L2 replay time (+%d)\n", l2Cache->hitTime);
                                 executionTime += l2Cache->hitTime;
 
-                                printf("Adding L1->L2 transfer time (+%d)\n", l2_transfer_time * (iCache->blockSize / l2_bus_width));
+                                if (debug) printf("Adding L1->L2 transfer time (+%d)\n", l2_transfer_time * (iCache->blockSize / l2_bus_width));
                                 executionTime += l2_transfer_time * (iCache->blockSize / l2_bus_width); // Move desired block from L1 -> L2
                             }
                         }
 
                         // Scan L2
-                        printf("Now scanning L2 for target tag\n"
+                        if (debug) printf("Now scanning L2 for target tag\n"
                                 "\t *** L2: Index Field = %llx, Tag Field = %llx *** \n", l2IndexField, l2Tag);
                         if (scanCache(l2Cache, l2Tag, l2IndexField, opCode)) { // Hit in L2
                             if (debug)
@@ -497,42 +502,46 @@ int main(int argc, char* argv[]) {
                         writeOverTag = moveBlock(dCache, l1Tag, l1IndexField, 1); // Tag is now in L1, do accounting details
 
                         if (writeOverTag) {
-                            printf("\t Need to write over a dirty block\n");
+                            if (debug) printf("\t Need to write over a dirty block\n");
                             writeBack(writeOverTag); // Reconstruct fields for L2 write-back
 
-                            printf("\t L2 Writeback Index = %llx, Tag = %llx\n", l2WritebackIndex, l2WritebackTag);
+                            if (debug) printf("\t L2 Writeback Index = %llx, Tag = %llx\n", l2WritebackIndex, l2WritebackTag);
 
                             if (scanCache(l2Cache, l2WritebackTag, l2WritebackIndex, 'W')) { // Be seen as a write
-                                printf("\t\t HIT: Found in L2, adding L2 hit time\n");
-                                printf("Adding L1->L2 transfer time (+%d)\n", l2_transfer_time * (iCache->blockSize / l2_bus_width));
+                                if (debug) {
+                                    printf("\t\t HIT: Found in L2, adding L2 hit time\n");
+                                    printf("Adding L1->L2 transfer time (+%d)\n", l2_transfer_time * (iCache->blockSize / l2_bus_width));
+                                }
                                 executionTime += l2Cache->hitTime;
                                 executionTime += l2_transfer_time * (dCache->blockSize / l2_bus_width); // Move desired block from L1 -> L2
                             } else {
-                                printf("\t\t MISS: Not Found in L2, adding L2 miss time\n");
+                                if (debug) printf("\t\t MISS: Not Found in L2, adding L2 miss time\n");
                                 executionTime += l2Cache->missTime;
 
                                 // Find LRU to write over in L2
                                 writeOverTag = moveBlock(l2Cache, l2WritebackTag, l2WritebackIndex, 1); // Mark as dirty
 
                                 if (writeOverTag) {
-                                    printf("\t\t Need to write over a dirty block\n");
-                                    printf("\t\t Adding L2-> memory time (+%d)\n", mainMemoryTime);
+                                    if (debug) {
+                                        printf("\t\t Need to write over a dirty block\n");
+                                        printf("\t\t Adding L2-> memory time (+%d)\n", mainMemoryTime);
+                                    }
                                     executionTime += mainMemoryTime;
                                 }
 
-                                printf("Bringing block into L2, adding memory -> L2 time (+%d)\n", mainMemoryTime);
+                                if (debug) printf("Bringing block into L2, adding memory -> L2 time (+%d)\n", mainMemoryTime);
                                 executionTime += mainMemoryTime;
 
-                                printf("Adding L2 replay time (+%d)\n", l2Cache->hitTime);
+                                if (debug) printf("Adding L2 replay time (+%d)\n", l2Cache->hitTime);
                                 executionTime += l2Cache->hitTime;
 
-                                printf("Adding L1->L2 transfer time (+%d)\n", l2_transfer_time * (dCache->blockSize / l2_bus_width));
+                                if (debug) printf("Adding L1->L2 transfer time (+%d)\n", l2_transfer_time * (dCache->blockSize / l2_bus_width));
                                 executionTime += l2_transfer_time * (iCache->blockSize / l2_bus_width); // Move desired block from L1 -> L2
                             }
                         }
 
                         // Scan L2
-                        printf("Now scanning L2 for target tag\n"
+                        if (debug) printf("Now scanning L2 for target tag\n"
                                 "\t *** L2: Index Field = %llx, Tag Field = %llx *** \n", l2IndexField, l2Tag);
                         if (scanCache(l2Cache, l2Tag, l2IndexField, opCode)) { // Hit in L2
                             if (debug)
@@ -595,33 +604,37 @@ int main(int argc, char* argv[]) {
                     //                    moved++;
                 }
 
-                printf("%d bytes transferred.\n", transferred);
+                if (debug) printf("%d bytes transferred.\n", transferred);
 
-//                if (transferred == 4 && traceCounter == 25) {
-//                    printCacheStatus(dCache, dCacheIndexTracker);
-//                    printCacheStatus(l2Cache, l2CacheIndexTracker);
-//                }
+                //                if (transferred == 4 && traceCounter == 25) {
+                //                    printCacheStatus(dCache, dCacheIndexTracker);
+                //                    printCacheStatus(l2Cache, l2CacheIndexTracker);
+                //                }
 
                 if (bytesLeft > 0) { // Reached end of cache block
+                    misalignments++;    // Have to do multiple memory access
                     if (byteEndAddress != cacheEndAddress) { // We can go on to another word in the same block
                         //                        byteStartAddress++;
                         byteEndAddress = byteStartAddress + 4;
-                        printf("%d bytes left. Still in the same block.\n\n", bytesLeft);
-                        printf("\t *** Byte Start/End Address = %llx, \t%llx *** \n", byteStartAddress, byteEndAddress);
-                    }
-                    else {
+                        if (debug) {
+                            printf("%d bytes left. Still in the same block.\n\n", bytesLeft);
+                            printf("\t *** Byte Start/End Address = %llx, \t%llx *** \n", byteStartAddress, byteEndAddress);
+                        }
+                    } else {
                         // Move on to the next block
                         //                        byteStartAddress; // Potential overflow error HERE
                         byteEndAddress = byteStartAddress + 4;
                         findFields();
 
-                        printf("\t Need to access the next block! \n");
-                        printf("\t Requested Cache Block Start/End address = %llx, \t%llx\n", cacheStartAddress, cacheEndAddress);
-                        printf("\t *** Byte Start/End Address = %llx, \t%llx *** \n", byteStartAddress, byteEndAddress);
-                        printf("\t *** L1: Index Field = %llx, Tag Field = %llx *** \n\n", l1IndexField, l1Tag);
+                        if (debug) {
+                            printf("\t Need to access the next block! \n");
+                            printf("\t Requested Cache Block Start/End address = %llx, \t%llx\n", cacheStartAddress, cacheEndAddress);
+                            printf("\t *** Byte Start/End Address = %llx, \t%llx *** \n", byteStartAddress, byteEndAddress);
+                            printf("\t *** L1: Index Field = %llx, Tag Field = %llx *** \n\n", l1IndexField, l1Tag);
+                        }
                     }
                 } else {
-                    printf("%d bytes left.\n", bytesLeft);
+                    if (debug) printf("%d bytes left.\n", bytesLeft);
                 }
             }
 
@@ -634,10 +647,27 @@ int main(int argc, char* argv[]) {
                 flushCaches(iCache, dCache, l2Cache, mainMemoryTime, l2_transfer_time, l2_bus_width);
             }
 
+            traceTime = executionTime - traceTime;
             if (debug) {
-                printf("\t ---> Total trace time: %llu\n", executionTime - traceTime);
+                printf("\t ---> Total trace time: %d\n", traceTime);
                 printf("\t ---> Total execution time: %llu\n", executionTime);
                 printf("-------------------- End of Trace --------------------\n");
+            }
+
+            switch (opCode) {
+                    //                printf("TraceTime: %d", traceTime);
+                case 'R':
+                    readTime += traceTime;
+                    if (debug) printf("ReadTime= %llu\n", readTime);
+                    break;
+                case 'W':
+                    writeTime += traceTime;
+                    if (debug) printf("WriteTime= %llu\n", writeTime);
+                    break;
+                case 'I':
+                    instructionTime += traceTime;
+                    if (debug) printf("InstTime= %llu\n", instructionTime);
+                    break;
             }
 
 #ifdef DEBUG
@@ -652,16 +682,16 @@ int main(int argc, char* argv[]) {
 #endif
     printReport();
 
-    printf("---------------------------------------------------\n");
-    printf("Cache Final Contents: \n\n"
-            "Memory Level: L1 Instruction Cache\n");
-    printCacheStatus(iCache, iCacheIndexTracker);
-
-    printf("\nMemory Level: L1 Data Cache\n");
-    printCacheStatus(dCache, dCacheIndexTracker);
-
-    printf("\nMemory Level: L2 Unified Cache \n");
-    printCacheStatus(l2Cache, l2CacheIndexTracker);
+//    printf("---------------------------------------------------\n");
+//    printf("Cache Final Contents: \n\n"
+//            "Memory Level: L1 Instruction Cache\n");
+//    printCacheStatus(iCache, iCacheIndexTracker);
+//
+//    printf("\nMemory Level: L1 Data Cache\n");
+//    printCacheStatus(dCache, dCacheIndexTracker);
+//
+//    printf("\nMemory Level: L2 Unified Cache \n");
+//    printCacheStatus(l2Cache, l2CacheIndexTracker);
 
     // Free all allocated memory
     freeCache(iCache);
@@ -684,9 +714,12 @@ double calculateCost(int level, int size, int associativity) {
         if (size < 65536) // Check if L2 memory is < 64Kb (still need to pay for full cost)
             result = 50;
         else
-            result = 100; // L2 cache memory costs $50 per 64KB
+            result = 50*(size/65536); // L2 cache memory costs $50 per 64KB
         // Add an additional $50 for each doubling in associativity
-        result += 50 * log(associativity) / log(2);
+        if (associativity > 1)
+            result += 50 * log(associativity)/ log(2);
+        else
+            result+= 50;
     }
     return result;
 }
@@ -799,7 +832,10 @@ void printReport() {
     printf("\t Main Memory: Ready time = %d, \tChunksize = %d, \tChunktime = %d,\n\n", mem_ready, mem_chunksize, mem_chunktime);
 
     printf("Execution Time = %d, \tTotal Traces Read = %d\n", (int) executionTime, (int) traceCounter);
-    printf("Flush time = %llu\n\n", flushTime);
+    
+    flushTime = iCache->flushTime + dCache->flushTime + l2Cache->flushTime;
+    printf("Flush time = %llu\n", flushTime);
+    printf("Total time (Execution Time + Flush Time) = %llu\n\n", flushTime + executionTime);
 
     printf("Number of Reference Types: \t[Percentage] \n"
             "\tReads \t= \t%llu \t\t[%.1f%%]\n"
@@ -811,40 +847,37 @@ void printReport() {
             instructionCounter, (double) instructionCounter * 100 / traceCounter,
             readCounter + writeCounter + instructionCounter);
 
-    unsigned long long readCycles = (iCache->readRefs * iCache->readTime) + (dCache->readRefs * dCache->readTime) + (l2Cache->readRefs * l2Cache->readTime);
-    unsigned long long writeCycles = (iCache->writeRefs * iCache->writeTime) + (dCache->writeRefs * dCache->writeTime) + (l2Cache->writeRefs * l2Cache->writeTime);
-    unsigned long long insCycles = (iCache->insRefs * iCache->instructionTime) + (dCache->insRefs * dCache->instructionTime) + (l2Cache->insRefs * l2Cache->instructionTime);
-
     printf("Total Cycles for Activities: \t[Percentage] \n"
             "\tReads \t= \t%llu \t\t[%.1f%%]\n"
             "\tWrites \t= \t%llu \t\t[%.1f%%]\n"
             "\tInst. \t= \t%llu \t\t[%.1f%%]\n"
             "\tTotal \t= \t%llu\n\n",
-            readCycles, (double) readCycles * 100 / executionTime,
-            writeCycles, (double) writeCycles * 100 / executionTime,
-            insCycles, (double) insCycles * 100 / executionTime,
-            readCycles + writeCycles + insCycles);
+            readTime, (double) readTime * 100 / executionTime,
+            writeTime, (double) writeTime * 100 / executionTime,
+            instructionTime, (double) instructionTime * 100 / executionTime,
+            readTime + writeTime + instructionTime);
 
+    double readCycles = 0, writeCycles = 0, insCycles = 0;
     if (readCounter)
-        readCycles = readCycles / readCounter;
-    else
-        readCycles = 0;
-
+        readCycles = ((double) readTime) / ((double) readCounter);
     if (writeCounter)
-        writeCycles = writeCycles / writeCounter;
-    else
-        writeCycles = 0;
+        writeCycles = ((double) writeTime) / ((double) writeCounter);
     if (instructionCounter)
-        insCycles = insCycles / instructionCounter;
-    else
-        insCycles = 0;
+        insCycles = ((double) instructionTime) / ((double) instructionCounter);
+    
+//    printf("instructionCounter = %llu", instructionCounter);
+//    printf("instructionTime = %llu", instructionTime);
+//    printf("Should be = %f", insCycles);
+    
 
     printf("Average Cycles for Activities: \n"
             "\tReads = %.1f, \tWrites = %.1f, \tInstructions = %.1f\n\n",
-            (double) readCycles, (double) writeCycles, (double) insCycles);
+            readCycles, writeCycles, insCycles);
 
-    printf("Ideal: Execution Time = xxxxx; \tCPI = xx.xx\n");
-    printf("Ideal Misaligned Execution Time = xxxxxx; \tCPI = xx.xx\n\n");
+    unsigned long long idealTime = readCounter + writeCounter + (2 * instructionCounter);
+
+    printf("Ideal: Execution Time = %llu; \tCPI = %.1f\n", idealTime, ((double) idealTime) / ((double) instructionCounter));
+    printf("Ideal Misaligned Execution Time = %llu; \tCPI = %.1f\n\n", idealTime + misalignments,((double) idealTime + (double)misalignments) / ((double) instructionCounter) );
 
     unsigned long long totalRequests = iCache->hits + iCache->misses;
     printf("Memory Level: L1 Instruction Cache\n"
@@ -905,4 +938,8 @@ void writeBack(unsigned long long writeBackTag) {
     l2WritebackTag = l2WritebackTag >> (l2Cache->byteOffsetSize + l2Cache->indexFieldSize);
 
     return;
+}
+
+void findIdealTimes() {
+
 }

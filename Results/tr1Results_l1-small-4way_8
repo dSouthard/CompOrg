@@ -1,41 +1,5 @@
 Configuration: config/l1-small-4way_8
 
-Now scanning L2 for target tag
-	 *** L2: Index Field = 1a, Tag Field = ff039c44 *** 
-3 bytes transferred.
-0 bytes left.
-4 bytes transferred.
-1 bytes left. Still in the same block.
-1 bytes transferred.
-0 bytes left.
-Now scanning L2 for target tag
-	 *** L2: Index Field = 1f, Tag Field = fffeb509 *** 
-4 bytes transferred.
-4 bytes left. Still in the same block.
-4 bytes transferred.
-0 bytes left.
-Now scanning L2 for target tag
-	 *** L2: Index Field = 100, Tag Field = ff039c44 *** 
-1 bytes transferred.
-0 bytes left.
-4 bytes transferred.
-4 bytes left. Still in the same block.
-4 bytes transferred.
-0 bytes left.
-3 bytes transferred.
-0 bytes left.
-2 bytes transferred.
-0 bytes left.
-4 bytes transferred.
-4 bytes left. Still in the same block.
-4 bytes transferred.
-0 bytes left.
-2 bytes transferred.
-0 bytes left.
-4 bytes transferred.
-4 bytes left. Still in the same block.
-4 bytes transferred.
-0 bytes left.
 ---------------------------------------------------
 				 Simulation Results
 ---------------------------------------------------
@@ -56,15 +20,15 @@ Number of Reference Types: 	[Percentage]
 
 Total Cycles for Activities: 	[Percentage] 
 	Reads 	= 	0 		[0.0%]
-	Writes 	= 	173 		[30.7%]
-	Inst. 	= 	77 		[13.7%]
-	Total 	= 	250
+	Writes 	= 	191 		[33.9%]
+	Inst. 	= 	373 		[66.1%]
+	Total 	= 	564
 
 Average Cycles for Activities: 
-	Reads = 0.0, 	Writes = 43.0, 	Instructions = 12.0
+	Reads = 0.0, 	Writes = 47.8, 	Instructions = 62.2
 
-Ideal: Execution Time = xxxxx; 	CPI = xx.xx
-Ideal Misaligned Execution Time = xxxxxx; 	CPI = xx.xx
+Ideal: Execution Time = 16; 	CPI = 2.7
+Ideal Misaligned Execution Time = 21; 	CPI = 3.5
 
 Memory Level: L1 Instruction Cache
 	Hit Count = 5, 	 Miss Count = 2
@@ -90,9 +54,9 @@ Memory Level: L2 Cache
 
 System Costs:
 	 L1 Cache Costs (Instruction Cache $300 + Data Cache $300) = $600
-	 L2 Cache Costs: $50 
+	 L2 Cache Costs: $100 
 	 Main Memory Costs: $75 
-	 Total Memory Cost: $725 
+	 Total Memory Cost: $775 
 
 Flushes = 0, Invalidates = 0
 

@@ -1,377 +1,5 @@
 Configuration: config/all-fa-l2big_8
 
-Now scanning L2 for target tag
-	 *** L2: Index Field = 0, Tag Field = 1fe0738881a *** 
-3 bytes transferred.
-0 bytes left.
-4 bytes transferred.
-1 bytes left. Still in the same block.
-1 bytes transferred.
-0 bytes left.
-Now scanning L2 for target tag
-	 *** L2: Index Field = 0, Tag Field = 1fffd6a121f *** 
-4 bytes transferred.
-4 bytes left. Still in the same block.
-4 bytes transferred.
-0 bytes left.
-Now scanning L2 for target tag
-	 *** L2: Index Field = 0, Tag Field = 1fe07388900 *** 
-1 bytes transferred.
-0 bytes left.
-4 bytes transferred.
-4 bytes left. Still in the same block.
-4 bytes transferred.
-0 bytes left.
-3 bytes transferred.
-0 bytes left.
-2 bytes transferred.
-0 bytes left.
-4 bytes transferred.
-4 bytes left. Still in the same block.
-4 bytes transferred.
-0 bytes left.
-2 bytes transferred.
-0 bytes left.
-4 bytes transferred.
-4 bytes left. Still in the same block.
-4 bytes transferred.
-0 bytes left.
-2 bytes transferred.
-0 bytes left.
-Now scanning L2 for target tag
-	 *** L2: Index Field = 0, Tag Field = 1fffd6a121e *** 
-4 bytes transferred.
-4 bytes left. Still in the same block.
-4 bytes transferred.
-0 bytes left.
-2 bytes transferred.
-0 bytes left.
-4 bytes transferred.
-4 bytes left. Still in the same block.
-4 bytes transferred.
-0 bytes left.
-1 bytes transferred.
-0 bytes left.
-4 bytes transferred.
-4 bytes left. Still in the same block.
-4 bytes transferred.
-0 bytes left.
-3 bytes transferred.
-0 bytes left.
-Now scanning L2 for target tag
-	 *** L2: Index Field = 0, Tag Field = 1fe07388900 *** 
-4 bytes transferred.
-0 bytes left.
-2 bytes transferred.
-0 bytes left.
-4 bytes transferred.
-0 bytes left.
-2 bytes transferred.
-0 bytes left.
-3 bytes transferred.
-0 bytes left.
-4 bytes transferred.
-3 bytes left. Still in the same block.
-3 bytes transferred.
-0 bytes left.
-4 bytes transferred.
-3 bytes left. Still in the same block.
-3 bytes transferred.
-0 bytes left.
-Now scanning L2 for target tag
-	 *** L2: Index Field = 0, Tag Field = 1fe0739106e *** 
-4 bytes transferred.
-4 bytes left. Still in the same block.
-Now scanning L2 for target tag
-	 *** L2: Index Field = 0, Tag Field = 1fe0739106e *** 
-4 bytes transferred.
-0 bytes left.
-4 bytes transferred.
-3 bytes left. Still in the same block.
-0 bytes transferred.
-	 Need to access the next block! 
-	 Requested Cache Block Start/End address = 7f81ce224040, 	7f81ce224060	 *** Byte Start Address = 7f81ce224040 *** 
-	 *** L1: Index Field = 0, Tag Field = 3fc0e711202 *** 
-Now scanning L2 for target tag
-	 *** L2: Index Field = 0, Tag Field = 1fe07388901 *** 
-3 bytes transferred.
-0 bytes left.
-Now scanning L2 for target tag
-	 *** L2: Index Field = 0, Tag Field = 1fe07391073 *** 
-4 bytes transferred.
-4 bytes left. Still in the same block.
-4 bytes transferred.
-0 bytes left.
-3 bytes transferred.
-0 bytes left.
-4 bytes transferred.
-3 bytes left. Still in the same block.
-3 bytes transferred.
-0 bytes left.
-Now scanning L2 for target tag
-	 *** L2: Index Field = 0, Tag Field = 1fe0739107e *** 
-4 bytes transferred.
-4 bytes left. Still in the same block.
-Now scanning L2 for target tag
-	 *** L2: Index Field = 0, Tag Field = 1fe0739107e *** 
-4 bytes transferred.
-0 bytes left.
-4 bytes transferred.
-3 bytes left. Still in the same block.
-3 bytes transferred.
-0 bytes left.
-Now scanning L2 for target tag
-	 *** L2: Index Field = 0, Tag Field = 1fe073910a7 *** 
-4 bytes transferred.
-4 bytes left. Still in the same block.
-4 bytes transferred.
-0 bytes left.
-3 bytes transferred.
-0 bytes left.
-Now scanning L2 for target tag
-	 *** L2: Index Field = 0, Tag Field = 1fe07391078 *** 
-4 bytes transferred.
-4 bytes left. Still in the same block.
-Now scanning L2 for target tag
-	 *** L2: Index Field = 0, Tag Field = 1fe07391078 *** 
-4 bytes transferred.
-0 bytes left.
-4 bytes transferred.
-3 bytes left. Still in the same block.
-3 bytes transferred.
-0 bytes left.
-Now scanning L2 for target tag
-	 *** L2: Index Field = 0, Tag Field = 1fe073910a7 *** 
-4 bytes transferred.
-4 bytes left. Still in the same block.
-4 bytes transferred.
-0 bytes left.
-3 bytes transferred.
-0 bytes left.
-Now scanning L2 for target tag
-	 *** L2: Index Field = 0, Tag Field = 1fe07388901 *** 
-4 bytes transferred.
-2 bytes left. Still in the same block.
-2 bytes transferred.
-0 bytes left.
-4 bytes transferred.
-1 bytes left. Still in the same block.
-1 bytes transferred.
-0 bytes left.
-4 bytes transferred.
-2 bytes left. Still in the same block.
-2 bytes transferred.
-0 bytes left.
-4 bytes transferred.
-2 bytes left. Still in the same block.
-2 bytes transferred.
-0 bytes left.
-4 bytes transferred.
-3 bytes left. Still in the same block.
-3 bytes transferred.
-0 bytes left.
-Now scanning L2 for target tag
-	 *** L2: Index Field = 0, Tag Field = 1fe07388902 *** 
-4 bytes transferred.
-2 bytes left. Still in the same block.
-2 bytes transferred.
-0 bytes left.
-4 bytes transferred.
-1 bytes left. Still in the same block.
-1 bytes transferred.
-0 bytes left.
-2 bytes transferred.
-0 bytes left.
-Now scanning L2 for target tag
-	 *** L2: Index Field = 0, Tag Field = 1fe07388902 *** 
-4 bytes transferred.
-0 bytes left.
-2 bytes transferred.
-0 bytes left.
-4 bytes transferred.
-3 bytes left. Still in the same block.
-3 bytes transferred.
-0 bytes left.
-4 bytes transferred.
-4 bytes left. Still in the same block.
-4 bytes transferred.
-0 bytes left.
-Now scanning L2 for target tag
-	 *** L2: Index Field = 0, Tag Field = 1fe073910aa *** 
-4 bytes transferred.
-4 bytes left. Still in the same block.
-4 bytes transferred.
-0 bytes left.
-4 bytes transferred.
-0 bytes left.
-4 bytes transferred.
-1 bytes left. Still in the same block.
-1 bytes transferred.
-0 bytes left.
-Now scanning L2 for target tag
-	 *** L2: Index Field = 0, Tag Field = 1fe07391078 *** 
-4 bytes transferred.
-4 bytes left. Still in the same block.
-Now scanning L2 for target tag
-	 *** L2: Index Field = 0, Tag Field = 1fe07391078 *** 
-4 bytes transferred.
-0 bytes left.
-3 bytes transferred.
-0 bytes left.
-2 bytes transferred.
-0 bytes left.
-4 bytes transferred.
-0 bytes left.
-2 bytes transferred.
-0 bytes left.
-4 bytes transferred.
-3 bytes left. Still in the same block.
-3 bytes transferred.
-0 bytes left.
-4 bytes transferred.
-4 bytes left. Still in the same block.
-4 bytes transferred.
-0 bytes left.
-Now scanning L2 for target tag
-	 *** L2: Index Field = 0, Tag Field = 1fe073910ab *** 
-4 bytes transferred.
-4 bytes left. Still in the same block.
-4 bytes transferred.
-0 bytes left.
-4 bytes transferred.
-0 bytes left.
-4 bytes transferred.
-1 bytes left. Still in the same block.
-1 bytes transferred.
-0 bytes left.
-Now scanning L2 for target tag
-	 *** L2: Index Field = 0, Tag Field = 1fe07391079 *** 
-4 bytes transferred.
-4 bytes left. Still in the same block.
-Now scanning L2 for target tag
-	 *** L2: Index Field = 0, Tag Field = 1fe07391079 *** 
-4 bytes transferred.
-0 bytes left.
-3 bytes transferred.
-0 bytes left.
-2 bytes transferred.
-0 bytes left.
-4 bytes transferred.
-0 bytes left.
-2 bytes transferred.
-0 bytes left.
-4 bytes transferred.
-3 bytes left. Still in the same block.
-3 bytes transferred.
-0 bytes left.
-4 bytes transferred.
-4 bytes left. Still in the same block.
-4 bytes transferred.
-0 bytes left.
-4 bytes transferred.
-4 bytes left. Still in the same block.
-4 bytes transferred.
-0 bytes left.
-4 bytes transferred.
-0 bytes left.
-4 bytes transferred.
-1 bytes left. Still in the same block.
-1 bytes transferred.
-0 bytes left.
-Now scanning L2 for target tag
-	 *** L2: Index Field = 0, Tag Field = 1fe07391079 *** 
-4 bytes transferred.
-4 bytes left. Still in the same block.
-Now scanning L2 for target tag
-	 *** L2: Index Field = 0, Tag Field = 1fe07391079 *** 
-4 bytes transferred.
-0 bytes left.
-3 bytes transferred.
-0 bytes left.
-2 bytes transferred.
-0 bytes left.
-4 bytes transferred.
-0 bytes left.
-2 bytes transferred.
-0 bytes left.
-4 bytes transferred.
-3 bytes left. Still in the same block.
-3 bytes transferred.
-0 bytes left.
-4 bytes transferred.
-4 bytes left. Still in the same block.
-4 bytes transferred.
-0 bytes left.
-Now scanning L2 for target tag
-	 *** L2: Index Field = 0, Tag Field = 1fe073910a8 *** 
-4 bytes transferred.
-4 bytes left. Still in the same block.
-4 bytes transferred.
-0 bytes left.
-4 bytes transferred.
-0 bytes left.
-4 bytes transferred.
-1 bytes left. Still in the same block.
-1 bytes transferred.
-0 bytes left.
-Now scanning L2 for target tag
-	 *** L2: Index Field = 0, Tag Field = 1fe07391079 *** 
-4 bytes transferred.
-4 bytes left. Still in the same block.
-Now scanning L2 for target tag
-	 *** L2: Index Field = 0, Tag Field = 1fe07391079 *** 
-4 bytes transferred.
-0 bytes left.
-3 bytes transferred.
-0 bytes left.
-2 bytes transferred.
-0 bytes left.
-4 bytes transferred.
-0 bytes left.
-2 bytes transferred.
-0 bytes left.
-3 bytes transferred.
-0 bytes left.
-3 bytes transferred.
-0 bytes left.
-4 bytes transferred.
-0 bytes left.
-4 bytes transferred.
-2 bytes left. Still in the same block.
-0 bytes transferred.
-	 Need to access the next block! 
-	 Requested Cache Block Start/End address = 7f81ce2240c0, 	7f81ce2240e0	 *** Byte Start Address = 7f81ce2240c0 *** 
-	 *** L1: Index Field = 0, Tag Field = 3fc0e711206 *** 
-Now scanning L2 for target tag
-	 *** L2: Index Field = 0, Tag Field = 1fe07388903 *** 
-2 bytes transferred.
-0 bytes left.
-Now scanning L2 for target tag
-	 *** L2: Index Field = 0, Tag Field = 1fe0738890e *** 
-3 bytes transferred.
-0 bytes left.
-2 bytes transferred.
-0 bytes left.
-3 bytes transferred.
-0 bytes left.
-2 bytes transferred.
-0 bytes left.
-Now scanning L2 for target tag
-	 *** L2: Index Field = 0, Tag Field = 1fe0738890f *** 
-3 bytes transferred.
-0 bytes left.
-3 bytes transferred.
-0 bytes left.
-4 bytes transferred.
-0 bytes left.
-4 bytes transferred.
-2 bytes left. Still in the same block.
-2 bytes transferred.
-0 bytes left.
-Now scanning L2 for target tag
-	 *** L2: Index Field = 0, Tag Field = 1fe07388914 *** 
-3 bytes transferred.
-0 bytes left.
 ---------------------------------------------------
 				 Simulation Results
 ---------------------------------------------------
@@ -381,7 +9,7 @@ Memory System:
 	 L2 Unified Cache: Size = 65536, 	Associativity = 1024, 	Block size = 64
 	 Main Memory: Ready time = 30, 	Chunksize = 8, 	Chunktime = 15,
 
-Execution Time = 3852, 	Total Traces Read = 100
+Execution Time = 3737, 	Total Traces Read = 100
 Flush time = 0
 
 Number of Reference Types: 	[Percentage] 
@@ -391,44 +19,44 @@ Number of Reference Types: 	[Percentage]
 	Total 	= 	100
 
 Total Cycles for Activities: 	[Percentage] 
-	Reads 	= 	1288 		[33.4%]
-	Writes 	= 	6644 		[172.5%]
-	Inst. 	= 	12662 		[328.7%]
-	Total 	= 	20594
+	Reads 	= 	762 		[20.4%]
+	Writes 	= 	1325 		[35.5%]
+	Inst. 	= 	1650 		[44.2%]
+	Total 	= 	3737
 
 Average Cycles for Activities: 
-	Reads = 184.0, 	Writes = 474.0, 	Instructions = 160.0
+	Reads = 108.9, 	Writes = 94.6, 	Instructions = 20.9
 
-Ideal: Execution Time = xxxxx; 	CPI = xx.xx
-Ideal Misaligned Execution Time = xxxxxx; 	CPI = xx.xx
+Ideal: Execution Time = 179; 	CPI = 2.3
+Ideal Misaligned Execution Time = 259; 	CPI = 3.3
 
 Memory Level: L1 Instruction Cache
-	Hit Count = 98, 	 Miss Count = 25
-	Total Requests = 123
-	Hit Rate: 79.7%, 	 Miss Rate = 20.3%
+	Hit Count = 127, 	 Miss Count = 11
+	Total Requests = 138
+	Hit Rate: 92.0%, 	 Miss Rate = 8.0%
 	Kickouts = 0, 	 Dirty-kickouts = 0, 	 Transfers = 11
 	Flush Kickouts = 0
 
 Memory Level: L1 Data Cache
-	Hit Count = 20, 	 Miss Count = 8
-	Total Requests = 28
-	Hit Rate: 71.4%, 	 Miss Rate = 28.6%
-	Kickouts = 0, 	 Dirty-kickouts = 0, 	 Transfers = 22
+	Hit Count = 29, 	 Miss Count = 13
+	Total Requests = 42
+	Hit Rate: 69.0%, 	 Miss Rate = 31.0%
+	Kickouts = 0, 	 Dirty-kickouts = 0, 	 Transfers = 13
 	Flush Kickouts = 0
 
 Memory Level: L2 Cache
-	Hit Count = 14, 	 Miss Count = 19
-	Total Requests = 33
-	Hit Rate: 42.4%, 	 Miss Rate = 57.6%
+	Hit Count = 5, 	 Miss Count = 19
+	Total Requests = 24
+	Hit Rate: 20.8%, 	 Miss Rate = 79.2%
 	Kickouts = 0, 	 Dirty-kickouts = 0, 	 Transfers = 19
 	Flush Kickouts = 0
 
 
 System Costs:
 	 L1 Cache Costs (Instruction Cache $1800 + Data Cache $1800) = $3600
-	 L2 Cache Costs: $600 
+	 L2 Cache Costs: $550 
 	 Main Memory Costs: $75 
-	 Total Memory Cost: $4275 
+	 Total Memory Cost: $4225 
 
 Flushes = 0, Invalidates = 0
 
@@ -441,7 +69,7 @@ Index 0:	| V: 1, D: 0 Tag: 	3fc0e711035|| V: 1, D: 0 Tag: 	3fc0e711200|| V: 1, D
 
 
 Memory Level: L1 Data Cache
-Index 0:	| V: 1, D: 1 Tag: 	3fffad4243e|| V: 1, D: 1 Tag: 	3fffad4243d|| V: 1, D: 0 Tag: 	3fc0e7220dc|| V: 1, D: 0 Tag: 	3fc0e7220dc|| V: 1, D: 1 Tag: 	3fc0e7220e6|| V: 1, D: 0 Tag: 	3fc0e7220fd|| V: 1, D: 0 Tag: 	3fc0e7220fd|| V: 1, D: 1 Tag: 	3fc0e72214e|| V: 1, D: 0 Tag: 	3fc0e7220f1|| V: 1, D: 0 Tag: 	3fc0e7220f1|| V: 1, D: 1 Tag: 	3fc0e72214f|| V: 1, D: 1 Tag: 	3fc0e722154|| V: 1, D: 0 Tag: 	3fc0e7220f1|| V: 1, D: 0 Tag: 	3fc0e7220f1|| V: 1, D: 1 Tag: 	3fc0e722157|| V: 1, D: 0 Tag: 	3fc0e7220f2|| V: 1, D: 0 Tag: 	3fc0e7220f2|| V: 1, D: 0 Tag: 	3fc0e7220f2|| V: 1, D: 0 Tag: 	3fc0e7220f2|| V: 1, D: 1 Tag: 	3fc0e722151|| V: 1, D: 0 Tag: 	3fc0e7220f3|| V: 1, D: 0 Tag: 	3fc0e7220f3|| V: 0, D: 0 Tag: - || V: 0, D: 0 Tag: - || V: 0, D: 0 Tag: - || V: 0, D: 0 Tag: - || V: 0, D: 0 Tag: - || V: 0, D: 0 Tag: - || V: 0, D: 0 Tag: - || V: 0, D: 0 Tag: - || V: 0, D: 0 Tag: - || V: 0, D: 0 Tag: - || V: 0, D: 0 Tag: - || V: 0, D: 0 Tag: - || V: 0, D: 0 Tag: - || V: 0, D: 0 Tag: - || V: 0, D: 0 Tag: - || V: 0, D: 0 Tag: - || V: 0, D: 0 Tag: - || V: 0, D: 0 Tag: - || V: 0, D: 0 Tag: - || V: 0, D: 0 Tag: - || V: 0, D: 0 Tag: - || V: 0, D: 0 Tag: - || V: 0, D: 0 Tag: - || V: 0, D: 0 Tag: - || V: 0, D: 0 Tag: - || V: 0, D: 0 Tag: - || V: 0, D: 0 Tag: - || V: 0, D: 0 Tag: - || V: 0, D: 0 Tag: - || V: 0, D: 0 Tag: - || V: 0, D: 0 Tag: - || V: 0, D: 0 Tag: - || V: 0, D: 0 Tag: - || V: 0, D: 0 Tag: - || V: 0, D: 0 Tag: - || V: 0, D: 0 Tag: - || V: 0, D: 0 Tag: - || V: 0, D: 0 Tag: - || V: 0, D: 0 Tag: - || V: 0, D: 0 Tag: - || V: 0, D: 0 Tag: - || V: 0, D: 0 Tag: - || V: 0, D: 0 Tag: - || V: 0, D: 0 Tag: - || V: 0, D: 0 Tag: - || V: 0, D: 0 Tag: - || V: 0, D: 0 Tag: - || V: 0, D: 0 Tag: - || V: 0, D: 0 Tag: - || V: 0, D: 0 Tag: - || V: 0, D: 0 Tag: - || V: 0, D: 0 Tag: - || V: 0, D: 0 Tag: - || V: 0, D: 0 Tag: - || V: 0, D: 0 Tag: - || V: 0, D: 0 Tag: - || V: 0, D: 0 Tag: - || V: 0, D: 0 Tag: - || V: 0, D: 0 Tag: - || V: 0, D: 0 Tag: - || V: 0, D: 0 Tag: - || V: 0, D: 0 Tag: - || V: 0, D: 0 Tag: - || V: 0, D: 0 Tag: - || V: 0, D: 0 Tag: - || V: 0, D: 0 Tag: - || V: 0, D: 0 Tag: - || V: 0, D: 0 Tag: - || V: 0, D: 0 Tag: - || V: 0, D: 0 Tag: - || V: 0, D: 0 Tag: - || V: 0, D: 0 Tag: - || V: 0, D: 0 Tag: - || V: 0, D: 0 Tag: - || V: 0, D: 0 Tag: - || V: 0, D: 0 Tag: - || V: 0, D: 0 Tag: - || V: 0, D: 0 Tag: - || V: 0, D: 0 Tag: - || V: 0, D: 0 Tag: - || V: 0, D: 0 Tag: - || V: 0, D: 0 Tag: - || V: 0, D: 0 Tag: - || V: 0, D: 0 Tag: - || V: 0, D: 0 Tag: - || V: 0, D: 0 Tag: - || V: 0, D: 0 Tag: - || V: 0, D: 0 Tag: - || V: 0, D: 0 Tag: - || V: 0, D: 0 Tag: - || V: 0, D: 0 Tag: - || V: 0, D: 0 Tag: - || V: 0, D: 0 Tag: - || V: 0, D: 0 Tag: - || V: 0, D: 0 Tag: - || V: 0, D: 0 Tag: - || V: 0, D: 0 Tag: - || V: 0, D: 0 Tag: - || V: 0, D: 0 Tag: - || V: 0, D: 0 Tag: - || V: 0, D: 0 Tag: - || V: 0, D: 0 Tag: - || V: 0, D: 0 Tag: - || V: 0, D: 0 Tag: - || V: 0, D: 0 Tag: - || V: 0, D: 0 Tag: - || V: 0, D: 0 Tag: - || V: 0, D: 0 Tag: - || V: 0, D: 0 Tag: - || V: 0, D: 0 Tag: - || V: 0, D: 0 Tag: - || V: 0, D: 0 Tag: - || V: 0, D: 0 Tag: - || V: 0, D: 0 Tag: - || V: 0, D: 0 Tag: - || V: 0, D: 0 Tag: - || V: 0, D: 0 Tag: - || V: 0, D: 0 Tag: - || V: 0, D: 0 Tag: - || V: 0, D: 0 Tag: - || V: 0, D: 0 Tag: - || V: 0, D: 0 Tag: - || V: 0, D: 0 Tag: - || V: 0, D: 0 Tag: - || V: 0, D: 0 Tag: - || V: 0, D: 0 Tag: - || V: 0, D: 0 Tag: - || V: 0, D: 0 Tag: - || V: 0, D: 0 Tag: - || V: 0, D: 0 Tag: - || V: 0, D: 0 Tag: - || V: 0, D: 0 Tag: - || V: 0, D: 0 Tag: - || V: 0, D: 0 Tag: - || V: 0, D: 0 Tag: - || V: 0, D: 0 Tag: - || V: 0, D: 0 Tag: - || V: 0, D: 0 Tag: - || V: 0, D: 0 Tag: - || V: 0, D: 0 Tag: - || V: 0, D: 0 Tag: - || V: 0, D: 0 Tag: - || V: 0, D: 0 Tag: - || V: 0, D: 0 Tag: - || V: 0, D: 0 Tag: - || V: 0, D: 0 Tag: - || V: 0, D: 0 Tag: - || V: 0, D: 0 Tag: - || V: 0, D: 0 Tag: - || V: 0, D: 0 Tag: - || V: 0, D: 0 Tag: - || V: 0, D: 0 Tag: - || V: 0, D: 0 Tag: - || V: 0, D: 0 Tag: - || V: 0, D: 0 Tag: - || V: 0, D: 0 Tag: - || V: 0, D: 0 Tag: - || V: 0, D: 0 Tag: - || V: 0, D: 0 Tag: - || V: 0, D: 0 Tag: - || V: 0, D: 0 Tag: - || V: 0, D: 0 Tag: - || V: 0, D: 0 Tag: - || V: 0, D: 0 Tag: - || V: 0, D: 0 Tag: - || V: 0, D: 0 Tag: - || V: 0, D: 0 Tag: - || V: 0, D: 0 Tag: - || V: 0, D: 0 Tag: - || V: 0, D: 0 Tag: - || V: 0, D: 0 Tag: - || V: 0, D: 0 Tag: - || V: 0, D: 0 Tag: - || V: 0, D: 0 Tag: - || V: 0, D: 0 Tag: - || V: 0, D: 0 Tag: - || V: 0, D: 0 Tag: - || V: 0, D: 0 Tag: - || V: 0, D: 0 Tag: - || V: 0, D: 0 Tag: - || V: 0, D: 0 Tag: - || V: 0, D: 0 Tag: - || V: 0, D: 0 Tag: - || V: 0, D: 0 Tag: - || V: 0, D: 0 Tag: - || V: 0, D: 0 Tag: - || V: 0, D: 0 Tag: - || V: 0, D: 0 Tag: - || V: 0, D: 0 Tag: - || V: 0, D: 0 Tag: - || V: 0, D: 0 Tag: - || V: 0, D: 0 Tag: - || V: 0, D: 0 Tag: - || V: 0, D: 0 Tag: - || V: 0, D: 0 Tag: - || V: 0, D: 0 Tag: - || V: 0, D: 0 Tag: - || V: 0, D: 0 Tag: - || V: 0, D: 0 Tag: - || V: 0, D: 0 Tag: - || V: 0, D: 0 Tag: - || V: 0, D: 0 Tag: - || V: 0, D: 0 Tag: - || V: 0, D: 0 Tag: - || V: 0, D: 0 Tag: - || V: 0, D: 0 Tag: - || V: 0, D: 0 Tag: - || V: 0, D: 0 Tag: - || V: 0, D: 0 Tag: - || V: 0, D: 0 Tag: - || V: 0, D: 0 Tag: - || V: 0, D: 0 Tag: - || V: 0, D: 0 Tag: - || V: 0, D: 0 Tag: - || V: 0, D: 0 Tag: - || V: 0, D: 0 Tag: - || V: 0, D: 0 Tag: - || V: 0, D: 0 Tag: - || V: 0, D: 0 Tag: - || V: 0, D: 0 Tag: - || V: 0, D: 0 Tag: - || V: 0, D: 0 Tag: - || V: 0, D: 0 Tag: - || V: 0, D: 0 Tag: - || V: 0, D: 0 Tag: - || V: 0, D: 0 Tag: - || V: 0, D: 0 Tag: - || V: 0, D: 0 Tag: - || V: 0, D: 0 Tag: - || V: 0, D: 0 Tag: - || V: 0, D: 0 Tag: - || V: 0, D: 0 Tag: - || V: 0, D: 0 Tag: - || V: 0, D: 0 Tag: - |
+Index 0:	| V: 1, D: 1 Tag: 	3fffad4243e|| V: 1, D: 1 Tag: 	3fffad4243d|| V: 1, D: 0 Tag: 	3fc0e7220dc|| V: 1, D: 1 Tag: 	3fc0e7220e6|| V: 1, D: 0 Tag: 	3fc0e7220fd|| V: 1, D: 1 Tag: 	3fc0e72214e|| V: 1, D: 0 Tag: 	3fc0e7220f1|| V: 1, D: 1 Tag: 	3fc0e72214f|| V: 1, D: 1 Tag: 	3fc0e722154|| V: 1, D: 1 Tag: 	3fc0e722157|| V: 1, D: 0 Tag: 	3fc0e7220f2|| V: 1, D: 1 Tag: 	3fc0e722151|| V: 1, D: 0 Tag: 	3fc0e7220f3|| V: 0, D: 0 Tag: - || V: 0, D: 0 Tag: - || V: 0, D: 0 Tag: - || V: 0, D: 0 Tag: - || V: 0, D: 0 Tag: - || V: 0, D: 0 Tag: - || V: 0, D: 0 Tag: - || V: 0, D: 0 Tag: - || V: 0, D: 0 Tag: - || V: 0, D: 0 Tag: - || V: 0, D: 0 Tag: - || V: 0, D: 0 Tag: - || V: 0, D: 0 Tag: - || V: 0, D: 0 Tag: - || V: 0, D: 0 Tag: - || V: 0, D: 0 Tag: - || V: 0, D: 0 Tag: - || V: 0, D: 0 Tag: - || V: 0, D: 0 Tag: - || V: 0, D: 0 Tag: - || V: 0, D: 0 Tag: - || V: 0, D: 0 Tag: - || V: 0, D: 0 Tag: - || V: 0, D: 0 Tag: - || V: 0, D: 0 Tag: - || V: 0, D: 0 Tag: - || V: 0, D: 0 Tag: - || V: 0, D: 0 Tag: - || V: 0, D: 0 Tag: - || V: 0, D: 0 Tag: - || V: 0, D: 0 Tag: - || V: 0, D: 0 Tag: - || V: 0, D: 0 Tag: - || V: 0, D: 0 Tag: - || V: 0, D: 0 Tag: - || V: 0, D: 0 Tag: - || V: 0, D: 0 Tag: - || V: 0, D: 0 Tag: - || V: 0, D: 0 Tag: - || V: 0, D: 0 Tag: - || V: 0, D: 0 Tag: - || V: 0, D: 0 Tag: - || V: 0, D: 0 Tag: - || V: 0, D: 0 Tag: - || V: 0, D: 0 Tag: - || V: 0, D: 0 Tag: - || V: 0, D: 0 Tag: - || V: 0, D: 0 Tag: - || V: 0, D: 0 Tag: - || V: 0, D: 0 Tag: - || V: 0, D: 0 Tag: - || V: 0, D: 0 Tag: - || V: 0, D: 0 Tag: - || V: 0, D: 0 Tag: - || V: 0, D: 0 Tag: - || V: 0, D: 0 Tag: - || V: 0, D: 0 Tag: - || V: 0, D: 0 Tag: - || V: 0, D: 0 Tag: - || V: 0, D: 0 Tag: - || V: 0, D: 0 Tag: - || V: 0, D: 0 Tag: - || V: 0, D: 0 Tag: - || V: 0, D: 0 Tag: - || V: 0, D: 0 Tag: - || V: 0, D: 0 Tag: - || V: 0, D: 0 Tag: - || V: 0, D: 0 Tag: - || V: 0, D: 0 Tag: - || V: 0, D: 0 Tag: - || V: 0, D: 0 Tag: - || V: 0, D: 0 Tag: - || V: 0, D: 0 Tag: - || V: 0, D: 0 Tag: - || V: 0, D: 0 Tag: - || V: 0, D: 0 Tag: - || V: 0, D: 0 Tag: - || V: 0, D: 0 Tag: - || V: 0, D: 0 Tag: - || V: 0, D: 0 Tag: - || V: 0, D: 0 Tag: - || V: 0, D: 0 Tag: - || V: 0, D: 0 Tag: - || V: 0, D: 0 Tag: - || V: 0, D: 0 Tag: - || V: 0, D: 0 Tag: - || V: 0, D: 0 Tag: - || V: 0, D: 0 Tag: - || V: 0, D: 0 Tag: - || V: 0, D: 0 Tag: - || V: 0, D: 0 Tag: - || V: 0, D: 0 Tag: - || V: 0, D: 0 Tag: - || V: 0, D: 0 Tag: - || V: 0, D: 0 Tag: - || V: 0, D: 0 Tag: - || V: 0, D: 0 Tag: - || V: 0, D: 0 Tag: - || V: 0, D: 0 Tag: - || V: 0, D: 0 Tag: - || V: 0, D: 0 Tag: - || V: 0, D: 0 Tag: - || V: 0, D: 0 Tag: - || V: 0, D: 0 Tag: - || V: 0, D: 0 Tag: - || V: 0, D: 0 Tag: - || V: 0, D: 0 Tag: - || V: 0, D: 0 Tag: - || V: 0, D: 0 Tag: - || V: 0, D: 0 Tag: - || V: 0, D: 0 Tag: - || V: 0, D: 0 Tag: - || V: 0, D: 0 Tag: - || V: 0, D: 0 Tag: - || V: 0, D: 0 Tag: - || V: 0, D: 0 Tag: - || V: 0, D: 0 Tag: - || V: 0, D: 0 Tag: - || V: 0, D: 0 Tag: - || V: 0, D: 0 Tag: - || V: 0, D: 0 Tag: - || V: 0, D: 0 Tag: - || V: 0, D: 0 Tag: - || V: 0, D: 0 Tag: - || V: 0, D: 0 Tag: - || V: 0, D: 0 Tag: - || V: 0, D: 0 Tag: - || V: 0, D: 0 Tag: - || V: 0, D: 0 Tag: - || V: 0, D: 0 Tag: - || V: 0, D: 0 Tag: - || V: 0, D: 0 Tag: - || V: 0, D: 0 Tag: - || V: 0, D: 0 Tag: - || V: 0, D: 0 Tag: - || V: 0, D: 0 Tag: - || V: 0, D: 0 Tag: - || V: 0, D: 0 Tag: - || V: 0, D: 0 Tag: - || V: 0, D: 0 Tag: - || V: 0, D: 0 Tag: - || V: 0, D: 0 Tag: - || V: 0, D: 0 Tag: - || V: 0, D: 0 Tag: - || V: 0, D: 0 Tag: - || V: 0, D: 0 Tag: - || V: 0, D: 0 Tag: - || V: 0, D: 0 Tag: - || V: 0, D: 0 Tag: - || V: 0, D: 0 Tag: - || V: 0, D: 0 Tag: - || V: 0, D: 0 Tag: - || V: 0, D: 0 Tag: - || V: 0, D: 0 Tag: - || V: 0, D: 0 Tag: - || V: 0, D: 0 Tag: - || V: 0, D: 0 Tag: - || V: 0, D: 0 Tag: - || V: 0, D: 0 Tag: - || V: 0, D: 0 Tag: - || V: 0, D: 0 Tag: - || V: 0, D: 0 Tag: - || V: 0, D: 0 Tag: - || V: 0, D: 0 Tag: - || V: 0, D: 0 Tag: - || V: 0, D: 0 Tag: - || V: 0, D: 0 Tag: - || V: 0, D: 0 Tag: - || V: 0, D: 0 Tag: - || V: 0, D: 0 Tag: - || V: 0, D: 0 Tag: - || V: 0, D: 0 Tag: - || V: 0, D: 0 Tag: - || V: 0, D: 0 Tag: - || V: 0, D: 0 Tag: - || V: 0, D: 0 Tag: - || V: 0, D: 0 Tag: - || V: 0, D: 0 Tag: - || V: 0, D: 0 Tag: - || V: 0, D: 0 Tag: - || V: 0, D: 0 Tag: - || V: 0, D: 0 Tag: - || V: 0, D: 0 Tag: - || V: 0, D: 0 Tag: - || V: 0, D: 0 Tag: - || V: 0, D: 0 Tag: - || V: 0, D: 0 Tag: - || V: 0, D: 0 Tag: - || V: 0, D: 0 Tag: - || V: 0, D: 0 Tag: - || V: 0, D: 0 Tag: - || V: 0, D: 0 Tag: - || V: 0, D: 0 Tag: - || V: 0, D: 0 Tag: - || V: 0, D: 0 Tag: - || V: 0, D: 0 Tag: - || V: 0, D: 0 Tag: - || V: 0, D: 0 Tag: - || V: 0, D: 0 Tag: - || V: 0, D: 0 Tag: - || V: 0, D: 0 Tag: - || V: 0, D: 0 Tag: - || V: 0, D: 0 Tag: - || V: 0, D: 0 Tag: - || V: 0, D: 0 Tag: - || V: 0, D: 0 Tag: - || V: 0, D: 0 Tag: - || V: 0, D: 0 Tag: - || V: 0, D: 0 Tag: - || V: 0, D: 0 Tag: - || V: 0, D: 0 Tag: - || V: 0, D: 0 Tag: - || V: 0, D: 0 Tag: - || V: 0, D: 0 Tag: - || V: 0, D: 0 Tag: - || V: 0, D: 0 Tag: - || V: 0, D: 0 Tag: - || V: 0, D: 0 Tag: - || V: 0, D: 0 Tag: - || V: 0, D: 0 Tag: - || V: 0, D: 0 Tag: - || V: 0, D: 0 Tag: - || V: 0, D: 0 Tag: - || V: 0, D: 0 Tag: - || V: 0, D: 0 Tag: - || V: 0, D: 0 Tag: - || V: 0, D: 0 Tag: - || V: 0, D: 0 Tag: - || V: 0, D: 0 Tag: - || V: 0, D: 0 Tag: - || V: 0, D: 0 Tag: - || V: 0, D: 0 Tag: - || V: 0, D: 0 Tag: - || V: 0, D: 0 Tag: - || V: 0, D: 0 Tag: - || V: 0, D: 0 Tag: - || V: 0, D: 0 Tag: - || V: 0, D: 0 Tag: - || V: 0, D: 0 Tag: - || V: 0, D: 0 Tag: - || V: 0, D: 0 Tag: - || V: 0, D: 0 Tag: - || V: 0, D: 0 Tag: - |
 
 
 Memory Level: L2 Unified Cache 

@@ -309,15 +309,15 @@ void flushCaches(struct Cache * iCache, struct Cache * dCache, struct Cache * l2
             if (tempBlock->valid) {
                 tempBlock->valid = 0;
                 iCache->invalidates++; // increment invalidate counter
-                if (debugFlag) {
-                    printf("Block is now invalid, moving on\n");
-                }
+//                if (debugFlag) {
+//                    printf("Block is now invalid, moving on\n");
+//                }
 
                 // Check if it was also dirty
                 if (tempBlock->dirty) {
-                    if (debugFlag) {
-                        printf("~~~> Block was dirty, incrementing iCache flush kickouts\n");
-                    }
+//                    if (debugFlag) {
+//                        printf("~~~> Block was dirty, incrementing iCache flush kickouts\n");
+//                    }
 
                     iCache->flushKickouts++;
 
@@ -348,15 +348,15 @@ void flushCaches(struct Cache * iCache, struct Cache * dCache, struct Cache * l2
                     // Ready to write back to the L2 cache
                     addressTemp = 0; // Reset to 0
 
-                    if (debugFlag) {
-                        printf("~~~> Writing dirtyBlock back to L2 cache.\n");
-                    }
+//                    if (debugFlag) {
+//                        printf("~~~> Writing dirtyBlock back to L2 cache.\n");
+//                    }
                     addressTemp = moveBlock(l2Cache, tagTemp, indexTemp, 1);
                     iCache->flushTime += transferTime * (iCache->blockSize / busWidth); // Move dirty block from L1->L2
 
                     if (addressTemp) {
                         // Kicked out another block, need to add more to the flush time
-                        if (debugFlag) printf("~~~> Kicked out another dirty block in L2 cache, writing it back to main memory");
+//                        if (debugFlag) printf("~~~> Kicked out another dirty block in L2 cache, writing it back to main memory");
                         l2Cache->flushKickouts++; // Increment L2 flushKickouts
                         iCache->flushTime += mainMemoryTime;
                     }
@@ -368,7 +368,8 @@ void flushCaches(struct Cache * iCache, struct Cache * dCache, struct Cache * l2
 
     // Have completed flushing the iCache, repeat for the dCache
     if (debugFlag) {
-        printf("~~~> Starting to flush the dCache\n");
+        printf("~~~> FINISHED FLUSHING ICACHE!!! \n\n"
+                "~~~> Starting to flush the dCache\n");
     }
     for (index = 0; index < dCache->lengthOfWay; index++) {
         tempBlock = dCache->blockArray[index][0].nextBlock;
@@ -378,15 +379,15 @@ void flushCaches(struct Cache * iCache, struct Cache * dCache, struct Cache * l2
             if (tempBlock->valid) {
                 tempBlock->valid = 0;
                 dCache->invalidates++; // increment invalidate counter
-                if (debugFlag) {
-                    printf("Block is now invalid, moving on\n");
-                }
+//                if (debugFlag) {
+//                    printf("Block is now invalid, moving on\n");
+//                }
 
                 // Check to see if it was also dirty
                 if (tempBlock->dirty) {
-                    if (debugFlag) {
-                        printf("~~~> Block was dirty, incrementing dCache flush kickouts\n");
-                    }
+//                    if (debugFlag) {
+//                        printf("~~~> Block was dirty, incrementing dCache flush kickouts\n");
+//                    }
 
                     dCache->flushKickouts++;
 
@@ -409,23 +410,23 @@ void flushCaches(struct Cache * iCache, struct Cache * dCache, struct Cache * l2
                     tagTemp = indexTemp;
                     indexTemp = ~indexTemp;
                     indexTemp = indexTemp & addressTemp;
-                    indexTemp = indexTemp >> dCache->byteOffsetSize; // Pull out the L2 index
+                    indexTemp = indexTemp >> l2Cache->byteOffsetSize; // Pull out the L2 index
 
                     tagTemp = tagTemp & addressTemp;
-                    tagTemp = tagTemp >> (dCache->indexFieldSize + dCache->byteOffsetSize); // Pull out the L2 tag
+                    tagTemp = tagTemp >> (l2Cache->indexFieldSize + l2Cache->byteOffsetSize); // Pull out the L2 tag
 
                     // Ready to write back to the L2 cache
                     addressTemp = 0; // Reset to 0
 
-                    if (debugFlag) {
-                        printf("~~~> Writing dirtyBlock back to L2 cache.\n");
-                    }
+//                    if (debugFlag) {
+//                        printf("~~~> Writing dirtyBlock back to L2 cache.\n");
+//                    }
                     addressTemp = moveBlock(l2Cache, tagTemp, indexTemp, 1);
                     dCache->flushTime += transferTime * (dCache->blockSize / busWidth); // Move dirty block from L1->L2
 
                     if (addressTemp) {
                         // Kicked out another block, need to add more to the flush time
-                        if (debugFlag) printf("~~~> Kicked out another dirty block in L2 cache, writing it back to main memory");
+//                        if (debugFlag) printf("~~~> Kicked out another dirty block in L2 cache, writing it back to main memory");
                         l2Cache->flushKickouts++; // Increment L2 flushKickouts
                         dCache->flushTime += mainMemoryTime;
                     }
@@ -437,7 +438,8 @@ void flushCaches(struct Cache * iCache, struct Cache * dCache, struct Cache * l2
 
     // Have completed flushing the dCache, repeat for the l2Cache
     if (debugFlag) {
-        printf("~~~> Starting to flush the l2Cache\n");
+        printf("~~~> FINISHED FLUSHING DCACHE!!! \n\n"
+                "~~~> Starting to flush the l2Cache\n");
     }
     for (index = 0; index < l2Cache->lengthOfWay; index++) {
         tempBlock = l2Cache->blockArray[index][0].nextBlock;
@@ -447,15 +449,15 @@ void flushCaches(struct Cache * iCache, struct Cache * dCache, struct Cache * l2
             if (tempBlock->valid) {
                 tempBlock->valid = 0;
                 l2Cache->invalidates++; // increment invalidate counter
-                if (debugFlag) {
-                    printf("Block is now invalid, moving on\n");
-                }
+//                if (debugFlag) {
+//                    printf("Block is now invalid, moving on\n");
+//                }
 
                 // Check to see if it was also dirty
                 if (tempBlock->dirty) {
-                    if (debugFlag) {
-                        printf("~~~> Block was dirty, incrementing l2Cache flush kickouts\n");
-                    }
+//                    if (debugFlag) {
+//                        printf("~~~> Block was dirty, incrementing l2Cache flush kickouts\n");
+//                    }
 
                     l2Cache->flushKickouts++;
                     l2Cache->flushTime += mainMemoryTime; // Write it back to main memory
