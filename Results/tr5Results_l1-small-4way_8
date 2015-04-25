@@ -1,5 +1,2069 @@
 Configuration: config/l1-small-4way_8
 
+Now scanning L2 for target tag
+	 *** L2: Index Field = 1a, Tag Field = ff039c44 *** 
+3 bytes transferred.
+0 bytes left.
+4 bytes transferred.
+1 bytes left. Still in the same block.
+1 bytes transferred.
+0 bytes left.
+Now scanning L2 for target tag
+	 *** L2: Index Field = 1f, Tag Field = fffeb509 *** 
+4 bytes transferred.
+4 bytes left. Still in the same block.
+4 bytes transferred.
+0 bytes left.
+Now scanning L2 for target tag
+	 *** L2: Index Field = 100, Tag Field = ff039c44 *** 
+1 bytes transferred.
+0 bytes left.
+4 bytes transferred.
+4 bytes left. Still in the same block.
+4 bytes transferred.
+0 bytes left.
+3 bytes transferred.
+0 bytes left.
+2 bytes transferred.
+0 bytes left.
+4 bytes transferred.
+4 bytes left. Still in the same block.
+4 bytes transferred.
+0 bytes left.
+2 bytes transferred.
+0 bytes left.
+4 bytes transferred.
+4 bytes left. Still in the same block.
+4 bytes transferred.
+0 bytes left.
+2 bytes transferred.
+0 bytes left.
+Now scanning L2 for target tag
+	 *** L2: Index Field = 1e, Tag Field = fffeb509 *** 
+4 bytes transferred.
+4 bytes left. Still in the same block.
+4 bytes transferred.
+0 bytes left.
+2 bytes transferred.
+0 bytes left.
+4 bytes transferred.
+4 bytes left. Still in the same block.
+4 bytes transferred.
+0 bytes left.
+1 bytes transferred.
+0 bytes left.
+4 bytes transferred.
+4 bytes left. Still in the same block.
+4 bytes transferred.
+0 bytes left.
+3 bytes transferred.
+0 bytes left.
+Now scanning L2 for target tag
+	 *** L2: Index Field = 100, Tag Field = ff039c44 *** 
+4 bytes transferred.
+0 bytes left.
+2 bytes transferred.
+0 bytes left.
+4 bytes transferred.
+0 bytes left.
+2 bytes transferred.
+0 bytes left.
+3 bytes transferred.
+0 bytes left.
+4 bytes transferred.
+3 bytes left. Still in the same block.
+3 bytes transferred.
+0 bytes left.
+4 bytes transferred.
+3 bytes left. Still in the same block.
+3 bytes transferred.
+0 bytes left.
+Now scanning L2 for target tag
+	 *** L2: Index Field = 6e, Tag Field = ff039c88 *** 
+4 bytes transferred.
+4 bytes left. Still in the same block.
+Now scanning L2 for target tag
+	 *** L2: Index Field = 6e, Tag Field = ff039c88 *** 
+4 bytes transferred.
+0 bytes left.
+4 bytes transferred.
+3 bytes left. Still in the same block.
+0 bytes transferred.
+	 Need to access the next block! 
+	 Requested Cache Block Start/End address = 7f81ce224040, 	7f81ce224060	 *** Byte Start Address = 7f81ce224040 *** 
+	 *** L1: Index Field = 1, Tag Field = 1fe0738890 *** 
+3 bytes transferred.
+0 bytes left.
+Now scanning L2 for target tag
+	 *** L2: Index Field = 73, Tag Field = ff039c88 *** 
+4 bytes transferred.
+4 bytes left. Still in the same block.
+4 bytes transferred.
+0 bytes left.
+Now scanning L2 for target tag
+	 *** L2: Index Field = 101, Tag Field = ff039c44 *** 
+3 bytes transferred.
+0 bytes left.
+4 bytes transferred.
+3 bytes left. Still in the same block.
+3 bytes transferred.
+0 bytes left.
+Now scanning L2 for target tag
+	 *** L2: Index Field = 7e, Tag Field = ff039c88 *** 
+4 bytes transferred.
+4 bytes left. Still in the same block.
+Now scanning L2 for target tag
+	 *** L2: Index Field = 7e, Tag Field = ff039c88 *** 
+4 bytes transferred.
+0 bytes left.
+4 bytes transferred.
+3 bytes left. Still in the same block.
+3 bytes transferred.
+0 bytes left.
+Now scanning L2 for target tag
+	 *** L2: Index Field = a7, Tag Field = ff039c88 *** 
+4 bytes transferred.
+4 bytes left. Still in the same block.
+4 bytes transferred.
+0 bytes left.
+3 bytes transferred.
+0 bytes left.
+Now scanning L2 for target tag
+	 *** L2: Index Field = 78, Tag Field = ff039c88 *** 
+4 bytes transferred.
+4 bytes left. Still in the same block.
+Now scanning L2 for target tag
+	 *** L2: Index Field = 78, Tag Field = ff039c88 *** 
+4 bytes transferred.
+0 bytes left.
+4 bytes transferred.
+3 bytes left. Still in the same block.
+3 bytes transferred.
+0 bytes left.
+Now scanning L2 for target tag
+	 *** L2: Index Field = a7, Tag Field = ff039c88 *** 
+4 bytes transferred.
+4 bytes left. Still in the same block.
+4 bytes transferred.
+0 bytes left.
+3 bytes transferred.
+0 bytes left.
+Now scanning L2 for target tag
+	 *** L2: Index Field = 101, Tag Field = ff039c44 *** 
+4 bytes transferred.
+2 bytes left. Still in the same block.
+2 bytes transferred.
+0 bytes left.
+4 bytes transferred.
+1 bytes left. Still in the same block.
+1 bytes transferred.
+0 bytes left.
+4 bytes transferred.
+2 bytes left. Still in the same block.
+2 bytes transferred.
+0 bytes left.
+4 bytes transferred.
+2 bytes left. Still in the same block.
+2 bytes transferred.
+0 bytes left.
+4 bytes transferred.
+3 bytes left. Still in the same block.
+3 bytes transferred.
+0 bytes left.
+Now scanning L2 for target tag
+	 *** L2: Index Field = 102, Tag Field = ff039c44 *** 
+4 bytes transferred.
+2 bytes left. Still in the same block.
+2 bytes transferred.
+0 bytes left.
+4 bytes transferred.
+1 bytes left. Still in the same block.
+1 bytes transferred.
+0 bytes left.
+2 bytes transferred.
+0 bytes left.
+Now scanning L2 for target tag
+	 *** L2: Index Field = 102, Tag Field = ff039c44 *** 
+4 bytes transferred.
+0 bytes left.
+2 bytes transferred.
+0 bytes left.
+4 bytes transferred.
+3 bytes left. Still in the same block.
+3 bytes transferred.
+0 bytes left.
+4 bytes transferred.
+4 bytes left. Still in the same block.
+4 bytes transferred.
+0 bytes left.
+Now scanning L2 for target tag
+	 *** L2: Index Field = aa, Tag Field = ff039c88 *** 
+4 bytes transferred.
+4 bytes left. Still in the same block.
+4 bytes transferred.
+0 bytes left.
+4 bytes transferred.
+0 bytes left.
+4 bytes transferred.
+1 bytes left. Still in the same block.
+1 bytes transferred.
+0 bytes left.
+Now scanning L2 for target tag
+	 *** L2: Index Field = 78, Tag Field = ff039c88 *** 
+4 bytes transferred.
+4 bytes left. Still in the same block.
+Now scanning L2 for target tag
+	 *** L2: Index Field = 78, Tag Field = ff039c88 *** 
+4 bytes transferred.
+0 bytes left.
+3 bytes transferred.
+0 bytes left.
+2 bytes transferred.
+0 bytes left.
+4 bytes transferred.
+0 bytes left.
+2 bytes transferred.
+0 bytes left.
+4 bytes transferred.
+3 bytes left. Still in the same block.
+3 bytes transferred.
+0 bytes left.
+4 bytes transferred.
+4 bytes left. Still in the same block.
+4 bytes transferred.
+0 bytes left.
+Now scanning L2 for target tag
+	 *** L2: Index Field = ab, Tag Field = ff039c88 *** 
+4 bytes transferred.
+4 bytes left. Still in the same block.
+4 bytes transferred.
+0 bytes left.
+4 bytes transferred.
+0 bytes left.
+4 bytes transferred.
+1 bytes left. Still in the same block.
+1 bytes transferred.
+0 bytes left.
+Now scanning L2 for target tag
+	 *** L2: Index Field = 79, Tag Field = ff039c88 *** 
+4 bytes transferred.
+4 bytes left. Still in the same block.
+Now scanning L2 for target tag
+	 *** L2: Index Field = 79, Tag Field = ff039c88 *** 
+4 bytes transferred.
+0 bytes left.
+3 bytes transferred.
+0 bytes left.
+2 bytes transferred.
+0 bytes left.
+4 bytes transferred.
+0 bytes left.
+2 bytes transferred.
+0 bytes left.
+4 bytes transferred.
+3 bytes left. Still in the same block.
+3 bytes transferred.
+0 bytes left.
+4 bytes transferred.
+4 bytes left. Still in the same block.
+4 bytes transferred.
+0 bytes left.
+4 bytes transferred.
+4 bytes left. Still in the same block.
+4 bytes transferred.
+0 bytes left.
+4 bytes transferred.
+0 bytes left.
+4 bytes transferred.
+1 bytes left. Still in the same block.
+1 bytes transferred.
+0 bytes left.
+Now scanning L2 for target tag
+	 *** L2: Index Field = 79, Tag Field = ff039c88 *** 
+4 bytes transferred.
+4 bytes left. Still in the same block.
+Now scanning L2 for target tag
+	 *** L2: Index Field = 79, Tag Field = ff039c88 *** 
+4 bytes transferred.
+0 bytes left.
+3 bytes transferred.
+0 bytes left.
+2 bytes transferred.
+0 bytes left.
+4 bytes transferred.
+0 bytes left.
+2 bytes transferred.
+0 bytes left.
+4 bytes transferred.
+3 bytes left. Still in the same block.
+3 bytes transferred.
+0 bytes left.
+4 bytes transferred.
+4 bytes left. Still in the same block.
+4 bytes transferred.
+0 bytes left.
+Now scanning L2 for target tag
+	 *** L2: Index Field = a8, Tag Field = ff039c88 *** 
+4 bytes transferred.
+4 bytes left. Still in the same block.
+4 bytes transferred.
+0 bytes left.
+4 bytes transferred.
+0 bytes left.
+4 bytes transferred.
+1 bytes left. Still in the same block.
+1 bytes transferred.
+0 bytes left.
+Now scanning L2 for target tag
+	 *** L2: Index Field = 79, Tag Field = ff039c88 *** 
+4 bytes transferred.
+4 bytes left. Still in the same block.
+Now scanning L2 for target tag
+	 *** L2: Index Field = 79, Tag Field = ff039c88 *** 
+4 bytes transferred.
+0 bytes left.
+3 bytes transferred.
+0 bytes left.
+2 bytes transferred.
+0 bytes left.
+4 bytes transferred.
+0 bytes left.
+2 bytes transferred.
+0 bytes left.
+3 bytes transferred.
+0 bytes left.
+3 bytes transferred.
+0 bytes left.
+4 bytes transferred.
+0 bytes left.
+4 bytes transferred.
+2 bytes left. Still in the same block.
+0 bytes transferred.
+	 Need to access the next block! 
+	 Requested Cache Block Start/End address = 7f81ce2240c0, 	7f81ce2240e0	 *** Byte Start Address = 7f81ce2240c0 *** 
+	 *** L1: Index Field = 5, Tag Field = 1fe0738890 *** 
+2 bytes transferred.
+0 bytes left.
+Now scanning L2 for target tag
+	 *** L2: Index Field = 10e, Tag Field = ff039c44 *** 
+3 bytes transferred.
+0 bytes left.
+2 bytes transferred.
+0 bytes left.
+3 bytes transferred.
+0 bytes left.
+2 bytes transferred.
+0 bytes left.
+Now scanning L2 for target tag
+	 *** L2: Index Field = 10f, Tag Field = ff039c44 *** 
+3 bytes transferred.
+0 bytes left.
+3 bytes transferred.
+0 bytes left.
+4 bytes transferred.
+0 bytes left.
+4 bytes transferred.
+2 bytes left. Still in the same block.
+2 bytes transferred.
+0 bytes left.
+Now scanning L2 for target tag
+	 *** L2: Index Field = 114, Tag Field = ff039c44 *** 
+3 bytes transferred.
+0 bytes left.
+3 bytes transferred.
+0 bytes left.
+4 bytes transferred.
+0 bytes left.
+Now scanning L2 for target tag
+	 *** L2: Index Field = 115, Tag Field = ff039c44 *** 
+4 bytes transferred.
+2 bytes left. Still in the same block.
+2 bytes transferred.
+0 bytes left.
+4 bytes transferred.
+2 bytes left. Still in the same block.
+2 bytes transferred.
+0 bytes left.
+3 bytes transferred.
+0 bytes left.
+4 bytes transferred.
+0 bytes left.
+Now scanning L2 for target tag
+	 *** L2: Index Field = b1, Tag Field = ff039c88 *** 
+4 bytes transferred.
+4 bytes left. Still in the same block.
+4 bytes transferred.
+0 bytes left.
+4 bytes transferred.
+1 bytes left. Still in the same block.
+1 bytes transferred.
+0 bytes left.
+4 bytes transferred.
+0 bytes left.
+4 bytes transferred.
+1 bytes left. Still in the same block.
+1 bytes transferred.
+0 bytes left.
+Now scanning L2 for target tag
+	 *** L2: Index Field = 79, Tag Field = ff039c88 *** 
+4 bytes transferred.
+4 bytes left. Still in the same block.
+Now scanning L2 for target tag
+	 *** L2: Index Field = 79, Tag Field = ff039c88 *** 
+4 bytes transferred.
+0 bytes left.
+3 bytes transferred.
+0 bytes left.
+2 bytes transferred.
+0 bytes left.
+4 bytes transferred.
+0 bytes left.
+2 bytes transferred.
+0 bytes left.
+4 bytes transferred.
+3 bytes left. Still in the same block.
+3 bytes transferred.
+0 bytes left.
+4 bytes transferred.
+4 bytes left. Still in the same block.
+4 bytes transferred.
+0 bytes left.
+Now scanning L2 for target tag
+	 *** L2: Index Field = a9, Tag Field = ff039c88 *** 
+4 bytes transferred.
+4 bytes left. Still in the same block.
+4 bytes transferred.
+0 bytes left.
+4 bytes transferred.
+0 bytes left.
+4 bytes transferred.
+1 bytes left. Still in the same block.
+1 bytes transferred.
+0 bytes left.
+Now scanning L2 for target tag
+	 *** L2: Index Field = 7a, Tag Field = ff039c88 *** 
+4 bytes transferred.
+4 bytes left. Still in the same block.
+Now scanning L2 for target tag
+	 *** L2: Index Field = 7a, Tag Field = ff039c88 *** 
+4 bytes transferred.
+0 bytes left.
+3 bytes transferred.
+0 bytes left.
+2 bytes transferred.
+0 bytes left.
+4 bytes transferred.
+0 bytes left.
+2 bytes transferred.
+0 bytes left.
+4 bytes transferred.
+3 bytes left. Still in the same block.
+3 bytes transferred.
+0 bytes left.
+4 bytes transferred.
+4 bytes left. Still in the same block.
+4 bytes transferred.
+0 bytes left.
+4 bytes transferred.
+4 bytes left. Still in the same block.
+4 bytes transferred.
+0 bytes left.
+4 bytes transferred.
+0 bytes left.
+4 bytes transferred.
+1 bytes left. Still in the same block.
+1 bytes transferred.
+0 bytes left.
+Now scanning L2 for target tag
+	 *** L2: Index Field = 7a, Tag Field = ff039c88 *** 
+4 bytes transferred.
+4 bytes left. Still in the same block.
+	 Need to write over a dirty block
+	 L2 Writeback Index = aa, Tag = ff039c88
+		 HIT: Found in L2, adding L2 hit time
+Adding L1->L2 transfer time (+10)
+Now scanning L2 for target tag
+	 *** L2: Index Field = 7a, Tag Field = ff039c88 *** 
+4 bytes transferred.
+0 bytes left.
+3 bytes transferred.
+0 bytes left.
+2 bytes transferred.
+0 bytes left.
+4 bytes transferred.
+0 bytes left.
+2 bytes transferred.
+0 bytes left.
+4 bytes transferred.
+3 bytes left. Still in the same block.
+3 bytes transferred.
+0 bytes left.
+4 bytes transferred.
+4 bytes left. Still in the same block.
+4 bytes transferred.
+0 bytes left.
+Now scanning L2 for target tag
+	 *** L2: Index Field = a9, Tag Field = ff039c88 *** 
+4 bytes transferred.
+4 bytes left. Still in the same block.
+4 bytes transferred.
+0 bytes left.
+4 bytes transferred.
+0 bytes left.
+4 bytes transferred.
+1 bytes left. Still in the same block.
+1 bytes transferred.
+0 bytes left.
+Now scanning L2 for target tag
+	 *** L2: Index Field = 7a, Tag Field = ff039c88 *** 
+4 bytes transferred.
+4 bytes left. Still in the same block.
+Now scanning L2 for target tag
+	 *** L2: Index Field = 7a, Tag Field = ff039c88 *** 
+4 bytes transferred.
+0 bytes left.
+3 bytes transferred.
+0 bytes left.
+2 bytes transferred.
+0 bytes left.
+4 bytes transferred.
+0 bytes left.
+2 bytes transferred.
+0 bytes left.
+4 bytes transferred.
+3 bytes left. Still in the same block.
+3 bytes transferred.
+0 bytes left.
+4 bytes transferred.
+4 bytes left. Still in the same block.
+4 bytes transferred.
+0 bytes left.
+4 bytes transferred.
+4 bytes left. Still in the same block.
+4 bytes transferred.
+0 bytes left.
+4 bytes transferred.
+0 bytes left.
+4 bytes transferred.
+1 bytes left. Still in the same block.
+1 bytes transferred.
+0 bytes left.
+Now scanning L2 for target tag
+	 *** L2: Index Field = 7a, Tag Field = ff039c88 *** 
+4 bytes transferred.
+4 bytes left. Still in the same block.
+Now scanning L2 for target tag
+	 *** L2: Index Field = 7a, Tag Field = ff039c88 *** 
+4 bytes transferred.
+0 bytes left.
+3 bytes transferred.
+0 bytes left.
+2 bytes transferred.
+0 bytes left.
+4 bytes transferred.
+0 bytes left.
+2 bytes transferred.
+0 bytes left.
+4 bytes transferred.
+3 bytes left. Still in the same block.
+3 bytes transferred.
+0 bytes left.
+4 bytes transferred.
+4 bytes left. Still in the same block.
+4 bytes transferred.
+0 bytes left.
+4 bytes transferred.
+4 bytes left. Still in the same block.
+4 bytes transferred.
+0 bytes left.
+4 bytes transferred.
+0 bytes left.
+4 bytes transferred.
+1 bytes left. Still in the same block.
+1 bytes transferred.
+0 bytes left.
+Now scanning L2 for target tag
+	 *** L2: Index Field = 7b, Tag Field = ff039c88 *** 
+4 bytes transferred.
+4 bytes left. Still in the same block.
+Now scanning L2 for target tag
+	 *** L2: Index Field = 7b, Tag Field = ff039c88 *** 
+4 bytes transferred.
+0 bytes left.
+3 bytes transferred.
+0 bytes left.
+2 bytes transferred.
+0 bytes left.
+4 bytes transferred.
+0 bytes left.
+2 bytes transferred.
+0 bytes left.
+4 bytes transferred.
+3 bytes left. Still in the same block.
+3 bytes transferred.
+0 bytes left.
+4 bytes transferred.
+4 bytes left. Still in the same block.
+4 bytes transferred.
+0 bytes left.
+4 bytes transferred.
+4 bytes left. Still in the same block.
+4 bytes transferred.
+0 bytes left.
+4 bytes transferred.
+0 bytes left.
+4 bytes transferred.
+1 bytes left. Still in the same block.
+1 bytes transferred.
+0 bytes left.
+Now scanning L2 for target tag
+	 *** L2: Index Field = 7b, Tag Field = ff039c88 *** 
+4 bytes transferred.
+4 bytes left. Still in the same block.
+Now scanning L2 for target tag
+	 *** L2: Index Field = 7b, Tag Field = ff039c88 *** 
+4 bytes transferred.
+0 bytes left.
+3 bytes transferred.
+0 bytes left.
+2 bytes transferred.
+0 bytes left.
+4 bytes transferred.
+0 bytes left.
+2 bytes transferred.
+0 bytes left.
+4 bytes transferred.
+3 bytes left. Still in the same block.
+3 bytes transferred.
+0 bytes left.
+4 bytes transferred.
+4 bytes left. Still in the same block.
+4 bytes transferred.
+0 bytes left.
+Now scanning L2 for target tag
+	 *** L2: Index Field = aa, Tag Field = ff039c88 *** 
+4 bytes transferred.
+4 bytes left. Still in the same block.
+4 bytes transferred.
+0 bytes left.
+4 bytes transferred.
+0 bytes left.
+4 bytes transferred.
+1 bytes left. Still in the same block.
+1 bytes transferred.
+0 bytes left.
+Now scanning L2 for target tag
+	 *** L2: Index Field = 7b, Tag Field = ff039c88 *** 
+4 bytes transferred.
+4 bytes left. Still in the same block.
+Now scanning L2 for target tag
+	 *** L2: Index Field = 7b, Tag Field = ff039c88 *** 
+4 bytes transferred.
+0 bytes left.
+3 bytes transferred.
+0 bytes left.
+2 bytes transferred.
+0 bytes left.
+4 bytes transferred.
+0 bytes left.
+2 bytes transferred.
+0 bytes left.
+4 bytes transferred.
+3 bytes left. Still in the same block.
+3 bytes transferred.
+0 bytes left.
+4 bytes transferred.
+4 bytes left. Still in the same block.
+4 bytes transferred.
+0 bytes left.
+Now scanning L2 for target tag
+	 *** L2: Index Field = ab, Tag Field = ff039c88 *** 
+4 bytes transferred.
+4 bytes left. Still in the same block.
+4 bytes transferred.
+0 bytes left.
+4 bytes transferred.
+0 bytes left.
+4 bytes transferred.
+1 bytes left. Still in the same block.
+1 bytes transferred.
+0 bytes left.
+Now scanning L2 for target tag
+	 *** L2: Index Field = 7b, Tag Field = ff039c88 *** 
+4 bytes transferred.
+4 bytes left. Still in the same block.
+	 Need to write over a dirty block
+	 L2 Writeback Index = ab, Tag = ff039c88
+		 HIT: Found in L2, adding L2 hit time
+Adding L1->L2 transfer time (+10)
+Now scanning L2 for target tag
+	 *** L2: Index Field = 7b, Tag Field = ff039c88 *** 
+4 bytes transferred.
+0 bytes left.
+3 bytes transferred.
+0 bytes left.
+2 bytes transferred.
+0 bytes left.
+4 bytes transferred.
+0 bytes left.
+2 bytes transferred.
+0 bytes left.
+4 bytes transferred.
+3 bytes left. Still in the same block.
+3 bytes transferred.
+0 bytes left.
+4 bytes transferred.
+4 bytes left. Still in the same block.
+4 bytes transferred.
+0 bytes left.
+4 bytes transferred.
+4 bytes left. Still in the same block.
+4 bytes transferred.
+0 bytes left.
+4 bytes transferred.
+0 bytes left.
+4 bytes transferred.
+1 bytes left. Still in the same block.
+1 bytes transferred.
+0 bytes left.
+Now scanning L2 for target tag
+	 *** L2: Index Field = 7c, Tag Field = ff039c88 *** 
+4 bytes transferred.
+4 bytes left. Still in the same block.
+Now scanning L2 for target tag
+	 *** L2: Index Field = 7c, Tag Field = ff039c88 *** 
+4 bytes transferred.
+0 bytes left.
+3 bytes transferred.
+0 bytes left.
+2 bytes transferred.
+0 bytes left.
+4 bytes transferred.
+0 bytes left.
+2 bytes transferred.
+0 bytes left.
+4 bytes transferred.
+3 bytes left. Still in the same block.
+3 bytes transferred.
+0 bytes left.
+4 bytes transferred.
+4 bytes left. Still in the same block.
+4 bytes transferred.
+0 bytes left.
+4 bytes transferred.
+4 bytes left. Still in the same block.
+4 bytes transferred.
+0 bytes left.
+4 bytes transferred.
+0 bytes left.
+4 bytes transferred.
+1 bytes left. Still in the same block.
+1 bytes transferred.
+0 bytes left.
+Now scanning L2 for target tag
+	 *** L2: Index Field = 7c, Tag Field = ff039c88 *** 
+4 bytes transferred.
+4 bytes left. Still in the same block.
+Now scanning L2 for target tag
+	 *** L2: Index Field = 7c, Tag Field = ff039c88 *** 
+4 bytes transferred.
+0 bytes left.
+3 bytes transferred.
+0 bytes left.
+2 bytes transferred.
+0 bytes left.
+4 bytes transferred.
+0 bytes left.
+2 bytes transferred.
+0 bytes left.
+4 bytes transferred.
+3 bytes left. Still in the same block.
+3 bytes transferred.
+0 bytes left.
+4 bytes transferred.
+4 bytes left. Still in the same block.
+4 bytes transferred.
+0 bytes left.
+4 bytes transferred.
+4 bytes left. Still in the same block.
+4 bytes transferred.
+0 bytes left.
+4 bytes transferred.
+0 bytes left.
+4 bytes transferred.
+1 bytes left. Still in the same block.
+1 bytes transferred.
+0 bytes left.
+Now scanning L2 for target tag
+	 *** L2: Index Field = 7c, Tag Field = ff039c88 *** 
+4 bytes transferred.
+4 bytes left. Still in the same block.
+Now scanning L2 for target tag
+	 *** L2: Index Field = 7c, Tag Field = ff039c88 *** 
+4 bytes transferred.
+0 bytes left.
+3 bytes transferred.
+0 bytes left.
+2 bytes transferred.
+0 bytes left.
+4 bytes transferred.
+0 bytes left.
+2 bytes transferred.
+0 bytes left.
+3 bytes transferred.
+0 bytes left.
+3 bytes transferred.
+0 bytes left.
+4 bytes transferred.
+0 bytes left.
+4 bytes transferred.
+2 bytes left. Still in the same block.
+0 bytes transferred.
+	 Need to access the next block! 
+	 Requested Cache Block Start/End address = 7f81ce2240c0, 	7f81ce2240e0	 *** Byte Start Address = 7f81ce2240c0 *** 
+	 *** L1: Index Field = 5, Tag Field = 1fe0738890 *** 
+2 bytes transferred.
+0 bytes left.
+Now scanning L2 for target tag
+	 *** L2: Index Field = 103, Tag Field = ff039c44 *** 
+3 bytes transferred.
+0 bytes left.
+3 bytes transferred.
+0 bytes left.
+4 bytes transferred.
+3 bytes left. Still in the same block.
+3 bytes transferred.
+0 bytes left.
+4 bytes transferred.
+4 bytes left. Still in the same block.
+4 bytes transferred.
+0 bytes left.
+Now scanning L2 for target tag
+	 *** L2: Index Field = ad, Tag Field = ff039c88 *** 
+4 bytes transferred.
+4 bytes left. Still in the same block.
+4 bytes transferred.
+0 bytes left.
+4 bytes transferred.
+0 bytes left.
+4 bytes transferred.
+1 bytes left. Still in the same block.
+0 bytes transferred.
+	 Need to access the next block! 
+	 Requested Cache Block Start/End address = 7f81ce2240e0, 	7f81ce224100	 *** Byte Start Address = 7f81ce2240e0 *** 
+	 *** L1: Index Field = 6, Tag Field = 1fe0738890 *** 
+1 bytes transferred.
+0 bytes left.
+Now scanning L2 for target tag
+	 *** L2: Index Field = 7c, Tag Field = ff039c88 *** 
+4 bytes transferred.
+4 bytes left. Still in the same block.
+Now scanning L2 for target tag
+	 *** L2: Index Field = 7c, Tag Field = ff039c88 *** 
+4 bytes transferred.
+0 bytes left.
+Now scanning L2 for target tag
+	 *** L2: Index Field = 103, Tag Field = ff039c44 *** 
+3 bytes transferred.
+0 bytes left.
+2 bytes transferred.
+0 bytes left.
+4 bytes transferred.
+0 bytes left.
+2 bytes transferred.
+0 bytes left.
+3 bytes transferred.
+0 bytes left.
+3 bytes transferred.
+0 bytes left.
+4 bytes transferred.
+0 bytes left.
+4 bytes transferred.
+2 bytes left. Still in the same block.
+0 bytes transferred.
+	 Need to access the next block! 
+	 Requested Cache Block Start/End address = 7f81ce2240c0, 	7f81ce2240e0	 *** Byte Start Address = 7f81ce2240c0 *** 
+	 *** L1: Index Field = 5, Tag Field = 1fe0738890 *** 
+2 bytes transferred.
+0 bytes left.
+3 bytes transferred.
+0 bytes left.
+3 bytes transferred.
+0 bytes left.
+4 bytes transferred.
+3 bytes left. Still in the same block.
+3 bytes transferred.
+0 bytes left.
+4 bytes transferred.
+4 bytes left. Still in the same block.
+4 bytes transferred.
+0 bytes left.
+Now scanning L2 for target tag
+	 *** L2: Index Field = ac, Tag Field = ff039c88 *** 
+4 bytes transferred.
+4 bytes left. Still in the same block.
+4 bytes transferred.
+0 bytes left.
+4 bytes transferred.
+0 bytes left.
+4 bytes transferred.
+1 bytes left. Still in the same block.
+0 bytes transferred.
+	 Need to access the next block! 
+	 Requested Cache Block Start/End address = 7f81ce2240e0, 	7f81ce224100	 *** Byte Start Address = 7f81ce2240e0 *** 
+	 *** L1: Index Field = 6, Tag Field = 1fe0738890 *** 
+1 bytes transferred.
+0 bytes left.
+Now scanning L2 for target tag
+	 *** L2: Index Field = 7d, Tag Field = ff039c88 *** 
+4 bytes transferred.
+4 bytes left. Still in the same block.
+Now scanning L2 for target tag
+	 *** L2: Index Field = 7d, Tag Field = ff039c88 *** 
+4 bytes transferred.
+0 bytes left.
+3 bytes transferred.
+0 bytes left.
+2 bytes transferred.
+0 bytes left.
+4 bytes transferred.
+0 bytes left.
+2 bytes transferred.
+0 bytes left.
+3 bytes transferred.
+0 bytes left.
+3 bytes transferred.
+0 bytes left.
+4 bytes transferred.
+0 bytes left.
+4 bytes transferred.
+2 bytes left. Still in the same block.
+0 bytes transferred.
+	 Need to access the next block! 
+	 Requested Cache Block Start/End address = 7f81ce2240c0, 	7f81ce2240e0	 *** Byte Start Address = 7f81ce2240c0 *** 
+	 *** L1: Index Field = 5, Tag Field = 1fe0738890 *** 
+2 bytes transferred.
+0 bytes left.
+3 bytes transferred.
+0 bytes left.
+3 bytes transferred.
+0 bytes left.
+4 bytes transferred.
+3 bytes left. Still in the same block.
+3 bytes transferred.
+0 bytes left.
+4 bytes transferred.
+4 bytes left. Still in the same block.
+4 bytes transferred.
+0 bytes left.
+Now scanning L2 for target tag
+	 *** L2: Index Field = ae, Tag Field = ff039c88 *** 
+4 bytes transferred.
+4 bytes left. Still in the same block.
+4 bytes transferred.
+0 bytes left.
+4 bytes transferred.
+0 bytes left.
+4 bytes transferred.
+1 bytes left. Still in the same block.
+0 bytes transferred.
+	 Need to access the next block! 
+	 Requested Cache Block Start/End address = 7f81ce2240e0, 	7f81ce224100	 *** Byte Start Address = 7f81ce2240e0 *** 
+	 *** L1: Index Field = 6, Tag Field = 1fe0738890 *** 
+1 bytes transferred.
+0 bytes left.
+Now scanning L2 for target tag
+	 *** L2: Index Field = 7d, Tag Field = ff039c88 *** 
+4 bytes transferred.
+4 bytes left. Still in the same block.
+	 Need to write over a dirty block
+	 L2 Writeback Index = ad, Tag = ff039c88
+		 HIT: Found in L2, adding L2 hit time
+Adding L1->L2 transfer time (+10)
+Now scanning L2 for target tag
+	 *** L2: Index Field = 7d, Tag Field = ff039c88 *** 
+4 bytes transferred.
+0 bytes left.
+3 bytes transferred.
+0 bytes left.
+2 bytes transferred.
+0 bytes left.
+4 bytes transferred.
+0 bytes left.
+2 bytes transferred.
+0 bytes left.
+3 bytes transferred.
+0 bytes left.
+3 bytes transferred.
+0 bytes left.
+4 bytes transferred.
+0 bytes left.
+4 bytes transferred.
+2 bytes left. Still in the same block.
+0 bytes transferred.
+	 Need to access the next block! 
+	 Requested Cache Block Start/End address = 7f81ce2240c0, 	7f81ce2240e0	 *** Byte Start Address = 7f81ce2240c0 *** 
+	 *** L1: Index Field = 5, Tag Field = 1fe0738890 *** 
+2 bytes transferred.
+0 bytes left.
+3 bytes transferred.
+0 bytes left.
+3 bytes transferred.
+0 bytes left.
+4 bytes transferred.
+3 bytes left. Still in the same block.
+3 bytes transferred.
+0 bytes left.
+4 bytes transferred.
+4 bytes left. Still in the same block.
+4 bytes transferred.
+0 bytes left.
+Now scanning L2 for target tag
+	 *** L2: Index Field = ad, Tag Field = ff039c88 *** 
+4 bytes transferred.
+4 bytes left. Still in the same block.
+4 bytes transferred.
+0 bytes left.
+4 bytes transferred.
+0 bytes left.
+4 bytes transferred.
+1 bytes left. Still in the same block.
+0 bytes transferred.
+	 Need to access the next block! 
+	 Requested Cache Block Start/End address = 7f81ce2240e0, 	7f81ce224100	 *** Byte Start Address = 7f81ce2240e0 *** 
+	 *** L1: Index Field = 6, Tag Field = 1fe0738890 *** 
+1 bytes transferred.
+0 bytes left.
+Now scanning L2 for target tag
+	 *** L2: Index Field = 7d, Tag Field = ff039c88 *** 
+4 bytes transferred.
+4 bytes left. Still in the same block.
+Now scanning L2 for target tag
+	 *** L2: Index Field = 7d, Tag Field = ff039c88 *** 
+4 bytes transferred.
+0 bytes left.
+3 bytes transferred.
+0 bytes left.
+2 bytes transferred.
+0 bytes left.
+4 bytes transferred.
+3 bytes left. Still in the same block.
+3 bytes transferred.
+0 bytes left.
+Now scanning L2 for target tag
+	 *** L2: Index Field = a7, Tag Field = ff039c88 *** 
+4 bytes transferred.
+4 bytes left. Still in the same block.
+Now scanning L2 for target tag
+	 *** L2: Index Field = a7, Tag Field = ff039c88 *** 
+4 bytes transferred.
+0 bytes left.
+3 bytes transferred.
+0 bytes left.
+4 bytes transferred.
+2 bytes left. Still in the same block.
+2 bytes transferred.
+0 bytes left.
+4 bytes transferred.
+3 bytes left. Still in the same block.
+3 bytes transferred.
+0 bytes left.
+Now scanning L2 for target tag
+	 *** L2: Index Field = a8, Tag Field = ff039c88 *** 
+4 bytes transferred.
+4 bytes left. Still in the same block.
+Now scanning L2 for target tag
+	 *** L2: Index Field = a8, Tag Field = ff039c88 *** 
+4 bytes transferred.
+0 bytes left.
+3 bytes transferred.
+0 bytes left.
+Now scanning L2 for target tag
+	 *** L2: Index Field = 104, Tag Field = ff039c44 *** 
+2 bytes transferred.
+0 bytes left.
+4 bytes transferred.
+0 bytes left.
+Now scanning L2 for target tag
+	 *** L2: Index Field = 79, Tag Field = ff039c88 *** 
+4 bytes transferred.
+4 bytes left. Still in the same block.
+Now scanning L2 for target tag
+	 *** L2: Index Field = 79, Tag Field = ff039c88 *** 
+4 bytes transferred.
+0 bytes left.
+4 bytes transferred.
+4 bytes left. Still in the same block.
+4 bytes transferred.
+0 bytes left.
+4 bytes transferred.
+3 bytes left. Still in the same block.
+3 bytes transferred.
+0 bytes left.
+Now scanning L2 for target tag
+	 *** L2: Index Field = a8, Tag Field = ff039c88 *** 
+4 bytes transferred.
+4 bytes left. Still in the same block.
+	 Need to write over a dirty block
+	 L2 Writeback Index = a8, Tag = ff039c88
+		 HIT: Found in L2, adding L2 hit time
+Adding L1->L2 transfer time (+10)
+Now scanning L2 for target tag
+	 *** L2: Index Field = a8, Tag Field = ff039c88 *** 
+4 bytes transferred.
+0 bytes left.
+3 bytes transferred.
+0 bytes left.
+2 bytes transferred.
+0 bytes left.
+4 bytes transferred.
+0 bytes left.
+Now scanning L2 for target tag
+	 *** L2: Index Field = 7b, Tag Field = ff039c88 *** 
+4 bytes transferred.
+4 bytes left. Still in the same block.
+Now scanning L2 for target tag
+	 *** L2: Index Field = 7b, Tag Field = ff039c88 *** 
+4 bytes transferred.
+0 bytes left.
+4 bytes transferred.
+4 bytes left. Still in the same block.
+4 bytes transferred.
+0 bytes left.
+4 bytes transferred.
+3 bytes left. Still in the same block.
+3 bytes transferred.
+0 bytes left.
+Now scanning L2 for target tag
+	 *** L2: Index Field = a9, Tag Field = ff039c88 *** 
+4 bytes transferred.
+4 bytes left. Still in the same block.
+Now scanning L2 for target tag
+	 *** L2: Index Field = a9, Tag Field = ff039c88 *** 
+4 bytes transferred.
+0 bytes left.
+3 bytes transferred.
+0 bytes left.
+Now scanning L2 for target tag
+	 *** L2: Index Field = 104, Tag Field = ff039c44 *** 
+2 bytes transferred.
+0 bytes left.
+4 bytes transferred.
+0 bytes left.
+Now scanning L2 for target tag
+	 *** L2: Index Field = 7a, Tag Field = ff039c88 *** 
+4 bytes transferred.
+4 bytes left. Still in the same block.
+Now scanning L2 for target tag
+	 *** L2: Index Field = 7a, Tag Field = ff039c88 *** 
+4 bytes transferred.
+0 bytes left.
+4 bytes transferred.
+4 bytes left. Still in the same block.
+4 bytes transferred.
+0 bytes left.
+4 bytes transferred.
+3 bytes left. Still in the same block.
+3 bytes transferred.
+0 bytes left.
+Now scanning L2 for target tag
+	 *** L2: Index Field = a9, Tag Field = ff039c88 *** 
+4 bytes transferred.
+4 bytes left. Still in the same block.
+	 Need to write over a dirty block
+	 L2 Writeback Index = a9, Tag = ff039c88
+		 HIT: Found in L2, adding L2 hit time
+Adding L1->L2 transfer time (+10)
+Now scanning L2 for target tag
+	 *** L2: Index Field = a9, Tag Field = ff039c88 *** 
+4 bytes transferred.
+0 bytes left.
+3 bytes transferred.
+0 bytes left.
+2 bytes transferred.
+0 bytes left.
+4 bytes transferred.
+0 bytes left.
+Now scanning L2 for target tag
+	 *** L2: Index Field = 7a, Tag Field = ff039c88 *** 
+4 bytes transferred.
+4 bytes left. Still in the same block.
+	 Need to write over a dirty block
+	 L2 Writeback Index = 7a, Tag = ff039c88
+		 HIT: Found in L2, adding L2 hit time
+Adding L1->L2 transfer time (+10)
+Now scanning L2 for target tag
+	 *** L2: Index Field = 7a, Tag Field = ff039c88 *** 
+4 bytes transferred.
+0 bytes left.
+4 bytes transferred.
+4 bytes left. Still in the same block.
+4 bytes transferred.
+0 bytes left.
+4 bytes transferred.
+3 bytes left. Still in the same block.
+3 bytes transferred.
+0 bytes left.
+Now scanning L2 for target tag
+	 *** L2: Index Field = a9, Tag Field = ff039c88 *** 
+4 bytes transferred.
+4 bytes left. Still in the same block.
+Now scanning L2 for target tag
+	 *** L2: Index Field = a9, Tag Field = ff039c88 *** 
+4 bytes transferred.
+0 bytes left.
+3 bytes transferred.
+0 bytes left.
+Now scanning L2 for target tag
+	 *** L2: Index Field = 105, Tag Field = ff039c44 *** 
+2 bytes transferred.
+0 bytes left.
+4 bytes transferred.
+0 bytes left.
+Now scanning L2 for target tag
+	 *** L2: Index Field = 7c, Tag Field = ff039c88 *** 
+4 bytes transferred.
+4 bytes left. Still in the same block.
+Now scanning L2 for target tag
+	 *** L2: Index Field = 7c, Tag Field = ff039c88 *** 
+4 bytes transferred.
+0 bytes left.
+4 bytes transferred.
+4 bytes left. Still in the same block.
+4 bytes transferred.
+0 bytes left.
+4 bytes transferred.
+3 bytes left. Still in the same block.
+3 bytes transferred.
+0 bytes left.
+Now scanning L2 for target tag
+	 *** L2: Index Field = ab, Tag Field = ff039c88 *** 
+4 bytes transferred.
+4 bytes left. Still in the same block.
+	 Need to write over a dirty block
+	 L2 Writeback Index = ab, Tag = ff039c88
+		 HIT: Found in L2, adding L2 hit time
+Adding L1->L2 transfer time (+10)
+Now scanning L2 for target tag
+	 *** L2: Index Field = ab, Tag Field = ff039c88 *** 
+4 bytes transferred.
+0 bytes left.
+3 bytes transferred.
+0 bytes left.
+2 bytes transferred.
+0 bytes left.
+4 bytes transferred.
+0 bytes left.
+Now scanning L2 for target tag
+	 *** L2: Index Field = 7b, Tag Field = ff039c88 *** 
+4 bytes transferred.
+4 bytes left. Still in the same block.
+Now scanning L2 for target tag
+	 *** L2: Index Field = 7b, Tag Field = ff039c88 *** 
+4 bytes transferred.
+0 bytes left.
+4 bytes transferred.
+4 bytes left. Still in the same block.
+4 bytes transferred.
+0 bytes left.
+4 bytes transferred.
+3 bytes left. Still in the same block.
+3 bytes transferred.
+0 bytes left.
+	 Need to write over a dirty block
+	 L2 Writeback Index = 1e, Tag = fffeb509
+		 HIT: Found in L2, adding L2 hit time
+Adding L1->L2 transfer time (+10)
+Now scanning L2 for target tag
+	 *** L2: Index Field = ae, Tag Field = ff039c88 *** 
+4 bytes transferred.
+4 bytes left. Still in the same block.
+Now scanning L2 for target tag
+	 *** L2: Index Field = ae, Tag Field = ff039c88 *** 
+4 bytes transferred.
+0 bytes left.
+3 bytes transferred.
+0 bytes left.
+Now scanning L2 for target tag
+	 *** L2: Index Field = 105, Tag Field = ff039c44 *** 
+2 bytes transferred.
+0 bytes left.
+4 bytes transferred.
+0 bytes left.
+Now scanning L2 for target tag
+	 *** L2: Index Field = 7d, Tag Field = ff039c88 *** 
+4 bytes transferred.
+4 bytes left. Still in the same block.
+Now scanning L2 for target tag
+	 *** L2: Index Field = 7d, Tag Field = ff039c88 *** 
+4 bytes transferred.
+0 bytes left.
+4 bytes transferred.
+4 bytes left. Still in the same block.
+4 bytes transferred.
+0 bytes left.
+4 bytes transferred.
+3 bytes left. Still in the same block.
+3 bytes transferred.
+0 bytes left.
+Now scanning L2 for target tag
+	 *** L2: Index Field = b1, Tag Field = ff039c88 *** 
+4 bytes transferred.
+4 bytes left. Still in the same block.
+Now scanning L2 for target tag
+	 *** L2: Index Field = b1, Tag Field = ff039c88 *** 
+4 bytes transferred.
+0 bytes left.
+3 bytes transferred.
+0 bytes left.
+2 bytes transferred.
+0 bytes left.
+4 bytes transferred.
+0 bytes left.
+Now scanning L2 for target tag
+	 *** L2: Index Field = 79, Tag Field = ff039c88 *** 
+4 bytes transferred.
+4 bytes left. Still in the same block.
+	 Need to write over a dirty block
+	 L2 Writeback Index = a9, Tag = ff039c88
+		 HIT: Found in L2, adding L2 hit time
+Adding L1->L2 transfer time (+10)
+Now scanning L2 for target tag
+	 *** L2: Index Field = 79, Tag Field = ff039c88 *** 
+4 bytes transferred.
+0 bytes left.
+4 bytes transferred.
+4 bytes left. Still in the same block.
+4 bytes transferred.
+0 bytes left.
+4 bytes transferred.
+3 bytes left. Still in the same block.
+3 bytes transferred.
+0 bytes left.
+Now scanning L2 for target tag
+	 *** L2: Index Field = aa, Tag Field = ff039c88 *** 
+4 bytes transferred.
+4 bytes left. Still in the same block.
+Now scanning L2 for target tag
+	 *** L2: Index Field = aa, Tag Field = ff039c88 *** 
+4 bytes transferred.
+0 bytes left.
+3 bytes transferred.
+0 bytes left.
+Now scanning L2 for target tag
+	 *** L2: Index Field = 106, Tag Field = ff039c44 *** 
+2 bytes transferred.
+0 bytes left.
+4 bytes transferred.
+1 bytes left. Still in the same block.
+1 bytes transferred.
+0 bytes left.
+Now scanning L2 for target tag
+	 *** L2: Index Field = 7b, Tag Field = ff039c88 *** 
+4 bytes transferred.
+4 bytes left. Still in the same block.
+	 Need to write over a dirty block
+	 L2 Writeback Index = 7b, Tag = ff039c88
+		 HIT: Found in L2, adding L2 hit time
+Adding L1->L2 transfer time (+10)
+Now scanning L2 for target tag
+	 *** L2: Index Field = 7b, Tag Field = ff039c88 *** 
+4 bytes transferred.
+0 bytes left.
+4 bytes transferred.
+2 bytes left. Still in the same block.
+2 bytes transferred.
+0 bytes left.
+4 bytes transferred.
+3 bytes left. Still in the same block.
+3 bytes transferred.
+0 bytes left.
+Now scanning L2 for target tag
+	 *** L2: Index Field = a9, Tag Field = ff039c88 *** 
+4 bytes transferred.
+4 bytes left. Still in the same block.
+	 Need to write over a dirty block
+	 L2 Writeback Index = a9, Tag = ff039c88
+		 HIT: Found in L2, adding L2 hit time
+Adding L1->L2 transfer time (+10)
+Now scanning L2 for target tag
+	 *** L2: Index Field = a9, Tag Field = ff039c88 *** 
+4 bytes transferred.
+0 bytes left.
+3 bytes transferred.
+0 bytes left.
+2 bytes transferred.
+0 bytes left.
+4 bytes transferred.
+3 bytes left. Still in the same block.
+3 bytes transferred.
+0 bytes left.
+Now scanning L2 for target tag
+	 *** L2: Index Field = a9, Tag Field = ff039c88 *** 
+4 bytes transferred.
+4 bytes left. Still in the same block.
+	 Need to write over a dirty block
+	 L2 Writeback Index = 79, Tag = ff039c88
+		 HIT: Found in L2, adding L2 hit time
+Adding L1->L2 transfer time (+10)
+Now scanning L2 for target tag
+	 *** L2: Index Field = a9, Tag Field = ff039c88 *** 
+4 bytes transferred.
+0 bytes left.
+Now scanning L2 for target tag
+	 *** L2: Index Field = 106, Tag Field = ff039c44 *** 
+4 bytes transferred.
+1 bytes left. Still in the same block.
+1 bytes transferred.
+0 bytes left.
+Now scanning L2 for target tag
+	 *** L2: Index Field = 7c, Tag Field = ff039c88 *** 
+4 bytes transferred.
+4 bytes left. Still in the same block.
+Now scanning L2 for target tag
+	 *** L2: Index Field = 7c, Tag Field = ff039c88 *** 
+4 bytes transferred.
+0 bytes left.
+4 bytes transferred.
+2 bytes left. Still in the same block.
+2 bytes transferred.
+0 bytes left.
+4 bytes transferred.
+3 bytes left. Still in the same block.
+3 bytes transferred.
+0 bytes left.
+	 Need to write over a dirty block
+	 L2 Writeback Index = 7d, Tag = ff039c88
+		 HIT: Found in L2, adding L2 hit time
+Adding L1->L2 transfer time (+10)
+Now scanning L2 for target tag
+	 *** L2: Index Field = ad, Tag Field = ff039c88 *** 
+4 bytes transferred.
+4 bytes left. Still in the same block.
+	 Need to write over a dirty block
+	 L2 Writeback Index = ad, Tag = ff039c88
+		 HIT: Found in L2, adding L2 hit time
+Adding L1->L2 transfer time (+10)
+Now scanning L2 for target tag
+	 *** L2: Index Field = ad, Tag Field = ff039c88 *** 
+4 bytes transferred.
+0 bytes left.
+3 bytes transferred.
+0 bytes left.
+2 bytes transferred.
+0 bytes left.
+Now scanning L2 for target tag
+	 *** L2: Index Field = 107, Tag Field = ff039c44 *** 
+4 bytes transferred.
+3 bytes left. Still in the same block.
+3 bytes transferred.
+0 bytes left.
+Now scanning L2 for target tag
+	 *** L2: Index Field = ac, Tag Field = ff039c88 *** 
+4 bytes transferred.
+4 bytes left. Still in the same block.
+Now scanning L2 for target tag
+	 *** L2: Index Field = ac, Tag Field = ff039c88 *** 
+4 bytes transferred.
+0 bytes left.
+3 bytes transferred.
+0 bytes left.
+2 bytes transferred.
+0 bytes left.
+4 bytes transferred.
+4 bytes left. Still in the same block.
+0 bytes transferred.
+	 Need to access the next block! 
+	 Requested Cache Block Start/End address = 7f81ce2241e0, 	7f81ce224200	 *** Byte Start Address = 7f81ce2241e0 *** 
+	 *** L1: Index Field = e, Tag Field = 1fe0738890 *** 
+4 bytes transferred.
+0 bytes left.
+Now scanning L2 for target tag
+	 *** L2: Index Field = ac, Tag Field = ff039c88 *** 
+4 bytes transferred.
+4 bytes left. Still in the same block.
+	 Need to write over a dirty block
+	 L2 Writeback Index = 7c, Tag = ff039c88
+		 HIT: Found in L2, adding L2 hit time
+Adding L1->L2 transfer time (+10)
+Now scanning L2 for target tag
+	 *** L2: Index Field = ac, Tag Field = ff039c88 *** 
+4 bytes transferred.
+0 bytes left.
+Now scanning L2 for target tag
+	 *** L2: Index Field = 107, Tag Field = ff039c44 *** 
+4 bytes transferred.
+2 bytes left. Still in the same block.
+2 bytes transferred.
+0 bytes left.
+4 bytes transferred.
+4 bytes left. Still in the same block.
+4 bytes transferred.
+0 bytes left.
+Now scanning L2 for target tag
+	 *** L2: Index Field = aa, Tag Field = ff039c88 *** 
+4 bytes transferred.
+4 bytes left. Still in the same block.
+	 Need to write over a dirty block
+	 L2 Writeback Index = 7a, Tag = ff039c88
+		 HIT: Found in L2, adding L2 hit time
+Adding L1->L2 transfer time (+10)
+Now scanning L2 for target tag
+	 *** L2: Index Field = aa, Tag Field = ff039c88 *** 
+4 bytes transferred.
+0 bytes left.
+4 bytes transferred.
+2 bytes left. Still in the same block.
+2 bytes transferred.
+0 bytes left.
+4 bytes transferred.
+3 bytes left. Still in the same block.
+3 bytes transferred.
+0 bytes left.
+Now scanning L2 for target tag
+	 *** L2: Index Field = a7, Tag Field = ff039c88 *** 
+4 bytes transferred.
+4 bytes left. Still in the same block.
+	 Need to write over a dirty block
+	 L2 Writeback Index = a7, Tag = ff039c88
+		 HIT: Found in L2, adding L2 hit time
+Adding L1->L2 transfer time (+10)
+Now scanning L2 for target tag
+	 *** L2: Index Field = a7, Tag Field = ff039c88 *** 
+4 bytes transferred.
+0 bytes left.
+Now scanning L2 for target tag
+	 *** L2: Index Field = 108, Tag Field = ff039c44 *** 
+3 bytes transferred.
+0 bytes left.
+4 bytes transferred.
+2 bytes left. Still in the same block.
+2 bytes transferred.
+0 bytes left.
+Now scanning L2 for target tag
+	 *** L2: Index Field = 10f, Tag Field = ff039c44 *** 
+3 bytes transferred.
+0 bytes left.
+4 bytes transferred.
+2 bytes left. Still in the same block.
+2 bytes transferred.
+0 bytes left.
+4 bytes transferred.
+3 bytes left. Still in the same block.
+3 bytes transferred.
+0 bytes left.
+Now scanning L2 for target tag
+	 *** L2: Index Field = ad, Tag Field = ff039c88 *** 
+4 bytes transferred.
+4 bytes left. Still in the same block.
+	 Need to write over a dirty block
+	 L2 Writeback Index = 7d, Tag = ff039c88
+		 HIT: Found in L2, adding L2 hit time
+Adding L1->L2 transfer time (+10)
+Now scanning L2 for target tag
+	 *** L2: Index Field = ad, Tag Field = ff039c88 *** 
+4 bytes transferred.
+0 bytes left.
+Now scanning L2 for target tag
+	 *** L2: Index Field = 110, Tag Field = ff039c44 *** 
+4 bytes transferred.
+0 bytes left.
+Now scanning L2 for target tag
+	 *** L2: Index Field = 7c, Tag Field = ff039c88 *** 
+4 bytes transferred.
+4 bytes left. Still in the same block.
+Now scanning L2 for target tag
+	 *** L2: Index Field = 7c, Tag Field = ff039c88 *** 
+4 bytes transferred.
+0 bytes left.
+4 bytes transferred.
+3 bytes left. Still in the same block.
+3 bytes transferred.
+0 bytes left.
+Now scanning L2 for target tag
+	 *** L2: Index Field = a9, Tag Field = ff039c88 *** 
+4 bytes transferred.
+4 bytes left. Still in the same block.
+Now scanning L2 for target tag
+	 *** L2: Index Field = a9, Tag Field = ff039c88 *** 
+4 bytes transferred.
+0 bytes left.
+3 bytes transferred.
+0 bytes left.
+4 bytes transferred.
+0 bytes left.
+Now scanning L2 for target tag
+	 *** L2: Index Field = 7c, Tag Field = ff039c88 *** 
+4 bytes transferred.
+4 bytes left. Still in the same block.
+	 Need to write over a dirty block
+	 L2 Writeback Index = ac, Tag = ff039c88
+		 HIT: Found in L2, adding L2 hit time
+Adding L1->L2 transfer time (+10)
+Now scanning L2 for target tag
+	 *** L2: Index Field = 7c, Tag Field = ff039c88 *** 
+4 bytes transferred.
+0 bytes left.
+4 bytes transferred.
+2 bytes left. Still in the same block.
+2 bytes transferred.
+0 bytes left.
+3 bytes transferred.
+0 bytes left.
+4 bytes transferred.
+6 bytes left. Still in the same block.
+4 bytes transferred.
+2 bytes left. Still in the same block.
+0 bytes transferred.
+	 Need to access the next block! 
+	 Requested Cache Block Start/End address = 7f81ce224420, 	7f81ce224440	 *** Byte Start Address = 7f81ce224420 *** 
+	 *** L1: Index Field = 0, Tag Field = 1fe0738891 *** 
+2 bytes transferred.
+0 bytes left.
+Now scanning L2 for target tag
+	 *** L2: Index Field = 110, Tag Field = ff039c44 *** 
+3 bytes transferred.
+0 bytes left.
+4 bytes transferred.
+0 bytes left.
+Now scanning L2 for target tag
+	 *** L2: Index Field = 7d, Tag Field = ff039c88 *** 
+4 bytes transferred.
+4 bytes left. Still in the same block.
+Now scanning L2 for target tag
+	 *** L2: Index Field = 7d, Tag Field = ff039c88 *** 
+4 bytes transferred.
+0 bytes left.
+4 bytes transferred.
+0 bytes left.
+4 bytes transferred.
+0 bytes left.
+3 bytes transferred.
+0 bytes left.
+4 bytes transferred.
+0 bytes left.
+3 bytes transferred.
+0 bytes left.
+2 bytes transferred.
+0 bytes left.
+Now scanning L2 for target tag
+	 *** L2: Index Field = 111, Tag Field = ff039c44 *** 
+4 bytes transferred.
+3 bytes left. Still in the same block.
+3 bytes transferred.
+0 bytes left.
+Now scanning L2 for target tag
+	 *** L2: Index Field = ab, Tag Field = ff039c88 *** 
+4 bytes transferred.
+4 bytes left. Still in the same block.
+	 Need to write over a dirty block
+	 L2 Writeback Index = 7b, Tag = ff039c88
+		 HIT: Found in L2, adding L2 hit time
+Adding L1->L2 transfer time (+10)
+Now scanning L2 for target tag
+	 *** L2: Index Field = ab, Tag Field = ff039c88 *** 
+4 bytes transferred.
+0 bytes left.
+4 bytes transferred.
+0 bytes left.
+Now scanning L2 for target tag
+	 *** L2: Index Field = 7b, Tag Field = ff039c88 *** 
+4 bytes transferred.
+4 bytes left. Still in the same block.
+	 Need to write over a dirty block
+	 L2 Writeback Index = 7b, Tag = ff039c88
+		 HIT: Found in L2, adding L2 hit time
+Adding L1->L2 transfer time (+10)
+Now scanning L2 for target tag
+	 *** L2: Index Field = 7b, Tag Field = ff039c88 *** 
+4 bytes transferred.
+0 bytes left.
+4 bytes transferred.
+2 bytes left. Still in the same block.
+2 bytes transferred.
+0 bytes left.
+4 bytes transferred.
+3 bytes left. Still in the same block.
+3 bytes transferred.
+0 bytes left.
+Now scanning L2 for target tag
+	 *** L2: Index Field = a8, Tag Field = ff039c88 *** 
+4 bytes transferred.
+4 bytes left. Still in the same block.
+Now scanning L2 for target tag
+	 *** L2: Index Field = a8, Tag Field = ff039c88 *** 
+4 bytes transferred.
+0 bytes left.
+4 bytes transferred.
+0 bytes left.
+4 bytes transferred.
+0 bytes left.
+Now scanning L2 for target tag
+	 *** L2: Index Field = 7b, Tag Field = ff039c88 *** 
+4 bytes transferred.
+4 bytes left. Still in the same block.
+	 Need to write over a dirty block
+	 L2 Writeback Index = ab, Tag = ff039c88
+		 HIT: Found in L2, adding L2 hit time
+Adding L1->L2 transfer time (+10)
+Now scanning L2 for target tag
+	 *** L2: Index Field = 7b, Tag Field = ff039c88 *** 
+4 bytes transferred.
+0 bytes left.
+Now scanning L2 for target tag
+	 *** L2: Index Field = 111, Tag Field = ff039c44 *** 
+4 bytes transferred.
+3 bytes left. Still in the same block.
+3 bytes transferred.
+0 bytes left.
+Now scanning L2 for target tag
+	 *** L2: Index Field = a9, Tag Field = ff039c88 *** 
+4 bytes transferred.
+4 bytes left. Still in the same block.
+	 Need to write over a dirty block
+	 L2 Writeback Index = a9, Tag = ff039c88
+		 HIT: Found in L2, adding L2 hit time
+Adding L1->L2 transfer time (+10)
+Now scanning L2 for target tag
+	 *** L2: Index Field = a9, Tag Field = ff039c88 *** 
+4 bytes transferred.
+0 bytes left.
+4 bytes transferred.
+0 bytes left.
+Now scanning L2 for target tag
+	 *** L2: Index Field = 7a, Tag Field = ff039c88 *** 
+4 bytes transferred.
+4 bytes left. Still in the same block.
+	 Need to write over a dirty block
+	 L2 Writeback Index = 7a, Tag = ff039c88
+		 HIT: Found in L2, adding L2 hit time
+Adding L1->L2 transfer time (+10)
+Now scanning L2 for target tag
+	 *** L2: Index Field = 7a, Tag Field = ff039c88 *** 
+4 bytes transferred.
+0 bytes left.
+4 bytes transferred.
+0 bytes left.
+4 bytes transferred.
+0 bytes left.
+3 bytes transferred.
+0 bytes left.
+2 bytes transferred.
+0 bytes left.
+4 bytes transferred.
+0 bytes left.
+Now scanning L2 for target tag
+	 *** L2: Index Field = 1e1, Tag Field = ff039c43 *** 
+4 bytes transferred.
+0 bytes left.
+3 bytes transferred.
+0 bytes left.
+	 Need to write over a dirty block
+	 L2 Writeback Index = b1, Tag = ff039c88
+		 HIT: Found in L2, adding L2 hit time
+Adding L1->L2 transfer time (+10)
+Now scanning L2 for target tag
+	 *** L2: Index Field = 1e1, Tag Field = ff039c43 *** 
+4 bytes transferred.
+4 bytes left. Still in the same block.
+Now scanning L2 for target tag
+	 *** L2: Index Field = 1e1, Tag Field = ff039c43 *** 
+4 bytes transferred.
+0 bytes left.
+4 bytes transferred.
+2 bytes left. Still in the same block.
+0 bytes transferred.
+	 Need to access the next block! 
+	 Requested Cache Block Start/End address = 7f81ce224480, 	7f81ce2244a0	 *** Byte Start Address = 7f81ce224480 *** 
+	 *** L1: Index Field = 3, Tag Field = 1fe0738891 *** 
+2 bytes transferred.
+0 bytes left.
+Now scanning L2 for target tag
+	 *** L2: Index Field = 112, Tag Field = ff039c44 *** 
+3 bytes transferred.
+0 bytes left.
+4 bytes transferred.
+1 bytes left. Still in the same block.
+1 bytes transferred.
+0 bytes left.
+2 bytes transferred.
+0 bytes left.
+Now scanning L2 for target tag
+	 *** L2: Index Field = 112, Tag Field = ff039c44 *** 
+3 bytes transferred.
+0 bytes left.
+4 bytes transferred.
+0 bytes left.
+Now scanning L2 for target tag
+	 *** L2: Index Field = 1e1, Tag Field = ff039c43 *** 
+4 bytes transferred.
+4 bytes left. Still in the same block.
+Now scanning L2 for target tag
+	 *** L2: Index Field = 1e1, Tag Field = ff039c43 *** 
+4 bytes transferred.
+0 bytes left.
+4 bytes transferred.
+0 bytes left.
+3 bytes transferred.
+0 bytes left.
+3 bytes transferred.
+0 bytes left.
+Now scanning L2 for target tag
+	 *** L2: Index Field = 6d, Tag Field = ff039c88 *** 
+4 bytes transferred.
+4 bytes left. Still in the same block.
+4 bytes transferred.
+0 bytes left.
+2 bytes transferred.
+0 bytes left.
+3 bytes transferred.
+0 bytes left.
+4 bytes transferred.
+1 bytes left. Still in the same block.
+1 bytes transferred.
+0 bytes left.
+Now scanning L2 for target tag
+	 *** L2: Index Field = 1e2, Tag Field = ff039c43 *** 
+4 bytes transferred.
+4 bytes left. Still in the same block.
+Now scanning L2 for target tag
+	 *** L2: Index Field = 1e2, Tag Field = ff039c43 *** 
+4 bytes transferred.
+0 bytes left.
+4 bytes transferred.
+0 bytes left.
+Now scanning L2 for target tag
+	 *** L2: Index Field = 1e2, Tag Field = ff039c43 *** 
+4 bytes transferred.
+0 bytes left.
+4 bytes transferred.
+2 bytes left. Still in the same block.
+0 bytes transferred.
+	 Need to access the next block! 
+	 Requested Cache Block Start/End address = 7f81ce2244a0, 	7f81ce2244c0	 *** Byte Start Address = 7f81ce2244a0 *** 
+	 *** L1: Index Field = 4, Tag Field = 1fe0738891 *** 
+2 bytes transferred.
+0 bytes left.
+3 bytes transferred.
+0 bytes left.
+4 bytes transferred.
+0 bytes left.
+Now scanning L2 for target tag
+	 *** L2: Index Field = 1e2, Tag Field = ff039c43 *** 
+4 bytes transferred.
+4 bytes left. Still in the same block.
+Now scanning L2 for target tag
+	 *** L2: Index Field = 1e2, Tag Field = ff039c43 *** 
+4 bytes transferred.
+0 bytes left.
+4 bytes transferred.
+0 bytes left.
+3 bytes transferred.
+0 bytes left.
+3 bytes transferred.
+0 bytes left.
+4 bytes transferred.
+4 bytes left. Still in the same block.
+4 bytes transferred.
+0 bytes left.
+2 bytes transferred.
+0 bytes left.
+3 bytes transferred.
+0 bytes left.
+4 bytes transferred.
+1 bytes left. Still in the same block.
+1 bytes transferred.
+0 bytes left.
+Now scanning L2 for target tag
+	 *** L2: Index Field = 1e2, Tag Field = ff039c43 *** 
+4 bytes transferred.
+4 bytes left. Still in the same block.
+Now scanning L2 for target tag
+	 *** L2: Index Field = 1e2, Tag Field = ff039c43 *** 
+4 bytes transferred.
+0 bytes left.
+4 bytes transferred.
+0 bytes left.
+Now scanning L2 for target tag
+	 *** L2: Index Field = 1e2, Tag Field = ff039c43 *** 
+4 bytes transferred.
+0 bytes left.
+4 bytes transferred.
+2 bytes left. Still in the same block.
+0 bytes transferred.
+	 Need to access the next block! 
+	 Requested Cache Block Start/End address = 7f81ce2244a0, 	7f81ce2244c0	 *** Byte Start Address = 7f81ce2244a0 *** 
+	 *** L1: Index Field = 4, Tag Field = 1fe0738891 *** 
+2 bytes transferred.
+0 bytes left.
+3 bytes transferred.
+0 bytes left.
+4 bytes transferred.
+0 bytes left.
+Now scanning L2 for target tag
+	 *** L2: Index Field = 1e2, Tag Field = ff039c43 *** 
+4 bytes transferred.
+4 bytes left. Still in the same block.
+Now scanning L2 for target tag
+	 *** L2: Index Field = 1e2, Tag Field = ff039c43 *** 
+4 bytes transferred.
+0 bytes left.
+4 bytes transferred.
+0 bytes left.
+3 bytes transferred.
+0 bytes left.
+3 bytes transferred.
+0 bytes left.
+Now scanning L2 for target tag
+	 *** L2: Index Field = 71, Tag Field = ff039c88 *** 
+4 bytes transferred.
+4 bytes left. Still in the same block.
+4 bytes transferred.
+0 bytes left.
+2 bytes transferred.
+0 bytes left.
+3 bytes transferred.
+0 bytes left.
+4 bytes transferred.
+1 bytes left. Still in the same block.
+1 bytes transferred.
+0 bytes left.
+Now scanning L2 for target tag
+	 *** L2: Index Field = 1e2, Tag Field = ff039c43 *** 
+4 bytes transferred.
+4 bytes left. Still in the same block.
+Now scanning L2 for target tag
+	 *** L2: Index Field = 1e2, Tag Field = ff039c43 *** 
+4 bytes transferred.
+0 bytes left.
+4 bytes transferred.
+0 bytes left.
+Now scanning L2 for target tag
+	 *** L2: Index Field = 1e2, Tag Field = ff039c43 *** 
+4 bytes transferred.
+0 bytes left.
+4 bytes transferred.
+2 bytes left. Still in the same block.
+0 bytes transferred.
+	 Need to access the next block! 
+	 Requested Cache Block Start/End address = 7f81ce2244a0, 	7f81ce2244c0	 *** Byte Start Address = 7f81ce2244a0 *** 
+	 *** L1: Index Field = 4, Tag Field = 1fe0738891 *** 
+2 bytes transferred.
+0 bytes left.
+3 bytes transferred.
+0 bytes left.
+4 bytes transferred.
+0 bytes left.
+Now scanning L2 for target tag
+	 *** L2: Index Field = 1e3, Tag Field = ff039c43 *** 
+4 bytes transferred.
+4 bytes left. Still in the same block.
+Now scanning L2 for target tag
+	 *** L2: Index Field = 1e3, Tag Field = ff039c43 *** 
+4 bytes transferred.
+0 bytes left.
+4 bytes transferred.
+0 bytes left.
+3 bytes transferred.
+0 bytes left.
+3 bytes transferred.
+0 bytes left.
+	 Need to write over a dirty block
+	 L2 Writeback Index = 1e1, Tag = ff039c43
+		 HIT: Found in L2, adding L2 hit time
+Adding L1->L2 transfer time (+10)
+Now scanning L2 for target tag
+	 *** L2: Index Field = 71, Tag Field = ff039c88 *** 
+4 bytes transferred.
+4 bytes left. Still in the same block.
+4 bytes transferred.
+0 bytes left.
+2 bytes transferred.
+0 bytes left.
+3 bytes transferred.
+0 bytes left.
+4 bytes transferred.
+1 bytes left. Still in the same block.
+1 bytes transferred.
+0 bytes left.
+Now scanning L2 for target tag
+	 *** L2: Index Field = 1e3, Tag Field = ff039c43 *** 
+4 bytes transferred.
+4 bytes left. Still in the same block.
+	 Need to write over a dirty block
+	 L2 Writeback Index = 73, Tag = ff039c88
+		 HIT: Found in L2, adding L2 hit time
+Adding L1->L2 transfer time (+10)
+Now scanning L2 for target tag
+	 *** L2: Index Field = 1e3, Tag Field = ff039c43 *** 
+4 bytes transferred.
+0 bytes left.
+4 bytes transferred.
+0 bytes left.
+Now scanning L2 for target tag
+	 *** L2: Index Field = 1e3, Tag Field = ff039c43 *** 
+4 bytes transferred.
+0 bytes left.
+4 bytes transferred.
+2 bytes left. Still in the same block.
+0 bytes transferred.
+	 Need to access the next block! 
+	 Requested Cache Block Start/End address = 7f81ce2244a0, 	7f81ce2244c0	 *** Byte Start Address = 7f81ce2244a0 *** 
+	 *** L1: Index Field = 4, Tag Field = 1fe0738891 *** 
+2 bytes transferred.
+0 bytes left.
+3 bytes transferred.
+0 bytes left.
+4 bytes transferred.
+0 bytes left.
+Now scanning L2 for target tag
+	 *** L2: Index Field = 1e3, Tag Field = ff039c43 *** 
+4 bytes transferred.
+4 bytes left. Still in the same block.
+Now scanning L2 for target tag
+	 *** L2: Index Field = 1e3, Tag Field = ff039c43 *** 
+4 bytes transferred.
+0 bytes left.
+4 bytes transferred.
+0 bytes left.
+3 bytes transferred.
+0 bytes left.
+3 bytes transferred.
+0 bytes left.
+4 bytes transferred.
+4 bytes left. Still in the same block.
+4 bytes transferred.
+0 bytes left.
+2 bytes transferred.
+0 bytes left.
+3 bytes transferred.
+0 bytes left.
+4 bytes transferred.
+1 bytes left. Still in the same block.
+1 bytes transferred.
+0 bytes left.
+Now scanning L2 for target tag
+	 *** L2: Index Field = 1e3, Tag Field = ff039c43 *** 
+4 bytes transferred.
+4 bytes left. Still in the same block.
+Now scanning L2 for target tag
+	 *** L2: Index Field = 1e3, Tag Field = ff039c43 *** 
+4 bytes transferred.
+0 bytes left.
+4 bytes transferred.
+0 bytes left.
+Now scanning L2 for target tag
+	 *** L2: Index Field = 1e3, Tag Field = ff039c43 *** 
+4 bytes transferred.
+0 bytes left.
+4 bytes transferred.
+2 bytes left. Still in the same block.
+0 bytes transferred.
+	 Need to access the next block! 
+	 Requested Cache Block Start/End address = 7f81ce2244a0, 	7f81ce2244c0	 *** Byte Start Address = 7f81ce2244a0 *** 
+	 *** L1: Index Field = 4, Tag Field = 1fe0738891 *** 
+2 bytes transferred.
+0 bytes left.
 ---------------------------------------------------
 				 Simulation Results
 ---------------------------------------------------
@@ -9,7 +2073,7 @@ Memory System:
 	 L2 Unified Cache: Size = 32768, 	Associativity = 1, 	Block size = 64
 	 Main Memory: Ready time = 30, 	Chunksize = 8, 	Chunktime = 15,
 
-Execution Time = 8376, 	Total Traces Read = 500
+Execution Time = 11364, 	Total Traces Read = 500
 Flush time = 0
 
 Number of Reference Types: 	[Percentage] 
@@ -19,35 +2083,35 @@ Number of Reference Types: 	[Percentage]
 	Total 	= 	500
 
 Total Cycles for Activities: 	[Percentage] 
-	Reads 	= 	8307 		[99.2%]
-	Writes 	= 	27715 		[330.9%]
-	Inst. 	= 	148832 		[1776.9%]
-	Total 	= 	184854
+	Reads 	= 	138300 		[1217.0%]
+	Writes 	= 	108474 		[954.5%]
+	Inst. 	= 	280816 		[2471.1%]
+	Total 	= 	527590
 
 Average Cycles for Activities: 
-	Reads = 106.0, 	Writes = 644.0, 	Instructions = 392.0
+	Reads = 1773.0, 	Writes = 2522.0, 	Instructions = 740.0
 
 Ideal: Execution Time = xxxxx; 	CPI = xx.xx
 Ideal Misaligned Execution Time = xxxxxx; 	CPI = xx.xx
 
 Memory Level: L1 Instruction Cache
-	Hit Count = 350, 	 Miss Count = 29
-	Total Requests = 379
-	Hit Rate: 92.3%, 	 Miss Rate = 7.7%
+	Hit Count = 496, 	 Miss Count = 179
+	Total Requests = 675
+	Hit Rate: 73.5%, 	 Miss Rate = 26.5%
 	Kickouts = 0, 	 Dirty-kickouts = 0, 	 Transfers = 29
 	Flush Kickouts = 0
 
 Memory Level: L1 Data Cache
-	Hit Count = 83, 	 Miss Count = 38
-	Total Requests = 121
-	Hit Rate: 68.6%, 	 Miss Rate = 31.4%
-	Kickouts = 0, 	 Dirty-kickouts = 0, 	 Transfers = 38
+	Hit Count = 66, 	 Miss Count = 20
+	Total Requests = 86
+	Hit Rate: 76.7%, 	 Miss Rate = 23.3%
+	Kickouts = 67, 	 Dirty-kickouts = 27, 	 Transfers = 170
 	Flush Kickouts = 0
 
 Memory Level: L2 Cache
-	Hit Count = 25, 	 Miss Count = 42
-	Total Requests = 67
-	Hit Rate: 37.3%, 	 Miss Rate = 62.7%
+	Hit Count = 184, 	 Miss Count = 42
+	Total Requests = 226
+	Hit Rate: 81.4%, 	 Miss Rate = 18.6%
 	Kickouts = 0, 	 Dirty-kickouts = 0, 	 Transfers = 42
 	Flush Kickouts = 0
 
@@ -90,53 +2154,53 @@ Index 1f:	| V: 1, D: 0 Tag: 	1fe0738890|| V: 0, D: 0 Tag: - || V: 0, D: 0 Tag: -
 
 Memory Level: L1 Data Cache
 Index 2:	| V: 1, D: 1 Tag: 	1fe0739107|| V: 0, D: 0 Tag: - || V: 0, D: 0 Tag: - || V: 0, D: 0 Tag: - |
-Index 3:	| V: 1, D: 1 Tag: 	1fe073910b|| V: 1, D: 0 Tag: 	1fe073887e|| V: 1, D: 1 Tag: 	1fe0739107|| V: 0, D: 0 Tag: - |
-Index 4:	| V: 1, D: 0 Tag: 	1fe073887e|| V: 0, D: 0 Tag: - || V: 0, D: 0 Tag: - || V: 0, D: 0 Tag: - |
-Index 5:	| V: 1, D: 0 Tag: 	1fe073887e|| V: 0, D: 0 Tag: - || V: 0, D: 0 Tag: - || V: 0, D: 0 Tag: - |
-Index 6:	| V: 1, D: 1 Tag: 	1fe0739107|| V: 1, D: 0 Tag: 	1fe073887e|| V: 0, D: 0 Tag: - || V: 0, D: 0 Tag: - |
-Index 7:	| V: 1, D: 0 Tag: 	1fe073887e|| V: 0, D: 0 Tag: - || V: 0, D: 0 Tag: - || V: 0, D: 0 Tag: - |
-Index e:	| V: 1, D: 1 Tag: 	1fe073910a|| V: 0, D: 0 Tag: - || V: 0, D: 0 Tag: - || V: 0, D: 0 Tag: - |
+Index 3:	| V: 1, D: 1 Tag: 	1fe0739107|| V: 1, D: 0 Tag: 	1fe073887e|| V: 1, D: 0 Tag: 	1fe073887e|| V: 1, D: 0 Tag: 	1fe073887e|
+Index 4:	| V: 1, D: 0 Tag: 	1fe073887e|| V: 1, D: 0 Tag: 	1fe073887e|| V: 1, D: 0 Tag: 	1fe073887e|| V: 1, D: 0 Tag: 	1fe073887e|
+Index 5:	| V: 1, D: 0 Tag: 	1fe073887e|| V: 1, D: 0 Tag: 	1fe073887e|| V: 1, D: 0 Tag: 	1fe073887e|| V: 1, D: 0 Tag: 	1fe073887e|
+Index 6:	| V: 1, D: 1 Tag: 	1fe073887e|| V: 1, D: 0 Tag: 	1fe073887e|| V: 1, D: 0 Tag: 	1fe073887e|| V: 1, D: 0 Tag: 	1fe073887e|
+Index 7:	| V: 1, D: 0 Tag: 	1fe073887e|| V: 1, D: 0 Tag: 	1fe073887e|| V: 1, D: 0 Tag: 	1fe073887e|| V: 0, D: 0 Tag: - |
+Index e:	| V: 1, D: 1 Tag: 	1fe073910a|| V: 1, D: 0 Tag: 	1fe073910a|| V: 1, D: 0 Tag: 	1fe073910a|| V: 1, D: 0 Tag: 	1fe073910a|
 Index f:	| V: 1, D: 1 Tag: 	1fe073910a|| V: 0, D: 0 Tag: - || V: 0, D: 0 Tag: - || V: 0, D: 0 Tag: - |
-Index 11:	| V: 1, D: 0 Tag: 	1fe0739107|| V: 1, D: 1 Tag: 	1fe073910a|| V: 0, D: 0 Tag: - || V: 0, D: 0 Tag: - |
-Index 12:	| V: 1, D: 0 Tag: 	1fe0739107|| V: 1, D: 1 Tag: 	1fe073910a|| V: 0, D: 0 Tag: - || V: 0, D: 0 Tag: - |
-Index 13:	| V: 1, D: 1 Tag: 	1fe0739107|| V: 1, D: 1 Tag: 	1fe073910a|| V: 0, D: 0 Tag: - || V: 0, D: 0 Tag: - |
-Index 14:	| V: 1, D: 1 Tag: 	1fe073910a|| V: 1, D: 1 Tag: 	1fe0739107|| V: 0, D: 0 Tag: - || V: 0, D: 0 Tag: - |
-Index 15:	| V: 1, D: 0 Tag: 	1fe0739107|| V: 1, D: 1 Tag: 	1fe073910a|| V: 0, D: 0 Tag: - || V: 0, D: 0 Tag: - |
-Index 16:	| V: 1, D: 1 Tag: 	1fe0739107|| V: 1, D: 1 Tag: 	1fe073910a|| V: 0, D: 0 Tag: - || V: 0, D: 0 Tag: - |
-Index 17:	| V: 1, D: 1 Tag: 	1fe073910a|| V: 1, D: 1 Tag: 	1fe0739107|| V: 0, D: 0 Tag: - || V: 0, D: 0 Tag: - |
-Index 18:	| V: 1, D: 1 Tag: 	1fe0739107|| V: 1, D: 0 Tag: 	1fe073910a|| V: 0, D: 0 Tag: - || V: 0, D: 0 Tag: - |
-Index 19:	| V: 1, D: 0 Tag: 	1fe0739107|| V: 1, D: 1 Tag: 	1fe073910a|| V: 0, D: 0 Tag: - || V: 0, D: 0 Tag: - |
-Index 1a:	| V: 1, D: 1 Tag: 	1fe073910a|| V: 1, D: 1 Tag: 	1fe0739107|| V: 0, D: 0 Tag: - || V: 0, D: 0 Tag: - |
-Index 1b:	| V: 1, D: 0 Tag: 	1fe0739107|| V: 1, D: 1 Tag: 	1fe0739106|| V: 0, D: 0 Tag: - || V: 0, D: 0 Tag: - |
-Index 1c:	| V: 1, D: 1 Tag: 	1fe0739106|| V: 0, D: 0 Tag: - || V: 0, D: 0 Tag: - || V: 0, D: 0 Tag: - |
-Index 1d:	| V: 1, D: 1 Tag: 	1fffd6a121|| V: 1, D: 0 Tag: 	1fe0739107|| V: 1, D: 1 Tag: 	1fe073910a|| V: 0, D: 0 Tag: - |
+Index 11:	| V: 1, D: 1 Tag: 	1fe073910a|| V: 1, D: 0 Tag: 	1fe073910a|| V: 1, D: 0 Tag: 	1fe073910a|| V: 1, D: 0 Tag: 	1fe073910a|
+Index 12:	| V: 1, D: 1 Tag: 	1fe073910a|| V: 1, D: 0 Tag: 	1fe073910a|| V: 1, D: 0 Tag: 	1fe073910a|| V: 1, D: 0 Tag: 	1fe073910a|
+Index 13:	| V: 1, D: 1 Tag: 	1fe0739107|| V: 1, D: 0 Tag: 	1fe073910a|| V: 1, D: 1 Tag: 	1fe073910a|| V: 1, D: 0 Tag: 	1fe0739107|
+Index 14:	| V: 1, D: 1 Tag: 	1fe0739107|| V: 1, D: 0 Tag: 	1fe073910a|| V: 1, D: 1 Tag: 	1fe073910a|| V: 1, D: 0 Tag: 	1fe0739107|
+Index 15:	| V: 1, D: 1 Tag: 	1fe073910a|| V: 1, D: 0 Tag: 	1fe073910a|| V: 1, D: 0 Tag: 	1fe073910a|| V: 1, D: 0 Tag: 	1fe0739107|
+Index 16:	| V: 1, D: 1 Tag: 	1fe0739107|| V: 1, D: 0 Tag: 	1fe073910a|| V: 1, D: 1 Tag: 	1fe073910a|| V: 1, D: 0 Tag: 	1fe0739107|
+Index 17:	| V: 1, D: 1 Tag: 	1fe0739107|| V: 1, D: 0 Tag: 	1fe0739107|| V: 1, D: 1 Tag: 	1fe0739107|| V: 1, D: 0 Tag: 	1fe0739107|
+Index 18:	| V: 1, D: 0 Tag: 	1fe0739107|| V: 1, D: 1 Tag: 	1fe0739107|| V: 1, D: 0 Tag: 	1fe0739107|| V: 1, D: 0 Tag: 	1fe0739107|
+Index 19:	| V: 1, D: 1 Tag: 	1fe073910a|| V: 1, D: 0 Tag: 	1fe0739107|| V: 1, D: 0 Tag: 	1fe0739107|| V: 1, D: 0 Tag: 	1fe0739107|
+Index 1a:	| V: 1, D: 1 Tag: 	1fe073910a|| V: 1, D: 1 Tag: 	1fe073910a|| V: 1, D: 0 Tag: 	1fe073910a|| V: 1, D: 1 Tag: 	1fe073910a|
+Index 1b:	| V: 1, D: 1 Tag: 	1fe0739106|| V: 1, D: 0 Tag: 	1fe0739107|| V: 1, D: 0 Tag: 	1fe0739107|| V: 1, D: 0 Tag: 	1fe0739107|
+Index 1c:	| V: 1, D: 0 Tag: 	1fe0739106|| V: 1, D: 1 Tag: 	1fe0739106|| V: 0, D: 0 Tag: - || V: 0, D: 0 Tag: - |
+Index 1d:	| V: 1, D: 1 Tag: 	1fe073910a|| V: 1, D: 0 Tag: 	1fe073910a|| V: 1, D: 0 Tag: 	1fe0739107|| V: 1, D: 1 Tag: 	1fe073910a|
 Index 1e:	| V: 1, D: 1 Tag: 	1fffd6a121|| V: 0, D: 0 Tag: - || V: 0, D: 0 Tag: - || V: 0, D: 0 Tag: - |
 
 
 Memory Level: L2 Unified Cache 
 Index 1a:	| V: 1, D: 0 Tag: 	ff039c44|
-Index 1e:	| V: 1, D: 0 Tag: 	fffeb509|
+Index 1e:	| V: 1, D: 1 Tag: 	fffeb509|
 Index 1f:	| V: 1, D: 0 Tag: 	fffeb509|
 Index 6d:	| V: 1, D: 0 Tag: 	ff039c88|
 Index 6e:	| V: 1, D: 0 Tag: 	ff039c88|
 Index 71:	| V: 1, D: 1 Tag: 	ff039c88|
-Index 73:	| V: 1, D: 0 Tag: 	ff039c88|
+Index 73:	| V: 1, D: 1 Tag: 	ff039c88|
 Index 78:	| V: 1, D: 0 Tag: 	ff039c88|
-Index 79:	| V: 1, D: 0 Tag: 	ff039c88|
-Index 7a:	| V: 1, D: 0 Tag: 	ff039c88|
-Index 7b:	| V: 1, D: 0 Tag: 	ff039c88|
-Index 7c:	| V: 1, D: 0 Tag: 	ff039c88|
-Index 7d:	| V: 1, D: 0 Tag: 	ff039c88|
+Index 79:	| V: 1, D: 1 Tag: 	ff039c88|
+Index 7a:	| V: 1, D: 1 Tag: 	ff039c88|
+Index 7b:	| V: 1, D: 1 Tag: 	ff039c88|
+Index 7c:	| V: 1, D: 1 Tag: 	ff039c88|
+Index 7d:	| V: 1, D: 1 Tag: 	ff039c88|
 Index 7e:	| V: 1, D: 0 Tag: 	ff039c88|
 Index a7:	| V: 1, D: 1 Tag: 	ff039c88|
-Index a8:	| V: 1, D: 0 Tag: 	ff039c88|
+Index a8:	| V: 1, D: 1 Tag: 	ff039c88|
 Index a9:	| V: 1, D: 1 Tag: 	ff039c88|
 Index aa:	| V: 1, D: 1 Tag: 	ff039c88|
 Index ab:	| V: 1, D: 1 Tag: 	ff039c88|
-Index ac:	| V: 1, D: 0 Tag: 	ff039c88|
-Index ad:	| V: 1, D: 0 Tag: 	ff039c88|
+Index ac:	| V: 1, D: 1 Tag: 	ff039c88|
+Index ad:	| V: 1, D: 1 Tag: 	ff039c88|
 Index ae:	| V: 1, D: 0 Tag: 	ff039c88|
-Index b1:	| V: 1, D: 0 Tag: 	ff039c88|
+Index b1:	| V: 1, D: 1 Tag: 	ff039c88|
 Index 100:	| V: 1, D: 0 Tag: 	ff039c44|
 Index 101:	| V: 1, D: 0 Tag: 	ff039c44|
 Index 102:	| V: 1, D: 0 Tag: 	ff039c44|
@@ -153,7 +2217,7 @@ Index 111:	| V: 1, D: 0 Tag: 	ff039c44|
 Index 112:	| V: 1, D: 0 Tag: 	ff039c44|
 Index 114:	| V: 1, D: 0 Tag: 	ff039c44|
 Index 115:	| V: 1, D: 0 Tag: 	ff039c44|
-Index 1e1:	| V: 1, D: 0 Tag: 	ff039c43|
+Index 1e1:	| V: 1, D: 1 Tag: 	ff039c43|
 Index 1e2:	| V: 1, D: 0 Tag: 	ff039c43|
 Index 1e3:	| V: 1, D: 0 Tag: 	ff039c43|
 

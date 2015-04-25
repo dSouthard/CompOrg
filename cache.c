@@ -104,7 +104,10 @@ unsigned long long moveBlock(struct Cache* cache, unsigned long long targetTag, 
         }
 
         // Block is invalid or clean, feel free to write over it
+//        printf("tempblock's tag is now: %llx\n", tempBlock->tag);
+//        printf("~~~> Targettag = %llx\n", targetTag);
         tempBlock->tag = targetTag;
+//        printf("tempblock's tag is now: %llx\n", tempBlock->tag);
         tempBlock->valid = 1;
 
         // May have been written back due to a dirty/flush kick-out

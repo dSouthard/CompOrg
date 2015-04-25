@@ -1,5 +1,91 @@
 Configuration: config/l2-4way_8
 
+Now scanning L2 for target tag
+	 *** L2: Index Field = 1a, Tag Field = 3fc0e7110 *** 
+3 bytes transferred.
+0 bytes left.
+4 bytes transferred.
+1 bytes left. Still in the same block.
+1 bytes transferred.
+0 bytes left.
+Now scanning L2 for target tag
+	 *** L2: Index Field = 1f, Tag Field = 3fffad424 *** 
+4 bytes transferred.
+4 bytes left. Still in the same block.
+4 bytes transferred.
+0 bytes left.
+Now scanning L2 for target tag
+	 *** L2: Index Field = 0, Tag Field = 3fc0e7112 *** 
+1 bytes transferred.
+0 bytes left.
+4 bytes transferred.
+4 bytes left. Still in the same block.
+4 bytes transferred.
+0 bytes left.
+3 bytes transferred.
+0 bytes left.
+2 bytes transferred.
+0 bytes left.
+4 bytes transferred.
+4 bytes left. Still in the same block.
+4 bytes transferred.
+0 bytes left.
+2 bytes transferred.
+0 bytes left.
+4 bytes transferred.
+4 bytes left. Still in the same block.
+4 bytes transferred.
+0 bytes left.
+2 bytes transferred.
+0 bytes left.
+Now scanning L2 for target tag
+	 *** L2: Index Field = 1e, Tag Field = 3fffad424 *** 
+4 bytes transferred.
+4 bytes left. Still in the same block.
+4 bytes transferred.
+0 bytes left.
+2 bytes transferred.
+0 bytes left.
+4 bytes transferred.
+4 bytes left. Still in the same block.
+4 bytes transferred.
+0 bytes left.
+1 bytes transferred.
+0 bytes left.
+4 bytes transferred.
+4 bytes left. Still in the same block.
+4 bytes transferred.
+0 bytes left.
+3 bytes transferred.
+0 bytes left.
+Now scanning L2 for target tag
+	 *** L2: Index Field = 0, Tag Field = 3fc0e7112 *** 
+4 bytes transferred.
+0 bytes left.
+2 bytes transferred.
+0 bytes left.
+4 bytes transferred.
+0 bytes left.
+2 bytes transferred.
+0 bytes left.
+3 bytes transferred.
+0 bytes left.
+4 bytes transferred.
+3 bytes left. Still in the same block.
+3 bytes transferred.
+0 bytes left.
+4 bytes transferred.
+3 bytes left. Still in the same block.
+3 bytes transferred.
+0 bytes left.
+Now scanning L2 for target tag
+	 *** L2: Index Field = 6e, Tag Field = 3fc0e7220 *** 
+4 bytes transferred.
+4 bytes left. Still in the same block.
+Now scanning L2 for target tag
+	 *** L2: Index Field = 6e, Tag Field = 3fc0e7220 *** 
+4 bytes transferred.
+0 bytes left.
 ---------------------------------------------------
 				 Simulation Results
 ---------------------------------------------------
@@ -9,7 +95,7 @@ Memory System:
 	 L2 Unified Cache: Size = 32768, 	Associativity = 4, 	Block size = 64
 	 Main Memory: Ready time = 30, 	Chunksize = 8, 	Chunktime = 15,
 
-Execution Time = 931, 	Total Traces Read = 25
+Execution Time = 983, 	Total Traces Read = 25
 Flush time = 0
 
 Number of Reference Types: 	[Percentage] 
@@ -19,35 +105,35 @@ Number of Reference Types: 	[Percentage]
 	Total 	= 	25
 
 Total Cycles for Activities: 	[Percentage] 
-	Reads 	= 	8 		[0.9%]
-	Writes 	= 	382 		[41.0%]
-	Inst. 	= 	346 		[37.2%]
-	Total 	= 	736
+	Reads 	= 	28 		[2.8%]
+	Writes 	= 	606 		[61.6%]
+	Inst. 	= 	457 		[46.5%]
+	Total 	= 	1091
 
 Average Cycles for Activities: 
-	Reads = 8.0, 	Writes = 54.0, 	Instructions = 20.0
+	Reads = 28.0, 	Writes = 86.0, 	Instructions = 26.0
 
 Ideal: Execution Time = xxxxx; 	CPI = xx.xx
 Ideal Misaligned Execution Time = xxxxxx; 	CPI = xx.xx
 
 Memory Level: L1 Instruction Cache
-	Hit Count = 14, 	 Miss Count = 3
-	Total Requests = 17
-	Hit Rate: 82.4%, 	 Miss Rate = 17.6%
+	Hit Count = 17, 	 Miss Count = 5
+	Total Requests = 22
+	Hit Rate: 77.3%, 	 Miss Rate = 22.7%
 	Kickouts = 0, 	 Dirty-kickouts = 0, 	 Transfers = 3
 	Flush Kickouts = 0
 
 Memory Level: L1 Data Cache
-	Hit Count = 5, 	 Miss Count = 3
-	Total Requests = 8
-	Hit Rate: 62.5%, 	 Miss Rate = 37.5%
-	Kickouts = 0, 	 Dirty-kickouts = 0, 	 Transfers = 3
+	Hit Count = 12, 	 Miss Count = 2
+	Total Requests = 14
+	Hit Rate: 85.7%, 	 Miss Rate = 14.3%
+	Kickouts = 0, 	 Dirty-kickouts = 0, 	 Transfers = 4
 	Flush Kickouts = 0
 
 Memory Level: L2 Cache
-	Hit Count = 1, 	 Miss Count = 5
-	Total Requests = 6
-	Hit Rate: 16.7%, 	 Miss Rate = 83.3%
+	Hit Count = 2, 	 Miss Count = 5
+	Total Requests = 7
+	Hit Rate: 28.6%, 	 Miss Rate = 71.4%
 	Kickouts = 0, 	 Dirty-kickouts = 0, 	 Transfers = 5
 	Flush Kickouts = 0
 
@@ -73,7 +159,7 @@ Index 35:	| V: 1, D: 0 Tag: 	7f81ce220|| V: 0, D: 0 Tag: - |
 Memory Level: L1 Data Cache
 Index 3d:	| V: 1, D: 1 Tag: 	7fff5a848|| V: 0, D: 0 Tag: - |
 Index 3e:	| V: 1, D: 1 Tag: 	7fff5a848|| V: 0, D: 0 Tag: - |
-Index 5c:	| V: 1, D: 0 Tag: 	7f81ce441|| V: 0, D: 0 Tag: - |
+Index 5c:	| V: 1, D: 0 Tag: 	7f81ce441|| V: 1, D: 0 Tag: 	7f81ce441|
 
 
 Memory Level: L2 Unified Cache 

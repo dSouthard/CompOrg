@@ -20,7 +20,7 @@ int mem_chunktime = 15;
 int mem_chunksize = 8;
 
 // Variables for pulling out values from address fields
-unsigned long long address, startAddress, byteAddress, l1EndAddress, l2EndAddress; // Read in new addresses
+unsigned long long address, cacheStartAddress, byteStartAddress, byteEndAddress, desiredByte, cacheEndAddress; // Read in new addresses
 unsigned long long l1Tag, l2Tag, l2WritebackTag, l2WritebackIndex; // Address Tag
 unsigned long long l1IndexField, l2IndexField; // Address Index
 unsigned long long l1Byte, l2Byte; // Address Byte Field
@@ -203,6 +203,7 @@ int main(int argc, char* argv[]) {
         l2CacheIndexTracker[tracker] = 0;
     }
 
+
 #ifndef DEBUG
     while (scanf("%c %Lx %d\n", &opCode, &address, &byteSize) == 3) {
 #endif
@@ -215,19 +216,29 @@ int main(int argc, char* argv[]) {
 #endif
             traceCounter++; // Increment trace counter
             int traceTime = executionTime; // Track individual trace times
+            int counted = 0; // Only count each trace once
+
+            byteStartAddress = address & (~3); // Find start address for desired word
+            byteEndAddress = byteStartAddress + 4; // Find the end address for desired word
 
             findFields(); // Have pulled out Index, Byte, and Tag fields for L1 cache
-            if (debug) {
-                printf("\nTrace #%lld --- Address  = %llx, Byte Size = %d, Type = %c \n", traceCounter, address, byteSize, opCode);
-                printf("\t *** Start Address = %llx *** \n", startAddress);
-                printf("\t *** L1: Index Field = %llx, Tag Field = %llx *** \n", l1IndexField, l1Tag);
-            }
+            int bytesLeft = byteSize;
+            printf("\nTrace #%lld --- Address  = %llx, Byte Size = %d, Type = %c \n", traceCounter, address, byteSize, opCode);
 
-            long long unsigned bytesLeft = byteSize * 8;
+            while (bytesLeft > 0) { // Go through and repeat for as many bytes as necessary
 
-            while (bytesLeft) { // Go through and repeat for as many bytes as necessary
+                if (debug) {
+                    printf("\t Requested Cache Block Start/End address = %llx, \t%llx\n", cacheStartAddress, cacheEndAddress);
+                    printf("\t *** Byte Start/End Address = %llx, \t %llx *** \n", byteStartAddress, byteEndAddress);
+                    printf("\t *** Desired Byte Address = %llx *** \n", address);
+                    printf("\t *** L1: Index Field = %llx, Tag Field = %llx *** \n", l1IndexField, l1Tag);
+                }
+
                 if (opCode == 'I') {
-                    instructionCounter++; // Increment instruction counter
+                    if (!counted) {
+                        instructionCounter++; // Increment instruction counter
+                        counted = 1;
+                    }
 
                     // Track which indexes have been changed
                     iCacheIndexTracker[l1IndexField] = 1;
@@ -249,6 +260,7 @@ int main(int argc, char* argv[]) {
                         // Find LRU to write over in L1
                         writeOverTag = moveBlock(iCache, l1Tag, l1IndexField, 0); // Tag is now in L1, do accounting details
 
+
                         if (writeOverTag) {
                             printf("\t Need to write over a dirty block\n");
                             writeBack(writeOverTag); // Reconstruct fields for L2 write-back
@@ -260,6 +272,8 @@ int main(int argc, char* argv[]) {
                                 printf("Adding L1->L2 transfer time (+%d)\n", l2_transfer_time * (iCache->blockSize / l2_bus_width));
                                 executionTime += l2Cache->hitTime;
                                 executionTime += l2_transfer_time * (iCache->blockSize / l2_bus_width); // Move desired block from L1 -> L2
+                                iCache->instructionTime += l2_transfer_time * (iCache->blockSize / l2_bus_width); // Add to instruction time counter
+
                             } else {
                                 printf("\t\t MISS: Not Found in L2, adding L2 miss time\n");
                                 executionTime += l2Cache->missTime;
@@ -281,6 +295,7 @@ int main(int argc, char* argv[]) {
 
                                 printf("Adding L1->L2 transfer time (+%d)\n", l2_transfer_time * (iCache->blockSize / l2_bus_width));
                                 executionTime += l2_transfer_time * (iCache->blockSize / l2_bus_width); // Move desired block from L1 -> L2
+                                iCache->instructionTime += l2_transfer_time * (iCache->blockSize / l2_bus_width); // Add to instruction time counter
                             }
                         }
 
@@ -329,23 +344,27 @@ int main(int argc, char* argv[]) {
 
                         // Time penalty
                         executionTime += l2_transfer_time * (iCache->blockSize / l2_bus_width); // Move desired block from L1 -> L2
+                        iCache->instructionTime += l2_transfer_time * (iCache->blockSize / l2_bus_width); // Add to instruction time counter
                         executionTime += iCache->hitTime;
                     }
                 }
 
                 else if (opCode == 'R') {
-                    readCounter++; // increment read counter
+                    if (!counted) {
+                        readCounter++; // increment read counter
+                        counted = 1;
+                    }
 
                     // Track which indexes have been changed
                     dCacheIndexTracker[l1IndexField] = 1;
                     l2CacheIndexTracker[l2IndexField] = 1;
 
-                    hit = scanCache(iCache, l1Tag, l1IndexField, opCode); // Check L1I cache
+                    hit = scanCache(dCache, l1Tag, l1IndexField, opCode); // Check L1I cache
                     if (hit == 1) { // Found in L1I cache
                         if (debug)
                             printf("\t HIT: Found in L1, adding L1 hit time (+%d)\n", l1_hit_time);
                         l1HitCounter++; //Increment hit counter
-                        executionTime += iCache->hitTime;
+                        executionTime += dCache->hitTime;
                         // 
                     } else { // Not in L1 Cache, all tags were valid, LRU is dirty
                         if (debug) {
@@ -356,8 +375,17 @@ int main(int argc, char* argv[]) {
                         executionTime += dCache->missTime;
 
                         // Find LRU to write over in L1
+//                        if (traceCounter == 25) {
+//                            printf("Trace 25 Tag= %llx, Index =  %llx\n",l1Tag, l1IndexField);
+//                        }
+//                        
                         writeOverTag = moveBlock(dCache, l1Tag, l1IndexField, 0); // Tag is now in L1, do accounting details
 
+//                        if (traceCounter == 25) {
+//                            printf("SHOULD BE HERE NOW\n");
+//                            printCacheStatus(dCache, dCacheIndexTracker);
+//                            printCacheStatus(l2Cache, l2CacheIndexTracker);
+//                        }
                         if (writeOverTag) {
                             printf("\t Need to write over a dirty block\n");
                             writeBack(writeOverTag); // Reconstruct fields for L2 write-back
@@ -432,7 +460,7 @@ int main(int argc, char* argv[]) {
                         // Bring into L1 cache
                         if (debug) {
                             printf("\t Writing block back to L1...");
-                            printf("Adding L2->L1 transfer time (+%d)\n", l2_transfer_time * (iCache->blockSize / l2_bus_width));
+                            printf("Adding L2->L1 transfer time (+%d)\n", l2_transfer_time * (dCache->blockSize / l2_bus_width));
                             printf("\t Adding L1 replay time (+%d)\n", l1_hit_time);
                         }
 
@@ -440,10 +468,11 @@ int main(int argc, char* argv[]) {
                         executionTime += l2_transfer_time * (dCache->blockSize / l2_bus_width); // Move desired block from L1 -> L2
                         executionTime += dCache->hitTime;
                     }
-                }
-
-                else if (opCode == 'W') {
-                    writeCounter++; // Increment write counter
+                } else if (opCode == 'W') {
+                    if (!counted) {
+                        writeCounter++; // Increment write counter
+                        counted = 1;
+                    }
 
                     // Track which indexes have been accessed
                     dCacheIndexTracker[l1IndexField] = 1;
@@ -477,7 +506,7 @@ int main(int argc, char* argv[]) {
                                 printf("\t\t HIT: Found in L2, adding L2 hit time\n");
                                 printf("Adding L1->L2 transfer time (+%d)\n", l2_transfer_time * (iCache->blockSize / l2_bus_width));
                                 executionTime += l2Cache->hitTime;
-                                executionTime += l2_transfer_time * (iCache->blockSize / l2_bus_width); // Move desired block from L1 -> L2
+                                executionTime += l2_transfer_time * (dCache->blockSize / l2_bus_width); // Move desired block from L1 -> L2
                             } else {
                                 printf("\t\t MISS: Not Found in L2, adding L2 miss time\n");
                                 executionTime += l2Cache->missTime;
@@ -497,7 +526,7 @@ int main(int argc, char* argv[]) {
                                 printf("Adding L2 replay time (+%d)\n", l2Cache->hitTime);
                                 executionTime += l2Cache->hitTime;
 
-                                printf("Adding L1->L2 transfer time (+%d)\n", l2_transfer_time * (iCache->blockSize / l2_bus_width));
+                                printf("Adding L1->L2 transfer time (+%d)\n", l2_transfer_time * (dCache->blockSize / l2_bus_width));
                                 executionTime += l2_transfer_time * (iCache->blockSize / l2_bus_width); // Move desired block from L1 -> L2
                             }
                         }
@@ -552,20 +581,47 @@ int main(int argc, char* argv[]) {
                 } // Finished reading trace
 
                 // Sent 4 bytes to the processor
-                
-                // Find the next fields if you need to move on to the next block
-                if ((byteAddress + bytesLeft) < l1EndAddress) {
-                    // No more bytes to transfer
-                    bytesLeft = 0;
-                    printf("All bytes transferred.\n");
-                } else {
-                    bytesLeft = l1EndAddress - byteAddress;
-                    byteAddress = l1EndAddress;
-                    findNextFields();
 
-                    printf("Not all bytes transferred.\n\n");
-                    printf("\t *** Start Address = %llx *** \n", startAddress);
-                    printf("\t *** L1: Index Field = %llx, Tag Field = %llx *** \n", l1IndexField, l1Tag);
+                int transferred = 0;
+                //                moved = 0;
+                // Find the next fields if you need to move on to the next block
+                while ((byteStartAddress < byteEndAddress) && (bytesLeft > 0)) {
+                    if (byteStartAddress >= address) { // Moved desired bytes
+                        //                        byteAddress++;
+                        transferred++;
+                        bytesLeft--;
+                    }
+                    byteStartAddress++;
+                    //                    moved++;
+                }
+
+                printf("%d bytes transferred.\n", transferred);
+
+//                if (transferred == 4 && traceCounter == 25) {
+//                    printCacheStatus(dCache, dCacheIndexTracker);
+//                    printCacheStatus(l2Cache, l2CacheIndexTracker);
+//                }
+
+                if (bytesLeft > 0) { // Reached end of cache block
+                    if (byteEndAddress != cacheEndAddress) { // We can go on to another word in the same block
+                        //                        byteStartAddress++;
+                        byteEndAddress = byteStartAddress + 4;
+                        printf("%d bytes left. Still in the same block.\n\n", bytesLeft);
+                        printf("\t *** Byte Start/End Address = %llx, \t%llx *** \n", byteStartAddress, byteEndAddress);
+                    }
+                    else {
+                        // Move on to the next block
+                        //                        byteStartAddress; // Potential overflow error HERE
+                        byteEndAddress = byteStartAddress + 4;
+                        findFields();
+
+                        printf("\t Need to access the next block! \n");
+                        printf("\t Requested Cache Block Start/End address = %llx, \t%llx\n", cacheStartAddress, cacheEndAddress);
+                        printf("\t *** Byte Start/End Address = %llx, \t%llx *** \n", byteStartAddress, byteEndAddress);
+                        printf("\t *** L1: Index Field = %llx, Tag Field = %llx *** \n\n", l1IndexField, l1Tag);
+                    }
+                } else {
+                    printf("%d bytes left.\n", bytesLeft);
                 }
             }
 
@@ -641,16 +697,17 @@ void findFields() {
     l1Byte = (~0) << iCache->byteOffsetSize;
     l2Byte = (~0) << l2Cache->byteOffsetSize;
 
-    startAddress = address & (~3); // Find start address for this block
-    l1EndAddress = startAddress + (iCache->blockSize +1);
+    cacheStartAddress = l1Byte;
+    cacheStartAddress = cacheStartAddress & byteStartAddress; // Track start of the block
+    cacheEndAddress = cacheStartAddress + iCache->blockSize; // Track end of the block
 
     l1Byte = ~l1Byte; // Switch all 1's to 0's
-    l1Byte = l1Byte & startAddress; // Mask out all fields but the incoming byte field
+    l1Byte = l1Byte & byteStartAddress; // Mask out all fields but the incoming byte field
 
     l2Byte = ~l2Byte; // Switch all 1's to 0's
-    l2Byte = l2Byte & startAddress; // Mask out all fields but the incoming byte field
+    l2Byte = l2Byte & byteStartAddress; // Mask out all fields but the incoming byte field
 
-    byteAddress = startAddress; // Keep track of start of desired bytes
+    //    desiredByteAddress = startAddress; // Keep track of start of desired bytes
 
     // Pull out the index field from the address
     // Fill space with 1's, then shift over by byeOffset
@@ -658,19 +715,19 @@ void findFields() {
     l2IndexField = (~0) << (l2Cache->indexFieldSize + l2Cache->byteOffsetSize);
     l1Tag = l1IndexField; // Save correct placing of 1's for finding the tag field next
     l1IndexField = ~l1IndexField; // Switch all 1's to 0's
-    l1IndexField = l1IndexField & address; // Mask out all fields but the incoming byte/index field
+    l1IndexField = l1IndexField & byteStartAddress; // Mask out all fields but the incoming byte/index field
 
     l2Tag = l2IndexField; // Save correct placing of 1's for finding the tag field next
     l2IndexField = ~l2IndexField; // Switch all 1's to 0's
-    l2IndexField = l2IndexField & startAddress; // Mask out all fields but the incoming byte/index field
+    l2IndexField = l2IndexField & byteStartAddress; // Mask out all fields but the incoming byte/index field
 
     // Shift out the byte field
     l1IndexField = l1IndexField >> iCache->byteOffsetSize;
     l2IndexField = l2IndexField >> l2Cache->byteOffsetSize;
 
     // Pull out the tag field
-    l1Tag = l1Tag & startAddress;
-    l2Tag = l2Tag & startAddress;
+    l1Tag = l1Tag & byteStartAddress;
+    l2Tag = l2Tag & byteStartAddress;
 
     // Shift out other fields
     l1Tag = l1Tag >> (iCache->indexFieldSize + iCache->byteOffsetSize);
@@ -679,44 +736,48 @@ void findFields() {
     return;
 }
 
-void findNextFields() {
-    // Pull out the byte field from the address
-    // Fill space with 1's, then shift over by byeOffset
-    l1Byte = (~0) << iCache->byteOffsetSize;
-    l2Byte = (~0) << l2Cache->byteOffsetSize;
-
-    l1Byte = ~l1Byte; // Switch all 1's to 0's
-    l1Byte = l1Byte & byteAddress; // Mask out all fields but the incoming byte field
-
-    l2Byte = ~l2Byte; // Switch all 1's to 0's
-    l2Byte = l2Byte & byteAddress; // Mask out all fields but the incoming byte field
-
-    // Pull out the index field from the address
-    // Fill space with 1's, then shift over by byeOffset
-    l1IndexField = (~0) << (iCache->indexFieldSize + iCache->byteOffsetSize);
-    l2IndexField = (~0) << (l2Cache->indexFieldSize + l2Cache->byteOffsetSize);
-    l1Tag = l1IndexField; // Save correct placing of 1's for finding the tag field next
-    l1IndexField = ~l1IndexField; // Switch all 1's to 0's
-    l1IndexField = l1IndexField & byteAddress; // Mask out all fields but the incoming byte/index field
-
-    l2Tag = l2IndexField; // Save correct placing of 1's for finding the tag field next
-    l2IndexField = ~l2IndexField; // Switch all 1's to 0's
-    l2IndexField = l2IndexField & byteAddress; // Mask out all fields but the incoming byte/index field
-
-    // Shift out the byte field
-    l1IndexField = l1IndexField >> iCache->byteOffsetSize;
-    l2IndexField = l2IndexField >> l2Cache->byteOffsetSize;
-
-    // Pull out the tag field
-    l1Tag = l1Tag & byteAddress;
-    l2Tag = l2Tag & byteAddress;
-
-    // Shift out other fields
-    l1Tag = l1Tag >> (iCache->indexFieldSize + iCache->byteOffsetSize);
-    l2Tag = l2Tag >> (l2Cache->indexFieldSize + l2Cache->byteOffsetSize);
-
-    return;
-}
+//void findNextFields() {
+//    // Pull out the byte field from the address
+//    // Fill space with 1's, then shift over by byeOffset
+//    l1Byte = (~0) << iCache->byteOffsetSize;
+//    l2Byte = (~0) << l2Cache->byteOffsetSize;
+//
+//    l1Byte = ~l1Byte; // Switch all 1's to 0's
+//    l1Byte = l1Byte & byteAddress; // Mask out all fields but the incoming byte field
+//
+//    l2Byte = ~l2Byte; // Switch all 1's to 0's
+//    l2Byte = l2Byte & byteAddress; // Mask out all fields but the incoming byte field
+//
+//    endAddress = l1Byte;
+//    endAddress = endAddress & address;
+//    endAddress = endAddress + iCache->blockSize; // Track end of the block
+//
+//    // Pull out the index field from the address
+//    // Fill space with 1's, then shift over by byeOffset
+//    l1IndexField = (~0) << (iCache->indexFieldSize + iCache->byteOffsetSize);
+//    l2IndexField = (~0) << (l2Cache->indexFieldSize + l2Cache->byteOffsetSize);
+//    l1Tag = l1IndexField; // Save correct placing of 1's for finding the tag field next
+//    l1IndexField = ~l1IndexField; // Switch all 1's to 0's
+//    l1IndexField = l1IndexField & byteAddress; // Mask out all fields but the incoming byte/index field
+//
+//    l2Tag = l2IndexField; // Save correct placing of 1's for finding the tag field next
+//    l2IndexField = ~l2IndexField; // Switch all 1's to 0's
+//    l2IndexField = l2IndexField & byteAddress; // Mask out all fields but the incoming byte/index field
+//
+//    // Shift out the byte field
+//    l1IndexField = l1IndexField >> iCache->byteOffsetSize;
+//    l2IndexField = l2IndexField >> l2Cache->byteOffsetSize;
+//
+//    // Pull out the tag field
+//    l1Tag = l1Tag & byteAddress;
+//    l2Tag = l2Tag & byteAddress;
+//
+//    // Shift out other fields
+//    l1Tag = l1Tag >> (iCache->indexFieldSize + iCache->byteOffsetSize);
+//    l2Tag = l2Tag >> (l2Cache->indexFieldSize + l2Cache->byteOffsetSize);
+//
+//    return;
+//}
 
 void printHelpStatement() {
     printf("Memory Simulation Project, ECEN 4593 \n"

@@ -1,5 +1,41 @@
 Configuration: config/l2-4way_8
 
+Now scanning L2 for target tag
+	 *** L2: Index Field = 1a, Tag Field = 3fc0e7110 *** 
+3 bytes transferred.
+0 bytes left.
+4 bytes transferred.
+1 bytes left. Still in the same block.
+1 bytes transferred.
+0 bytes left.
+Now scanning L2 for target tag
+	 *** L2: Index Field = 1f, Tag Field = 3fffad424 *** 
+4 bytes transferred.
+4 bytes left. Still in the same block.
+4 bytes transferred.
+0 bytes left.
+Now scanning L2 for target tag
+	 *** L2: Index Field = 0, Tag Field = 3fc0e7112 *** 
+1 bytes transferred.
+0 bytes left.
+4 bytes transferred.
+4 bytes left. Still in the same block.
+4 bytes transferred.
+0 bytes left.
+3 bytes transferred.
+0 bytes left.
+2 bytes transferred.
+0 bytes left.
+4 bytes transferred.
+4 bytes left. Still in the same block.
+4 bytes transferred.
+0 bytes left.
+2 bytes transferred.
+0 bytes left.
+4 bytes transferred.
+4 bytes left. Still in the same block.
+4 bytes transferred.
+0 bytes left.
 ---------------------------------------------------
 				 Simulation Results
 ---------------------------------------------------
@@ -9,7 +45,7 @@ Memory System:
 	 L2 Unified Cache: Size = 32768, 	Associativity = 4, 	Block size = 64
 	 Main Memory: Ready time = 30, 	Chunksize = 8, 	Chunktime = 15,
 
-Execution Time = 544, 	Total Traces Read = 10
+Execution Time = 564, 	Total Traces Read = 10
 Flush time = 0
 
 Number of Reference Types: 	[Percentage] 
@@ -20,27 +56,27 @@ Number of Reference Types: 	[Percentage]
 
 Total Cycles for Activities: 	[Percentage] 
 	Reads 	= 	0 		[0.0%]
-	Writes 	= 	117 		[21.5%]
-	Inst. 	= 	64 		[11.8%]
-	Total 	= 	181
+	Writes 	= 	173 		[30.7%]
+	Inst. 	= 	77 		[13.7%]
+	Total 	= 	250
 
 Average Cycles for Activities: 
-	Reads = 0.0, 	Writes = 29.0, 	Instructions = 10.0
+	Reads = 0.0, 	Writes = 43.0, 	Instructions = 12.0
 
 Ideal: Execution Time = xxxxx; 	CPI = xx.xx
 Ideal Misaligned Execution Time = xxxxxx; 	CPI = xx.xx
 
 Memory Level: L1 Instruction Cache
-	Hit Count = 4, 	 Miss Count = 2
-	Total Requests = 6
-	Hit Rate: 66.7%, 	 Miss Rate = 33.3%
+	Hit Count = 5, 	 Miss Count = 2
+	Total Requests = 7
+	Hit Rate: 71.4%, 	 Miss Rate = 28.6%
 	Kickouts = 0, 	 Dirty-kickouts = 0, 	 Transfers = 2
 	Flush Kickouts = 0
 
 Memory Level: L1 Data Cache
-	Hit Count = 3, 	 Miss Count = 1
-	Total Requests = 4
-	Hit Rate: 75.0%, 	 Miss Rate = 25.0%
+	Hit Count = 7, 	 Miss Count = 1
+	Total Requests = 8
+	Hit Rate: 87.5%, 	 Miss Rate = 12.5%
 	Kickouts = 0, 	 Dirty-kickouts = 0, 	 Transfers = 1
 	Flush Kickouts = 0
 
