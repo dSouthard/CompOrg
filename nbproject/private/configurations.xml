@@ -5,8 +5,32 @@
       <df name="config">
       </df>
       <df name="Results">
+        <df name="bzip2">
+        </df>
+        <df name="h264">
+        </df>
+        <df name="libquantum">
+        </df>
+        <df name="omnetpp">
+        </df>
+        <df name="sjeng">
+        </df>
       </df>
-      <df name="traces-short">
+      <df name="Results_5M">
+        <df name="bzip2">
+        </df>
+        <df name="h264">
+        </df>
+        <df name="libquantum">
+        </df>
+        <df name="omnetpp">
+        </df>
+        <df name="sjeng">
+        </df>
+      </df>
+      <df name="traces-5M">
+      </df>
+      <df name="traces-long">
       </df>
       <in>cache.c</in>
       <in>cache.h</in>
@@ -38,6 +62,8 @@
         <gdb_interceptlist>
           <gdbinterceptoptions gdb_all="false" gdb_unhandled="true" gdb_unexpected="true"/>
         </gdb_interceptlist>
+        <gdb_signals>
+        </gdb_signals>
         <gdb_options>
           <DebugOptions>
           </DebugOptions>

@@ -109,6 +109,7 @@ unsigned long long moveBlock(struct Cache* cache, unsigned long long targetTag, 
         tempBlock->tag = targetTag;
 //        printf("tempblock's tag is now: %llx\n", tempBlock->tag);
         tempBlock->valid = 1;
+        tempBlock->dirty=0;
 
         // May have been written back due to a dirty/flush kick-out
         if (isDirty) {
@@ -137,7 +138,12 @@ unsigned long long moveBlock(struct Cache* cache, unsigned long long targetTag, 
     cache->writeRefs++;
     cache->writeTime += cache->hitTime;
 
+
     tempBlock->tag = targetTag; // Put in new targetTag into block
+    if (isDirty)
+    	tempBlock->dirty = 1;	// mark as clean
+    else
+        tempBlock->dirty = 0;	// mark as clean
 
     // Update LRU chain
     // Move block to front of LRU chain
@@ -176,6 +182,7 @@ int scanCache(struct Cache* cache, unsigned long long targetTag, unsigned long l
                 if (cache->blockArray[targetIndex][0].nextBlock != tempBlock) {
                     updateLRU(cache, tempBlock, targetIndex);
                 }
+                
                 return 1;
 
             } else { // Tag didn't match
@@ -249,7 +256,7 @@ void printCacheStatus(struct Cache * cache, int * cacheIndexCounter) {
             printf("Index %llx:\t", (unsigned long long) i);
             for (j = 1; j < (cache->associativity + 1); j++) {
                 // Skip the first column since it's being used as a dummy pointer
-                if (cache->blockArray[i][j].tag != 0) // Block has a tag in it
+                if (cache->blockArray[i][j].valid != 0) // Block has a tag in it
                     printf("| V: %d, D: %d Tag: \t%llx|", cache->blockArray[i][j].valid, cache->blockArray[i][j].dirty, cache->blockArray[i][j].tag);
                 else // Block doesn't have a tag in it
                     printf("| V: %d, D: %d Tag: - |", cache->blockArray[i][j].valid, cache->blockArray[i][j].dirty);
@@ -308,6 +315,8 @@ void flushCaches(struct Cache * iCache, struct Cache * dCache, struct Cache * l2
             // Found a valid block
             if (tempBlock->valid) {
                 tempBlock->valid = 0;
+                tempBlock->tag = 0;
+                
                 iCache->invalidates++; // increment invalidate counter
 //                if (debugFlag) {
 //                    printf("Block is now invalid, moving on\n");
@@ -320,6 +329,7 @@ void flushCaches(struct Cache * iCache, struct Cache * dCache, struct Cache * l2
 //                    }
 
                     iCache->flushKickouts++;
+                    tempBlock->dirty = 0;
 
                     // Get ready to write it back to the L2 Cache
                     // Start with 0-filled variables
@@ -378,6 +388,7 @@ void flushCaches(struct Cache * iCache, struct Cache * dCache, struct Cache * l2
             // Found a valid block
             if (tempBlock->valid) {
                 tempBlock->valid = 0;
+                tempBlock->tag = 0;
                 dCache->invalidates++; // increment invalidate counter
 //                if (debugFlag) {
 //                    printf("Block is now invalid, moving on\n");
@@ -390,6 +401,7 @@ void flushCaches(struct Cache * iCache, struct Cache * dCache, struct Cache * l2
 //                    }
 
                     dCache->flushKickouts++;
+                    tempBlock->dirty = 0;
 
                     // Get ready to write it back to the L2 Cache
                     // Start with 0-filled variables
@@ -448,6 +460,7 @@ void flushCaches(struct Cache * iCache, struct Cache * dCache, struct Cache * l2
             // Found a valid block
             if (tempBlock->valid) {
                 tempBlock->valid = 0;
+                tempBlock->tag=0;
                 l2Cache->invalidates++; // increment invalidate counter
 //                if (debugFlag) {
 //                    printf("Block is now invalid, moving on\n");
@@ -460,6 +473,8 @@ void flushCaches(struct Cache * iCache, struct Cache * dCache, struct Cache * l2
 //                    }
 
                     l2Cache->flushKickouts++;
+                    tempBlock->dirty = 0;   // Reset to clean
+                    
                     l2Cache->flushTime += mainMemoryTime; // Write it back to main memory
                 }
             }

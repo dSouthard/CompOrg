@@ -1,0 +1,104 @@
+diana@PowerOverwhelming:~/Documents/Comp Org/Project$ ./testAll_5M.sh
+Starting bzip2: 12 Files
+Finished: 1
+Finished: 2
+Finished: 3
+Finished: 4
+Finished: 5
+Finished: 6
+Finished: 7
+Finished: 8
+Finished: 9
+Finished: 10
+Finished: 11
+Completed bzip2 trace in 22 seconds.
+Starting h264ref: 12 Files
+Finished: 1
+Finished: 2
+Finished: 3
+Finished: 4
+Finished: 5
+Finished: 6
+Finished: 7
+Finished: 8
+Finished: 9
+Finished: 10
+Finished: 11
+Completed h264ref trace in 22 seconds.
+Starting libquantum: 12 Files
+Finished: 1
+Finished: 2
+Finished: 3
+Finished: 4
+Finished: 5
+Finished: 6
+Finished: 7
+Finished: 8
+Finished: 9
+Finished: 10
+Finished: 11
+Completed libquantum trace in 20 seconds.
+Starting omnetpp: 12 Files
+Finished: 1
+Finished: 2
+Finished: 3
+Finished: 4
+Finished: 5
+Finished: 6
+Finished: 7
+Finished: 8
+Finished: 9
+Finished: 10
+Finished: 11
+Completed omnetpp trace in 24 seconds.
+Starting sjeng: 48 Files, 4 per configuration. Starting: Default
+Finished: 1
+Finished: 2
+Finished: 3
+Starting sjeng: All 2-Way
+Finished: 1
+Finished: 2
+Finished: 3
+Starting sjeng: All 4-Way
+Finished: 1
+Finished: 2
+Finished: 3
+Starting sjeng: L2 4-Way
+Finished: 1
+Finished: 2
+Finished: 3
+Starting sjeng: All FA
+Finished: 1
+Finished: 2
+Finished: 3
+Starting sjeng: All FA, L2 Big
+Finished: 1
+Finished: 2
+Finished: 3
+Starting sjeng: L1 Small
+Finished: 1
+Finished: 2
+Finished: 3
+Starting sjeng: L1 Small, 4-Way
+Finished: 1
+Finished: 2
+Finished: 3
+Starting sjeng: L2 Big
+Finished: 1
+Finished: 2
+Finished: 3
+Starting sjeng: L1 2-Way
+Finished: 1
+Finished: 2
+Finished: 3
+Starting sjeng: L1 8-Way
+Finished: 1
+Finished: 2
+Finished: 3
+Starting sjeng: L1 Small, 4-Way
+Finished: 1
+Finished: 2
+Finished: 3
+Completed sjeng trace in 144 seconds.
+It took 232 seconds to run all the LONG traces
+

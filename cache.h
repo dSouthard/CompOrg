@@ -19,7 +19,7 @@ struct Cache {
   int lengthOfWay;
   
   // size of index field & byte offset field
-  int indexFieldSize, byteOffsetSize;	
+  unsigned int indexFieldSize, byteOffsetSize;	
 
   // track number of hits/misses/references; need to be unsigned to handle possible sizes
   unsigned long long hits, misses, writeRefs, readRefs, insRefs;
@@ -34,7 +34,7 @@ struct Cache {
   unsigned long long instructionTime, readTime, writeTime, flushTime;
   
   // how many cycles each hit/miss should add
-  int hitTime, missTime;
+  unsigned int hitTime, missTime;
 
   struct Block **blockArray;	// Array of pointers to blocks, implements LRU policy
 };
