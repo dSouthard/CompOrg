@@ -1,0 +1,64 @@
+Configuration: config/all-fa_64
+
+---------------------------------------------------
+				 Simulation Results
+---------------------------------------------------
+Memory System:
+	 D Cache: Size = 8192, 	Associativity = 256, 	Block size = 32
+	 I Cache: Size = 8192, 	Associativity = 256, 	Block size = 32
+	 L2 Unified Cache: Size = 32768, 	Associativity = 512, 	Block size = 64
+	 Main Memory: Ready time = 30, 	Chunksize = 64, 	Chunktime = 15,
+
+Execution Time = 25754920532, 	Total Traces Read = 10000000109
+Flush time = 190286305
+Total time (Execution Time + Flush Time) = 25945206837
+
+Number of Reference Types: 	[Percentage] 
+	Reads 	= 	1907768017			[19.1%]
+	Writes 	= 	727693598			[7.3%]
+	Inst. 	= 	7364538494			[73.6%]
+	Total 	= 	10000000109
+
+Total Cycles for Activities: 	[Percentage] 
+	Reads 	= 	4614255478			[17.9%]
+	Writes 	= 	3043989355			[11.8%]
+	Inst. 	= 	18096675699			[70.3%]
+	Total 	= 	25754920532
+
+Average Cycles for Activities: 
+	Reads = 2.4, 	Writes = 4.2, 	Instructions = 3.5
+
+Ideal: Execution Time = 17364538603; 	CPI = 2.4
+Ideal Misaligned Execution Time = 23214492795; 	CPI = 3.2
+
+Memory Level: L1 Instruction Cache
+	Hit Count = 12304076483, 	 Miss Count = 248299309
+	Total Requests = 12552375792
+	Hit Rate: 98.0%, 	 Miss Rate = 2.0%
+	Kickouts = 241606304, 	 Dirty-kickouts = 0, 	 Transfers = 248299309
+	Flush Kickouts = 0
+
+Memory Level: L1 Data Cache
+	Hit Count = 3227625215, 	 Miss Count = 69953294
+	Total Requests = 3297578509
+	Hit Rate: 97.9%, 	 Miss Rate = 2.1%
+	Kickouts = 27881150, 	 Dirty-kickouts = 35335248, 	 Transfers = 69953294
+	Flush Kickouts = 3291874
+
+Memory Level: L2 Cache
+	Hit Count = 299626846, 	 Miss Count = 57252879
+	Total Requests = 356879725
+	Hit Rate: 84.0%, 	 Miss Rate = 16.0%
+	Kickouts = 30413302, 	 Dirty-kickouts = 13367945, 	 Transfers = 57252879
+	Flush Kickouts = 2532303
+
+
+System Costs:
+	 L1 Cache Costs (Instruction Cache $1800 + Data Cache $1800) = $3600
+	 L2 Cache Costs: $500 
+	 Main Memory Costs: $275 
+	 Total Memory Cost: $4375 
+
+Flushes = 26315, Invalidates = 26900509
+
+---------------------------------------------------

@@ -1,0 +1,64 @@
+Configuration: config/default_8
+
+---------------------------------------------------
+				 Simulation Results
+---------------------------------------------------
+Memory System:
+	 D Cache: Size = 8192, 	Associativity = 1, 	Block size = 32
+	 I Cache: Size = 8192, 	Associativity = 1, 	Block size = 32
+	 L2 Unified Cache: Size = 32768, 	Associativity = 1, 	Block size = 64
+	 Main Memory: Ready time = 30, 	Chunksize = 8, 	Chunktime = 15,
+
+Execution Time = 104138715372, 	Total Traces Read = 10000000076
+Flush time = 1276064012
+Total time (Execution Time + Flush Time) = 105414779384
+
+Number of Reference Types: 	[Percentage] 
+	Reads 	= 	2011922989			[20.1%]
+	Writes 	= 	1239405364			[12.4%]
+	Inst. 	= 	6748671723			[67.5%]
+	Total 	= 	10000000076
+
+Total Cycles for Activities: 	[Percentage] 
+	Reads 	= 	48403064167			[46.5%]
+	Writes 	= 	10809886183			[10.4%]
+	Inst. 	= 	44925765022			[43.1%]
+	Total 	= 	104138715372
+
+Average Cycles for Activities: 
+	Reads = 24.1, 	Writes = 8.7, 	Instructions = 15.4
+
+Ideal: Execution Time = 16748671799; 	CPI = 2.5
+Ideal Misaligned Execution Time = 24145770580; 	CPI = 3.6
+
+Memory Level: L1 Instruction Cache
+	Hit Count = 10999734919, 	 Miss Count = 459750154
+	Total Requests = 11459485073
+	Hit Rate: 96.0%, 	 Miss Rate = 4.0%
+	Kickouts = 453451137, 	 Dirty-kickouts = 0, 	 Transfers = 459750154
+	Flush Kickouts = 0
+
+Memory Level: L1 Data Cache
+	Hit Count = 5567721529, 	 Miss Count = 369892255
+	Total Requests = 5937613784
+	Hit Rate: 93.8%, 	 Miss Rate = 6.2%
+	Kickouts = 202390824, 	 Dirty-kickouts = 160764849, 	 Transfers = 369892255
+	Flush Kickouts = 2892627
+
+Memory Level: L2 Cache
+	Hit Count = 642775176, 	 Miss Count = 350524709
+	Total Requests = 993299885
+	Hit Rate: 64.7%, 	 Miss Rate = 35.3%
+	Kickouts = 256165107, 	 Dirty-kickouts = 81001599, 	 Transfers = 350524709
+	Flush Kickouts = 5540605
+
+
+System Costs:
+	 L1 Cache Costs (Instruction Cache $200 + Data Cache $200) = $400
+	 L2 Cache Costs: $50 
+	 Main Memory Costs: $75 
+	 Total Memory Cost: $525 
+
+Flushes = 26315, Invalidates = 26392604
+
+---------------------------------------------------

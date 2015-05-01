@@ -1,0 +1,32 @@
+#!/bin/bash
+
+#sjeng files
+
+echo "Starting sjeng: L2 Big"
+zcat traces-long/sjeng.gz | ./main config/l1-2way_64 > Results/sjeng/sjengResults_l1-2way_64
+echo "Finished: 2"
+zcat traces-long/sjeng.gz | ./main config/l2-big_32 > Results/sjeng/sjengResults_l2-big_32
+echo "Finished: 3"
+zcat traces-long/sjeng.gz | ./main config/l2-big_64 > Results/sjeng/sjengResults_l2-big_64
+echo "Finished: 22/35"
+
+echo "Starting sjeng: L1 Small"
+zcat traces-long/sjeng.gz | ./main config/l1-small_16 > Results/sjeng/sjengResults_l1-small_16
+echo "Finished: 1"
+zcat traces-long/sjeng.gz | ./main config/l1-small_32 > Results/sjeng/sjengResults_l1-small_32
+echo "Finished: 2"
+zcat traces-long/sjeng.gz | ./main config/l1-small_64 > Results/sjeng/sjengResults_l1-small_64
+echo "Finished: 25/35"
+
+echo "Starting sjeng: L1 Small, 4-Way"
+
+zcat traces-long/sjeng.gz | ./main config/l1-small-4way_16 > Results/sjeng/sjengResults_l1-small-4way_16
+echo "Finished: 2"
+zcat traces-long/sjeng.gz | ./main config/l1-small-4way_32 > Results/sjeng/sjengResults_l1-small-4way_32
+echo "Finished: 3"
+zcat traces-long/sjeng.gz | ./main config/l1-small-4way_64 > Results/sjeng/sjengResults_l1-small-4way_64
+echo "Finished: 29/35"
+
+END=$(date +%s)
+DIFF=$(( $END - $START ))
+echo "Completed sjeng trace in $DIFF seconds."

@@ -1,0 +1,64 @@
+Configuration: config/default_8
+
+---------------------------------------------------
+				 Simulation Results
+---------------------------------------------------
+Memory System:
+	 D Cache: Size = 8192, 	Associativity = 1, 	Block size = 32
+	 I Cache: Size = 8192, 	Associativity = 1, 	Block size = 32
+	 L2 Unified Cache: Size = 32768, 	Associativity = 1, 	Block size = 64
+	 Main Memory: Ready time = 30, 	Chunksize = 8, 	Chunktime = 15,
+
+Execution Time = 52753050839, 	Total Traces Read = 10000000073
+Flush time = 602367385
+Total time (Execution Time + Flush Time) = 53355418224
+
+Number of Reference Types: 	[Percentage] 
+	Reads 	= 	1882275327			[18.8%]
+	Writes 	= 	552506959			[5.5%]
+	Inst. 	= 	7565217787			[75.7%]
+	Total 	= 	10000000073
+
+Total Cycles for Activities: 	[Percentage] 
+	Reads 	= 	21886254229			[41.5%]
+	Writes 	= 	18672589068			[35.4%]
+	Inst. 	= 	12194207542			[23.1%]
+	Total 	= 	52753050839
+
+Average Cycles for Activities: 
+	Reads = 11.6, 	Writes = 33.8, 	Instructions = 7.0
+
+Ideal: Execution Time = 17565217860; 	CPI = 2.3
+Ideal Misaligned Execution Time = 22199500705; 	CPI = 2.9
+
+Memory Level: L1 Instruction Cache
+	Hit Count = 12094581696, 	 Miss Count = 1500826
+	Total Requests = 12096082522
+	Hit Rate: 100.0%, 	 Miss Rate = 0.0%
+	Kickouts = 782137, 	 Dirty-kickouts = 0, 	 Transfers = 1500826
+	Flush Kickouts = 0
+
+Memory Level: L1 Data Cache
+	Hit Count = 2359895135, 	 Miss Count = 178305261
+	Total Requests = 2538200396
+	Hit Rate: 93.0%, 	 Miss Rate = 7.0%
+	Kickouts = 102760923, 	 Dirty-kickouts = 68885054, 	 Transfers = 178305261
+	Flush Kickouts = 1582865
+
+Memory Level: L2 Cache
+	Hit Count = 99342999, 	 Miss Count = 150931007
+	Total Requests = 250274006
+	Hit Rate: 39.7%, 	 Miss Rate = 60.3%
+	Kickouts = 80793120, 	 Dirty-kickouts = 57599764, 	 Transfers = 150931007
+	Flush Kickouts = 2615081
+
+
+System Costs:
+	 L1 Cache Costs (Instruction Cache $200 + Data Cache $200) = $400
+	 L2 Cache Costs: $50 
+	 Main Memory Costs: $75 
+	 Total Memory Cost: $525 
+
+Flushes = 26315, Invalidates = 19915269
+
+---------------------------------------------------

@@ -1,0 +1,28 @@
+Starting bzip2: 12 Files
+Finished: 1
+Finished: 2
+Finished: 3
+Finished: 4
+Finished: 5
+Finished: 6
+Finished: 7
+Finished: 8
+Finished: 9
+Finished: 10
+Finished: 11
+Completed bzip2 trace in 41519 seconds.
+Starting h264ref: 12 Files
+Finished: 1
+Finished: 2
+Finished: 3
+Finished: 4
+Finished: 5
+Finished: 6
+Finished: 7
+Finished: 8
+Finished: 9
+Finished: 10
+Finished: 11
+Completed h264ref trace in 40436 seconds.
+
+

@@ -14,21 +14,11 @@
         <df name="omnetpp">
         </df>
         <df name="sjeng">
+          <df name="Old">
+          </df>
         </df>
       </df>
-      <df name="Results_5M">
-        <df name="bzip2">
-        </df>
-        <df name="h264">
-        </df>
-        <df name="libquantum">
-        </df>
-        <df name="omnetpp">
-        </df>
-        <df name="sjeng">
-        </df>
-      </df>
-      <df name="traces-5M">
+      <df name="Scripts">
       </df>
       <df name="traces-long">
       </df>
@@ -62,8 +52,6 @@
         <gdb_interceptlist>
           <gdbinterceptoptions gdb_all="false" gdb_unhandled="true" gdb_unexpected="true"/>
         </gdb_interceptlist>
-        <gdb_signals>
-        </gdb_signals>
         <gdb_options>
           <DebugOptions>
           </DebugOptions>

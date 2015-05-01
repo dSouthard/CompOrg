@@ -1,0 +1,64 @@
+Configuration: config/all-fa-l2big_8
+
+---------------------------------------------------
+				 Simulation Results
+---------------------------------------------------
+Memory System:
+	 D Cache: Size = 8192, 	Associativity = 256, 	Block size = 32
+	 I Cache: Size = 8192, 	Associativity = 256, 	Block size = 32
+	 L2 Unified Cache: Size = 65536, 	Associativity = 1024, 	Block size = 64
+	 Main Memory: Ready time = 30, 	Chunksize = 8, 	Chunktime = 15,
+
+Execution Time = 46801694774, 	Total Traces Read = 10000000073
+Flush time = 568775360
+Total time (Execution Time + Flush Time) = 47370470134
+
+Number of Reference Types: 	[Percentage] 
+	Reads 	= 	1882275327			[18.8%]
+	Writes 	= 	552506959			[5.5%]
+	Inst. 	= 	7565217787			[75.7%]
+	Total 	= 	10000000073
+
+Total Cycles for Activities: 	[Percentage] 
+	Reads 	= 	18004007190			[38.5%]
+	Writes 	= 	16619883250			[35.5%]
+	Inst. 	= 	12177804334			[26.0%]
+	Total 	= 	46801694774
+
+Average Cycles for Activities: 
+	Reads = 9.6, 	Writes = 30.1, 	Instructions = 6.2
+
+Ideal: Execution Time = 17565217860; 	CPI = 2.3
+Ideal Misaligned Execution Time = 22199500705; 	CPI = 2.9
+
+Memory Level: L1 Instruction Cache
+	Hit Count = 12095352780, 	 Miss Count = 729742
+	Total Requests = 12096082522
+	Hit Rate: 100.0%, 	 Miss Rate = 0.0%
+	Kickouts = 1681, 	 Dirty-kickouts = 0, 	 Transfers = 729742
+	Flush Kickouts = 0
+
+Memory Level: L1 Data Cache
+	Hit Count = 2380675441, 	 Miss Count = 157524955
+	Total Requests = 2538200396
+	Hit Rate: 93.8%, 	 Miss Rate = 6.2%
+	Kickouts = 89788427, 	 Dirty-kickouts = 60999845, 	 Transfers = 157524955
+	Flush Kickouts = 1598968
+
+Memory Level: L2 Cache
+	Hit Count = 97118523, 	 Miss Count = 123734987
+	Total Requests = 220853510
+	Hit Rate: 44.0%, 	 Miss Rate = 56.0%
+	Kickouts = 49087852, 	 Dirty-kickouts = 50384616, 	 Transfers = 123734987
+	Flush Kickouts = 3377513
+
+
+System Costs:
+	 L1 Cache Costs (Instruction Cache $1800 + Data Cache $1800) = $3600
+	 L2 Cache Costs: $1100 
+	 Main Memory Costs: $75 
+	 Total Memory Cost: $4775 
+
+Flushes = 26315, Invalidates = 31725920
+
+---------------------------------------------------
